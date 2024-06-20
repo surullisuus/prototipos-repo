@@ -1,0 +1,86 @@
+/* Estilos para el menú y dropdowns */
+.container-navbar-menu-govco {
+  width: 200px; /* Ajusta el ancho del menú vertical */
+}
+
+.navbar-menu-govco {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.navbar-toggler {
+  width: 100%;
+  text-align: left;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-item {
+  width: 100%;
+  position: relative;
+}
+
+.nav-link {
+  width: 100%;
+  padding: 10px 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* Oculta los dropdowns inicialmente */
+.nav-item .dropdown-menu,
+.nav-item .megamenu-menu-govco {
+  
+  position: absolute;
+  width: 100%;
+  left: 0;
+top: 100%;
+}
+
+/* Muestra los dropdowns cuando el nav-item está en focus-within */
+.nav-item:focus-within > .dropdown-menu,
+.nav-item:focus-within > .megamenu-menu-govco {
+  display: block;
+}
+
+.nav-item .dropdown-menu .dropdown-item {
+  padding: 10px 20px;
+}
+
+/* Estilos adicionales para la barra de búsqueda */
+.container-search-icon-menu-govco {
+  width: 100%;
+}
+
+.search-govco {
+  width: 100%;
+}
+
+.input-search-govco {
+  width: calc(100% - 40px);
+}
+
+.icon-search-govco {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.g-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.colum-item-menu-govco {
+  width: 100%;
+}
+
+/* Extra CSS to ensure dropdowns do not overlap */
+.nav-item {
+  margin-bottom: 1px; /* Add margin between items */
+}

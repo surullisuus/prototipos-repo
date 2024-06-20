@@ -1,0 +1,29 @@
+.loading-modal-enable-disabled{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 350px;
+}
+
+.spinner-modal-enable-disabled{
+    width: 60px;
+    height: 60px;
+    border-width: 8px;
+}
+
+/* spinner */
+.spinner-indicador-de-carga-govco {
+    display: inline-block;
+    vertical-align: -0.125em;
+    border-radius: 50%;
+    -webkit-animation: .75s linear infinite spinner-border;
+    animation: .75s linear infinite spinner-border;
+    border-color: #0B457F;
+    border-style: solid;
+    border-right-color: transparent;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-width: 8px;
+  }

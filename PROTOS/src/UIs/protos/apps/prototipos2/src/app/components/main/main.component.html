@@ -1,0 +1,15 @@
+<div class="d-flex flex-column main-dashboard justify-content-between">
+    <subsidios-header></subsidios-header>
+
+    <div class="container-fluid">
+        <div class="row flex-nowrap grid">
+            <div class="sidebar col-auto col-md-3 col-xl-2 px-sm-4 px-0 bg-light sidebar-color">
+                <subsidios-sidebar></subsidios-sidebar>
+            </div>
+            <div class="col py-3">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <subsidios-footer></subsidios-footer>
+</div>

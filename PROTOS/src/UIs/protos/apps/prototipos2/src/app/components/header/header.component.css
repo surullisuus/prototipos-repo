@@ -1,0 +1,88 @@
+.container {
+  background-color: #f2f2f2;
+  max-width: 100%;
+}
+
+.container-logo-header-govco {
+  padding: 0.35rem !important;
+  background-color: #f8f9fa;
+}
+
+.user-container {
+  font-family: "WorkSans-Regular";
+}
+
+.width-user-container {
+  width: 18rem;
+}
+
+.item-user {
+  border-radius: 0.313rem;
+  display: grid;
+  grid-template-columns: 16fr 1fr;
+  align-items: center;
+  padding: 0.4rem 1rem 0.4rem 0.6rem;
+  color: #4b4b4b;
+  font-size: 0.875rem;
+  height: 2.625rem;
+  border: 0;
+  text-align: left;
+}
+
+.item-user .span {
+  min-width: 1.875rem;
+}
+
+.item-user[aria-expanded="true"] {
+  background-color: #ffffff;
+}
+
+.item-user[aria-expanded="true"] .bi-chevron-down {
+  display: none;
+}
+
+.item-user[aria-expanded="false"] .bi-chevron-up {
+  display: none;
+}
+
+.item-user[aria-expanded="false"]:hover,
+a[aria-expanded="false"]:active {
+  background-color: #e6effd;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+.dropdown-menu-user {
+  background-color: #f6f8f9;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.dropdown-menu-user ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu-user ul li a {
+  background: transparent;
+}
+
+.dropdown-menu-user ul li a:hover,
+a:active {
+  background: #e6effd;
+}
+
+.sisfv-logo {
+  color: #31bbe2;
+  font-family: "WorkSans-Medium";
+  font-size: 1.8rem;
+  letter-spacing: 0.4rem;
+}
+
+.gov-co-ico {
+  color: #3366cc !important;
+}

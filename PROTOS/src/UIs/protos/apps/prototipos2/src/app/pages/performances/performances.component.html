@@ -1,0 +1,124 @@
+<div class="modal fade" id="Actuaciones" tabindex="-1" aria-labelledby="#Actuaciones" aria-hidden="true">
+  <form>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class='row'>
+            <h4 class="h4-tipografia-govco">
+              <span class="govcolor-marine">
+                ACTUACIONES
+              </span>
+            </h4>
+          </div>
+          <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close" aria-expanded="false">
+            <span class="modal-close-govco govco-times"></span>
+          </a>
+        </div>
+        <div class="modal-body">
+          
+          <div class="table-responsive">
+            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+              <thead class="encabezado-tabla">
+                <tr>
+                  <th class="columna-especial" role="button">Usuario Gestor</th>
+                  <th role="button">Actuación</th>
+                  <th role="button">Estado</th>
+                  <th role="button">Fecha de Cierre</th>
+                            
+                  <th style="text-align: center !important;">Acciones</th>
+                </tr>
+              </thead>
+        
+              <tbody class="contenido-tablas">
+                <tr *ngFor="let item of registros">
+                  <td class="text-left">{{ item.nombreUsuarioGestor }}</td>
+                  <td class="text-left">{{ item.actuacion }}</td>
+                  <td class="text-left">{{ item.estado }}</td>
+        
+                  <td style="text-align: left !important;">
+                    <p class="mb-0">
+                      {{ item.fechaCierre | date: 'dd/MM/yyyy' }}
+                    </p>
+                  </td>
+                 
+                  <td style="text-align:center!important; padding-right: 10px;">
+        
+        
+                    <!-- Acciones-->
+                    <a class="button-modal-enabled-none" data-bs-toggle="modal" #openDocuments
+                      data-bs-target="#verdocumentos" href="#"></a>
+                    <a type="button"  class="me-0"  tabindex="0" (click)="onDocumentsLink()">Ver</a>
+        
+                  
+                   
+                  </td>
+                </tr>
+              </tbody>
+        
+              <!--<tbody >
+              <tr>
+                <td colspan="7">
+                  No se encuentra información con los criterios de búsqueda seleccionados
+                </td>
+              </tr>
+            </tbody>-->
+        
+              <!--  <tbody >
+              <tr>
+                <td colspan="7">
+                  <entidades-loading-modal></entidades-loading-modal>
+                </td>
+              </tr>
+            </tbody>-->
+            </table>
+            <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" type="button" >Guardar</button>
+          <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space" >Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div #dialog ></div>
+
+
+
+<div class="modal fade" id="verdocumentos" tabindex="-1" aria-labelledby="#verdocumentos" aria-hidden="true">
+  <form>
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class='row'>
+            <h4 class="h4-tipografia-govco">
+              <span class="govcolor-marine">
+                Documentos
+              </span>
+            </h4>
+          </div>
+          <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close" aria-expanded="false">
+            <span class="modal-close-govco govco-times"></span>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="mt-3 col-md-12">
+           <a href="#"> 123131090</a><br>
+           <a href="#"> 238729430</a><br>
+           <a href="#"> 347728892</a>
+            </div>
+          </div>
+          <div class="row">
+           
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div #dialog ></div>

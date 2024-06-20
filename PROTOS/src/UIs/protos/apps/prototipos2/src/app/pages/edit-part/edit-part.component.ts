@@ -1,0 +1,135 @@
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { ActionType } from '../../components/dialog/models/action-type.enum';
+import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { DialogData } from '../../components/dialog/models/dialog-data';
+import { DialogType } from '../../components/dialog/models/dialog-type';
+import { DialogService } from '../../components/dialog/services/dialog.service';
+import { Router } from '@angular/router';
+
+interface QuerySelect {
+  text: string;
+  value: number;
+}
+
+
+@Component({
+  selector: 'app-edit-part',
+  templateUrl: './edit-part.component.html',
+  styleUrls: ['./edit-part.component.css'],
+})
+export class EditPartComponent {
+
+  
+  @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
+  formQueryScheme!: FormGroup;
+  subscription!: Subscription;
+  typesList: QuerySelect[] = [];
+  typesListParts: QuerySelect[] = [];
+  typesListDepartment: QuerySelect[] = [];
+  typesListMunicipal: QuerySelect[] = [];
+
+  isVisible:boolean=false
+
+  
+  constructor( private readonly fb: FormBuilder,
+    private dialogService: DialogService,
+    private router: Router){}
+  
+
+  initList(){
+    this.typesList = [
+      { text: 'Cédula de ciudadanía', value: 1 },
+      { text: 'Cédula de extranjería', value: 2 },
+      { text: 'Pasaporte', value: 3 },
+      { text: 'NIT', value: 4 }
+    ];
+
+    this.typesListParts = [
+      { text: 'Parte uno', value: 1 },
+      { text: 'Parte dos', value: 2 },
+      { text: 'Parte tres', value: 3 },
+      { text: 'Parte cuatro', value: 4 }
+    ];
+
+    this.typesListDepartment = [
+      { text: 'CAUCA', value: 1 },
+      { text: 'CAQUETÁ', value: 2 },
+      { text: 'CUNDINAMARCA', value: 3 },
+      { text: 'RISARALDA', value: 4 }
+    ];
+
+    this.typesListMunicipal = [
+      { text: 'POPAYÁN', value: 1 },
+      { text: 'FLORENCIA', value: 2 },
+      { text: 'BOGOTÁ', value: 3 },
+      { text: 'PEREIRA', value: 4 }
+    ];
+
+
+  }
+ 
+  ngOnInit(): void {
+    this.initList()    
+
+    this.formQueryScheme = this.fb.group({
+      tipoIdentificacion: ['CC', Validators.required],
+      numeroIdentificacion: ['12345678', Validators.required],
+      tipoParte: ['Persona', Validators.required],
+      razonSocial: ['Mi Casa Ya', Validators.required],
+      departamento: ['Antioquia', Validators.required],
+      municipio: ['Medellín', Validators.required],
+      direccion: ['Cra 26 #12 -24', Validators.required],
+      telefono: ['3127467890', Validators.required],
+      correoElectronico: ['correo@yopmail.com', [Validators.required, Validators.email]],
+      aceptaTratamiento: [false, Validators.requiredTrue]
+    })}
+
+
+    onSaveModal(){
+     
+      const dialogData = new DialogData();
+      dialogData.title="¿Está seguro de guardar esta información?"
+      dialogData.textButtonCancel = "Cerrar";
+      dialogData.type = DialogType.warning;
+    
+      this.dialogService.resultActionModal
+      this.subscription = this.dialogService
+        .openModal(this.dialog, dialogData)
+        .subscribe((dialogAction: DialogAction) => {
+          if (dialogAction.action === ActionType.confirm) {
+         
+            this.onShowSuccessModal()
+           
+          } else {
+            dialogAction.eventClose.emit();
+          }
+        });
+    }
+    
+    onShowSuccessModal(){
+       
+      const dialogData = new DialogData();
+      dialogData.title="El registro fue actualizado con éxito"
+      dialogData.type = DialogType.success;
+         dialogData.buttonCancel=false
+    
+      this.dialogService.resultActionModal
+      this.subscription = this.dialogService
+        .openModal(this.dialog, dialogData)
+        .subscribe((dialogAction: DialogAction) => {
+          if (dialogAction.action === ActionType.confirm) {
+            this.router.navigate(['/partes-procesos']);
+           
+          } 
+        });
+    }
+    
+    onCancel(){
+      this.router.navigate(['/partes-procesos']);
+    }
+  
+
+}

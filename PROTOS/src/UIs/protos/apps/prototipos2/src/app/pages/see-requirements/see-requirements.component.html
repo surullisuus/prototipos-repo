@@ -1,0 +1,50 @@
+<div class="modal fade" id="verRequisitos" tabindex="-1" aria-labelledby="verRequisitosLabel" aria-hidden="true">
+  <form>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class='row'>
+            <h4 class="h4-tipografia-govco">
+              <span class="govcolor-marine">
+                Requisitos-Etapa
+              </span>
+            </h4>
+          </div>
+          <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close" aria-expanded="false">
+            <span class="modal-close-govco govco-times"></span>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="form-check">
+            <div class="checkbox-seleccion-govco m-2">
+              <input id="opt1" type="checkbox"/>
+              <label for="opt1">Checkbox 1</label>
+            </div>
+            <div class="checkbox-seleccion-govco m-2">
+              <input id="opt2" type="checkbox" checked/>
+              <label for="opt2">Checkbox 2</label>
+            </div>
+            <div class="checkbox-seleccion-govco m-2">
+              <input id="opt3" type="checkbox"/>
+              <label for="opt3">Checkbox 3</label>
+            </div>
+            <div class="checkbox-seleccion-govco m-2">
+              <input id="opt4" type="checkbox" checked/>
+              <label for="opt4">Checkbox 4</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" type="button" (click)="AcceptModal()">
+            Aceptar
+          </button>
+          <button #closeModal type="button" data-bs-dismiss='modal' class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space" (click)="onCloseModal()">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- Aquí estará el dialog, que debe estar bien posicionado en el DOM -->
+<div #dialog></div>

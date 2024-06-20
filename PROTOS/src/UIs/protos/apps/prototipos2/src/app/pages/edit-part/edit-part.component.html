@@ -1,0 +1,180 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine">EDITAR PARTE</span></h3>
+<div class="rounded-3 mb-5 mt-3">
+
+  <div class="row">
+    <!--tipo id-->
+    <div class="col-md-4">
+        <label for='tipoIdentificacion' class='form-label'>Tipo de identificaci&oacute;n*:</label>
+        <select class='form-select' name='tipoIdentificacion' id='tipoIdentificacion' formControlName='tipoIdentificacion'
+             autocomplete='off'>
+<option *ngFor='let row of typesList' [value]='row.value'>
+  {{ row.text }}
+</option>
+</select>
+    </div>
+    <!--Numero de id-->
+    <div class="col-md-4">
+      <subsidios-input
+      [control]="$any(formQueryScheme.get('numeroIdentificacion'))"
+      type="numeric"
+      value="12313123"
+      label="No. de identificaci&oacute;n*:"
+      placeholder="Ej. 104619011214"
+      [showStatus]="false"
+      [maxLength]="20"
+      [minLength]="1"
+      typeValidation="numeric"
+      note="Ingrese su identificaci&oacute;n"
+    ></subsidios-input>
+    </div>
+    <!--logo de buscar-->
+    <div class="col-md-4">
+      <!-- Puedes agregar contenido aquí si es necesario -->
+    </div>
+
+    <!-- Tipo de parte-->
+    <div class="col-md-8 mb-4">
+        <label for='tipoParte' class='form-label'>Tipo de parte*:</label>
+        <select class='form-select' name='tipoParte' id='tipoParte' formControlName='tipoParte'
+             autocomplete='off'>
+<option *ngFor='let row of typesListParts' [value]='row.value'>
+  {{ row.text }}
+</option>
+</select>
+    </div>
+    <!-- Razón social -->
+    <div class="col-md-12">
+      <subsidios-input
+      [control]="$any(formQueryScheme.get('razonSocial'))"
+      type="text"
+      label="Nombre / Raz&oacute;n social*:"
+      placeholder="Ej. Razón social mi casa ya"
+      [showStatus]="false"
+      [maxLength]="20"
+      [minLength]="1"
+      typeValidation="alphanumericwhithspaces"
+      note="Ingrese su identificaci&oacute;n"
+    ></subsidios-input>
+    </div>
+
+    <!-- Departamento -->
+    <div class="col-md-4">
+        <label for='tipoIdentificacion' class='form-label'>Departamento*:</label>
+        <select class='form-select' name='tipoIdentificacion' id='tipoIdentificacion' formControlName='tipoIdentificacion'
+             autocomplete='off'>
+<option *ngFor='let row of typesListDepartment' [value]='row.value'>
+  {{ row.text }}
+</option>
+</select>
+    </div>
+
+    <!-- Municipio -->
+    <div class="col-md-4">
+        <label for='tipoIdentificacion' class='form-label'>Municipio*:</label>
+        <select class='form-select' name='tipoIdentificacion' id='tipoIdentificacion' formControlName='tipoIdentificacion'
+             autocomplete='off'>
+<option *ngFor='let row of typesListMunicipal' [value]='row.value'>
+  {{ row.text }}
+</option>
+</select>
+    </div>
+    
+    <!-- Dirección -->
+    <div class="col-md-4">
+      <subsidios-input
+      [control]="$any(formQueryScheme.get('direccion'))"
+      type="numeric"
+      label="Direcci&oacute;n*:"
+      placeholder="Ej. Cra 26 #12 -24"
+      [showStatus]="false"
+      [maxLength]="20"
+      [minLength]="1"
+      typeValidation="alphanumericwhithspaces"
+      note="Ingrese una direcci&oacute;n"
+      ></subsidios-input>
+    </div>
+
+    <!-- Teléfono -->
+    <div class="col-md-4">
+      <subsidios-input
+      [control]="$any(formQueryScheme.get('telefono'))"
+      type="numeric"
+      label="Tel&eacute;fono*:"
+      placeholder="Ej. 3127467890"
+      [showStatus]="false"
+      [maxLength]="20"
+      [minLength]="1"
+      typeValidation="alphanumericwhithspaces"
+      note="Ingrese un tel&eacute;fono"
+      ></subsidios-input>
+    </div>
+
+    <!-- Correo electrónico -->
+    <div class="col-md-4">
+      <subsidios-input
+      [control]="$any(formQueryScheme.get('correoElectronico'))"
+      type="numeric"
+      label="Correo electr&oacute;nico*:"
+      placeholder="Ej. correo@yopmail.com"
+      [showStatus]="false"
+      [maxLength]="20"
+      [minLength]="1"
+      typeValidation="alphanumericwhithspaces"
+      note="Ingrese un correo electr&oacute;nico"
+      ></subsidios-input>
+    </div>
+
+    <!-- Checkbox de tratamiento de datos -->
+    <div class="checkbox-seleccion-govco entradas-de-texto-govco m-2">
+      <input id="input-tratamiento" type="checkbox" formControlName="aceptaTratamiento"/>
+      <label class="d-block" for="input-tratamiento"><a href="https://minvivienda.gov.co/ministerio/planeacion-gestion-y-control/sistema-integrado-de-gestion/mapa-de-procesos/gestion-de-tecnologias-de-la-informacion-y-las-comunicaciones/gti-plt-01-politica-de-tratamiento-y-proteccion-de" target="_blank" class="link-tipografia-govco">
+        Autorizar notificaciones por medios electr&oacute;nicos</a></label>
+    </div>
+
+    <!-- Carga de archivo -->
+   <div class="container-carga-de-archivo-govco">
+  <div class="loader-carga-de-archivo-govco">
+    <div class="all-input-carga-de-archivo-govco">
+      <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple/>
+      <label for="inputFile" class="label-carga-de-archivo-govco">Etiqueta*</label>
+      <label for="inputFile" class="container-input-carga-de-archivo-govco">
+        <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
+        <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
+      </label>
+      <span class="text-validation-carga-de-archivo-govco">Sólo archivos PDF. Peso máximo: 200 kB</span>
+    </div>
+    <div class="load-button-carga-de-archivo-govco">
+      <div class="load-carga-de-archivo-govco">
+        <!-- indicador de carga -->
+        <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+        <!-- end indicador de carga -->
+      </div>
+      <button class="button-loader-carga-de-archivo-govco" disabled>Cargar archivo</button>
+    </div>
+  </div>
+
+  <div class="container-detail-carga-de-archivo-govco">
+    <span class="alert-carga-de-archivo-govco visually-hidden"></span>
+    <div class="attached-files-carga-de-archivo-govco"></div>
+  </div>
+</div>
+
+  </div> <!--fin row-->
+
+  <div class="row mt-4 mb-3 text-left">
+    <div class="col-md-12">
+      
+      <button type="button" (click)="onSaveModal()" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+       Guardar
+      </button>
+
+      <button type="button" (click)="onCancel()"
+       class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+        Cancelar
+      </button>
+    </div>
+  </div>
+  <div #dialog ></div>
+</div>
