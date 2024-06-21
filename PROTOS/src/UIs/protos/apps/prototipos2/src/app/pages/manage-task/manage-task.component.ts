@@ -306,6 +306,30 @@ export class ManageTaskComponent implements OnInit {
       });
   }
 
+  onFinishTasktModal(task: PhaseTask, $event: Event) {
+    $event.preventDefault();
+    console.log('taks', task);
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Finalizar tarea';
+    dialogData.body = `¿Está seguro de finalizar la tarea ${task.taskName}?`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          this.changeTaskState(task.taskId, TaskStateEnum.EnEjecucion);
+          const body = `La tarea  ha cambiado a estado "Finalizada"`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
   onCloseTaskAnormalModal(task: PhaseTask, $event: Event) {
     $event.preventDefault();
 

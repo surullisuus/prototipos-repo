@@ -86,7 +86,9 @@
 
                             <span>&nbsp;/&nbsp;</span>
 
-                            <a class="button-modal-enabled-none" href="#">Finalizar</a>
+                            <a class="button-modal-enabled-none" type="button"
+                                (click)="onFinishTasktModal(task, $event)"
+                                (keypress)="onFinishTasktModal(task, $event)">Finalizar</a>
 
                             <span>&nbsp;/&nbsp;</span>
 
