@@ -52,8 +52,8 @@
             <a
               class="button-modal-enabled-none"
               data-bs-toggle="modal"
-              #openbuttongenerateExitDocument
-              data-bs-target="#verRequisitos"
+              #openbuttonassociateEntryDoc
+              data-bs-target="#associateEntryDocModal"
               href="#"
               hidden="true"
             ></a>
@@ -61,7 +61,7 @@
               class="dropdown-item dir-menu-govco me-0"
               type="button"
               tabindex="0"
-              (click)="onGenerateExitDocument()"
+              (click)="onAssociateEntryDoc()"
             >
               Asociar documentos de entrada</a
             >
@@ -198,3 +198,4 @@
   </div>
 </div>
 <app-generate-exit-document></app-generate-exit-document>
+<app-associate-entry-doc></app-associate-entry-doc>

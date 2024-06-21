@@ -9,6 +9,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ManageProcessDesignComponent {
   @ViewChild('openbuttongenerateExitDocument')
   openbuttongenerateExitDocument!: ElementRef;
+  @ViewChild('openbuttonassociateEntryDoc')
+  openbuttonassociateEntryDoc!: ElementRef;
 
   radicados = [
     {
@@ -78,6 +80,11 @@ export class ManageProcessDesignComponent {
   onGenerateExitDocument() {
     if (this.openbuttongenerateExitDocument) {
       this.openbuttongenerateExitDocument.nativeElement.click();
+    }
+  }
+  onAssociateEntryDoc() {
+    if (this.openbuttonassociateEntryDoc) {
+      this.openbuttonassociateEntryDoc.nativeElement.click();
     }
   }
 }

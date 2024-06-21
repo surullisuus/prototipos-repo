@@ -25,6 +25,7 @@ import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
 import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
+import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view
     ManageProcessDesignComponent,
     GenerateExitDocumentComponent,
     PreliminarViewComponent,
+    AssociateEntryDocComponent,
   ],
   imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
