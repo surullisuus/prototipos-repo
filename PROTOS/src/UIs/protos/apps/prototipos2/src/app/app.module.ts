@@ -22,6 +22,7 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { SeeRequirementsComponent } from './pages/see-requirements/see-requirements.component';
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
+import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
 
 
 
@@ -35,6 +36,7 @@ import { EditPartComponent } from './pages/edit-part/edit-part.component';
     PaginatorComponent,
     LoadingModalComponent,
     AssignRequestComponent,
+    AssignDocumentComponent,
     DialogComponent,
     CloseStageComponent,
     ManageProcessComponent,
