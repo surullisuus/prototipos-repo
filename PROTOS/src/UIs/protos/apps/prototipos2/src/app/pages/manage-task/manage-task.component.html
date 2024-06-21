@@ -147,8 +147,9 @@
                     <td style="text-align: center !important; padding-right: 10px;">
 
                         <!-- ACCIONES PRA TAREAS GENERALES ASIGNADAS -->
-                        <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                            data-bs-target="#verEsquemaModal" href="#">Realizar</a>
+                        <a class="button-modal-enabled-none" type="button"
+                            (click)="onMakeSuggestedTasktModal(task, $event)"
+                            (keypress)="onMakeSuggestedTasktModal(task, $event)">Realizar</a>
                         <span>&nbsp;/&nbsp;</span>
                         <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
                             data-bs-target="#verEsquemaModal" href="#">Aprobar</a>

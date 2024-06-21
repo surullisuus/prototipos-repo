@@ -351,6 +351,30 @@ export class ManageTaskComponent implements OnInit {
       });
   }
 
+  onMakeSuggestedTasktModal(task: SuggestedTask, $event: Event) {
+    $event.preventDefault();
+    console.log('taks', task);
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Realizar tarea';
+    dialogData.body = `¿Está seguro de realizar la tarea seleccionada? Con esta acción la tarea "${task.taskName}" le será asignada.`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          this.changeTaskState(task.taskId, TaskStateEnum.EnEjecucion);
+          const body = `La tarea seleccionada pasó a su listado de tareas actuales.`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
   showSuccessTaskInitializationAlertState(body: string) {
     const dialogData = new DialogData();
     dialogData.title = body;
