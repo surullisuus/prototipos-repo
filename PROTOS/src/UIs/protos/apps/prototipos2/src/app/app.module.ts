@@ -23,6 +23,7 @@ import { SeeRequirementsComponent } from './pages/see-requirements/see-requireme
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
+import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
     CreatePartComponent,
     EditPartComponent,
     ManageTaskComponent,
+    CloseTaskAnormalComponent,
   ],
   imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],

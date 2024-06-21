@@ -65,30 +65,39 @@
 
                         <!-- ACCIONES PRA TAREAS GENERALES ASIGNADAS -->
                         <ng-container *ngIf="task.state === 'Asignada' && task.implementationType === 'general'">
-                            <a type="button" class="ms-2 me-2" href="#" tabindex="0"
+                            <a type="button" class="ms-2 me-2" tabindex="0"
                                 (click)="onInitializeTasktModal(task, $event)"
                                 (keypress)="onInitializeTasktModal(task, $event)">Iniciar</a>
+
                             <span>&nbsp;/&nbsp;</span>
-                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                                data-bs-target="#verEsquemaModal" href="#">Cierre anormal</a>
+
+                            <a type="button" class="button-modal-enabled-none"
+                                (click)="onCloseTaskAnormalModal(task, $event)"
+                                (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
+
+
+                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openButtonCloseTaskAnormal
+                                data-bs-target="#closeTaskAnormal" hidden="true"></a>
                         </ng-container>
 
                         <!-- ACCIONES PRA TAREAS GENERALES EN EJECUCIÓN -->
                         <ng-container *ngIf="task.state === 'En ejecución' && task.implementationType === 'general'">
-                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                                data-bs-target="#verEsquemaModal" href="#">Gestionar documentos</a>
+                            <a class="button-modal-enabled-none" href="#">Gestionar documentos</a>
+
                             <span>&nbsp;/&nbsp;</span>
-                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                                data-bs-target="#verEsquemaModal" href="#">Finalizar</a>
+
+                            <a class="button-modal-enabled-none" href="#">Finalizar</a>
+
                             <span>&nbsp;/&nbsp;</span>
-                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                                data-bs-target="#verEsquemaModal" href="#">Cierre anormal</a>
+
+                            <a class="button-modal-enabled-none" (click)="onCloseTaskAnormalModal(task, $event)"
+                                (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
+
                         </ng-container>
 
                         <!-- ACCIONES PRA TAREAS ESPECÍFICAS -->
                         <ng-container *ngIf=" task.implementationType === 'específica'">
-                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                                data-bs-target="#verEsquemaModal" href="#">Ir a funcionalidad</a>
+                            <a class="button-modal-enabled-none" href="#">Ir a funcionalidad</a>
                         </ng-container>
 
 
@@ -160,3 +169,4 @@
 
 
 <div #dialog></div>
+<app-close-task-anormal />

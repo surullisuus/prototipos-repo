@@ -54,6 +54,8 @@ export class ManageTaskComponent implements OnInit {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   @ViewChild('closeModal') closeModal!: ElementRef;
   @ViewChild('openbutton') openbutton!: ElementRef;
+  @ViewChild('openButtonCloseTaskAnormal')
+  openButtonCloseTaskAnormal!: ElementRef;
   subscription!: Subscription;
 
   solicitudId = 101;
@@ -273,6 +275,13 @@ export class ManageTaskComponent implements OnInit {
   }
 
   // MODALES
+
+  onSeeCloseTaskAnormalModal() {
+    if (this.openButtonCloseTaskAnormal) {
+      this.openButtonCloseTaskAnormal.nativeElement.click();
+    }
+  }
+
   onInitializeTasktModal(task: PhaseTask, $event: Event) {
     $event.preventDefault();
     console.log('taks', task);
@@ -282,7 +291,6 @@ export class ManageTaskComponent implements OnInit {
     dialogData.body = `¿Está seguro de asignar la tarea ${task.taskName}?`;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.warning;
-    console.log('dialogData', dialogData);
 
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
@@ -292,6 +300,27 @@ export class ManageTaskComponent implements OnInit {
           const body = `La tarea  ha cambiado a estado "En ejecución"`;
           dialogAction.eventClose.emit();
           this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
+  onCloseTaskAnormalModal(task: PhaseTask, $event: Event) {
+    $event.preventDefault();
+
+    const dialogData = new DialogData();
+    //dialogData.title = 'Asignar Solicitud';
+    dialogData.body = `¿Está seguro de cerrar la tarea "${task.taskName}" de forma anormal? Recuerde que la acción es irreversible.`;
+    dialogData.textButtonCancel = 'Cerrar';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          dialogAction.eventClose.emit();
+          this.onSeeCloseTaskAnormalModal();
         } else {
           dialogAction.eventClose.emit();
         }
