@@ -11,95 +11,64 @@
     <nav class="navbar-expand-lg navbar-pestana-govco">
       <div class="navbar-collapse">
         <ul class="navbar-nav">
-          <li id="pestania1" class="nav-item">
+          <li>
             <a
-              id="pestuno"
-              class="nav-link"
-              href="javascript:void(0)"
-              (click)="setActiveTab(0)"
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttongenerateExitDocument
+              data-bs-target="#verRequisitos"
+              href="#"
+              hidden="true"
+            ></a>
+            <a
+              class="dropdown-item dir-menu-govco me-0"
+              type="button"
+              tabindex="0"
+              (click)="onGenerateExitDocument()"
             >
-              <p id="letrapestuno">Generar documento de salida</p>
-            </a>
-            <hr id="hruno" class="clase-uno" style="color: transparent" />
+              Generar documento de salida</a
+            >
           </li>
-          <li id="pestania2" class="nav-item">
+
+          <li>
             <a
-              id="pestdos"
-              class="nav-link"
-              href="javascript:void(0)"
-              (click)="setActiveTab(1)"
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttongenerateExitDocument
+              data-bs-target="#verRequisitos"
+              href="#"
+              hidden="true"
+            ></a>
+            <a
+              class="dropdown-item dir-menu-govco me-0"
+              type="button"
+              tabindex="0"
+              (click)="onGenerateExitDocument()"
             >
-              <p id="letrapestdos">Cargar documento de salida</p>
+              Cargar documento de salida
             </a>
-            <hr id="hrdos" class="clase-uno" style="color: transparent" />
           </li>
-          <li id="pestania3" class="nav-item">
+          <li>
             <a
-              id="pesttres"
-              class="nav-link"
-              href="javascript:void(0)"
-              (click)="setActiveTab(2)"
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttongenerateExitDocument
+              data-bs-target="#verRequisitos"
+              href="#"
+              hidden="true"
+            ></a>
+            <a
+              class="dropdown-item dir-menu-govco me-0"
+              type="button"
+              tabindex="0"
+              (click)="onGenerateExitDocument()"
             >
-              <p id="letrapesttres">Asociar documentos de entrada</p>
-            </a>
-            <hr id="hrtres" class="clase-uno" style="color: transparent" />
+              Asociar documentos de entrada</a
+            >
           </li>
         </ul>
       </div>
     </nav>
-  </div>
-
-  <div *ngIf="isTabActive(0)" class="mt-5 ps-5">
-    <div class="me-4">
-      <div class="col-md-10 mt-5">
-        <h4 class="h5-tipografia-govco">
-          <span class="govcolor-marine">Generar documento de salida</span>
-        </h4>
-      </div>
-      <div class="d-flex">
-        <subsidios-dropdown-list
-          labelText="Tipo documental*"
-          idList="type-345676"
-          type="basic"
-          [disabled]="false"
-          class="w-100"
-        ></subsidios-dropdown-list>
-        <div class="col-md-8 mt-4">
-          <button
-            type="button"
-            class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space ms-4"
-            (click)="showModal($event)"
-          >
-            Generar documento
-          </button>
-        </div>
-      </div>
-      <button
-        type="button"
-        class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-3"
-      >
-        Cancelar
-      </button>
-    </div>
-  </div>
-  <div #dialog></div>
-
-  <div *ngIf="isTabActive(1)" class="mt-5 ps-5">
-    <div class="col-md-10 mt-5">
-      <h4 class="h5-tipografia-govco">
-        <span class="govcolor-marine">Cargar documento de salida</span>
-      </h4>
-    </div>
-    Carga de documentos
-  </div>
-
-  <div *ngIf="isTabActive(2)" class="mt-5 ps-5">
-    <div class="col-md-10 mt-5">
-      <h4 class="h5-tipografia-govco">
-        <span class="govcolor-marine">Asociar documentos de entrada</span>
-      </h4>
-    </div>
-    Asociar documentos
   </div>
 
   <div class="mt-5">
@@ -228,3 +197,4 @@
     </button>
   </div>
 </div>
+<app-generate-exit-document></app-generate-exit-document>
