@@ -1,0 +1,55 @@
+<div class="modal fade" id="closeTaskAnormal" tabindex="-1" aria-labelledby="verRequisitosLabel" aria-hidden="true">
+    <form>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class='row'>
+                        <h4 class="h4-tipografia-govco">
+                            <span class="govcolor-marine">
+                                Cerrar tarea de forma anormal
+                            </span>
+                        </h4>
+                    </div>
+                    <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+                        aria-expanded="false">
+                        <span class="modal-close-govco govco-times"></span>
+                    </a>
+                </div>
+
+                <div class="modal-body">
+                    <subsidios-dropdown-list labelText="Motivo - Cierre anormal de tarea*" note="Seleccione un motivo"
+                        idList="type-345676" type="basic" [disabled]="false" />
+
+                    <div class="entradas-de-texto-govco">
+                        <label for="input-contador-id">Comentarios*</label>
+
+                        <textarea id="input-contador-id" aria-describedby="contador max-lenght"
+                            placeholder="Ejemplo: Campo de texto" maxlength="250" typeData="accountant" rows="3"
+                            style="width: 100%; border-radius: 5px; resize: none;"></textarea>
+
+                        <span class="visually-hidden-focusable info-entradas-de-texto-govco" id="max-lenght">Caracteres
+                            permitidos:250</span>
+                        <div class="counter-entradas-de-texto-govco" id="contador" role="status">
+                            <span class="number-entradas-de-texto-govco">0</span>
+                            <span> de 250</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer d-flex justify-content-start">
+                    <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" type="button" #closeModal
+                        data-bs-dismiss='modal' (click)="AcceptModal()">
+                        Guardar
+                    </button>
+                    <button #closeModal type="button" data-bs-dismiss='modal'
+                        class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+                        Cancelar
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+<!-- Aquí estará el dialog, que debe estar bien posicionado en el DOM -->
+<div #dialog></div>

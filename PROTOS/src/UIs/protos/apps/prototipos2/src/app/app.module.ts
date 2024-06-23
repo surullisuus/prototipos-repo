@@ -22,15 +22,17 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { SeeRequirementsComponent } from './pages/see-requirements/see-requirements.component';
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
-
-
-
+import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
+import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
 
 @NgModule({
-  declarations: [AppComponent,MainComponent,
+  declarations: [
+    AppComponent,
+    MainComponent,
     SidebarComponent,
     FooterComponent,
-    HeaderComponent,DropdownListComponent,
+    HeaderComponent,
+    DropdownListComponent,
     ProcessRequestComponent,
     PaginatorComponent,
     LoadingModalComponent,
@@ -43,12 +45,11 @@ import { EditPartComponent } from './pages/edit-part/edit-part.component';
     ModalComponent,
     SeeRequirementsComponent,
     CreatePartComponent,
-    EditPartComponent
-    
-      ],
-  imports: [BrowserModule,UisModule,
-              RouterModule.forRoot(appRoutes),
-],
+    EditPartComponent,
+    ManageTaskComponent,
+    CloseTaskAnormalComponent,
+  ],
+  imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })
