@@ -1,11 +1,11 @@
 <h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine">EDITAR PARTE</span></h3>
-<div class="rounded-3 mb-5 mt-3">
+<div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryScheme">
 
   <div class="row">
     <!--tipo id-->
     <div class="col-md-4">
         <label for='tipoIdentificacion' class='form-label'>Tipo de identificaci&oacute;n*:</label>
-        <select class='form-select' name='tipoIdentificacion' id='tipoIdentificacion' formControlName='tipoIdentificacion'
+        <select class='form-select select-dark-border' name='tipoIdentificacion' id='tipoIdentificacion' formControlName='tipoIdentificacion'
              autocomplete='off'>
 <option *ngFor='let row of typesList' [value]='row.value'>
   {{ row.text }}
@@ -35,7 +35,7 @@
     <!-- Tipo de parte-->
     <div class="col-md-8 mb-4">
         <label for='tipoParte' class='form-label'>Tipo de parte*:</label>
-        <select class='form-select' name='tipoParte' id='tipoParte' formControlName='tipoParte'
+        <select class='form-select select-dark-border' name='tipoParte' id='tipoParte' formControlName='tipoParte'
              autocomplete='off'>
 <option *ngFor='let row of typesListParts' [value]='row.value'>
   {{ row.text }}
@@ -59,8 +59,8 @@
 
     <!-- Departamento -->
     <div class="col-md-4">
-        <label for='tipoIdentificacion' class='form-label'>Departamento*:</label>
-        <select class='form-select' name='tipoIdentificacion' id='tipoIdentificacion' formControlName='tipoIdentificacion'
+        <label for='departamento' class='form-label'>Departamento*:</label>
+        <select class='form-select select-dark-border' name='departamento' id='departamento' formControlName='departamento'
              autocomplete='off'>
 <option *ngFor='let row of typesListDepartment' [value]='row.value'>
   {{ row.text }}
@@ -70,8 +70,8 @@
 
     <!-- Municipio -->
     <div class="col-md-4">
-        <label for='tipoIdentificacion' class='form-label'>Municipio*:</label>
-        <select class='form-select' name='tipoIdentificacion' id='tipoIdentificacion' formControlName='tipoIdentificacion'
+        <label for='municipio' class='form-label'>Municipio*:</label>
+        <select class='form-select select-dark-border' name='municipio' id='municipio' formControlName='municipio'
              autocomplete='off'>
 <option *ngFor='let row of typesListMunicipal' [value]='row.value'>
   {{ row.text }}
@@ -135,7 +135,7 @@
    <div class="container-carga-de-archivo-govco">
   <div class="loader-carga-de-archivo-govco">
     <div class="all-input-carga-de-archivo-govco">
-      <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple/>
+      <input type="file" name="inputFile" formControlName="fileUpload"   id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple />
       <label for="inputFile" class="label-carga-de-archivo-govco">Etiqueta*</label>
       <label for="inputFile" class="container-input-carga-de-archivo-govco">
         <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>

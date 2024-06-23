@@ -2,8 +2,8 @@
     <label for="lista-desplegables" class="label-desplegable-govco"
       >{{ labelText }} <span aria-required="true"></span
     ></label>
-    <div class="desplegable-govco">
-      <button
+    <div class="desplegable-govco ">
+      <button class="select-dark-border"
       *ngIf="update === false"
         type="button"
         [ngClass]="isNotValid || (isRequired && isTouched) ? selectOptionRequired : isValid ? selectOptionSuccess : selectOption"        

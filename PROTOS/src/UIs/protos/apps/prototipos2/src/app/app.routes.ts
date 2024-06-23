@@ -19,6 +19,7 @@ export const appRoutes: Route[] = [
     { path: 'gestionar-procesos', component: ManageProcessComponent },
     { path: 'partes-procesos', component: PartsProcessComponent },
     { path: 'crear-parte',component: CreatePartComponent},
-    { path: 'editar-parte',component: EditPartComponent}
+    { path: 'editar-parte',component: EditPartComponent},
+    
 
 ];
