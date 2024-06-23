@@ -7,6 +7,7 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
+import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
 
 
 export const appRoutes: Route[] = [
@@ -20,5 +21,6 @@ export const appRoutes: Route[] = [
     { path: 'partes-procesos', component: PartsProcessComponent },
     { path: 'crear-parte',component: CreatePartComponent},
     { path: 'editar-parte',component: EditPartComponent},
-    {path: 'asignar-documento', component: AssignDocumentComponent}
+    { path: 'asignar-documento', component: AssignDocumentComponent},
+    { path: 'observacion-documento', component: DocumentObservationsComponent}
 ];

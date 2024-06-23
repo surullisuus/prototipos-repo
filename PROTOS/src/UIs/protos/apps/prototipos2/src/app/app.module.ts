@@ -23,6 +23,7 @@ import { SeeRequirementsComponent } from './pages/see-requirements/see-requireme
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
+import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
 
 
 
@@ -38,6 +39,7 @@ import { AssignDocumentComponent } from './pages/assign-document/assign-document
     AssignRequestComponent,
     AssignDocumentComponent,
     DialogComponent,
+    DocumentObservationsComponent,
     CloseStageComponent,
     ManageProcessComponent,
     PerformancesComponent,
