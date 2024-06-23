@@ -7,6 +7,7 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
+import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ManageProcessDesignComponent },
@@ -17,4 +18,5 @@ export const appRoutes: Route[] = [
   { path: 'crear-parte', component: CreatePartComponent },
   { path: 'editar-parte', component: EditPartComponent },
   { path: 'gestionar-proceso-diseno', component: ManageProcessDesignComponent },
+  { path: 'gestionar-tareas', component: ManageTaskComponent },
 ];
