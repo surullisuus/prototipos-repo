@@ -23,6 +23,7 @@ import { SeeRequirementsComponent } from './pages/see-requirements/see-requireme
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DetailPartComponent } from './pages/detail-part/detail-part.component';
 
 
 
@@ -45,6 +46,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SeeRequirementsComponent,
     CreatePartComponent,
     EditPartComponent,
+    DetailPartComponent
     
     
       ],

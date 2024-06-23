@@ -1,1 +1,162 @@
-<p>detail-part works!</p>
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine">DETALLE PARTE INTERESADA</span></h3>
+<div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryScheme">
+
+  <div class="row">
+
+ <!-- Tipo de parte-->
+ <div class="col-md-4 mt-4">
+    <div class="row">
+    <span class="text3-tipografia-govco govcolor-silver">Tipo de parte*:</span>
+     <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="detail">{{
+        detail.tipoParte
+        }}</span>
+    </div>
+</div>
+
+    <!--tipo id-->
+    <div class="col-md-4 mt-4">
+        <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Tipo de identificaci&oacute;n*:</span>
+               <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="detail">{{
+            detail.tipoIdentificacion
+            }}</span>
+        </div>
+    </div>
+    <!--Numero de id-->
+    <div class="col-md-4 mt-4">
+        <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">No. identificaci&oacute;n*:</span>
+               <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="detail">{{
+            detail.noIdentificacion
+            }}</span>
+        </div>
+       </div>
+    
+   
+    <!-- Razón social -->
+    <div class="col-md-4 mt-4">
+        <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Tipo de identificaci&oacute;n*:</span>
+        <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="detail">{{
+            detail.razon
+            }}</span>
+        </div>
+    </div>
+
+    <!-- Departamento -->
+    <div class="col-md-4 mt-4">
+        <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Departamento*:</span>
+        <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="detail">{{
+            detail.departamento
+            }}</span>
+        </div>
+    </div>
+
+    <!-- Municipio -->
+    <div class="col-md-4 mt-4">
+        <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Municipio*:</span>
+        <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="detail">{{
+            detail.municipio
+            }}</span>
+        </div>
+    </div>
+    
+    <!-- Dirección -->
+    <div class="col-md-4 mt-4">
+        <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Direcci&oacute;n*:</span>
+        <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="detail">{{
+            detail.direccion
+            }}</span>
+        </div>
+    </div>
+     <!-- Correo electrónico -->
+     <div class="col-md-4 mt-4">
+        <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Correo electr&oacute;nico*:</span>
+        <span class=" text2-tipografia-govco mt-1 bold-tipografia-govco " *ngIf="detail">{{
+            detail.correo
+            }}</span>
+        </div>
+    </div>
+  
+
+    <!-- Teléfono -->
+    <div class="col-md-4 mt-4">
+        <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Tel&eacute;fono*:</span>
+        <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="detail">{{
+            detail.telefono
+            }}</span>
+        </div>
+    </div>
+
+   
+    <!-- Checkbox de tratamiento de datos -->
+    <div class=" checkbox-seleccion-govco entradas-de-texto-govco m-2" style="padding-top: 50px;">
+      <label class="d-block" for="input-tratamiento">
+        <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbutton
+        data-bs-target="#vistaDocumento" hidden="true"></a>
+        <a (click)="onSeeDocument()" class="link-tipografia-govco">
+        Autorización de notificaciones por medios electr&oacute;nicos</a></label>
+    </div>
+
+  
+
+  </div> <!--fin row-->
+
+  <div class="row mt-4 mb-3 text-left">
+    <div class="col-md-12">
+       <button type="button" (click)="onClose()" (keypress)="onClose()"
+       class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1">
+        Cerrar
+      </button>
+    </div>
+  </div>
+  <div #dialog ></div>
+</div>
+
+
+
+<!--Vista preeliminar del documento-->
+
+<div class="modal fade" id="vistaDocumento" tabindex="-1" aria-labelledby="#vistaDocumento" aria-hidden="true">
+    <form>
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class='row'>
+              
+                <span class="h1-tipografia-govco">
+                  Vista preliminar
+                </span>
+              
+            </div>
+            <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close" aria-expanded="false">
+              <span class="modal-close-govco govco-times"></span>
+
+            </a>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+             
+                <div style="justify-content:center;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+                Fusce lacinia arcu et nulla. Nulla vitae mauris non felis mollis faucibus. Praesent sed enim vel turpis blandit imperdiet ac ac felis. Donec turpis libero, dapibus nec, pretium sit amet, tempor quis. In neque felis, bibendum a, aliquet vel, viverra sit amet, magna. In vehicula metus eget est volutpat consectetur. Ut dapibus purus sapien, vel aliquam velit scelerisque eget. Curabitur scelerisque vulputate turpis, vitae suscipit orci. Morbi tempus lorem eget orci posuere, eu tempor nulla gravida.
+                Quisque vel lacus lorem. Nam lobortis.
+            </div>
+            </div>
+           
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            
+            <button type="button"  #closeModal  data-bs-dismiss='modal' class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space" (click)="onCloseModal()">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div #dialog ></div>
+

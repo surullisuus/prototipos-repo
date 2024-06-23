@@ -138,22 +138,15 @@
 
 
             <!-- Acciones-->
-            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-              data-bs-target="#verEsquemaModal" href="#"></a>
-            <a type="button"  [routerLink]="['/asignar-solicitud']" class="me-0" href="#" tabindex="0">Ver&nbsp;detalle</a>
+            <a type="button"  [routerLink]="['/detalles-parte']" class="me-0" href="#" tabindex="0">Ver&nbsp;detalle</a>
 
             <!--editar modal-->
-
-            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttondelete data-bs-target="#modalDelete"
-              href="#"></a>
-            <a type="button" class="ms-2 me-2" href="#" tabindex="0"> Editar
+            <a type="button" [routerLink]="['/editar-parte']"  class="ms-2 me-2" href="#" tabindex="0"> Editar
             </a>
 
             <!--eliminar modal-->
-
-            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-            data-bs-target="#verEsquemaModal" href="#"></a>
-          <a type="button"  [routerLink]="['/asignar-solicitud']" class="me-0" href="#" tabindex="0">Eliminar</a>
+          <a type="button" (click)="onDeletePart()"
+          (keypress)="onDeletePart()"  class="me-0" tabindex="0">Eliminar</a>
 
 
           </td>
@@ -179,6 +172,6 @@
     <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
   </div>
 
-
+<div #dialog ></div>
 
 </div>
