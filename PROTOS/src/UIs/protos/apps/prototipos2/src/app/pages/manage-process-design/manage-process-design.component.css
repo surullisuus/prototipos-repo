@@ -20,3 +20,15 @@
   background-color: #33b2cc !important;
   color: #000 !important;
 }
+
+@media (min-width: 1201px) and (max-width: 1841px) {
+  .table-process {
+    width: calc(80vw - 15px);
+  }
+}
+
+@media screen and (max-width: 1201px) {
+  .table-process {
+    width: calc(80vw - 105px);
+  }
+}
