@@ -8,6 +8,8 @@ import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { DetailPartComponent } from './pages/detail-part/detail-part.component';
 import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-responsible.component';
+import { AssingResponsibleTaskComponent } from './pages/assing-responsible-task/assing-responsible-task.component';
+import { AlertsByResponsibleComponent } from './pages/alerts-by-responsible/alerts-by-responsible.component';
 
 
 
@@ -24,6 +26,8 @@ export const appRoutes: Route[] = [
     { path: 'editar-parte',component: EditPartComponent},
     { path: 'detalles-parte',component: DetailPartComponent},
     { path: 'consultar-tareas',component: TaskByResponsibleComponent},
+    { path: 'asignar-responsable-tareas',component: AssingResponsibleTaskComponent},
+    { path: 'consultar-alertas',component: AlertsByResponsibleComponent},
     
 
 ];

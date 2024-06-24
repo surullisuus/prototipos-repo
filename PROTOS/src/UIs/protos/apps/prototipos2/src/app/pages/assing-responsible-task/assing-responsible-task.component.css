@@ -1,0 +1,18 @@
+
+.table-general {
+    table-layout: fixed;
+    width: 80%;
+  }
+  
+  .table-general th, .table-general td {
+    
+    width: 33.3%; /* 100% / 8 columnas = 12.5% */
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+    width: 95%;
+    margin: left auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
