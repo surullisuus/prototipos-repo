@@ -27,8 +27,13 @@ export const appRoutes: Route[] = [
   { path: 'editar-parte',component: EditPartComponent},
   { path: 'asignar-documento', component: AssignDocumentComponent},
   { path: 'observacion-documento', component: DocumentObservationsComponent},
-  { path: 'crear-parte', component: CreatePartComponent },
-  { path: 'editar-parte', component: EditPartComponent },
   { path: 'gestionar-proceso-diseno', component: ManageProcessDesignComponent },
   { path: 'gestionar-tareas', component: ManageTaskComponent },
+  { path: 'detalles-parte',component: DetailPartComponent},
+  { path: 'consultar-tareas',component: TaskByResponsibleComponent},
+  { path: 'asignar-responsable-tareas',component: AssingResponsibleTaskComponent},
+  { path: 'consultar-alertas',component: AlertsByResponsibleComponent},
+    
+
+
 ];

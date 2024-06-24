@@ -65,8 +65,13 @@ import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associat
     PreliminarViewComponent,
     AssociateEntryDocComponent,
     EditPartComponent,
+    DetailPartComponent,
+    TaskByResponsibleComponent,
+    AssingResponsibleTaskComponent,
+    AlertsByResponsibleComponent
+    
   ],
-  imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })
