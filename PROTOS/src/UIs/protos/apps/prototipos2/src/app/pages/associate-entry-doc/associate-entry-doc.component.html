@@ -1,0 +1,206 @@
+<div
+  class="modal fade"
+  id="associateEntryDocModal"
+  tabindex="-1"
+  aria-labelledby="associateEntryDocModalLabel"
+  aria-hidden="true"
+>
+  <form>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="row">
+            <h4 class="h4-tipografia-govco">
+              <span class="govcolor-marine">
+                Asociar documentos de entrada del GesDoc
+              </span>
+            </h4>
+          </div>
+          <a
+            href="#"
+            role="button"
+            data-bs-dismiss="modal"
+            class="close-btn-modal"
+            aria-label="Close"
+            aria-expanded="false"
+          >
+            <span class="modal-close-govco govco-times"></span>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-4">
+                <subsidios-input
+                  [control]="$any(formQueryScheme.get('keyword'))"
+                  type="text"
+                  label="No. Radicado"
+                  placeholder="Ej. 234"
+                  [showStatus]="false"
+                  [maxLength]="10"
+                  [minLength]="5"
+                  typeValidation="alphanumeric"
+                ></subsidios-input>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4">
+                <label for="calendario-govco-1" class="label-desplegable-govco">
+                  Fecha inicio: <span aria-required="true"></span>
+                </label>
+                <div
+                  id="miCalendario1"
+                  class="desplegable-govco desplegable-calendar-govco"
+                  style="width: 100%; height: 40px"
+                  data-type="calendar"
+                >
+                  <div class="date desplegable-selected-option">
+                    <input
+                      class="browser-default"
+                      type="text"
+                      id="calendario-govco-1"
+                      aria-autocomplete="off"
+                      days="true"
+                      style="width: 100%; height: 40px"
+                    />
+                  </div>
+                </div>
+                <div class="texto-informativo">
+                  <small>Filtrar por periodo de radicación.</small>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-4">
+                <label for="calendario-govco-2" class="label-desplegable-govco">
+                  Fecha fin: <span aria-required="true"></span>
+                </label>
+                <div
+                  id="miCalendario2"
+                  class="desplegable-govco desplegable-calendar-govco"
+                  style="width: 100%; height: 40px"
+                  data-type="calendar"
+                >
+                  <div class="date desplegable-selected-option">
+                    <input
+                      class="browser-default"
+                      type="text"
+                      id="calendario-govco-2"
+                      aria-autocomplete="off"
+                      days="true"
+                      style="width: 100%; height: 40px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-2">
+            <button
+              type="button"
+              class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+            >
+              Buscar
+            </button>
+            <button
+              class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space"
+            >
+              Limpiar
+            </button>
+          </div>
+
+          <div class="table-responsive mt-4">
+            <table
+              class="table table-general table-basic"
+              aria-describedby="tableDescBasic"
+            >
+              <thead class="encabezado-tabla">
+                <tr>
+                  <th role="button">No.&nbsp;Radicado</th>
+                  <th role="button">Fecha&nbsp;radicado</th>
+                  <th style="text-align: center !important">Acción</th>
+                  <th style="text-align: center !important">Seleccionar</th>
+                </tr>
+              </thead>
+
+              <tbody class="contenido-tablas">
+                <tr *ngFor="let item of data">
+                  <td class="text-left">{{ item.numeroRadicado }}</td>
+                  <td style="text-align: left !important">
+                    <p class="mb-0">
+                      {{ item.fechaRadicacion }}
+                    </p>
+                  </td>
+
+                  <td style="text-align: left !important; padding-right: 10px">
+                    <!-- Acciones-->
+                    <a
+                      class="button-modal-enabled-none"
+                      data-bs-toggle="modal"
+                      #openbuttonSeeScheme
+                      data-bs-target="#verEsquemaModal"
+                      href="#"
+                    ></a>
+                    <a
+                      type="button"
+                      [routerLink]="['/']"
+                      class="me-0"
+                      href="#"
+                      tabindex="0"
+                      >Ver&nbsp;documento</a
+                    >
+                  </td>
+                  <td class="align-middle">
+                    <div class="d-flex justify-content-center">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        formControlName="aceptaTratamiento"
+                        id="input-tratamiento-{{ item.numeroRadicado }}"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="input-tratamiento-{{ item.numeroRadicado }}"
+                      ></label>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+
+              <!--<tbody >
+              <tr>
+                <td colspan="7">
+                  No se encuentra información con los criterios de búsqueda seleccionados
+                </td>
+              </tr>
+            </tbody>-->
+
+              <!--  <tbody >
+              <tr>
+                <td colspan="7">
+                  <entidades-loading-modal></entidades-loading-modal>
+                </td>
+              </tr>
+            </tbody>-->
+            </table>
+            <subsidios-paginator
+              [totalCount]="6"
+              [pageSize]="5"
+              [currentPage]="1"
+            ></subsidios-paginator>
+          </div>
+          <button
+            type="button"
+            class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+          >
+            Asociar
+          </button>
+
+          <button
+            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

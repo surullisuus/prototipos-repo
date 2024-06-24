@@ -1,35 +1,40 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> PARTES DEL PROCESO</span></h3>
+<h3 class="h3-tipografia-govco mt-3">
+  <span class="govcolor-marine"> PARTES DEL PROCESO</span>
+</h3>
 <span class="label-desplegable-govco">
-  Se&ntilde;or usuario, a continuaci&oacute;n puede consultar una o varias partes de un proceso.
+  Se&ntilde;or usuario, a continuaci&oacute;n puede consultar una o varias
+  partes de un proceso.
 </span>
 <div class="rounded-3 mb-5 mt-3">
-
-
   <div class="row">
-
     <!--tipo de Parte-->
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Tipo de parte" note="Seleccione una parte del proceso" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+      <subsidios-dropdown-list
+        labelText="Tipo de parte"
+        note="Seleccione una parte del proceso"
+        idList="type-345676"
+        type="basic"
+        [disabled]="false"
+      ></subsidios-dropdown-list>
     </div>
     <!--Numero de id-->
     <div class="col-md-4">
       <subsidios-input
-      [control]="$any(formQueryScheme.get('keyword'))"
-      type="text"
-      label="No. identificación"
-      placeholder="Ej. 234"
-      [showStatus]="false"
-      [maxLength]="10"
-      [minLength]="5"
-      typeValidation="alphanumeric"
-      note="Ingrese una palabra"
-    ></subsidios-input>
+        [control]="$any(formQueryScheme.get('keyword'))"
+        type="text"
+        label="No. identificación"
+        placeholder="Ej. 234"
+        [showStatus]="false"
+        [maxLength]="10"
+        [minLength]="5"
+        typeValidation="alphanumeric"
+        note="Ingrese una palabra"
+      ></subsidios-input>
     </div>
 
     <!--Razon social-->
     <div class="col-md-4">
-        <subsidios-input
+      <subsidios-input
         [control]="$any(formQueryScheme.get('keyword'))"
         type="text"
         label="Razon social"
@@ -40,47 +45,62 @@
         typeValidation="alphabetic"
         note="Ingrese una palabra"
       ></subsidios-input>
-      </div>
+    </div>
 
     <!--Departamento-->
 
     <div class="col-md-4">
-        <subsidios-dropdown-list labelText="Departamento" note="Seleccione una departamento" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+      <subsidios-dropdown-list
+        labelText="Departamento"
+        note="Seleccione una departamento"
+        idList="type-345676"
+        type="basic"
+        [disabled]="false"
+      ></subsidios-dropdown-list>
     </div>
-
 
     <!-- Municipio-->
 
     <div class="col-md-4">
-        <subsidios-dropdown-list labelText="Municipio" note="Seleccione una municipio" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+      <subsidios-dropdown-list
+        labelText="Municipio"
+        note="Seleccione una municipio"
+        idList="type-345676"
+        type="basic"
+        [disabled]="false"
+      ></subsidios-dropdown-list>
     </div>
-
- 
   </div>
 
   <div class="row mt-4 mb-3 text-left">
     <div class="col-md-12">
-      <a class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#crearEsquemaModal" href="#"
-        #openbuttoncreate></a>
-        <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
-            Buscar
-          </button>
-                 
-          <button
-            type="button"
-            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
-            >
-            Limpiar
-          </button>
-          <button
-          type="button"
-          (click)="onCreatePart()"
-          class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
-           >
-          Crear&nbsp;parte
-        </button>
+      <a
+        class="button-modal-enabled-none"
+        data-bs-toggle="modal"
+        data-bs-target="#crearEsquemaModal"
+        href="#"
+        #openbuttoncreate
+      ></a>
+      <button
+        type="submit"
+        class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+      >
+        Buscar
+      </button>
+
+      <button
+        type="button"
+        class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+      >
+        Limpiar
+      </button>
+      <button
+        type="button"
+        (click)="onCreatePart()"
+        class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+      >
+        Crear&nbsp;parte
+      </button>
     </div>
   </div>
 
@@ -89,9 +109,7 @@
   <div class="row">
     <div class="col-md-10">
       <h4 class="h4-tipografia-govco mt-3 mb-2">
-        <span class="govcolor-marine">
-          Resultado de consulta
-        </span>
+        <span class="govcolor-marine"> Resultado de consulta </span>
       </h4>
     </div>
     <div class="col-md-2">
@@ -102,16 +120,25 @@
   </div>
 
   <div class="table-responsive">
-    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+    <table
+      class="table table-general table-basic"
+      aria-describedby="tableDescBasic"
+    >
       <thead class="encabezado-tabla">
         <tr>
-          <th class="columna-especial" role="button">Tipo&nbsp;de&nbsp;parte</th>
+          <th class="columna-especial" role="button">
+            Tipo&nbsp;de&nbsp;parte
+          </th>
           <th role="button">No. identificaci&oacute;n</th>
           <th role="button">Nombre/Razon&nbsp;social</th>
-          <th class="text-align: right; columna-estado" role="button">Departamento</th>
-          <th class="text-align: right; columna-estado" role="button">Municipio</th>
+          <th class="text-align: right; columna-estado" role="button">
+            Departamento
+          </th>
+          <th class="text-align: right; columna-estado" role="button">
+            Municipio
+          </th>
 
-          <th style="text-align: center !important;">Acciones</th>
+          <th style="text-align: center !important">Acciones</th>
         </tr>
       </thead>
 
@@ -120,42 +147,66 @@
           <td class="text-left">{{ item.tipoParte }}</td>
           <td class="text-left">{{ item.noIdentificacion }}</td>
 
-          <td style="text-align: left !important;">
+          <td style="text-align: left !important">
             <p class="mb-0">
               {{ item.nombreRazonSocial }}
             </p>
           </td>
           <td class="text-left">
-            {{ item.departamento}}
-
+            {{ item.departamento }}
           </td>
 
           <td class="text-left">
-            {{ item.municipio}}
-
+            {{ item.municipio }}
           </td>
-          <td style="text-align: left !important; padding-right: 10px;">
-
-
+          <td style="text-align: left !important; padding-right: 10px">
             <!-- Acciones-->
-            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-              data-bs-target="#verEsquemaModal" href="#"></a>
-            <a type="button"  [routerLink]="['/asignar-solicitud']" class="me-0" href="#" tabindex="0">Ver&nbsp;detalle</a>
+            <a
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttonSeeScheme
+              data-bs-target="#verEsquemaModal"
+              href="#"
+            ></a>
+            <a
+              type="button"
+              [routerLink]="['/asignar-solicitud']"
+              class="me-0"
+              href="#"
+              tabindex="0"
+              >Ver&nbsp;detalle</a
+            >
 
             <!--editar modal-->
 
-            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttondelete data-bs-target="#modalDelete"
-              href="#"></a>
-            <a type="button" class="ms-2 me-2" href="#" tabindex="0"> Editar
+            <a
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttondelete
+              data-bs-target="#modalDelete"
+              href="#"
+            ></a>
+            <a type="button" class="ms-2 me-2" href="#" tabindex="0">
+              Editar
             </a>
 
             <!--eliminar modal-->
 
-            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-            data-bs-target="#verEsquemaModal" href="#"></a>
-          <a type="button"  [routerLink]="['/asignar-solicitud']" class="me-0" href="#" tabindex="0">Eliminar</a>
-
-
+            <a
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttonSeeScheme
+              data-bs-target="#verEsquemaModal"
+              href="#"
+            ></a>
+            <a
+              type="button"
+              [routerLink]="['/asignar-solicitud']"
+              class="me-0"
+              href="#"
+              tabindex="0"
+              >Eliminar</a
+            >
           </td>
         </tr>
       </tbody>
@@ -176,9 +227,10 @@
       </tr>
     </tbody>-->
     </table>
-    <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
+    <subsidios-paginator
+      [totalCount]="6"
+      [pageSize]="5"
+      [currentPage]="1"
+    ></subsidios-paginator>
   </div>
-
-
-
 </div>

@@ -24,15 +24,21 @@ import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
 import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
-
-
-
+import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
+import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
+import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
+import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
+import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
+import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 
 @NgModule({
-  declarations: [AppComponent,MainComponent,
+  declarations: [
+    AppComponent,
+    MainComponent,
     SidebarComponent,
     FooterComponent,
-    HeaderComponent,DropdownListComponent,
+    HeaderComponent,
+    DropdownListComponent,
     ProcessRequestComponent,
     PaginatorComponent,
     LoadingModalComponent,
@@ -47,12 +53,15 @@ import { DocumentObservationsComponent } from './pages/document-observations/doc
     ModalComponent,
     SeeRequirementsComponent,
     CreatePartComponent,
-    EditPartComponent
-    
-      ],
-  imports: [BrowserModule,UisModule,
-              RouterModule.forRoot(appRoutes),
-],
+    ManageTaskComponent,
+    CloseTaskAnormalComponent,
+    ManageProcessDesignComponent,
+    GenerateExitDocumentComponent,
+    PreliminarViewComponent,
+    AssociateEntryDocComponent,
+    EditPartComponent,
+  ],
+  imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })
