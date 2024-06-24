@@ -22,6 +22,11 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { SeeRequirementsComponent } from './pages/see-requirements/see-requirements.component';
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DetailPartComponent } from './pages/detail-part/detail-part.component';
+import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-responsible.component';
+import { AssingResponsibleTaskComponent } from './pages/assing-responsible-task/assing-responsible-task.component';
+import { AlertsByResponsibleComponent } from './pages/alerts-by-responsible/alerts-by-responsible.component';
 import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
 import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
@@ -60,8 +65,13 @@ import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associat
     PreliminarViewComponent,
     AssociateEntryDocComponent,
     EditPartComponent,
+    DetailPartComponent,
+    TaskByResponsibleComponent,
+    AssingResponsibleTaskComponent,
+    AlertsByResponsibleComponent
+    
   ],
-  imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })

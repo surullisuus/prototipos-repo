@@ -1,3 +1,9 @@
 .desplegable-govco .desplegable-items li {
     height: fit-content;
 }
+
+.select-dark-border {
+    border: 2px solid #737373; /* Cambia #555 por el color gris oscuro que prefieras */
+    
+  }
+  
