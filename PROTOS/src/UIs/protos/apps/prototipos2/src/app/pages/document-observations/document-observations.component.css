@@ -1,0 +1,21 @@
+.table-responsive {
+    overflow-x: auto;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .table {
+    width: 100%;
+    table-layout: fixed; /* Para que todas las columnas tengan el mismo tamaño */
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+  width: 25%; /* Ajusta este valor según el número de columnas para que sumen 100% */
+  padding: 10px;
+  text-align: left;
+  }
+  .encabezado-tabla .columna-pequena {
+    width: 10%; 
+  }
