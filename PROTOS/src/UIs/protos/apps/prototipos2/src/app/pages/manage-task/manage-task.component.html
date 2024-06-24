@@ -1,0 +1,178 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> GESTIONAR TAREAS ACTIVAS DE ETAPA</span></h3>
+
+
+<div class="rounded-3 mb-5 mt-3">
+
+    <!--Tabla-->
+    <div class="table-responsive" style="overflow: hidden;">
+        <!-- encabezado -->
+        <div class="row govco-bg-blue-light">
+            <h4 class="h4-tipografia-govco mt-3 mb-2 text-center">
+                <span class="govcolor-marine">
+                    Tareas actuales
+                </span>
+            </h4>
+            <!-- <div class="col-md-2">
+                <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+                    Total registros: {{ phaseTasks.length }}
+                </p>
+            </div> -->
+        </div>
+
+        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+            <!-- headers -->
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th style="text-align: center !important;">Tarea</th>
+                    <th style="text-align: center !important;">Estado</th>
+                    <th style="text-align: center !important;">Fecha vencimiento</th>
+                    <th style="text-align: center !important;">Estatus temporal</th>
+                    <th style="text-align: center !important;">Responsable</th>
+                    <th style="text-align: center !important;">Tipo de ejeci&oacute;n</th>
+                    <th style="text-align: center !important;">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody class="contenido-tablas">
+                <tr *ngFor="let task of phaseTasks">
+                    <td class="text-center">{{ task.taskName }}</td>
+                    <td class="text-center">{{ task.state }}</td>
+
+                    <td style="text-align: center !important;">
+                        <p class="mb-0">
+                            {{ task.expirationDate | date: 'dd/MM/yyyy' }}
+                        </p>
+                    </td>
+                    <td class="text-center">
+                        <div style="display: flex; justify-content: space-between;">
+                            <p>&nbsp;</p>
+                            {{ task.temporalStatus }}
+                            <ng-container [ngSwitch]="task.temporalStatus">
+                                <p *ngSwitchCase="'Vencida'" class="govcolor-red-flag"> <span
+                                        class="govco-exclamation-triangle"></span></p>
+                                <p *ngSwitchCase="'Próxima a vencer'" class="govcolor-yellow"><span
+                                        class="govco-exclamation-triangle"></span></p>
+                                <p *ngSwitchCase="'En termino'" class="govcolor-green"><span
+                                        class="govco-exclamation-triangle"></span></p>
+                            </ng-container>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        {{ task.responsible }}
+                    </td>
+                    <td class="text-center">
+                        {{ task.implementationType }}
+                    </td>
+
+                    <td style="text-align: center !important; padding-right: 10px;">
+
+                        <!-- ACCIONES PRA TAREAS GENERALES ASIGNADAS -->
+                        <ng-container *ngIf="task.state === 'Asignada' && task.implementationType === 'general'">
+                            <a type="button" class="ms-2 me-2" tabindex="0"
+                                (click)="onInitializeTasktModal(task, $event)"
+                                (keypress)="onInitializeTasktModal(task, $event)">Iniciar</a>
+
+                            <span>&nbsp;/&nbsp;</span>
+
+                            <a type="button" class="button-modal-enabled-none"
+                                (click)="onCloseTaskAnormalModal(task, $event)"
+                                (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
+
+
+                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openButtonCloseTaskAnormal
+                                data-bs-target="#closeTaskAnormal" hidden="true"></a>
+                        </ng-container>
+
+                        <!-- ACCIONES PRA TAREAS GENERALES EN EJECUCIÓN -->
+                        <ng-container *ngIf="task.state === 'En ejecución' && task.implementationType === 'general'">
+                            <a class="button-modal-enabled-none" href="#">Gestionar documentos</a>
+
+                            <span>&nbsp;/&nbsp;</span>
+
+                            <a class="button-modal-enabled-none" type="button"
+                                (click)="onFinishTasktModal(task, $event)"
+                                (keypress)="onFinishTasktModal(task, $event)">Finalizar</a>
+
+                            <span>&nbsp;/&nbsp;</span>
+
+                            <a class="button-modal-enabled-none" (click)="onCloseTaskAnormalModal(task, $event)"
+                                (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
+
+                        </ng-container>
+
+                        <!-- ACCIONES PRA TAREAS ESPECÍFICAS -->
+                        <ng-container *ngIf=" task.implementationType === 'específica'">
+                            <a class="button-modal-enabled-none" href="#">Ir a funcionalidad</a>
+                        </ng-container>
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+    </div>
+
+
+
+    <!--Tabla tareas sugeridas-->
+
+
+    <div class="table-responsive" style="overflow: hidden;">
+        <!-- encabezado -->
+        <div class="row govco-bg-blue-light">
+
+            <h4 class="h4-tipografia-govco mt-3 mb-2 text-center">
+                <span class="govcolor-marine">
+                    Tareas sugeridas
+                </span>
+            </h4>
+            <!-- <div class="col-md-2">
+                <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+                    Total registros: {{ suggestedTasks.length }}
+                </p>
+            </div> -->
+        </div>
+
+        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+            <!-- headers -->
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th style="text-align: center !important;">Tarea</th>
+                    <th style="text-align: center !important;">Seleccionar</th>
+                </tr>
+            </thead>
+
+            <tbody class="contenido-tablas">
+                <tr *ngFor="let task of suggestedTasks">
+                    <td class="text-center">{{ task.taskName }}</td>
+
+                    <td style="text-align: center !important; padding-right: 10px;">
+
+                        <!-- ACCIONES PRA TAREAS GENERALES ASIGNADAS -->
+                        <a class="button-modal-enabled-none" type="button"
+                            (click)="onMakeSuggestedTasktModal(task, $event)"
+                            (keypress)="onMakeSuggestedTasktModal(task, $event)">Realizar</a>
+                        <span>&nbsp;/&nbsp;</span>
+                        <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
+                            data-bs-target="#verEsquemaModal" href="#">Aprobar</a>
+                        <span>&nbsp;/&nbsp;</span>
+                        <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
+                            data-bs-target="#verEsquemaModal" href="#">Rechazar</a>
+
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+    </div>
+
+
+
+</div>
+
+
+
+<div #dialog></div>
+<app-close-task-anormal [taskName]="anormalTaskClosed" />

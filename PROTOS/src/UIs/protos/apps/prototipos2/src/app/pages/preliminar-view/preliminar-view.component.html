@@ -1,0 +1,59 @@
+<div
+  class="modal fade"
+  id="preliminarViewModal"
+  tabindex="-1"
+  aria-labelledby="preliminarViewModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="h4-tipografia-govco">
+          <span class="govcolor-marine"> Vista Preliminar </span>
+        </h4>
+        <a
+          href="#"
+          role="button"
+          data-bs-dismiss="modal"
+          class="close-btn-modal"
+          aria-label="Close"
+          aria-expanded="false"
+        >
+          <span class="modal-close-govco govco-times"></span>
+        </a>
+      </div>
+      <div class="modal-body">
+        <div class="me-4">
+          <p>Contenido del segundo modal aquí</p>
+          <button
+            type="button"
+            class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space ms-4"
+            (click)="showModal($event)"
+          >
+            Guardar
+          </button>
+
+          <button
+            type="button"
+            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+            (click)="closePreliminarViewModalClick()"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Botón oculto para cerrar el modal -->
+<a
+  class="button-modal-enabled-none"
+  data-bs-toggle="modal"
+  #closePreliminarViewModal
+  data-bs-target="#preliminarViewModal"
+  href="#"
+  hidden="true"
+></a>
+<!-- Aquí estará el dialog, que debe estar bien posicionado en el DOM -->
+<div #dialog></div>

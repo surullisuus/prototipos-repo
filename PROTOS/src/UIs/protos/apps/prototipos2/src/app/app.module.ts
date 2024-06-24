@@ -27,20 +27,30 @@ import { DetailPartComponent } from './pages/detail-part/detail-part.component';
 import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-responsible.component';
 import { AssingResponsibleTaskComponent } from './pages/assing-responsible-task/assing-responsible-task.component';
 import { AlertsByResponsibleComponent } from './pages/alerts-by-responsible/alerts-by-responsible.component';
-
-
-
+import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
+import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
+import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
+import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
+import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
+import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
+import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
+import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 
 @NgModule({
-  declarations: [AppComponent,MainComponent,
+  declarations: [
+    AppComponent,
+    MainComponent,
     SidebarComponent,
     FooterComponent,
-    HeaderComponent,DropdownListComponent,
+    HeaderComponent,
+    DropdownListComponent,
     ProcessRequestComponent,
     PaginatorComponent,
     LoadingModalComponent,
     AssignRequestComponent,
+    AssignDocumentComponent,
     DialogComponent,
+    DocumentObservationsComponent,
     CloseStageComponent,
     ManageProcessComponent,
     PerformancesComponent,
@@ -48,18 +58,15 @@ import { AlertsByResponsibleComponent } from './pages/alerts-by-responsible/aler
     ModalComponent,
     SeeRequirementsComponent,
     CreatePartComponent,
+    ManageTaskComponent,
+    CloseTaskAnormalComponent,
+    ManageProcessDesignComponent,
+    GenerateExitDocumentComponent,
+    PreliminarViewComponent,
+    AssociateEntryDocComponent,
     EditPartComponent,
-    DetailPartComponent,
-    TaskByResponsibleComponent,
-    AssingResponsibleTaskComponent,
-    AlertsByResponsibleComponent
-    
-    
-      ],
-  imports: [BrowserModule,UisModule,
-              RouterModule.forRoot(appRoutes),
-              ReactiveFormsModule
-],
+  ],
+  imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })

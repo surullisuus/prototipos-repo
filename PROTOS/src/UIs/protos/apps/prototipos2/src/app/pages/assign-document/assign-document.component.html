@@ -1,0 +1,100 @@
+<h3 class="h3-tipografia-govco mt-3">
+    <span class="govcolor-marine"> Asociar documentos de entrada del GesDoc</span>
+  </h3>
+  <div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+      <!-- No. Radicado -->
+      <div class="col-md-4">
+        <label for="lista-desplegables" class="label-desplegable-govco"
+        > No Radicado:<span aria-required="true"></span
+      ></label>
+        <div class="form-group pt-0 entradas-de-texto-govco">
+          <div class="container-input-texto-govco">
+            <ng-container>
+          <input value="123" disabled type="text" placeholder="123">
+        </ng-container>
+        </div>
+        </div>
+      </div>  
+      <!-- Fecha de inicio -->
+      <div class="col-md-4">
+        <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
+          <label for="calendario-govco" class="label-desplegable-govco">Fecha de inicio</label>
+          <div class="date desplegable-selected-option " style="height: 40px; width: auto;">
+            <input #fechaInicioInput class="browser-default" type="text" formControlName="date" placeholder="dd/mm/aaaa"
+              id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off" days="true">
+          </div>
+          <label for="texto de ayuda" class="label-desplegable-govco">Filtrar por periodo de radicación.</label>
+          <ng-container>
+            <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
+  
+            </span>
+          </ng-container>
+        </div>
+      </div>
+      <!-- Fecha fin -->
+      <div class="col-md-4">
+        <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
+          <label for="calendario-govco" class="label-desplegable-govco">Fecha de fin</label>
+          <div class="date desplegable-selected-option " style="height: 40px; width: auto;">
+            <input #fechaInicioInput class="browser-default" type="text" formControlName="date" placeholder="dd/mm/aaaa"
+              id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off" days="true">
+          </div>
+          <ng-container>
+            <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
+            </span>
+          </ng-container>
+        </div>
+      </div>
+    <!-- Botones de búsqueda y limpieza-->
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">Buscar</button>
+        <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">Limpiar</button>
+      </div>
+    </div>
+    <!--Tabla de resultados-->
+    <div class="row mt-3">
+      <div class="table-responsive">
+        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+          <thead class="encabezado-tabla">
+            <tr>
+              <th  scope="col" role="button">No. Radicado</th>
+              <th scope="col" role="button">Fecha radicacion</th>
+              <th class="columna-especial" role="button"  style="text-align: left !important;">Acci&oacute;n</th>
+              <th class="columna-especial" role="button"  style="text-align: left !important;">Seleccionar</th>
+            </tr>
+          </thead>
+          <tbody class="contenido-tablas">
+            <tr *ngFor="let item of filedRequests">
+              <td class="text-left">{{ item.numeroRadicado }}</td>
+              <td style="text-align: left !important;">
+                <p class="mb-0">
+                  {{ item.fechaRadicado | date: 'dd/MM/yyyy' }}
+                </p>
+              </td>
+              <td style="text-align: left !important; padding-right: 10px;">
+                <!--Ver el documento-->
+                <a class="button-modal-accept-none ms-2 me-2" href="#" tabindex="0">Ver documento</a>
+              </td>
+              <td class="check" style="text-align: center;">
+                <!-- Checkbox -->
+                <input type="checkbox">
+              </td>              
+            </tr>
+          </tbody>
+        </table>
+        <!--subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator-->      
+      </div>
+    </div>
+    <!--Cambiar de pagina-->
+    <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+    <!--Botones Asociar y cancelar-->
+    <div class="row mt-3">
+      <div class="col-md-12">
+        <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">Asociar</button>
+        <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">Cancelar</button>
+      </div>
+    </div>
+  </div>   
+  </div> 
