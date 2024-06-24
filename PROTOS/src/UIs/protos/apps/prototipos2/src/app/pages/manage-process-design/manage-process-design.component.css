@@ -1,3 +1,22 @@
 :host {
   display: block;
 }
+.bg-marine {
+  background-color: #3392cc !important;
+  color: #fff !important;
+}
+
+.bg-marine:hover {
+  background-color: #2878a3 !important;
+  color: #fff !important;
+}
+
+.bg-marine-light {
+  background-color: #70cbde !important;
+  color: #000 !important;
+}
+
+.bg-marine-light:hover {
+  background-color: #33b2cc !important;
+  color: #000 !important;
+}

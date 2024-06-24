@@ -96,41 +96,35 @@
         >
           <thead class="encabezado-tabla">
             <tr>
-              <th class="columna-especial" role="button">
-                Nombre&nbsp;Archivo
+              <th>Nombre&nbsp;Archivo</th>
+              <th style="white-space: nowrap !important">
+                Tipo&nbsp;documento
               </th>
-              <th role="button">Tipo&nbsp;documento</th>
-              <th role="button">Estado&nbsp;documento</th>
-              <th class="text-align-right columna-estado" role="button">
-                No.&nbsp;radicado
-              </th>
-              <th class="text-align-right columna-estado" role="button">
-                Fecha&nbsp;radicación
-              </th>
-              <th class="text-align-right columna-estado" role="button">
-                Numerado
-              </th>
-              <th class="text-align-right columna-estado" role="button">
-                Fechado
-              </th>
-              <th class="text-align-right columna-estado" role="button">
-                Seleccionar
-              </th>
-              <th style="text-align: center !important">Acciones</th>
+              <th>Estado&nbsp;documento</th>
+              <th style="white-space: nowrap !important">No.&nbsp;radicado</th>
+              <th>Fecha&nbsp;radicación</th>
+              <th>Numerado</th>
+              <th>Fechado</th>
+              <th>Seleccionar</th>
+              <th style="text-align: center !important">Acción</th>
             </tr>
           </thead>
           <tbody class="contenido-tablas">
             <tr *ngFor="let item of partes">
-              <td class="text-left">{{ item.nombreArchivo }}</td>
-              <td class="text-left">{{ item.tipoDocumento }}</td>
-              <td class="text-left">{{ item.estadoDocumento }}</td>
-              <td class="text-right">{{ item.numeroRadicado }}</td>
-              <td class="text-left">{{ item.fechaRadicacion }}</td>
-              <td class="text-right">{{ item.numerado }}</td>
-              <td class="text-left text-nowrap">{{ item.fechado }}</td>
+              <td>{{ item.nombreArchivo }}</td>
+              <td style="white-space: nowrap !important">
+                {{ item.tipoDocumento }}
+              </td>
+              <td style="text-align: left !important">
+                {{ item.estadoDocumento }}
+              </td>
+              <td>{{ item.numeroRadicado }}</td>
+              <td>{{ item.fechaRadicacion }}</td>
+              <td>{{ item.numerado }}</td>
+              <td>{{ item.fechado }}</td>
               <td>
                 <div
-                  class="checkbox-seleccion-govco entradas-de-texto-govco mb-4"
+                  class="checkbox-seleccion-govco entradas-de-texto-govco mb-4 d-flex justify-content-center"
                 >
                   <input
                     id="input-tratamiento"
@@ -139,14 +133,40 @@
                   />
                 </div>
               </td>
-              <td style="text-align: left !important; padding-right: 10px">
-                <!-- Acciones-->
-                <div class="d-flex align-items-center text-nowrap">
-                  <a type="button" class="me-2" href="#" tabindex="0">Borrar</a>
-                  /
-                  <a type="button" class="ms-2" href="#" tabindex="0"
-                    >Ver documento</a
-                  >
+              <td style="text-align: center !important">
+                <div class="d-flex justify-content-start text-nowrap px-2">
+                  <ng-container *ngIf="item.actions">
+                    <a
+                      *ngIf="item.actions[0]?.enabled"
+                      class="me-2 cursor-pointer"
+                      tabindex="0"
+                      (click)="item.actions[0].action()"
+                      style="cursor: pointer"
+                    >
+                      Borrar
+                    </a>
+                    /
+                    <a
+                      *ngIf="item.actions[1].enabled"
+                      class="ms-2 me-2"
+                      tabindex="0"
+                      (click)="item.actions[1].action()"
+                      style="cursor: pointer"
+                    >
+                      Ver documento
+                    </a>
+                    <ng-container *ngIf="item.actions[2]?.enabled">
+                      /
+                      <a
+                        class="ms-2"
+                        tabindex="0"
+                        (click)="item.actions[2].action()"
+                        style="cursor: pointer"
+                      >
+                        Observaciones
+                      </a>
+                    </ng-container>
+                  </ng-container>
                 </div>
               </td>
             </tr>
@@ -172,13 +192,13 @@
     </button>
     <button
       type="button"
-      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space bg-marine mt-1"
     >
       Devolver
     </button>
     <button
       type="button"
-      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space bg-marine-light mt-1"
     >
       Firmar
     </button>
