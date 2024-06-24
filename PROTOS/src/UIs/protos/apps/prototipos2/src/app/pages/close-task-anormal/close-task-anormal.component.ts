@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, Input, ViewChild, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
@@ -12,6 +12,7 @@ import { DialogService } from '../../components/dialog/services/dialog.service';
   styleUrl: './close-task-anormal.component.css',
 })
 export class CloseTaskAnormalComponent {
+  @Input() taskName = '';
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
 
   subscription!: Subscription;
@@ -20,8 +21,9 @@ export class CloseTaskAnormalComponent {
 
   AcceptModal() {
     const dialogData = new DialogData();
-    dialogData.title =
-      'Se registró con éxito el cierre anormal de la tarea <agregar descripción de la tarea>';
+    dialogData.body = `Se registró con éxito el cierre anormal de la tarea "${this.taskName}"`;
+    dialogData.title = 'Cerrar tarea de forma anormal';
+
     dialogData.type = DialogType.success;
     dialogData.textButtonCancel = 'Cerrar';
 
