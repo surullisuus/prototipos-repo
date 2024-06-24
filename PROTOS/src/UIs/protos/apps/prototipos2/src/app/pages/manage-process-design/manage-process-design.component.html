@@ -1,0 +1,201 @@
+<div class="row">
+  <div class="col-md-10">
+    <h4 class="h4-tipografia-govco mt-3 mb-2">
+      <span class="govcolor-marine"> Gestionar documentos de tarea </span>
+    </h4>
+  </div>
+
+  <div
+    class="container-navbar-pestana-govco blue-pestana-govco col-md-10 mt-5 mb-5"
+  >
+    <nav class="navbar-expand-lg navbar-pestana-govco">
+      <div class="navbar-collapse">
+        <ul class="navbar-nav">
+          <li>
+            <a
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttongenerateExitDocument
+              data-bs-target="#verRequisitos"
+              href="#"
+              hidden="true"
+            ></a>
+            <a
+              class="dropdown-item dir-menu-govco me-0"
+              type="button"
+              tabindex="0"
+              (click)="onGenerateExitDocument()"
+            >
+              Generar documento de salida</a
+            >
+          </li>
+
+          <li>
+            <a
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttongenerateExitDocument
+              data-bs-target="#verRequisitos"
+              href="#"
+              hidden="true"
+            ></a>
+            <a
+              class="dropdown-item dir-menu-govco me-0"
+              type="button"
+              tabindex="0"
+              (click)="onGenerateExitDocument()"
+            >
+              Cargar documento de salida
+            </a>
+          </li>
+          <li>
+            <a
+              class="button-modal-enabled-none"
+              data-bs-toggle="modal"
+              #openbuttonassociateEntryDoc
+              data-bs-target="#associateEntryDocModal"
+              href="#"
+              hidden="true"
+            ></a>
+            <a
+              class="dropdown-item dir-menu-govco me-0"
+              type="button"
+              tabindex="0"
+              (click)="onAssociateEntryDoc()"
+            >
+              Asociar documentos de entrada</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="mt-5">
+    <div class="col-md-12">
+      <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+        Total registros: {{ partes.length }}
+      </p>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table
+      class="table table-general table-basic"
+      aria-describedby="tableDescBasic"
+    >
+      <thead class="encabezado-tabla">
+        <tr>
+          <th class="columna-especial" role="button">Nombre&nbsp;Archivo</th>
+          <th role="button">Tipo&nbsp;documento</th>
+          <th role="button">Estado&nbsp;documento</th>
+          <th class="text-align: right; columna-estado" role="button">
+            No.&nbsp;radicado
+          </th>
+          <th class="text-align: right; columna-estado" role="button">
+            Fecha&nbsp;radicación
+          </th>
+          <th class="text-align: right; columna-estado" role="button">
+            Numerado
+          </th>
+          <th class="text-align: right; columna-estado" role="button">
+            Fechado
+          </th>
+          <th class="text-align: right; columna-estado" role="button">
+            Seleccionar
+          </th>
+          <th style="text-align: center !important">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody class="contenido-tablas">
+        <tr *ngFor="let item of partes">
+          <td class="text-left">{{ item.nombreArchivo }}</td>
+          <td class="text-left">{{ item.tipoDocumento }}</td>
+          <td class="text-left">{{ item.estadoDocumento }}</td>
+          <td class="text-right">{{ item.numeroRadicado }}</td>
+          <td class="text-left">{{ item.fechaRadicacion }}</td>
+          <td class="text-right">{{ item.numerado }}</td>
+          <td class="text-left text-nowrap">{{ item.fechado }}</td>
+          <td>
+            <div class="checkbox-seleccion-govco entradas-de-texto-govco mb-4">
+              <input
+                id="input-tratamiento"
+                type="checkbox"
+                formControlName="aceptaTratamiento"
+              />
+            </div>
+          </td>
+          <td style="text-align: left !important; padding-right: 10px">
+            <!-- Acciones-->
+            <div class="d-flex align-items-center text-nowrap">
+              <a type="button" class="me-2" href="#" tabindex="0">Borrar</a> /
+              <a type="button" class="ms-2" href="#" tabindex="0"
+                >Ver documento</a
+              >
+            </div>
+          </td>
+        </tr>
+      </tbody>
+
+      <!--<tbody>
+        <tr>
+          <td colspan="7">
+            No se encuentra información con los criterios de búsqueda seleccionados
+          </td>
+        </tr>
+      </tbody>-->
+
+      <!--<tbody>
+        <tr>
+          <td colspan="7">
+            <entidades-loading-modal></entidades-loading-modal>
+          </td>
+        </tr>
+      </tbody>-->
+    </table>
+
+    <subsidios-paginator
+      [totalCount]="6"
+      [pageSize]="5"
+      [currentPage]="1"
+    ></subsidios-paginator>
+  </div>
+</div>
+
+<div class="row mt-4 mb-3 text-left">
+  <div class="col-md-12">
+    <button
+      type="button"
+      class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+    >
+      Crear parte
+    </button>
+    <button
+      type="button"
+      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+    >
+      Devolver
+    </button>
+    <button
+      type="button"
+      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+    >
+      Firmar
+    </button>
+    <button
+      type="button"
+      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+    >
+      Radicar
+    </button>
+    <button
+      type="button"
+      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+    >
+      Publicar
+    </button>
+  </div>
+</div>
+<app-generate-exit-document></app-generate-exit-document>
+<app-associate-entry-doc></app-associate-entry-doc>
