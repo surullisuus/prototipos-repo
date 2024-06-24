@@ -7,6 +7,7 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { DetailPartComponent } from './pages/detail-part/detail-part.component';
+import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-responsible.component';
 
 
 
@@ -22,6 +23,7 @@ export const appRoutes: Route[] = [
     { path: 'crear-parte',component: CreatePartComponent},
     { path: 'editar-parte',component: EditPartComponent},
     { path: 'detalles-parte',component: DetailPartComponent},
+    { path: 'consultar-tareas',component: TaskByResponsibleComponent},
     
 
 ];

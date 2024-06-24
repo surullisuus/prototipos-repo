@@ -1,0 +1,20 @@
+.exclamation-green {
+    color: green;
+}
+.exclamation-red {
+    color: red;
+}
+.exclamation-yellow {
+    color: yellow;
+}
+
+.table-general {
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  .table-general th, .table-general td {
+    
+    width: 12.5%; /* 100% / 8 columnas = 12.5% */
+  }
+

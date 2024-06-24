@@ -30,3 +30,9 @@
         width: 10%; 
       }
 
+      .select-dark-border {
+        border: 2px solid #737373; /* Cambia #555 por el color gris oscuro que prefieras */
+        
+      }
+      
+

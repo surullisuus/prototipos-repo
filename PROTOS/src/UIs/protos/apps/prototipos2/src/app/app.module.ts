@@ -24,6 +24,7 @@ import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailPartComponent } from './pages/detail-part/detail-part.component';
+import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-responsible.component';
 
 
 
@@ -46,7 +47,8 @@ import { DetailPartComponent } from './pages/detail-part/detail-part.component';
     SeeRequirementsComponent,
     CreatePartComponent,
     EditPartComponent,
-    DetailPartComponent
+    DetailPartComponent,
+    TaskByResponsibleComponent
     
     
       ],
