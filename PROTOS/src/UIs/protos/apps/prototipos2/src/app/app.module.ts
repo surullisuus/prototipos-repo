@@ -22,6 +22,8 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { SeeRequirementsComponent } from './pages/see-requirements/see-requirements.component';
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
+import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
+import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
 import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
@@ -41,7 +43,9 @@ import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associat
     PaginatorComponent,
     LoadingModalComponent,
     AssignRequestComponent,
+    AssignDocumentComponent,
     DialogComponent,
+    DocumentObservationsComponent,
     CloseStageComponent,
     ManageProcessComponent,
     PerformancesComponent,
