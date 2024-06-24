@@ -59,6 +59,7 @@ export class ManageTaskComponent implements OnInit {
   subscription!: Subscription;
 
   solicitudId = 101;
+  anormalTaskClosed = '';
 
   /**
    * Esta lista de tareas se debe ordenar por el estado, de tal forma que:
@@ -333,8 +334,10 @@ export class ManageTaskComponent implements OnInit {
   onCloseTaskAnormalModal(task: PhaseTask, $event: Event) {
     $event.preventDefault();
 
+    this.anormalTaskClosed = task.taskName;
+
     const dialogData = new DialogData();
-    //dialogData.title = 'Asignar Solicitud';
+    dialogData.title = 'Cerrar tarea de forma anormal';
     dialogData.body = `¿Está seguro de cerrar la tarea "${task.taskName}" de forma anormal? Recuerde que la acción es irreversible.`;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.warning;
@@ -353,10 +356,9 @@ export class ManageTaskComponent implements OnInit {
 
   onMakeSuggestedTasktModal(task: SuggestedTask, $event: Event) {
     $event.preventDefault();
-    console.log('taks', task);
 
     const dialogData = new DialogData();
-    dialogData.title = 'Realizar tarea';
+    dialogData.title = 'Asignar tarea';
     dialogData.body = `¿Está seguro de realizar la tarea seleccionada? Con esta acción la tarea "${task.taskName}" le será asignada.`;
     dialogData.textButtonCancel = 'Cancelar';
     dialogData.type = DialogType.warning;

@@ -48,9 +48,12 @@
                             <p>&nbsp;</p>
                             {{ task.temporalStatus }}
                             <ng-container [ngSwitch]="task.temporalStatus">
-                                <p *ngSwitchCase="'Vencida'" class="badge govco-bg-red-flag">-</p>
-                                <p *ngSwitchCase="'Próxima a vencer'" class="badge govco-bg-yellow">-</p>
-                                <p *ngSwitchCase="'En termino'" class="badge govco-bg-green">-</p>
+                                <p *ngSwitchCase="'Vencida'" class="govcolor-red-flag"> <span
+                                        class="govco-exclamation-triangle"></span></p>
+                                <p *ngSwitchCase="'Próxima a vencer'" class="govcolor-yellow"><span
+                                        class="govco-exclamation-triangle"></span></p>
+                                <p *ngSwitchCase="'En termino'" class="govcolor-green"><span
+                                        class="govco-exclamation-triangle"></span></p>
                             </ng-container>
                         </div>
                     </td>
@@ -172,4 +175,4 @@
 
 
 <div #dialog></div>
-<app-close-task-anormal />
+<app-close-task-anormal [taskName]="anormalTaskClosed" />
