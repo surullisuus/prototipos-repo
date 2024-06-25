@@ -78,9 +78,6 @@
                                 (click)="onCloseTaskAnormalModal(task, $event)"
                                 (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
 
-
-                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openButtonCloseTaskAnormal
-                                data-bs-target="#closeTaskAnormal" hidden="true"></a>
                         </ng-container>
 
                         <!-- ACCIONES PRA TAREAS GENERALES EN EJECUCIÓN -->
@@ -95,8 +92,13 @@
 
                             <span>&nbsp;/&nbsp;</span>
 
-                            <a class="button-modal-enabled-none" (click)="onCloseTaskAnormalModal(task, $event)"
+                            <a class="button-modal-enabled-none" type="button"
+                                (click)="onCloseTaskAnormalModal(task, $event)"
                                 (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
+
+                            <span>&nbsp;/&nbsp;</span>
+                            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openSeeRadicadoModal
+                                data-bs-target="#seeRadicado" (click)="showSeeRadicadoModal()"> Ver radicado</a>
 
                         </ng-container>
 
@@ -176,3 +178,4 @@
 
 <div #dialog></div>
 <app-close-task-anormal [taskName]="anormalTaskClosed" />
+<app-see-radicado />
