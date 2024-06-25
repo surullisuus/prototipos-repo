@@ -35,6 +35,7 @@ import { ManageProcessDesignComponent } from './pages/manage-process-design/mana
 import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
+import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
 
 @NgModule({
   declarations: [
@@ -68,8 +69,8 @@ import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associat
     DetailPartComponent,
     TaskByResponsibleComponent,
     AssingResponsibleTaskComponent,
-    AlertsByResponsibleComponent
-    
+    AlertsByResponsibleComponent,
+    VerRadicadoViewComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
