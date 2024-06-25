@@ -1,0 +1,155 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR TAREAS POR RESPONSABLE</span></h3>
+
+
+<div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryTasks">
+
+
+  <div class="row">
+
+    <!--Proceso-->
+    <div class="col-md-4">
+      <subsidios-dropdown-list labelText="Proceso" note="Seleccione el proceso" idList="type-345676" type="basic"
+        [disabled]="false"></subsidios-dropdown-list>
+    </div>
+
+     <!--Etapa-->
+     <div class="col-md-4">
+        <subsidios-dropdown-list labelText="Etapa" note="Etapa donde se inicia la tarea" idList="type-345676" type="basic"
+          [disabled]="false"></subsidios-dropdown-list>
+      </div>
+
+       <!--Estado tarea-->
+     <div class="col-md-4">
+        <subsidios-dropdown-list labelText="Estado tarea" note="Seleccione un estado" idList="type-345676" type="basic"
+          [disabled]="false"></subsidios-dropdown-list>
+      </div>
+   
+    <!--Numero de solicitud-->
+    <div class="col-md-4">
+        <subsidios-input
+        [control]="$any(formQueryTasks.get('keyword'))"
+        type="text"
+        label="No. Solicitud"
+        placeholder="Ej. 234"
+        [showStatus]="false"
+        [maxLength]="8"
+        [minLength]="1"
+        typeValidation="alphanumeric"
+        note="Ingrese un No. de solicitud"
+      ></subsidios-input>
+      </div>
+ 
+
+  </div>
+
+  <div class="row mt-4 mb-3 text-left">
+    <div class="col-md-12">
+      <a class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#crearEsquemaModal" href="#"
+        #openbuttoncreate></a>
+      <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+        Buscar
+      </button>
+
+      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+        Limpiar
+      </button>
+    </div>
+  </div>
+
+  <!--Tabla-->
+
+  <div class="row">
+    <div class="col-md-10">
+      <h4 class="h4-tipografia-govco mt-3 mb-2">
+        <span class="govcolor-marine">
+          Resultado de consulta
+        </span>
+      </h4>
+    </div>
+    <div class="col-md-2">
+      <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+        Total registros: {{ 3 }}
+      </p>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+      <thead class="encabezado-tabla">
+        <tr>
+          <th style="text-align: center;" role="button">Proceso</th>
+          <th role="button">Expediente</th>
+          <th  class="text-align: center;" role="button">Estado Expediente</th>
+          <th class="text-align: right; " role="button">Etapa</th>
+          <th class="text-align: right;" role="button">Tarea</th>
+          <th class="text-align: right; " role="button">Estado Tarea</th>
+          <th class="text-align: center;" role="button">Fecha Vencimiento</th>
+          <th class="text-align: right;" role="button">Estatus Temporal</th>
+
+          <th style="text-align: center !important;">Acci&oacute;n</th>
+        </tr>
+      </thead>
+
+      <tbody class="contenido-tablas">
+        <tr *ngFor="let item of processRequests">
+          <td class="text-left">{{ item.nombreProceso }}</td>
+          <td class="text-left">{{ item.expediente }}</td>
+          <td class="text-left">{{ item.estado }}</td>
+          <td class="text-left">{{ item.etapa }}</td>
+          <td class="text-left">{{ item.tarea }}</td>
+          <td class="text-left">{{ item.estadoTarea }}</td>
+
+          <td style="text-align: left !important;">
+            <p class="mb-0">
+              {{ item.fechaVencimiento | date: 'dd/MM/yyyy' }}
+            </p>
+          </td>
+          <td class="text-left">
+            <ng-container [ngSwitch]="item.estatusTemporal">
+              <span *ngSwitchCase="'1'">Vencida</span> 
+              <span *ngSwitchCase="'2'">Próxima a Vencer</span>
+              <span *ngSwitchCase="'3'">En Término</span>
+             </ng-container>
+            <span *ngIf="item.estatusTemporal==='3'" class="govco-exclamation-triangle exclamation-green"></span>
+            <span *ngIf="item.estatusTemporal==='1'" class="govco-exclamation-triangle exclamation-red"></span>
+            <span *ngIf="item.estatusTemporal==='2'" class="govco-exclamation-triangle exclamation-yellow"></span>
+
+            
+          </td>
+          <td style="text-align: left !important; padding-right: 10px;">
+
+
+            <!-- Acciones-->
+            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
+              data-bs-target="#verEsquemaModal" href="#"></a>
+            <a type="button"  [routerLink]="['/asignar-solicitud']" class="me-0" href="#" tabindex="0">Ver proceso</a>
+
+            <!--eliminaaaar modal-->
+
+         
+          </td>
+        </tr>
+      </tbody>
+
+      <!--<tbody >
+      <tr>
+        <td colspan="7">
+          No se encuentra información con los criterios de búsqueda seleccionados
+        </td>
+      </tr>
+    </tbody>-->
+
+      <!--  <tbody >
+      <tr>
+        <td colspan="7">
+          <entidades-loading-modal></entidades-loading-modal>
+        </td>
+      </tr>
+    </tbody>-->
+    </table>
+    <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+  </div>
+
+
+
+</div>

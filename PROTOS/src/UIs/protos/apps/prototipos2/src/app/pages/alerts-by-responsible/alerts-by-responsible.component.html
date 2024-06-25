@@ -1,0 +1,107 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR ALERTAS POR RESPONSABLE</span></h3>
+
+<div class="rounded-3 mb-5 mt-3">
+
+  <!--Tabla-->
+
+  <div class="row">
+    <div class="col-md-10">
+      <h4 class="h4-tipografia-govco mt-3 mb-2">
+        <span class="govcolor-marine">
+          Resultado de consulta
+        </span>
+      </h4>
+    </div>
+    <div class="col-md-2">
+      <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+        Total registros: {{ 6 }}
+      </p>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+      <thead class="encabezado-tabla">
+        <tr>
+          <th class="columna-especial" role="button">No. Solicitud</th>
+          <th role="button">Proceso</th>
+          <th role="button">Tarea</th>
+          <th class="text-align: right; columna-estado" role="button">Estado</th>
+          <th class="text-align: right; columna-estado" role="button">Estado Tarea</th>
+          <th class="text-align: right; columna-estado" role="button">Fecha asignaci&oacute;n</th>
+          <th class="text-align: right; columna-estado" role="button">Fecha vencimiento</th>
+
+          <th style="text-align: center !important;">Acci&oacute;n</th>
+        </tr>
+      </thead>
+
+      <tbody class="contenido-tablas">
+        <tr *ngFor="let item of alertas">
+          <td class="text-left">{{ item.noSolicitud }}</td>
+          <td class="text-left">{{ item.proceso }}</td>
+
+          <td style="text-align: left !important;">
+            <p class="mb-0">
+              {{ item.tarea }}
+            </p>
+          </td>
+          <td class="text-left">
+            {{ item.estado}}
+
+          </td>
+
+          <td class="text-left">
+
+            <ng-container [ngSwitch]="item.estadoTarea">
+                <span *ngSwitchCase="'1'">Vencida</span> 
+                <span *ngSwitchCase="'2'">Próxima a Vencer</span>
+                <span *ngSwitchCase="'3'">En Término</span>
+               </ng-container>
+              <span *ngIf="item.estadoTarea==='3'" class="govco-exclamation-triangle exclamation-green"></span>
+              <span *ngIf="item.estadoTarea==='1'" class="govco-exclamation-triangle exclamation-red"></span>
+              <span *ngIf="item.estadoTarea==='2'" class="govco-exclamation-triangle exclamation-yellow"></span>
+  
+            
+
+          </td>
+          <td class="text-left">
+            {{ item.fechaAsignacion}}
+
+          </td>
+          <td class="text-left">
+            {{ item.fechaVencimiento}}
+
+          </td>
+
+          <td style="text-align: left !important; padding-right: 10px;">
+
+
+            <!-- Acciones-->
+            <a type="button" (click)="onDeleteAlert()" class="me-0" tabindex="0">Eliminar&nbsp;alerta</a>
+
+          </td>
+        </tr>
+      </tbody>
+
+      <!--<tbody >
+      <tr>
+        <td colspan="7">
+          No se encuentra información con los criterios de búsqueda seleccionados
+        </td>
+      </tr>
+    </tbody>-->
+
+      <!--  <tbody >
+      <tr>
+        <td colspan="7">
+          <entidades-loading-modal></entidades-loading-modal>
+        </td>
+      </tr>
+    </tbody>-->
+    </table>
+    <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
+  </div>
+
+<div #dialog ></div>
+
+</div>

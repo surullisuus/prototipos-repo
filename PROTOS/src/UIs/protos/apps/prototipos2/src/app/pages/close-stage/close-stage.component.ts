@@ -39,6 +39,6 @@ export class CloseStageComponent {
       });
   }
    
-
+  onCloseModal(){}
 
 }
