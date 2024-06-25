@@ -15,17 +15,9 @@
     </div>
     <!--Numero de solicitud-->
     <div class="col-md-4">
-      <subsidios-input
-      [control]="$any(formQueryScheme.get('keyword'))"
-      type="text"
-      label="No. Solicitud"
-      placeholder="Ej. 234"
-      [showStatus]="false"
-      [maxLength]="20"
-      [minLength]="1"
-      typeValidation="alphanumeric"
-      note="Ingrese una palabra"
-    ></subsidios-input>
+      <subsidios-input [control]="$any(formQueryScheme.get('keyword'))" type="text" label="No. Solicitud"
+        placeholder="Ej. 234" [showStatus]="false" [maxLength]="20" [minLength]="1" typeValidation="alphanumeric"
+        note="Ingrese una palabra"></subsidios-input>
     </div>
     <!--Fechas-->
 
@@ -136,13 +128,15 @@
             <!-- Acciones-->
             <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
               data-bs-target="#verEsquemaModal" href="#"></a>
-            <a type="button"  [routerLink]="['/asignar-solicitud']" class="me-0" href="#" tabindex="0">Asignar&nbsp;Solicitud</a>
+            <a type="button" [routerLink]="['/asignar-solicitud']" class="me-0" href="#"
+              tabindex="0">Asignar&nbsp;Solicitud</a>
 
             <!--eliminaaaar modal-->
 
             <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttondelete data-bs-target="#modalDelete"
               href="#"></a>
-            <a type="button" class="ms-2 me-2" href="#"  [routerLink]="['/gestionar-procesos']" tabindex="0"> Gestionar&nbsp;Proceso
+            <a type="button" class="ms-2 me-2" href="#" [routerLink]="['/gestionar-procesos']" tabindex="0">
+              Gestionar&nbsp;Proceso
             </a>
 
           </td>
@@ -171,3 +165,5 @@
 
 
 </div>
+
+<a type="button" routerLink="/configuracionEtapasProceso">Etapas de proceso</a>

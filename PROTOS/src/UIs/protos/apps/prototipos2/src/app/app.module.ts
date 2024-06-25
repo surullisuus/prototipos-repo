@@ -25,6 +25,7 @@ import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
 import { SeeRadicadoComponent } from './pages/see-radicado/see-radicado.component';
+import { ManageProcessConfigsComponent } from './pages/manage-process-configs/manage-process-configs.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { SeeRadicadoComponent } from './pages/see-radicado/see-radicado.componen
     ManageTaskComponent,
     CloseTaskAnormalComponent,
     SeeRadicadoComponent,
+    ManageProcessConfigsComponent,
   ],
   imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],

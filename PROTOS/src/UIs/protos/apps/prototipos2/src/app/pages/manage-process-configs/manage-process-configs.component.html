@@ -1,0 +1,130 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Configurar etapas de proceso</span></h3>
+<span class="label-desplegable-govco">
+    Se&ntilde;or usuario, a continuaci&oacute;n puede consultar las etapas de los procesos que hayan sido configuradas
+    previamente.
+</span>
+
+<div class="rounded-3 mb-5 mt-3">
+
+    <div class="row mt-5">
+
+        <!--Proceso-->
+
+        <div class="col-md-4">
+
+            <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false">
+            </subsidios-dropdown-list>
+        </div>
+
+        <!--Etapa-->
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Etapa" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false">
+            </subsidios-dropdown-list>
+        </div>
+
+    </div>
+
+    <div class="row mt-4 mb-3 text-left">
+        <div class="col-md-12">
+            <a class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#crearEsquemaModal" href="#"
+                #openbuttoncreate></a>
+            <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+                Buscar
+            </button>
+
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+                Limpiar
+            </button>
+
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom">
+                Crear etapa
+            </button>
+        </div>
+    </div>
+
+
+
+
+    <div class="row mt-5">
+        <div class="col-md-10">
+            <h4 class="h4-tipografia-govco mt-3 mb-2">
+                <span class="govcolor-marine">
+                    Resultado de consulta
+                </span>
+            </h4>
+        </div>
+        <div class="col-md-2">
+            <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+                Total registros: {{ processPhases.length }}
+            </p>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th class="columna-especial" role="button">Proceso</th>
+                    <th role="button">Etapa</th>
+                    <th style="text-align: center !important;">Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody class="contenido-tablas">
+                <tr *ngFor="let phase of processPhases">
+                    <td class="text-left">{{ phase.processName }}</td>
+                    <td class="text-left">{{ phase.phase }}</td>
+
+
+                    <td style="text-align: center !important; padding-right: 10px;">
+
+
+                        <a type="button" class="me-0" href="#" tabindex="0">Ver detalle</a>
+                        <span>&nbsp;/&nbsp;</span>
+
+
+                        <a type="button" class="ms-2 me-2" href="#" tabindex="0">
+                            Editar
+                        </a>
+                        <span>&nbsp;/&nbsp;</span>
+
+                        <a type="button" class="ms-2 me-2" href="#" tabindex="0">
+                            Eliminar
+                        </a>
+                        <span>&nbsp;/&nbsp;</span>
+
+                        <a type="button" class="ms-2 me-2" href="#" tabindex="0">
+                            Gestionar requisitos
+                        </a>
+                        <span>&nbsp;/&nbsp;</span>
+
+                        <a type="button" class="ms-2 me-2" href="#" tabindex="0">
+                            Ordenar tareas
+                        </a>
+
+
+
+                    </td>
+                </tr>
+            </tbody>
+
+            <!--<tbody >
+          <tr>
+            <td colspan="7">
+              No se encuentra información con los criterios de búsqueda seleccionados
+            </td>
+          </tr>
+        </tbody>-->
+
+            <!--  <tbody >
+          <tr>
+            <td colspan="7">
+              <entidades-loading-modal></entidades-loading-modal>
+            </td>
+          </tr>
+        </tbody>-->
+        </table>
+        <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+    </div>
+</div>
