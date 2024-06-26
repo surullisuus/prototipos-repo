@@ -134,42 +134,74 @@
               </td>
               <td style="text-align: center !important">
                 <div class="d-flex justify-content-start text-nowrap px-2">
-                  <ng-container *ngIf="item.actions">
+                  <ng-container
+                    *ngIf="
+                      (item.tipoDocumento === 'Entrada' && item.estadoDocumento === 'Radicado') ||
+                      (item.tipoDocumento === 'Salida' && item.estadoDocumento === 'Proyectado')
+                    "
+                  >
                     <a
-                      *ngIf="item.actions[0]?.enabled"
                       class="me-2 cursor-pointer"
                       tabindex="0"
-                      (click)="item.actions[0].action()"
+                      (click)="deleteDocument(item.id, $event)"
                       style="cursor: pointer"
                     >
                       Borrar
                     </a>
                     /
                     <a
-                      *ngIf="item.actions[1].enabled"
                       class="ms-2 me-2"
                       tabindex="0"
-                      (click)="item.actions[1].action()"
+                      (click)="viewDocument(item.id, $event)"
+                      data-bs-target="#verRadicadoViewModal"
+                      data-bs-toggle="modal"
                       style="cursor: pointer"
                     >
                       Ver documento
                     </a>
-                    <ng-container *ngIf="item.actions[2]?.enabled">
+                    <ng-container *ngIf="item.tipoDocumento === 'Salida' && item.estadoDocumento === 'Proyectado'">
                       /
                       <a
                         class="ms-2"
                         tabindex="0"
                         [routerLink]="'/observacion-documento'"
-                        (click)="item.actions[2].action()"
+                        (click)="viewDocument(item.id, $event)"
                         style="cursor: pointer"
                       >
                         Observaciones
                       </a>
                     </ng-container>
                   </ng-container>
+                  <ng-container
+                    *ngIf="
+                      item.tipoDocumento === 'Salida' &&
+                      ['Por revisar', 'Revisado', 'Devuelto', 'Firmado', 'Radicado', 'Publicado'].includes(item.estadoDocumento)
+                    "
+                  >
+                    <a
+                      class="ms-2 me-2"
+                      tabindex="0"
+                      (click)="viewDocument(item.id, $event)"
+                      data-bs-target="#verRadicadoViewModal"
+                      data-bs-toggle="modal"
+                      style="cursor: pointer"
+                    >
+                      Ver documento
+                    </a>
+                    /
+                    <a
+                      class="ms-2"
+                      tabindex="0"
+                      (click)="viewDocument(item.id, $event)"
+                      style="cursor: pointer"
+                    >
+                      Observaciones
+                    </a>
+                  </ng-container>
                 </div>
               </td>
             </tr>
+
           </tbody>
         </table>
         <subsidios-paginator
@@ -218,3 +250,5 @@
 </div>
 <app-generate-exit-document></app-generate-exit-document>
 <app-associate-entry-doc></app-associate-entry-doc>
+<app-ver-radicado-view></app-ver-radicado-view>
+<div #dialog></div>
