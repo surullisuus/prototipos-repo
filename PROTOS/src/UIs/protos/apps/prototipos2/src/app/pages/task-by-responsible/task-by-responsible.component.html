@@ -25,7 +25,7 @@
       </div>
    
     <!--Numero de solicitud-->
-    <div class="col-md-4">
+    <div class="col-md-4" style="padding-top: 15px;">
         <subsidios-input
         [control]="$any(formQueryTasks.get('keyword'))"
         type="text"
@@ -74,12 +74,20 @@
   </div>
 
   <div class="table-responsive">
+    <div class="row govco-bg-blue-light">
+      <h4 class="h4-tipografia-govco mt-3 mb-2 text-center">
+          <span class="govcolor-marine">
+              Tareas actuales
+          </span>
+      </h4>
+     </div>
+
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
           <th style="text-align: center;" role="button">Proceso</th>
-          <th role="button">Expediente</th>
-          <th  class="text-align: center;" role="button">Estado Expediente</th>
+          <th role="button">No. Solicitud</th>
+          <th  class="text-align: center;" role="button">Estado Solicitud</th>
           <th class="text-align: right; " role="button">Etapa</th>
           <th class="text-align: right;" role="button">Tarea</th>
           <th class="text-align: right; " role="button">Estado Tarea</th>
@@ -124,9 +132,7 @@
               data-bs-target="#verEsquemaModal" href="#"></a>
             <a type="button"  [routerLink]="['/asignar-solicitud']" class="me-0" href="#" tabindex="0">Ver proceso</a>
 
-            <!--eliminaaaar modal-->
-
-         
+          
           </td>
         </tr>
       </tbody>

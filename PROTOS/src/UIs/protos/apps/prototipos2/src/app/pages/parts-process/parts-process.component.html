@@ -28,7 +28,7 @@
         [maxLength]="10"
         [minLength]="5"
         typeValidation="alphanumeric"
-        note="Ingrese una palabra"
+        note="Ingrese un número de identificación"
       ></subsidios-input>
     </div>
 
@@ -37,13 +37,13 @@
       <subsidios-input
         [control]="$any(formQueryScheme.get('keyword'))"
         type="text"
-        label="Razon social"
+        label="Nombre/Raz&oacute;n social"
         placeholder="Ej. 234"
         [showStatus]="false"
         [maxLength]="50"
         [minLength]="5"
         typeValidation="alphabetic"
-        note="Ingrese una palabra"
+        note="Ingrese un nombre"
       ></subsidios-input>
     </div>
 

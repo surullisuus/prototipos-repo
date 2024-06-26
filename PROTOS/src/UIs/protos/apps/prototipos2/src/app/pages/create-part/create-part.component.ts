@@ -9,17 +9,29 @@ import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 import { Router, RouterLink } from '@angular/router';
 
+
+interface QuerySelect {
+  text: string;
+  value: number;
+}
+
+
 @Component({
   selector: 'app-create-part',
   templateUrl: './create-part.component.html',
   styleUrls:['./create-part.component.css'],
 })
+
 export class CreatePartComponent {
 
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   formQueryScheme!: FormGroup;
   subscription!: Subscription;
-  isVisible:boolean=false
+  typesList: QuerySelect[] = [];
+  typesListParts: QuerySelect[] = [];
+  typesListDepartment: QuerySelect[] = [];
+  typesListMunicipal: QuerySelect[] = [];
+  
 
 
   constructor( private readonly fb: FormBuilder,
@@ -38,6 +50,58 @@ export class CreatePartComponent {
   });
 }
 
+initList(){
+  this.typesList = [
+    { text: 'Cédula de ciudadanía', value: 1 },
+    { text: 'Cédula de extranjería', value: 2 },
+    { text: 'Pasaporte', value: 3 },
+    { text: 'NIT', value: 4 }
+  ];
+
+  this.typesListParts = [
+    { text: 'Parte uno', value: 1 },
+    { text: 'Parte dos', value: 2 },
+    { text: 'Parte tres', value: 3 },
+    { text: 'Parte cuatro', value: 4 }
+  ];
+
+  this.typesListDepartment = [
+    { text: 'CAUCA', value: 1 },
+    { text: 'CAQUETÁ', value: 2 },
+    { text: 'CUNDINAMARCA', value: 3 },
+    { text: 'RISARALDA', value: 4 },
+   
+  ];
+
+  this.typesListMunicipal = [
+    { text: 'POPAYÁN', value: 1 },
+    { text: 'FLORENCIA', value: 2 },
+    { text: 'BOGOTÁ', value: 3 },
+    { text: 'PEREIRA', value: 4},
+    ];
+}
+
+onSearch() {
+  
+
+  const formData = {
+    tipoId: [1],
+    id: ["12345"],
+    razon: "Razón social de ejemplo",
+    direccion: "Calle 13 45-68",
+    telefono: "602434780",
+    municipio:1,
+    departamento:1,
+    tipoParte:2,
+    correo: "correo@ejemplo.com",
+    aceptaTratamiento: true,
+    fileUpload: { value: '', disabled: false }
+  };
+
+  this.formQueryScheme.setValue(formData);
+}
+
+
 enableFileUpload() {
   this.formQueryScheme.get('fileUpload')?.enable();
 }
@@ -48,13 +112,17 @@ disableFileUpload() {
 
 
   initForm(): FormGroup {
+    this.initList()
     return this.fb.group({
       razon: [""],
       tipoId: [null],
       id: [null],
+      tipoParte:["5"],
       direccion: [null],
       telefono: [""],
       correo: [""],
+      departamento:["5"],
+      municipio:["5"],
       aceptaTratamiento:[false],
       fileUpload: [{ value: '', disabled: true }]
        });

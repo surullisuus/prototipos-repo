@@ -31,13 +31,28 @@ export class SeeRequirementsComponent {
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
-         /*aquí cuando esté el servicio se debe guardar y actualizar la
-          informacion en la pantalla principal*/
           dialogAction.eventClose.emit()
-          location.reload();
+          this.showSuccessAlert("Los requisitos han sido marcados como realizados exitosamente.")
+         
+         
         } else {
           dialogAction.eventClose.emit();
         }
+      });
+  }
+
+  showSuccessAlert(body: string) {
+    const dialogData = new DialogData();
+    dialogData.title = body;
+    dialogData.type = DialogType.success;
+    dialogData.buttonConfirm = false;
+    dialogData.textButtonCancel = 'Cerrar';
+  
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+          dialogAction.eventClose.emit();
+          location.reload();
       });
   }
 
