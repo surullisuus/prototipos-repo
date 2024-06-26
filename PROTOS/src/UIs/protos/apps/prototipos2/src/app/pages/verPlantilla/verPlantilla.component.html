@@ -1,0 +1,138 @@
+<div class="modal fade" id="configurarPlantillaModal" tabindex="-1" aria-labelledby="configurarPlantillaModalLabel"
+    aria-hidden="true">
+    <form>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="h4-tipografia-govco">
+                        <span class="govcolor-marine">
+                            Configurar Plantillas Correo Electrónico
+                        </span>
+                    </h4>
+                    <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+                        aria-expanded="false">
+                        <span class="modal-close-govco govco-times"></span>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <subsidios-dropdown-list labelText="Proceso:" note="Seleccione el proceso"
+                                    idList="proceso" type="basic" [disabled]="false" />
+
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <subsidios-dropdown-list labelText="Tipo Documental:"
+                                    note="Seleccione el tipo documental" idList="tipoDocumental" type="basic"
+                                    [disabled]="false" />
+
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-2">
+                                <label for="">Nombre</label>
+                            </div>
+                            <div class="col-10">
+                                <div class="form-group pt-0 entradas-de-texto-govco">
+                                    <div class="container-input-texto-govco">
+                                        <ng-container>
+                                            <input  type="text">
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-2">
+                                <label for="">Descripción</label>
+                            </div>
+                            <div class="col-10">
+                                <div class="form-group pt-0 entradas-de-texto-govco">
+                                    <div class="container-input-texto-govco">
+                                        <ng-container>
+                                            <input  type="text">
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-3">
+                            <div class="col-2">
+                                <label for="">Desde</label>
+                            </div>
+                            <div class="col-10">
+                                <div class="form-group pt-0 entradas-de-texto-govco">
+                                    <div class="container-input-texto-govco">
+                                        <ng-container>
+                                            <input  type="text">
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-2">
+                                <label for="">Cc</label>
+                            </div>
+                            <div class="col-10">
+                                <div class="form-group pt-0 entradas-de-texto-govco">
+                                    <div class="container-input-texto-govco">
+                                        <ng-container>
+                                            <input  type="text">
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-3">
+                            <div class="col-2">
+                                <label for="">Asunto</label>
+                            </div>
+                            <div class="col-10">
+                                <div class="form-group pt-0 entradas-de-texto-govco">
+                                    <div class="container-input-texto-govco">
+                                        <ng-container>
+                                            <input  type="text">
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <label for="cuerpoCorreo" class="label-desplegable-govco">Cuerpo del correo</label>
+                                <div class="container-input-texto-govco">
+                                    <ng-container>
+                                        <textarea id="cuerpoCorreo"
+                                            placeholder="Ingrese el cuerpo del correo"></textarea>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 text-center">
+                        <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+                            (click)="guardarPlantilla()">
+                            Guardar
+                        </button>
+                        <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space"
+                            (click)="cancelar()">
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

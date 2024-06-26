@@ -1,0 +1,63 @@
+<h3 class="h3-tipografia-govco mt-3">
+    <span class="govcolor-marine">CONSULTAR PLANTILLAS CORREO ELECTRÓNICO</span>
+</h3>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <subsidios-dropdown-list labelText="Proceso:" note="Seleccione el proceso" idList="type-345676" type="basic"
+            [disabled]="false"></subsidios-dropdown-list>
+    </div>
+
+    <div class="col-md-4">
+        <subsidios-dropdown-list labelText="Tipo documental:" note="Seleccione el tipo documental" idList="type-345676"
+            type="basic" [disabled]="false"></subsidios-dropdown-list>
+    </div>
+
+    <div class="col-md-3 d-flex align-items-center ">
+        <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+            data-bs-target="#configurarPlantillaModal" data-bs-toggle="modal">
+            Crear plantilla
+        </button>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-md-8 d-flex justify-content-center">
+        <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+            Buscar
+        </button>
+    </div>
+</div>
+
+<div class="table-responsive mt-4">
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+        <thead class="encabezado-tabla">
+            <tr>
+                <th>Proceso</th>
+                <th style="text-align: center !important">Tipo documental</th>
+                <th style="text-align: center !important">Nombre</th>
+                <th style="text-align: center !important">Descripción</th>
+                <th style="text-align: center !important">Acción</th>
+            </tr>
+        </thead>
+        <tbody class="contenido-tablas">
+            <tr *ngFor="let plantilla of plantillas">
+                <td class="text-center">{{ plantilla.proceso }}</td>
+                <td class="text-center">{{ plantilla.tipoDocumental }}</td>
+                <td class="text-center">{{ plantilla.nombre }}</td>
+                <td class="text-center">{{ plantilla.descripcion }}</td>
+                <td class="text-center">
+                    <div class="d-flex justify-content-center text-nowrap">
+                        <a href="#" (click)="verDetalle(plantilla)" class="px-2">Ver detalle</a>
+                        <span>/</span>
+                        <a href="#" (click)="editarPlantilla(plantilla)" class="px-2">Editar</a>
+                        <span>/</span>
+                        <a href="#" (click)="eliminarPlantilla(plantilla)" class="px-2">Eliminar</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-ver-plantilla></app-ver-plantilla>

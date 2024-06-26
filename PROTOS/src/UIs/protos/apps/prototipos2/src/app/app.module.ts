@@ -22,7 +22,7 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { SeeRequirementsComponent } from './pages/see-requirements/see-requirements.component';
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailPartComponent } from './pages/detail-part/detail-part.component';
 import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-responsible.component';
 import { AssingResponsibleTaskComponent } from './pages/assing-responsible-task/assing-responsible-task.component';
@@ -36,6 +36,8 @@ import { GenerateExitDocumentComponent } from './pages/generate-exit-document/ge
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
+import { VistaConfigurarPlantillasComponent } from './pages/vistaConfigurarPlantillas/vistaConfigurarPlantillas.component';
+import { VerPlantillaComponent } from './pages/verPlantilla/verPlantilla.component';
 
 @NgModule({
   declarations: [
@@ -71,8 +73,10 @@ import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoVie
     AssingResponsibleTaskComponent,
     AlertsByResponsibleComponent,
     VerRadicadoViewComponent,
+    VistaConfigurarPlantillasComponent,
+    VerPlantillaComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes),FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
