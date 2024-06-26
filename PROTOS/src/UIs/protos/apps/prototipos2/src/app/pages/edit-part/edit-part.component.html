@@ -3,44 +3,38 @@
 
   <div class="row">
     <!--tipo id-->
-    <div class="col-md-4">
-        <label for='tipoIdentificacion' class='form-label'>Tipo de identificaci&oacute;n*:</label>
-        <select class='form-select select-dark-border' name='tipoIdentificacion' id='tipoIdentificacion' formControlName='tipoIdentificacion'
-             autocomplete='off'>
-<option *ngFor='let row of typesList' [value]='row.value'>
-  {{ row.text }}
-</option>
-</select>
-    </div>
-    <!--Numero de id-->
-    <div class="col-md-4">
-      <subsidios-input
-      [control]="$any(formQueryScheme.get('numeroIdentificacion'))"
-      type="numeric"
-      value="12313123"
-      label="No. de identificaci&oacute;n*:"
-      placeholder="Ej. 104619011214"
-      [showStatus]="false"
-      [maxLength]="20"
-      [minLength]="1"
-      typeValidation="numeric"
-      note="Ingrese su identificaci&oacute;n"
-    ></subsidios-input>
-    </div>
+    <div class="col-md-4 mt-4">
+      <div class="row">
+      <span class="form-label govcolor-tundora">Tipo de identificaci&oacute;n*:</span>
+             <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="typesList">{{
+          typesList[0].text
+          }}</span>
+      </div>
+  </div>
+  <!--Numero de id-->
+  <div class="col-md-4 mt-4">
+      <div class="row">
+      <span class="form-label govcolor-tundora">No. identificaci&oacute;n*:</span>
+             <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" >{{
+         12345123
+          }}</span>
+      </div>
+     </div>
     <!--logo de buscar-->
     <div class="col-md-4">
       <!-- Puedes agregar contenido aquí si es necesario -->
     </div>
 
     <!-- Tipo de parte-->
-    <div class="col-md-8 mb-4">
-        <label for='tipoParte' class='form-label'>Tipo de parte*:</label>
+    <div class="col-md-8 mb-4" style="padding-top: 20px;">
+        <label for='tipoParte' class='form-label govcolor-tundora'>Tipo de parte*:</label>
         <select class='form-select select-dark-border' name='tipoParte' id='tipoParte' formControlName='tipoParte'
              autocomplete='off'>
 <option *ngFor='let row of typesListParts' [value]='row.value'>
   {{ row.text }}
 </option>
 </select>
+<label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione un tipo de parte</label>
     </div>
     <!-- Razón social -->
     <div class="col-md-12">
@@ -59,24 +53,26 @@
 
     <!-- Departamento -->
     <div class="col-md-4">
-        <label for='departamento' class='form-label'>Departamento*:</label>
+        <label for='departamento' class='form-label govcolor-tundora'>Departamento*:</label>
         <select class='form-select select-dark-border' name='departamento' id='departamento' formControlName='departamento'
              autocomplete='off'>
 <option *ngFor='let row of typesListDepartment' [value]='row.value'>
   {{ row.text }}
 </option>
 </select>
+<label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione un departamento</label>
     </div>
 
     <!-- Municipio -->
     <div class="col-md-4">
-        <label for='municipio' class='form-label'>Municipio*:</label>
+        <label for='municipio' class='form-label govcolor-tundora'>Municipio*:</label>
         <select class='form-select select-dark-border' name='municipio' id='municipio' formControlName='municipio'
              autocomplete='off'>
 <option *ngFor='let row of typesListMunicipal' [value]='row.value'>
   {{ row.text }}
 </option>
 </select>
+<label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione un municipio</label>
     </div>
     
     <!-- Dirección -->

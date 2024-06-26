@@ -19,6 +19,7 @@ export class PerformancesComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   @ViewChild('openbutton') openbutton!: ElementRef;
   @ViewChild('openDocuments') openDocuments!: ElementRef;
+  @ViewChild('openPreliminar') openPreliminar!: ElementRef;
   
   subscription!: Subscription;
   isVisible:boolean=false
@@ -51,6 +52,12 @@ onDocumentsLink(){
  }
 }
 
+onPreliminarDocuments(){
+  if(this.openPreliminar){
+    this.openPreliminar.nativeElement.click()
+   }
+}
+onCloseModal(){}
 
 
 }

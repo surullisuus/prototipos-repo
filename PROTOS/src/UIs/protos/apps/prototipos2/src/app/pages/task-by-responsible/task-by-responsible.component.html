@@ -25,7 +25,7 @@
       </div>
    
     <!--Numero de solicitud-->
-    <div class="col-md-4">
+    <div class="col-md-4" style="padding-top: 15px;">
         <subsidios-input
         [control]="$any(formQueryTasks.get('keyword'))"
         type="text"
@@ -86,8 +86,8 @@
       <thead class="encabezado-tabla">
         <tr>
           <th style="text-align: center;" role="button">Proceso</th>
-          <th role="button">Expediente</th>
-          <th  class="text-align: center;" role="button">Estado Expediente</th>
+          <th role="button">No. Solicitud</th>
+          <th  class="text-align: center;" role="button">Estado Solicitud</th>
           <th class="text-align: right; " role="button">Etapa</th>
           <th class="text-align: right;" role="button">Tarea</th>
           <th class="text-align: right; " role="button">Estado Tarea</th>
@@ -132,9 +132,7 @@
               data-bs-target="#verEsquemaModal" href="#"></a>
             <a type="button"  [routerLink]="['/asignar-solicitud']" class="me-0" href="#" tabindex="0">Ver proceso</a>
 
-            <!--eliminaaaar modal-->
-
-         
+          
           </td>
         </tr>
       </tbody>
