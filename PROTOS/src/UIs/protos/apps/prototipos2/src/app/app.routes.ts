@@ -15,6 +15,7 @@ import { DocumentObservationsComponent } from './pages/document-observations/doc
 import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { ManageProcessConfigsComponent } from './pages/manage-process-configs/manage-process-configs.component';
+import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -39,4 +40,5 @@ export const appRoutes: Route[] = [
     component: AssingResponsibleTaskComponent,
   },
   { path: 'consultar-alertas', component: AlertsByResponsibleComponent },
+  { path: 'tipos-documentales', component: SeeDocumentalTypesComponent },
 ];

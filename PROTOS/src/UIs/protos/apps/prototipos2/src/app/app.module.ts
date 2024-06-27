@@ -38,6 +38,7 @@ import { GenerateExitDocumentComponent } from './pages/generate-exit-document/ge
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
+import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoVie
     AssingResponsibleTaskComponent,
     AlertsByResponsibleComponent,
     VerRadicadoViewComponent,
+    SeeDocumentalTypesComponent,
   ],
   imports: [
     BrowserModule,
