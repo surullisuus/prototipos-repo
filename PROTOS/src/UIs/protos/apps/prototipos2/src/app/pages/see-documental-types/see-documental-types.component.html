@@ -31,7 +31,8 @@
                 Buscar
             </button>
 
-            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom">
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                (click)="showSaveInformationModal(tiposDocumentales, $event)">
                 Guardar
             </button>
 
@@ -102,3 +103,5 @@
 
     </div>
 </div>
+
+<div #dialog></div>
