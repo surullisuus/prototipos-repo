@@ -10,14 +10,14 @@
         <div class="col-md-4">
 
             <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676" type="basic"
-                [disabled]="false">
+                [disabled]="false" [lista]="getProcessList()" (eventlist)="setProcess($event)">
             </subsidios-dropdown-list>
         </div>
 
         <!--Etapa-->
         <div class="col-md-4">
             <subsidios-dropdown-list labelText="Tipos documentales" note="Seleccione una opción" idList="type-345676"
-                type="basic" [disabled]="false">
+                type="basic" [disabled]="false" [lista]="getDocumentTypesList()" (eventlist)="setDocumentType($event)">
             </subsidios-dropdown-list>
         </div>
 
@@ -31,12 +31,15 @@
                 Buscar
             </button>
 
-            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
-                (click)="showSaveInformationModal(tiposDocumentales, $event)">
-                Guardar
-            </button>
+            <ng-container *ngIf="activeSaveButton">
+                <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                    (click)="showSaveInformationModal(tiposDocumentales, $event)">
+                    Guardar
+                </button>
+            </ng-container>
 
-            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom">
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                (click)="cancelSearch()">
                 Cancelar
             </button>
         </div>

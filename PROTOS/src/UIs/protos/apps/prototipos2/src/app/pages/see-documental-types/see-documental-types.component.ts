@@ -1,4 +1,10 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import {
+  Component,
+  OnChanges,
+  SimpleChanges,
+  ViewChild,
+  ViewContainerRef,
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
@@ -20,6 +26,8 @@ interface DocumentType {
 export class SeeDocumentalTypesComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   subscription!: Subscription;
+  selectedProcess: string | null = null;
+  selectedDocumentType: string | null = null;
 
   tiposDocumentales: DocumentType[] = [
     {
@@ -45,6 +53,48 @@ export class SeeDocumentalTypesComponent {
   ];
 
   constructor(private dialogService: DialogService) {}
+
+  getProcessList() {
+    return this.tiposDocumentales.map((documentType) => {
+      return { id: documentType.id, text: documentType.process };
+    });
+  }
+
+  getDocumentTypesList() {
+    return [
+      {
+        id: 1,
+        text: 'Acta de selección',
+      },
+      {
+        id: 2,
+        text: 'Acta de apertura',
+      },
+      {
+        id: 3,
+        text: 'Acta de cierre',
+      },
+    ];
+  }
+
+  setProcess(processSelected: { id: number; text: string }) {
+    this.selectedProcess = processSelected.text;
+    console.log('selectedDocumentType', this.selectedDocumentType);
+  }
+
+  setDocumentType(documentType: { id: number; text: string }) {
+    this.selectedDocumentType = documentType.text;
+  }
+
+  get activeSaveButton(): boolean {
+    console.log('selectedProcess', this.selectedProcess);
+    return this.selectedProcess !== null && this.selectedDocumentType !== null;
+  }
+
+  cancelSearch() {
+    this.selectedProcess = null;
+    this.selectedDocumentType = null;
+  }
 
   // MODALES
   showSaveInformationModal(proccess: DocumentType[], $event: Event) {
