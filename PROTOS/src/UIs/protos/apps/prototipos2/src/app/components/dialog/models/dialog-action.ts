@@ -7,4 +7,6 @@ export class DialogAction {
     public eventError = new EventEmitter<any>();
     public eventProcessing = new EventEmitter<boolean>();
   }
+
+export { ActionType };
   

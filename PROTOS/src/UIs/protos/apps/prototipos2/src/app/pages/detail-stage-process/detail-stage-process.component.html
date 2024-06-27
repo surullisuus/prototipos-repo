@@ -1,0 +1,78 @@
+<h3 class="h3-tipografia-govco">
+    <span class="govcolor-marine">Ver etapa</span>
+</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <p><span class="text1-tipografia-govco">Proceso*:</span></p>
+        <p><b><span class="text1-tipografia-govco">Nombre del proceso</span></b></p>
+    </div>
+    <div class="row">
+        <p><span class="text1-tipografia-govco">Etapa*:</span></p>
+        <p><b><span class="text1-tipografia-govco">Nombre de la etapa</span></b></p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p><span class="text1-tipografia-govco">Cierre anormal de etapa</span></p>
+            <span class="text3-tipografia-govco">Seleccione si la etapa se puede cerrar de forma anormal.</span>
+        </div>
+        <div class="col-md-4">
+            <div class="checkbox-seleccion-govco ms-2 mt-4">
+                <input type="checkbox" id="checkbox11" name="checkbox1" value="0">
+            </div>
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p><span class="text1-tipografia-govco">Devolver etapa</span></p>
+            <span class="text3-tipografia-govco">Seleccione si la etapa se puede devolver.</span>
+        </div>
+        <div class="col-md-4">
+            <div class="checkbox-seleccion-govco ms-2 mt-4">
+                <input type="checkbox" id="checkbox11" name="checkbox1" value="1">
+            </div>          
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p><span class="text1-tipografia-govco">Gestion de requisitos</span></p>
+            <span class="text3-tipografia-govco">Seleccione si la etapa hace gestion de requisitos a traves del motor de proceso.</span>
+        </div>
+        <div class="col-md-4">
+            <div class="checkbox-seleccion-govco ms-2 mt-4">
+                <input type="checkbox" id="checkbox11" name="checkbox1" value="2">
+            </div>           
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p><span class="text1-tipografia-govco">Ejecución secuencial de tareas</span></p>
+            <span class="text3-tipografia-govco">Seleccione si las tareas de la etapa se realizarán de forma secuencial.</span>
+        </div>
+        <div class="col-md-4">
+            <div class="checkbox-seleccion-govco ms-2 mt-4">
+                <input type="checkbox" id="checkbox11" name="checkbox1" value="3" checked>
+            </div>           
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p><span class="text1-tipografia-govco">Activar etapa</span></p>
+            <span class="text3-tipografia-govco">Seleccione si la etapa estará activa en el motor de proceso.</span>
+        </div>
+        <div class="col-md-4">
+            <div class="checkbox-seleccion-govco ms-2 mt-4">
+                <input type="checkbox" id="checkbox11" name="checkbox1" value="4" checked>
+            </div>           
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" 
+            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+            [routerLink]="['/etapas-proceso']">
+                Salir
+               </button>   
+        </div>    
+    </div>
+</div>
+

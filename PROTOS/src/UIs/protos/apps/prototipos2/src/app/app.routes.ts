@@ -9,7 +9,11 @@ import { EditPartComponent } from './pages/edit-part/edit-part.component';
 import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
 import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
-
+import { DetailEmailTemplateComponent } from './pages/detail-email-template/detail-email-template.component';
+import { ProcessStagesComponent } from './pages/process-stages/process-stages.component';
+import { CreateStageProcessComponent } from './pages/create-stage-process/create-stage-process.component';
+import { EditStageProcessComponent } from './pages/edit-stage-process/edit-stage-process.component';
+import { DetailStageProcessComponent } from './pages/detail-stage-process/detail-stage-process.component';
 export const appRoutes: Route[] = [
 
 
@@ -27,4 +31,10 @@ export const appRoutes: Route[] = [
   { path: 'editar-parte', component: EditPartComponent },
   { path: 'gestionar-proceso-diseno', component: ManageProcessDesignComponent },
   { path: 'gestionar-tareas', component: ManageTaskComponent },
+  { path: 'ver-plantilla-correo', component: DetailEmailTemplateComponent},
+  { path: 'etapas-proceso', component: ProcessStagesComponent},
+  { path: 'crear-etapa', component: CreateStageProcessComponent},
+  { path: 'editar-etapa', component: EditStageProcessComponent},
+  { path: 'ver-etapa', component: DetailStageProcessComponent}
+
 ];

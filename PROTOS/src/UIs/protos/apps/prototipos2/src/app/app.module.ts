@@ -30,7 +30,11 @@ import { ManageProcessDesignComponent } from './pages/manage-process-design/mana
 import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
-
+import { DetailEmailTemplateComponent } from './pages/detail-email-template/detail-email-template.component';
+import { ProcessStagesComponent } from './pages/process-stages/process-stages.component';
+import { CreateStageProcessComponent } from './pages/create-stage-process/create-stage-process.component';
+import { EditStageProcessComponent } from './pages/edit-stage-process/edit-stage-process.component';
+import { DetailStageProcessComponent } from './pages/detail-stage-process/detail-stage-process.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +64,11 @@ import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associat
     PreliminarViewComponent,
     AssociateEntryDocComponent,
     EditPartComponent,
+    DetailEmailTemplateComponent,
+    ProcessStagesComponent,
+    CreateStageProcessComponent,
+    EditStageProcessComponent,
+    DetailStageProcessComponent,
   ],
   imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
