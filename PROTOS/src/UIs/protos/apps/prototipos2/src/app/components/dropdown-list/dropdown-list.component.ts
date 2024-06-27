@@ -59,7 +59,6 @@ export class DropdownListComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.getTipo();
-    console.log('lista', this.lista);
   }
 
   ngOnChanges(changes: SimpleChanges) {
