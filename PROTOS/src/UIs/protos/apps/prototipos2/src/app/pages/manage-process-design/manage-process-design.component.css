@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+.bg-marine {
+  background-color: #3392cc !important;
+  color: #fff !important;
+}
+
+.bg-marine:hover {
+  background-color: #2878a3 !important;
+  color: #fff !important;
+}
+
+.bg-marine-light {
+  background-color: #70cbde !important;
+  color: #000 !important;
+}
+
+.bg-marine-light:hover {
+  background-color: #33b2cc !important;
+  color: #000 !important;
+}
+
+@media (min-width: 1201px) and (max-width: 1841px) {
+  .table-process {
+    width: calc(80vw - 15px);
+  }
+}
+
+@media screen and (max-width: 1201px) {
+  .table-process {
+    width: calc(80vw - 105px);
+  }
+}

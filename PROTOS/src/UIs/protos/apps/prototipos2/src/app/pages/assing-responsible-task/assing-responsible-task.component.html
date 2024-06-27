@@ -1,0 +1,111 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> ASIGNAR RESPONSABLE TAREA</span></h3>
+
+<div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryTasks">
+
+
+  <div class="row">
+
+    <!--Grupo/subdirección-->
+    <div class="col-md-4">
+        <div class="row">
+            <span class="text3-tipografia-govco govcolor-silver">Grupo/Subdirección*:</span>
+             <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" >{{
+               formQueryTasks.get('Grupo')?.value
+                }}</span>
+            </div>
+    </div>
+    <!--Proceso-->
+    <div class="col-md-4">
+        <div class="row">
+            <span class="text3-tipografia-govco govcolor-silver">Proceso*:</span>
+             <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" >{{
+               formQueryTasks.get('Proceso')?.value
+                }}</span>
+            </div>
+    </div>
+  
+     <!--No. solicitud-->
+     <div class="col-md-4">
+        <div class="row">
+            <span class="text3-tipografia-govco govcolor-silver">No. Solicitud*:</span>
+             <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" >{{
+               formQueryTasks.get('nosolicitud')?.value
+                }}</span>
+            </div>
+    </div>
+
+  </div>
+  <div style="padding-bottom: 5%;"></div>
+
+  <!--Tabla-->
+
+  <div class="row" >
+    <div class="col-md-10" style="padding-bottom: 2%;">
+      <h4 class="h4-tipografia-govco mt-3 mb-2">
+        <span class="govcolor-marine">
+          Resultado de consulta
+        </span>
+      </h4>
+    </div>
+    <div class="col-md-2">
+      <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+        Total registros: {{ 3 }}
+      </p>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+      <thead class="encabezado-tabla">
+        <tr>
+        <th style="text-align: center !important;">Acci&oacute;n</th>
+          <th style="text-align: center !important;" role="button">Nombres y apellidos del usuario</th>
+          <th style="text-align: center !important;" role="button">Rol</th>
+          
+        </tr>
+      </thead>
+
+      <tbody class="contenido-tablas">
+
+
+        <tr *ngFor="let item of taskAssign">
+            <td style="text-align: center !important; padding-right: 10px;">
+                <!-- Acciones-->
+                <a type="button" (click)="onAssignTaskModal(item)" class="me-0"  tabindex="0">Asignar</a>
+              </td>
+          <td style="text-align: center !important;">{{ item.nombre }}</td>
+          <td style="text-align: center !important;">{{ item.rol }}</td>
+         
+         
+        </tr>
+      </tbody>
+
+      <!--<tbody >
+      <tr>
+        <td colspan="7">
+          No se encuentra información con los criterios de búsqueda seleccionados
+        </td>
+      </tr>
+    </tbody>-->
+
+      <!--  <tbody >
+      <tr>
+        <td colspan="7">
+          <entidades-loading-modal></entidades-loading-modal>
+        </td>
+      </tr>
+    </tbody>-->
+    </table>
+    <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+  </div>
+
+  <div class="row mt-4 mb-3 text-left">
+    <div class="col-md-12">
+       <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+       Cancelar
+      </button>
+    </div>
+  </div>
+
+  <div #dialog></div>
+</div>

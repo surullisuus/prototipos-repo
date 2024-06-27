@@ -13,10 +13,13 @@ import { ActionType } from '../../components/dialog/models/action-type.enum';
 })
 export class SeeRequirementsComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
+  @ViewChild('verRequisitos') verRequisitos!: ElementRef;
 
   subscription!: Subscription;
 
   constructor(private dialogService: DialogService) {}
+
+  
 
   AcceptModal() {
     const dialogData = new DialogData();
@@ -28,10 +31,28 @@ export class SeeRequirementsComponent {
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
-          // Aquí puedes agregar el setTimeout si es necesario
+          dialogAction.eventClose.emit()
+          this.showSuccessAlert("Los requisitos han sido marcados como realizados exitosamente.")
+         
+         
         } else {
           dialogAction.eventClose.emit();
         }
+      });
+  }
+
+  showSuccessAlert(body: string) {
+    const dialogData = new DialogData();
+    dialogData.title = body;
+    dialogData.type = DialogType.success;
+    dialogData.buttonConfirm = false;
+    dialogData.textButtonCancel = 'Cerrar';
+  
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+          dialogAction.eventClose.emit();
+          location.reload();
       });
   }
 

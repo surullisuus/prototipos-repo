@@ -24,9 +24,9 @@ export class CloseStageComponent {
   subscription!: Subscription;
 
 
-  showSuccessAlertState(body: string) {
+  showSuccessAlert() {
     const dialogData = new DialogData();
-    dialogData.title = body;
+    dialogData.title = "La etapa fue cerrada de forma anormal con éxito";
     dialogData.type = DialogType.success;
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
@@ -39,6 +39,6 @@ export class CloseStageComponent {
       });
   }
    
-
+  onCloseModal(){}
 
 }

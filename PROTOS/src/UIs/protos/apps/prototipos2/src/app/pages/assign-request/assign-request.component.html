@@ -1,149 +1,148 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Solicitudes</span></h3>
-<h4 class="h4-tipografia-govco"><span class="govcolor-marine"> Asignar Solicitud</span></h4>
+<h3 class="h3-tipografia-govco mt-3">
+  <span class="govcolor-marine">ASIGNAR SOLICITUD</span>
+</h3>
 
 <div class="rounded-3 mb-5 mt-3">
-
-    <div class="row">
-
-      
-        <!--Grupo-->
-        <div class="col-md-4">
-          <label for="lista-desplegables" class="label-desplegable-govco"
-          > Grupo/Subdirecci&oacute;n*:<span aria-required="true"></span
-        ></label>
-          <div class="form-group pt-0 entradas-de-texto-govco">
-            <div class="container-input-texto-govco">
-              <ng-container>
-            <input value="Subidrección 1" disabled type="text" placeholder="Ej. 23454">
-          </ng-container>
-          </div>
-          </div>
-        </div>
-        <!--Proceso-->
-    
-        <div class="col-md-4">
-            <label for="lista-desplegables" class="label-desplegable-govco"
-            > Proceso*:<span aria-required="true"></span
-          ></label>
-            <div class="form-group pt-0 entradas-de-texto-govco">
-              <div class="container-input-texto-govco">
-                <ng-container>
-              <input  value="proceso 1" disabled type="text" placeholder="Ej. 23454">
-            </ng-container>
-            </div>
-            </div>
-          </div>
-
-          
-    
-        <!-- No Solicitud-->
-    
-        <div class="col-md-4">
-            <label for="lista-desplegables" class="label-desplegable-govco"
-            > No Solicitud*:<span aria-required="true"></span
-          ></label>
-            <div class="form-group pt-0 entradas-de-texto-govco">
-              <div class="container-input-texto-govco">
-                <ng-container>
-              <input value="234" disabled type="text" placeholder="Ej. 23454">
-            </ng-container>
-            </div>
-            </div>
-          </div>      
-    
-      </div>
-
-      
+  <div class="row">
+    <!--Grupo-->
+    <div class="col-md-4">
       <div class="row">
-        <div class="col-md-10">
-          <h4 class="h4-tipografia-govco mt-3 mb-2">
-            <span class="govcolor-marine">
-              Resultado de consulta
-            </span>
-          </h4>
+        <span class="text3-tipografia-govco govcolor-silver">Grupo/Subdirecci&oacute;n*:</span>
+         <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="data">{{
+            data.grupo
+            }}</span>
         </div>
-        <div class="col-md-2">
-          <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
-            Total registros: {{ 3 }}
-          </p>
+    </div>
+    <!--Proceso-->
+
+    <div class="col-md-4">
+      <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Proceso*:</span>
+         <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="data">{{
+            data.proceso
+            }}</span>
         </div>
-      </div>
-    
+    </div>
 
-      <div class="table-responsive">
-        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-          <thead class="encabezado-tabla">
-            <tr>
-              <th class="columna-especial" role="button"  style="text-align: left !important;">Acci&oacute;n</th>
-              <th  scope="col" role="button">Cantidad Solicitudes a Cargo</th>
-              <th scope="col" role="button">Nombres y Apellidos del usuario</th>
-              <th class="text-align: right; columna-estado" role="button">Rol</th>
-    
-            </tr>
-          </thead>
-    
-          <tbody class="contenido-tablas">
-            <tr *ngFor="let item of usuarios">
+    <!-- No Solicitud-->
 
-                <td style="text-align: left !important; padding-right: 10px;">
-    
-    
-                    <!-- Acciones-->
-                    <a class="button-modal-accept-none" data-bs-toggle="modal" #openbutton
-                      data-bs-target="#AsignarSolicitudModal" href="#"></a>
-                    <a type="button"
-                    class="ms-2 me-2"
-                    href="#"
-                    tabindex="0"
-                    (click)="onAssingRequestModal(item, $event)"
-                (keypress)="onAssingRequestModal(item, $event)" >Asignar</a>
-            
-                  </td>
-              <td class="text-left">{{ item.cantidadDeSolicitudes }}</td>
-              <td class="text-left">{{ item.nombresYApellidos }}</td>
-    
-              <td >
-                <p class="mb-0">
-                  {{ item.rol}}
-                </p>
-              </td>
-              
-            </tr>
-          </tbody>
-    
-          <!--<tbody >
+    <div class="col-md-4">
+      <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">No. Solicitud*:</span>
+         <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" *ngIf="data">{{
+            data.noSolicitud
+            }}</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-10">
+      <h4 class="h4-tipografia-govco mt-3 mb-2">
+        <span class="govcolor-marine"> Resultado de consulta </span>
+      </h4>
+    </div>
+    <div class="col-md-2">
+      <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+        Total registros: {{ 3 }}
+      </p>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table
+      class="table table-general table-basic"
+      aria-describedby="tableDescBasic"
+    >
+      <thead class="encabezado-tabla">
+        <tr>
+       
+          <th scope="col" role="button">Cantidad Solicitudes a Cargo</th>
+          <th scope="col" role="button">Nombres y Apellidos del usuario</th>
+          <th class="text-align: right; columna-estado" role="button">Rol</th>
+          <th
+          class="columna-especial"
+          role="button"
+          style="text-align: left !important"
+        >
+          Acci&oacute;n
+        </th>
+        </tr>
+      </thead>
+
+      <tbody class="contenido-tablas">
+        <tr *ngFor="let item of usuarios">
+         
+          <td class="text-left">{{ item.cantidadDeSolicitudes }}</td>
+          <td class="text-left">{{ item.nombresYApellidos }}</td>
+
+          <td>
+            <p class="mb-0">
+              {{ item.rol }}
+            </p>
+          </td>
+          <td style="text-align: left !important; padding-right: 10px">
+            <!-- Acciones-->
+            <a
+              class="button-modal-accept-none"
+              data-bs-toggle="modal"
+              #openbutton
+              data-bs-target="#AsignarSolicitudModal"
+              href="#"
+            ></a>
+            <a
+              type="button"
+              class="ms-2 me-2"
+              href="#"
+              tabindex="0"
+              (click)="onAssingRequestModal(item, $event)"
+              (keypress)="onAssingRequestModal(item, $event)"
+              >Asignar</a
+            >
+          </td>
+        </tr>
+      </tbody>
+
+      <!--<tbody >
           <tr>
             <td colspan="7">
               No se encuentra información con los criterios de búsqueda seleccionados
             </td>
           </tr>
         </tbody>-->
-    
-          <!--  <tbody >
+
+      <!--  <tbody >
           <tr>
             <td colspan="7">
               <entidades-loading-modal></entidades-loading-modal>
             </td>
           </tr>
         </tbody>-->
-        </table>
-        <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
-
-        
-      </div>
-      <div class="row mt-4 mb-3 text-left">
-        <div class="col-md-12">
-          <a class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#crearEsquemaModal" href="#"
-            #openbuttoncreate></a>
-          <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1" [routerLink]="['/procesos']">
-            Cancelar
-          </button>
-        </div>
-      </div>
-
-   
-
-
+    </table>
+    <subsidios-paginator
+      [totalCount]="4"
+      [pageSize]="5"
+      [currentPage]="2"
+    ></subsidios-paginator>
+  </div>
+  <div class="row mt-4 mb-3 text-left">
+    <div class="col-md-12">
+      <a
+        class="button-modal-enabled-none"
+        data-bs-toggle="modal"
+        data-bs-target="#crearEsquemaModal"
+        href="#"
+        #openbuttoncreate
+      ></a>
+      <button
+        type="submit"
+        class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+        [routerLink]="['/procesos']"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
 </div>
 
-<div #dialog ></div>
+<div #dialog></div>

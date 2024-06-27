@@ -22,10 +22,25 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { SeeRequirementsComponent } from './pages/see-requirements/see-requirements.component';
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { DetailPartComponent } from './pages/detail-part/detail-part.component';
+import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-responsible.component';
+import { AssingResponsibleTaskComponent } from './pages/assing-responsible-task/assing-responsible-task.component';
+import { AlertsByResponsibleComponent } from './pages/alerts-by-responsible/alerts-by-responsible.component';
+import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
+import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
+<<<<<<< HEAD
 import { SeeRadicadoComponent } from './pages/see-radicado/see-radicado.component';
 import { ManageProcessConfigsComponent } from './pages/manage-process-configs/manage-process-configs.component';
+=======
+import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
+import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
+import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
+import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
+import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
+>>>>>>> origin/main
 
 @NgModule({
   declarations: [
@@ -39,7 +54,9 @@ import { ManageProcessConfigsComponent } from './pages/manage-process-configs/ma
     PaginatorComponent,
     LoadingModalComponent,
     AssignRequestComponent,
+    AssignDocumentComponent,
     DialogComponent,
+    DocumentObservationsComponent,
     CloseStageComponent,
     ManageProcessComponent,
     PerformancesComponent,
@@ -47,13 +64,25 @@ import { ManageProcessConfigsComponent } from './pages/manage-process-configs/ma
     ModalComponent,
     SeeRequirementsComponent,
     CreatePartComponent,
-    EditPartComponent,
     ManageTaskComponent,
     CloseTaskAnormalComponent,
+<<<<<<< HEAD
     SeeRadicadoComponent,
     ManageProcessConfigsComponent,
+=======
+    ManageProcessDesignComponent,
+    GenerateExitDocumentComponent,
+    PreliminarViewComponent,
+    AssociateEntryDocComponent,
+    EditPartComponent,
+    DetailPartComponent,
+    TaskByResponsibleComponent,
+    AssingResponsibleTaskComponent,
+    AlertsByResponsibleComponent,
+    VerRadicadoViewComponent,
+>>>>>>> origin/main
   ],
-  imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })

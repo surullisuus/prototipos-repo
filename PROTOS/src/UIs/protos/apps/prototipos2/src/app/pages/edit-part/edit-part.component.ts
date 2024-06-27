@@ -67,25 +67,37 @@ export class EditPartComponent {
       { text: 'BOGOTÁ', value: 3 },
       { text: 'PEREIRA', value: 4 }
     ];
-
-
   }
  
   ngOnInit(): void {
     this.initList()    
 
     this.formQueryScheme = this.fb.group({
-      tipoIdentificacion: ['CC', Validators.required],
+      tipoIdentificacion: [{ value: 2, disabled: true }, Validators.required],
       numeroIdentificacion: ['12345678', Validators.required],
-      tipoParte: ['Persona', Validators.required],
+      tipoParte: [{ value: 1, disabled: true }, Validators.required],
       razonSocial: ['Mi Casa Ya', Validators.required],
-      departamento: ['Antioquia', Validators.required],
-      municipio: ['Medellín', Validators.required],
+      departamento: [{ value: 2, disabled: true }, Validators.required],
+      municipio: [{ value: 2, disabled: true }, Validators.required],
       direccion: ['Cra 26 #12 -24', Validators.required],
       telefono: ['3127467890', Validators.required],
       correoElectronico: ['correo@yopmail.com', [Validators.required, Validators.email]],
-      aceptaTratamiento: [false, Validators.requiredTrue]
-    })}
+      aceptaTratamiento: [false, Validators.requiredTrue],
+      fileUpload: [{ value: "", disabled: true }]
+    })
+   const valuedept= this.formQueryScheme.get('departamento')?.value
+    console.log("depart",valuedept)
+    this.formQueryScheme.get('aceptaTratamiento')?.valueChanges.subscribe(value => {
+      if (value) {
+        this.isVisible=true
+        this.formQueryScheme.get('fileUpload')?.enable();
+      } else {
+        this.isVisible=false
+        this.formQueryScheme.get('fileUpload')?.disable();
+      }
+    });
+  
+  }
 
 
     onSaveModal(){
