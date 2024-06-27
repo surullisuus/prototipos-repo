@@ -31,16 +31,13 @@ import { AssignDocumentComponent } from './pages/assign-document/assign-document
 import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
-<<<<<<< HEAD
 import { SeeRadicadoComponent } from './pages/see-radicado/see-radicado.component';
 import { ManageProcessConfigsComponent } from './pages/manage-process-configs/manage-process-configs.component';
-=======
 import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
 import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
->>>>>>> origin/main
 
 @NgModule({
   declarations: [
@@ -66,10 +63,8 @@ import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoVie
     CreatePartComponent,
     ManageTaskComponent,
     CloseTaskAnormalComponent,
-<<<<<<< HEAD
     SeeRadicadoComponent,
     ManageProcessConfigsComponent,
-=======
     ManageProcessDesignComponent,
     GenerateExitDocumentComponent,
     PreliminarViewComponent,
@@ -80,9 +75,13 @@ import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoVie
     AssingResponsibleTaskComponent,
     AlertsByResponsibleComponent,
     VerRadicadoViewComponent,
->>>>>>> origin/main
   ],
-  imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    UisModule,
+    RouterModule.forRoot(appRoutes),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
