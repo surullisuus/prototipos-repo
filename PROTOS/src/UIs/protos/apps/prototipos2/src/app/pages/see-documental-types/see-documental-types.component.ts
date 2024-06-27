@@ -69,6 +69,28 @@ export class SeeDocumentalTypesComponent {
       });
   }
 
+  showDeleteProcessModal(proccess: DocumentType, $event: Event) {
+    $event.preventDefault();
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Eliminar registro';
+    dialogData.body = `¿Está seguro de eliminar el registro ${proccess.process}?`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          const body = `Registro eliminado de forma exitosa`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
   showSuccessTaskInitializationAlertState(body: string) {
     const dialogData = new DialogData();
     dialogData.title = body;
