@@ -101,7 +101,7 @@
                         </a>
                         <span>&nbsp;/&nbsp;</span>
 
-                        <a type="button" class="ms-2 me-2" href="#" tabindex="0">
+                        <a type="button" class="ms-2 me-2" tabindex="0" (click)="onDeleteTaskModal(phase)">
                             Eliminar
                         </a>
 
@@ -117,3 +117,5 @@
         <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
     </div>
 </div>
+
+<div #dialog></div>
