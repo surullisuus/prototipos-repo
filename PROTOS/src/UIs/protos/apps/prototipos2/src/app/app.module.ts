@@ -38,6 +38,10 @@ import { EmailTemplateComponent } from './pages/email-template/email-template.co
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 import { DetailEmailTemplateComponent } from './pages/detail-email-template/detail-email-template.component';
+import { NotificationTypeComponent } from './pages/notification-type/notification-type.component';
+import { CreateNotificationTypeComponent } from './pages/create-notification-type/create-notification-type.component';
+import { EditNotificationTypeComponent } from './pages/edit-notification-type/edit-notification-type.component';
+import { DetailNotificationTypeComponent } from './pages/detail-notification-type/detail-notification-type.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +79,10 @@ import { DetailEmailTemplateComponent } from './pages/detail-email-template/deta
     CreateEmailTemplateComponent,
     EditEmailTemplateComponent,
     DetailEmailTemplateComponent,
+    NotificationTypeComponent,
+    CreateNotificationTypeComponent,
+    EditNotificationTypeComponent,
+    DetailNotificationTypeComponent,
   ],
   imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],

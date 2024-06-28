@@ -17,6 +17,10 @@ import { EmailTemplateComponent } from './pages/email-template/email-template.co
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 import { DetailEmailTemplateComponent } from './pages/detail-email-template/detail-email-template.component';
+import { NotificationTypeComponent } from './pages/notification-type/notification-type.component';
+import { CreateNotificationTypeComponent } from './pages/create-notification-type/create-notification-type.component';
+import { EditNotificationTypeComponent } from './pages/edit-notification-type/edit-notification-type.component';
+import { DetailNotificationTypeComponent } from './pages/detail-notification-type/detail-notification-type.component';
 export const appRoutes: Route[] = [
 
 
@@ -42,5 +46,9 @@ export const appRoutes: Route[] = [
   { path: 'crear-plantilla', component: CreateEmailTemplateComponent},
   { path: 'editar-plantilla', component: EditEmailTemplateComponent},
   { path: 'ver-plantilla', component: DetailEmailTemplateComponent},
+  { path: 'tipo-notificacion', component: NotificationTypeComponent},
+  { path: 'crear-notificacion', component: CreateNotificationTypeComponent},
+  { path: 'editar-notificacion', component: EditNotificationTypeComponent},
+  { path: 'ver-notificacion', component: DetailNotificationTypeComponent},
 
 ];
