@@ -41,6 +41,7 @@ import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoVie
 import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
 import { CreateTaskComponent } from './pages/create-task/create-task.component';
+import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import { CreateTaskComponent } from './pages/create-task/create-task.component';
     SeeDocumentalTypesComponent,
     SeeTaskDetailsComponent,
     CreateTaskComponent,
+    EditTaskComponent,
   ],
   imports: [
     BrowserModule,

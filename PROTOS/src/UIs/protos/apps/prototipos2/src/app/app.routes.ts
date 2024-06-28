@@ -18,6 +18,7 @@ import { ManageProcessConfigsComponent } from './pages/manage-process-configs/ma
 import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
 import { CreateTaskComponent } from './pages/create-task/create-task.component';
+import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -45,4 +46,5 @@ export const appRoutes: Route[] = [
   { path: 'tipos-documentales', component: SeeDocumentalTypesComponent },
   { path: 'task-details/:id', component: SeeTaskDetailsComponent },
   { path: 'create-task', component: CreateTaskComponent },
+  { path: 'edit-task/:id', component: EditTaskComponent },
 ];
