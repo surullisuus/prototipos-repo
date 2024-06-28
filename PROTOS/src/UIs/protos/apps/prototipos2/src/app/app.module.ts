@@ -31,14 +31,20 @@ import { AssignDocumentComponent } from './pages/assign-document/assign-document
 import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { CloseTaskAnormalComponent } from './pages/close-task-anormal/close-task-anormal.component';
+import { SeeRadicadoComponent } from './pages/see-radicado/see-radicado.component';
+import { ManageProcessConfigsComponent } from './pages/manage-process-configs/manage-process-configs.component';
 import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
 import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
-import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
-import { CreateRequirementComponent } from './pages/create-requirement/create-requirement.component';
 import { EditRequirementComponent } from './pages/edit-requirement/edit-requirement.component';
+import { CreateRequirementComponent } from './pages/create-requirement/create-requirement.component';
+import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
+import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
+import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
+import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { CreateTaskConfigComponent } from './pages/create-task-configs/create-task-config.component';
 
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 
@@ -66,6 +72,8 @@ import { CreateTaskComponent } from './pages/createTask/createTask.component';
     CreatePartComponent,
     ManageTaskComponent,
     CloseTaskAnormalComponent,
+    SeeRadicadoComponent,
+    ManageProcessConfigsComponent,
     ManageProcessDesignComponent,
     GenerateExitDocumentComponent,
     PreliminarViewComponent,
@@ -76,12 +84,21 @@ import { CreateTaskComponent } from './pages/createTask/createTask.component';
     AssingResponsibleTaskComponent,
     AlertsByResponsibleComponent,
     VerRadicadoViewComponent,
+    SeeDocumentalTypesComponent,
+    SeeTaskDetailsComponent,
+    EditTaskComponent,
+    CreateTaskConfigComponent,
     SetStageRequirementsComponent,
     CreateRequirementComponent,
     EditRequirementComponent,
     CreateTaskComponent,
   ],
-  imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    UisModule,
+    RouterModule.forRoot(appRoutes),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
