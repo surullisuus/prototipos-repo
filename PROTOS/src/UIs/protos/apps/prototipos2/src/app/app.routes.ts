@@ -13,6 +13,7 @@ import { AlertsByResponsibleComponent } from './pages/alerts-by-responsible/aler
 import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
 import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
+import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
 
 export const appRoutes: Route[] = [
 
@@ -33,6 +34,7 @@ export const appRoutes: Route[] = [
   { path: 'consultar-tareas',component: TaskByResponsibleComponent},
   { path: 'asignar-responsable-tareas',component: AssingResponsibleTaskComponent},
   { path: 'consultar-alertas',component: AlertsByResponsibleComponent},
+  { path: 'configurar-requerimientos-etapa',component: SetStageRequirementsComponent},
     
 
 

@@ -89,15 +89,11 @@ export class AlertsByResponsibleComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
    subscription!: Subscription;
 
-
   
   ngOnInit(): void {
  
   }
   
- 
- 
-
   onDeleteAlert(){
 
     const dialogData = new DialogData();

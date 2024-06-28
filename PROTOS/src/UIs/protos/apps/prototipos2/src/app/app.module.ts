@@ -36,6 +36,10 @@ import { GenerateExitDocumentComponent } from './pages/generate-exit-document/ge
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
+import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
+import { CreateRequirementComponent } from './pages/create-requirement/create-requirement.component';
+import { EditRequirementComponent } from './pages/edit-requirement/edit-requirement.component';
+
 
 @NgModule({
   declarations: [
@@ -71,6 +75,9 @@ import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoVie
     AssingResponsibleTaskComponent,
     AlertsByResponsibleComponent,
     VerRadicadoViewComponent,
+    SetStageRequirementsComponent,
+    CreateRequirementComponent,
+    EditRequirementComponent
   ],
   imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
