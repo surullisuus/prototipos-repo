@@ -41,6 +41,12 @@ export class AssignRequestComponent
       NoSoli:234
     }
   ];
+
+  data={
+    grupo:"Subdirección 1",
+    proceso: "proceso 1",
+    noSolicitud:234
+  }
   constructor(private dialogService: DialogService){}
 
   

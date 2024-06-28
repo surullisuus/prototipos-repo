@@ -11,7 +11,8 @@ import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-
 import { AssingResponsibleTaskComponent } from './pages/assing-responsible-task/assing-responsible-task.component';
 import { AlertsByResponsibleComponent } from './pages/alerts-by-responsible/alerts-by-responsible.component';
 import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
-import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
+import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
+import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { ProcessStagesComponent } from './pages/process-stages/process-stages.component';
 import { CreateStageProcessComponent } from './pages/create-stage-process/create-stage-process.component';
@@ -25,10 +26,12 @@ import { NotificationTypeComponent } from './pages/notification-type/notificatio
 import { CreateNotificationTypeComponent } from './pages/create-notification-type/create-notification-type.component';
 import { EditNotificationTypeComponent } from './pages/edit-notification-type/edit-notification-type.component';
 import { DetailNotificationTypeComponent } from './pages/detail-notification-type/detail-notification-type.component';
+import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
+import { CreateTaskComponent } from './pages/createTask/createTask.component';
 export const appRoutes: Route[] = [
 
 
-    
+
   { path: '', component: ProcessRequestComponent },
   { path: 'procesos', component: ProcessRequestComponent },
   { path: 'asignar-solicitud', component: AssignRequestComponent },
@@ -57,7 +60,10 @@ export const appRoutes: Route[] = [
   { path: 'consultar-tareas',component: TaskByResponsibleComponent},
   { path: 'asignar-responsable-tareas',component: AssingResponsibleTaskComponent},
   { path: 'consultar-alertas',component: AlertsByResponsibleComponent},
-    
+  { path: 'configurar-requerimientos-etapa',component: SetStageRequirementsComponent},
+  { path: 'crear-tarea',component: CreateTaskComponent},
+
+
 
 
 ];

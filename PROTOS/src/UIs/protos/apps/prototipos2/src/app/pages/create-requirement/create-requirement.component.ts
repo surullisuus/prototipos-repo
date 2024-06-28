@@ -1,32 +1,31 @@
 import { Component, ElementRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { DialogAction } from '../../components/dialog/models/dialog-action';
 import { DialogData } from '../../components/dialog/models/dialog-data';
+import { DialogAction } from '../../components/dialog/models/dialog-action';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
-
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-close-stage',
-  templateUrl: './close-stage.component.html',
-  styleUrl: './close-stage.component.css',
+  selector: 'app-create-requirement',
+  templateUrl: './create-requirement.component.html',
+  styleUrls: ['./create-requirement.component.css'],
 })
-export class CloseStageComponent {
-
-  
+export class CreateRequirementComponent {
+   
 
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   @ViewChild('openbuttonclose') openbuttonclose!: ElementRef;
+
 
   constructor(private dialogService: DialogService) {  }
 
 
   subscription!: Subscription;
 
-
+  
   showSuccessAlert() {
     const dialogData = new DialogData();
-    dialogData.title = "La etapa fue cerrada de forma anormal con éxito";
+    dialogData.title = "El requisito fue creado con éxito";
     dialogData.type = DialogType.success;
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
@@ -38,7 +37,6 @@ export class CloseStageComponent {
           location.reload();
       });
   }
-   
-  onCloseModal(){}
 
+  onCloseModal(){}
 }
