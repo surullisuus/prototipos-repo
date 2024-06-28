@@ -30,11 +30,14 @@ import { ManageProcessDesignComponent } from './pages/manage-process-design/mana
 import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
-import { DetailEmailTemplateComponent } from './pages/detail-email-template/detail-email-template.component';
 import { ProcessStagesComponent } from './pages/process-stages/process-stages.component';
 import { CreateStageProcessComponent } from './pages/create-stage-process/create-stage-process.component';
 import { EditStageProcessComponent } from './pages/edit-stage-process/edit-stage-process.component';
 import { DetailStageProcessComponent } from './pages/detail-stage-process/detail-stage-process.component';
+import { EmailTemplateComponent } from './pages/email-template/email-template.component';
+import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
+import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
+import { DetailEmailTemplateComponent } from './pages/detail-email-template/detail-email-template.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,11 +67,14 @@ import { DetailStageProcessComponent } from './pages/detail-stage-process/detail
     PreliminarViewComponent,
     AssociateEntryDocComponent,
     EditPartComponent,
-    DetailEmailTemplateComponent,
     ProcessStagesComponent,
     CreateStageProcessComponent,
     EditStageProcessComponent,
     DetailStageProcessComponent,
+    EmailTemplateComponent,
+    CreateEmailTemplateComponent,
+    EditEmailTemplateComponent,
+    DetailEmailTemplateComponent,
   ],
   imports: [BrowserModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],

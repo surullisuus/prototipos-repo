@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, ViewContainerRef, Inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewContainerRef} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { DialogService } from '../../components/dialog/services/dialog.service';
@@ -49,12 +49,14 @@ processStages: ProcessStage[] = [
     const dialogData = new DialogData();
     dialogData.title = "¿Está seguro de eliminar esta etapa?";
     dialogData.textButtonCancel = "Cerrar";
+    dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
-
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
+          dialogAction.eventClose.emit();
+          this.onAcceptedModal(); 
           // Aquí puedes agregar el setTimeout si es necesario
         } else {
           dialogAction.eventClose.emit();
@@ -62,5 +64,18 @@ processStages: ProcessStage[] = [
       });
   }
 
+  onAcceptedModal(){
+    const dialogData = new DialogData();
+    dialogData.title = "Etapa eliminada de forma exitosa";
+    dialogData.buttonConfirm = false;
+    dialogData.textButtonCancel = 'Cerrar';
+    dialogData.type = DialogType.success;
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((DialogAction: DialogAction) => {
+          DialogAction.eventClose.emit()
+          location.reload();
+      })
+  }
   onCloseModal() {}
 }

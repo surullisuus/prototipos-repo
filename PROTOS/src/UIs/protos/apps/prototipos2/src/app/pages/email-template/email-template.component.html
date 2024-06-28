@@ -1,0 +1,102 @@
+<h3 class="h3-tipografia-govco">
+    <span class="govcolor-marine">Plantillas de correo electr&oacute;nico registradas</span>
+</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <div class="col-md-4">
+                <subsidios-input
+                [control]="$any(fromQueryScheme.get('keyword'))"
+                type="text"
+                label="ID"
+                placeholder="Ej. 234"
+                [showStatus]="false"
+                [maxLength]="20"
+                [minLength]="1"
+                typeValidation="numeric"
+                note="Ingrese un ID"
+              ></subsidios-input>
+        </div>
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Proceso" note="Seleccione el proceso" idList="type-345676" type="basic"
+            [disabled]="false"></subsidios-dropdown-list>
+        </div>
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Tema" note="Seleccione un tema" idList="type-345676" type="basic"
+            [disabled]="false"></subsidios-dropdown-list>
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+              Buscar
+            </button>
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+              Limpiar
+            </button>
+            <button type="button" 
+            class="btn-govco outline-secundary-btn-govco" 
+            style="width: 165px; height: 42px;"
+            [routerLink]="['/crear-plantilla']">
+              Crear plantilla
+            </button>
+          </div>
+    </div>
+    <h4 class="h4-tipografia-govco mt-3 mb-2">
+        <span class="govcolor-marine">
+        Resultado de consulta
+        </span>
+    </h4>
+    <div class="table-responsive">
+        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th role="button">ID</th>
+                    <th role="button">Proceso</th>
+                    <th role="button">Tema</th>
+                    <th role="button">Nombre</th>
+                    <th style="text-align: center !important;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="contenido-tablas">
+                <tr *ngFor="let item of templatesRequests">
+                    <td class="text-left">{{ item.id }}</td>
+                    <td class="text-left">{{ item.nombreProceso }}</td>
+                    <td class="text-left">{{ item.tema }}</td>
+                    <td class="text-left">{{ item.nombrePlantilla }}</td>
+                    <td style="text-align: left !important; padding-right: 10px">
+                        <!-- Acciones-->
+                         <!--ver detalles-->
+                         <a type="button"  
+                         [routerLink]="['/ver-plantilla']" 
+                         class="me-1" 
+                         href="#" 
+                         tabindex="0"
+                         >
+                        Ver Detalles 
+                        </a>
+
+                        <!--editar-->
+                        <a type="button"  
+                        [routerLink]="['/editar-plantilla']" 
+                        class="me-1" 
+                        href="#" 
+                        tabindex="0"
+                        >
+                        Editar 
+                        </a>                
+                                     
+                        <!--eliminar modal-->
+                        <a type="button" 
+                        class="me-1" 
+                        tabindex="0" 
+                        (click)="AcceptModal()"
+                        >
+                        Eliminar
+                      </a>
+                    </td>
+                  </tr>
+            </tbody>
+        </table>   
+    </div>
+</div>
+<div #dialog></div>

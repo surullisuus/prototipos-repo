@@ -3,36 +3,60 @@
 </h3>
 <div class="rounded-3 mb-5 mt-3">
     <div class="row">
-        <p><span class="label-desplegable-govco">ID*:</span></p>
-        <p><b><span class="label-desplegable-govco">123</span></b></p>
-    </div>
-    <div class="row">
+        <div class="col-md-4">
+            <p><span class="label-desplegable-govco">ID*:</span></p>
+            <p><b><span class="label-desplegable-govco">123</span></b></p>
+        </div>
         <div class="col-md-4">
             <p><span class="label-desplegable-govco">Proceso:</span></p>
             <p><b><span class="label-desplegable-govco">Proceso 1</span></b></p>
         </div>
         <div class="col-md-4">
-            <span class="label-desplegable-govco">Tema:</span>
+            <p><span class="label-desplegable-govco">Tema:</span></p>
             <p><b><span class="label-desplegable-govco">Tema 1</span></b></p>
-    </div>      
+        </div>
+    </div>    
     <div class="row">
-        <span class="label-desplegable-govco">Nombre*:</span>
-        <b><span class="text-left">ABC.............................</span></b>
-        <span class="label-desplegable-govco">Descripci&oacute;n*: </span>
-        <b><span class="text-left">ABC.............................</span></b>
+        <div class="col-md-6">
+            <p><span class="label-desplegable-govco">Nombre*:</span></p>
+            <p><b><span class="text-left">ABC.............................</span></b></p>
+        </div>
+        <div class="col-md-6">
+            <p><span class="label-desplegable-govco">Descripci&oacute;n*: </span></p>
+            <p><b><span class="text-left">ABC.............................</span></b></p>
+        </div>
     </div>
     <div class="row">
-        <span class="label-desplegable-govco">Desde*:</span>
-        <b><span class="text-left">nombreusuariodominio.texto</span></b>
-        <span class="label-desplegable-govco">Destinatario:</span>
-        <b><span class="text-left">nombreusuariodominio.texto</span></b>
-        <span class="label-desplegable-govco">Cc:</span>
-        <b><span class="text-left">nombreusuariodominio.texto</span></b>
+        <div class="col-md-4">
+            <p><span class="label-desplegable-govco">Desde*:</span></p>
+            <p><b><span class="text-left">nombreusuario&#64;dominio.texto</span></b></p>
+        </div>
+        <div class="col-md-4">
+            <p><span class="label-desplegable-govco">Destinatario:</span></p>
+            <p><b><span class="text-left">nombreusuario&#64;dominio.texto</span></b></p>
+        </div>
+        <div class="col-md-4">
+            <p><span class="label-desplegable-govco">Cc:</span></p>
+            <p><b><span class="text-left">nombreusuario&#64;dominio.texto</span></b></p>
+        </div>
     </div>
     <div class="row">
-        <span class="label-desplegable-govco">Asunto*:</span>
-        <b><span class="text-left">ABC.............................</span></b>
-        <span class="label-desplegable-govco">Cuerpo del correo*: </span>
-        <b><span class="text-left">ABC.............................</span></b>  
+        <div class="col-md-6">
+            <p><span class="label-desplegable-govco">Asunto*:</span></p>
+            <b><span class="text-left">ABC.............................</span></b>
+        </div>
+        <div class="col-md-6">
+            <p><span class="label-desplegable-govco">Cuerpo del correo*: </span></p>
+            <b><span class="text-left">ABC.............................</span></b> 
+        </div> 
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" 
+            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+            [routerLink]="['/plantilla-correo']">
+                Cerrar
+               </button>   
+        </div>    
     </div>
 </div>
