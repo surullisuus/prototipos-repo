@@ -3,7 +3,7 @@
 <span class="label-desplegable-govco">
   Se&ntilde;or usuario, a continuaci&oacute;n puede consultar una o varias Solicitudes.
 </span>
-<div class="rounded-3 mb-5 mt-3">
+<div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryScheme">
 
 
   <div class="row">
@@ -32,7 +32,7 @@
     <div class="col-md-4">
       <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
         <label for="calendario-govco" class="label-desplegable-govco">Fecha de creación</label>
-        <div class="date desplegable-selected-option " style="height: 40px; width: auto;">
+        <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
           <input #fechaInicioInput class="browser-default" type="text" formControlName="date" placeholder="dd/mm/aaaa"
             id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off" days="true">
         </div>
@@ -51,7 +51,7 @@
     <div class="col-md-4">
       <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
         <label for="calendario-govco" class="label-desplegable-govco">Fecha Fin</label>
-        <div class="date desplegable-selected-option " style="height: 40px; width: auto;">
+        <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
           <input #fechaInicioInput class="browser-default" type="text" formControlName="date" placeholder="dd/mm/aaaa"
             id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off" days="true">
         </div>

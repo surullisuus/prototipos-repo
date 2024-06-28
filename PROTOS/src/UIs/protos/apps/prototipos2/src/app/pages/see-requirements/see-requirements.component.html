@@ -1,4 +1,6 @@
-<div class="modal fade" id="verRequisitos" tabindex="-1" aria-labelledby="verRequisitosLabel" aria-hidden="true">
+<!-- see-requirements.component.html -->
+<div class="modal fade" id="verRequisitos" tabindex="-1" aria-labelledby="verRequisitosLabel" 
+aria-hidden="true" #verRequisitos>
   <form>
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
@@ -18,19 +20,19 @@
           <div class="form-check">
             <div class="checkbox-seleccion-govco m-2">
               <input id="opt1" type="checkbox"/>
-              <label for="opt1">Checkbox 1</label>
+              <label for="opt1">Requisito 1 - Identificaci&oacute;n del inmueble.</label>
             </div>
             <div class="checkbox-seleccion-govco m-2">
-              <input id="opt2" type="checkbox" checked/>
-              <label for="opt2">Checkbox 2</label>
+              <input id="opt2" type="checkbox" disabled="true" checked/>
+              <label for="opt2">Requisito 2 - Esquema de localizaci&oacute;n del inmueble.</label>
             </div>
             <div class="checkbox-seleccion-govco m-2">
               <input id="opt3" type="checkbox"/>
-              <label for="opt3">Checkbox 3</label>
+              <label for="opt3">Requisito 3 - Informaci&oacute;n catastral del inmueble.</label>
             </div>
             <div class="checkbox-seleccion-govco m-2">
-              <input id="opt4" type="checkbox" checked/>
-              <label for="opt4">Checkbox 4</label>
+              <input id="opt4" type="checkbox"  [disabled]="true" checked/>
+              <label for="opt4">Requisito 4 - Informaci&oacute;n del aval&uacute;o del inmueble.</label>
             </div>
           </div>
         </div>
@@ -45,6 +47,7 @@
       </div>
     </div>
   </form>
-</div>
-<!-- Aquí estará el dialog, que debe estar bien posicionado en el DOM -->
+  
 <div #dialog></div>
+</div>
+

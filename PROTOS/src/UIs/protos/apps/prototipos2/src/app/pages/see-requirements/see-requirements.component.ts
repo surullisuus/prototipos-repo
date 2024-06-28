@@ -13,10 +13,13 @@ import { ActionType } from '../../components/dialog/models/action-type.enum';
 })
 export class SeeRequirementsComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
+  @ViewChild('verRequisitos') verRequisitos!: ElementRef;
 
   subscription!: Subscription;
 
   constructor(private dialogService: DialogService) {}
+
+  
 
   AcceptModal() {
     const dialogData = new DialogData();
@@ -28,7 +31,10 @@ export class SeeRequirementsComponent {
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
-          // Aquí puedes agregar el setTimeout si es necesario
+         /*aquí cuando esté el servicio se debe guardar y actualizar la
+          informacion en la pantalla principal*/
+          dialogAction.eventClose.emit()
+          location.reload();
         } else {
           dialogAction.eventClose.emit();
         }

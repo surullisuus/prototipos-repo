@@ -29,14 +29,36 @@ export class CreatePartComponent {
   
   ngOnInit(): void {
   this.formQueryScheme = this.initForm();
-  }
+  this.formQueryScheme.get('aceptaTratamiento')?.valueChanges.subscribe((value) => {
+    if (value) {
+      this.enableFileUpload();
+    } else {
+      this.disableFileUpload();
+    }
+  });
+}
+
+enableFileUpload() {
+  this.formQueryScheme.get('fileUpload')?.enable();
+}
+
+disableFileUpload() {
+  this.formQueryScheme.get('fileUpload')?.disable();
+}
+
 
   initForm(): FormGroup {
     return this.fb.group({
-      keyword: [""],
-      status: [null],
-      date: [null],
-    });
+      razon: [""],
+      tipoId: [null],
+      id: [null],
+      direccion: [null],
+      telefono: [""],
+      correo: [""],
+      aceptaTratamiento:[false],
+      fileUpload: [{ value: '', disabled: true }]
+       });
+    
   }
 
   onSaveModal(){
