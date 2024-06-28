@@ -40,6 +40,7 @@ import { SetStageRequirementsComponent } from './pages/set-stage-requirements/se
 import { CreateRequirementComponent } from './pages/create-requirement/create-requirement.component';
 import { EditRequirementComponent } from './pages/edit-requirement/edit-requirement.component';
 
+import { CreateTaskComponent } from './pages/createTask/createTask.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { EditRequirementComponent } from './pages/edit-requirement/edit-requirem
     VerRadicadoViewComponent,
     SetStageRequirementsComponent,
     CreateRequirementComponent,
-    EditRequirementComponent
+    EditRequirementComponent,
+    CreateTaskComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
