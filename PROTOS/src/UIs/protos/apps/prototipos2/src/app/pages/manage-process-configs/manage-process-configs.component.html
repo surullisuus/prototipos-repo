@@ -13,14 +13,21 @@
         <div class="col-md-4">
 
             <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676" type="basic"
-                [disabled]="false">
+                [disabled]="false" [lista]="processOptions()" (eventlist)="setSelectedProcess($event)">
             </subsidios-dropdown-list>
         </div>
 
         <!--Etapa-->
         <div class="col-md-4">
             <subsidios-dropdown-list labelText="Etapa" note="Seleccione una opción" idList="type-345676" type="basic"
-                [disabled]="false">
+                [disabled]="false" [lista]="phaseOptions()" (eventlist)="setSelectedPhase($event)">
+            </subsidios-dropdown-list>
+        </div>
+
+        <!--Tarea-->
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Tarea" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false" [lista]="taskOptions()" (eventlist)="setSelectedTask($event)">
             </subsidios-dropdown-list>
         </div>
 
@@ -34,12 +41,14 @@
                 Buscar
             </button>
 
-            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+                (click)="clearFilters()">
                 Limpiar
             </button>
 
-            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom">
-                Crear etapa
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
+                routerLink="/create-task">
+                Crear tarea
             </button>
         </div>
     </div>
@@ -67,6 +76,7 @@
                 <tr>
                     <th class="columna-especial" role="button">Proceso</th>
                     <th role="button">Etapa</th>
+                    <th role="button" style="text-align: center !important;">Tarea</th>
                     <th style="text-align: center !important;">Acciones</th>
                 </tr>
             </thead>
@@ -75,12 +85,14 @@
                 <tr *ngFor="let phase of processPhases">
                     <td class="text-left">{{ phase.processName }}</td>
                     <td class="text-left">{{ phase.phase }}</td>
+                    <td class="text-center">{{ phase.task }}</td>
 
 
                     <td style="text-align: center !important; padding-right: 10px;">
 
 
-                        <a type="button" class="me-0" href="#" tabindex="0">Ver detalle</a>
+                        <a type="button" class="me-0" href="#" tabindex="0"
+                            [routerLink]="['/task-details', phase.id]">Ver detalle</a>
                         <span>&nbsp;/&nbsp;</span>
 
 
@@ -92,16 +104,7 @@
                         <a type="button" class="ms-2 me-2" href="#" tabindex="0">
                             Eliminar
                         </a>
-                        <span>&nbsp;/&nbsp;</span>
 
-                        <a type="button" class="ms-2 me-2" href="#" tabindex="0">
-                            Gestionar requisitos
-                        </a>
-                        <span>&nbsp;/&nbsp;</span>
-
-                        <a type="button" class="ms-2 me-2" href="#" tabindex="0">
-                            Ordenar tareas
-                        </a>
 
 
 
@@ -109,21 +112,7 @@
                 </tr>
             </tbody>
 
-            <!--<tbody >
-          <tr>
-            <td colspan="7">
-              No se encuentra información con los criterios de búsqueda seleccionados
-            </td>
-          </tr>
-        </tbody>-->
 
-            <!--  <tbody >
-          <tr>
-            <td colspan="7">
-              <entidades-loading-modal></entidades-loading-modal>
-            </td>
-          </tr>
-        </tbody>-->
         </table>
         <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
     </div>

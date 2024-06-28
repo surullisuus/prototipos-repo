@@ -39,6 +39,8 @@ import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
 import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
+import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
+import { CreateTaskComponent } from './pages/create-task/create-task.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-do
     AlertsByResponsibleComponent,
     VerRadicadoViewComponent,
     SeeDocumentalTypesComponent,
+    SeeTaskDetailsComponent,
+    CreateTaskComponent,
   ],
   imports: [
     BrowserModule,

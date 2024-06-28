@@ -16,6 +16,8 @@ import { ManageProcessDesignComponent } from './pages/manage-process-design/mana
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { ManageProcessConfigsComponent } from './pages/manage-process-configs/manage-process-configs.component';
 import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
+import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
+import { CreateTaskComponent } from './pages/create-task/create-task.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -41,4 +43,6 @@ export const appRoutes: Route[] = [
   },
   { path: 'consultar-alertas', component: AlertsByResponsibleComponent },
   { path: 'tipos-documentales', component: SeeDocumentalTypesComponent },
+  { path: 'task-details/:id', component: SeeTaskDetailsComponent },
+  { path: 'create-task', component: CreateTaskComponent },
 ];
