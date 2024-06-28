@@ -40,8 +40,8 @@ import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associat
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
 import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
-import { CreateTaskComponent } from './pages/create-task/create-task.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { CreateTaskConfigComponent } from './pages/create-task-configs/create-task-config.component';
 
 @NgModule({
   declarations: [
@@ -81,8 +81,8 @@ import { EditTaskComponent } from './pages/edit-task/edit-task.component';
     VerRadicadoViewComponent,
     SeeDocumentalTypesComponent,
     SeeTaskDetailsComponent,
-    CreateTaskComponent,
     EditTaskComponent,
+    CreateTaskConfigComponent,
   ],
   imports: [
     BrowserModule,
