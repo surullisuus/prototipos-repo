@@ -42,6 +42,7 @@ import { EditRequirementComponent } from './pages/edit-requirement/edit-requirem
 
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
+import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/conf
     EditRequirementComponent,
     CreateTaskComponent,
     ConfigureFlowStagesComponent,
+    ConfigureFlowTasksComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],

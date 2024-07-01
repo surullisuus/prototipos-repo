@@ -16,6 +16,7 @@ import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
 import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
+import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -36,4 +37,5 @@ export const appRoutes: Route[] = [
   { path: 'configurar-requerimientos-etapa',component: SetStageRequirementsComponent},
   { path: 'crear-tarea',component: CreateTaskComponent},
   { path: 'configurar-flujo-etapas',component: ConfigureFlowStagesComponent},
+  { path: 'configurar-flujo-tareas',component: ConfigureFlowTasksComponent},
 ];
