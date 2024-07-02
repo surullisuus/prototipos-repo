@@ -1,0 +1,97 @@
+<h3 class="h3-tipografia-govco">
+    <span class="govcolor-marine">Editar tipo de notificaci&oacute;n para tipo documental de un proceso</span>
+</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <p><span class="label-desplegable-govco">Proceso:</span></p>
+            <p><b><span class="text-left">Proceso 1</span></b></p> 
+        </div>
+        <div class="col-md-4">
+            <p><span class="label-desplegable-govco">Tipo documental:</span></p>
+            <p><b><span class="text-left">Tipo documental 1</span></b></p>
+        </div>
+        <div class="col-md-4">
+            <p><span class="label-desplegable-govco">Tipo notificacion:</span></p>
+            <p><b><span class="text-left">Tipo notificacion 1</span></b></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <label for="lista-desplegables" class="label-desplegable-govco">
+                T&eacute;rmino Notificaci&oacute;n(En dias)*:<span aria-required="true"></span
+              ></label>
+              <div class="form-group pt-0 entradas-de-texto-govco">
+                <div class="container-input-texto-govco">
+                  <ng-container>
+                    <input
+                      value="12"
+                      type="text"
+                      placeholder="Ej. 12"
+                    />
+                  </ng-container>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-8">
+            <p><span>Días:</span></p>
+            <div class="d-flex align-items-center">
+                <div class="radio-seleccion-govco ms-4 mt-6">
+                    <input type="radio" id="radio11" name="radioButton1" value="0">
+                    <label for="radio11">Hábiles</label>
+                </div>
+                <div class="radio-seleccion-govco ms-4 mt-6">
+                    <input type="radio" id="radio12" name="radioButton1" value="1" checked>
+                    <label for="radio12">Calendario</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p><span>¿Procede el recurso?</span></p>
+            <div class="d-flex align-items-center">
+                <div class="radio-seleccion-govco ms-2">
+                    <input type="radio" id="radio13" name="radioButton2" value="2" checked>
+                    <label for="radio13">Sí</label>
+                </div>
+                <div class="radio-seleccion-govco ms-2">
+                    <input type="radio" id="radio14" name="radioButton2" value="3">
+                    <label for="radio14">No</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="entradas-de-texto-govco">   
+                <label for="input-cc">Término recurso(En dias)*:</label>
+                <input type="text" id="input-tr" placeholder="3" value="3"/>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <p><span>Días:</span></p>
+            <div class="d-flex align-items-center">
+                <div class="radio-seleccion-govco ms-4 mt-6">
+                    <input type="radio" id="radio11" name="radioButton3" value="0">
+                    <label for="radio11">Hábiles</label>
+                </div>
+                <div class="radio-seleccion-govco ms-4 mt-6">
+                    <input type="radio" id="radio12" name="radioButton3" value="1" checked>
+                    <label for="radio12">Calendario</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1" (click)="SaveModal()">
+                Guardar
+               </button>   
+               <button type="button" 
+               class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+               [routerLink]="['/tipo-notificacion']">
+                 Cancelar
+               </button>
+        </div>    
+    </div>
+</div>
+<div #dialog></div>

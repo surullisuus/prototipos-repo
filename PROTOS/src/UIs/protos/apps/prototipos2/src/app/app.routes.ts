@@ -12,8 +12,21 @@ import { AssingResponsibleTaskComponent } from './pages/assing-responsible-task/
 import { AlertsByResponsibleComponent } from './pages/alerts-by-responsible/alerts-by-responsible.component';
 import { AssignDocumentComponent } from './pages/assign-document/assign-document.component';
 import { DocumentObservationsComponent } from './pages/document-observations/document-observations.component';
+
 import { ManageProcessDesignComponent } from './pages/manage-process-design/manage-process-design.component';
 import { ManageTaskComponent } from './pages/manage-task/manage-task.component';
+import { ProcessStagesComponent } from './pages/process-stages/process-stages.component';
+import { CreateStageProcessComponent } from './pages/create-stage-process/create-stage-process.component';
+import { EditStageProcessComponent } from './pages/edit-stage-process/edit-stage-process.component';
+import { DetailStageProcessComponent } from './pages/detail-stage-process/detail-stage-process.component';
+import { EmailTemplateComponent } from './pages/email-template/email-template.component';
+import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
+import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
+import { DetailEmailTemplateComponent } from './pages/detail-email-template/detail-email-template.component';
+import { NotificationTypeComponent } from './pages/notification-type/notification-type.component';
+import { CreateNotificationTypeComponent } from './pages/create-notification-type/create-notification-type.component';
+import { EditNotificationTypeComponent } from './pages/edit-notification-type/edit-notification-type.component';
+import { DetailNotificationTypeComponent } from './pages/detail-notification-type/detail-notification-type.component';
 import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
@@ -40,12 +53,21 @@ export const appRoutes: Route[] = [
     path: 'configuracionEtapasProceso',
     component: ManageProcessConfigsComponent,
   },
+  { path: 'etapas-proceso', component: ProcessStagesComponent},
+  { path: 'crear-etapa', component: CreateStageProcessComponent},
+  { path: 'editar-etapa', component: EditStageProcessComponent},
+  { path: 'ver-etapa', component: DetailStageProcessComponent},
+  { path: 'plantilla-correo', component: EmailTemplateComponent},
+  { path: 'crear-plantilla', component: CreateEmailTemplateComponent},
+  { path: 'editar-plantilla', component: EditEmailTemplateComponent},
+  { path: 'ver-plantilla', component: DetailEmailTemplateComponent},
+  { path: 'tipo-notificacion', component: NotificationTypeComponent},
+  { path: 'crear-notificacion', component: CreateNotificationTypeComponent},
+  { path: 'editar-notificacion', component: EditNotificationTypeComponent},
+  { path: 'ver-notificacion', component: DetailNotificationTypeComponent},
   { path: 'detalles-parte', component: DetailPartComponent },
   { path: 'consultar-tareas', component: TaskByResponsibleComponent },
-  {
-    path: 'asignar-responsable-tareas',
-    component: AssingResponsibleTaskComponent,
-  },
+  { path: 'asignar-responsable-tareas',component: AssingResponsibleTaskComponent,},
   { path: 'consultar-alertas', component: AlertsByResponsibleComponent },
   { path: 'tipos-documentales', component: SeeDocumentalTypesComponent },
   { path: 'task-details/:id', component: SeeTaskDetailsComponent },
@@ -53,15 +75,9 @@ export const appRoutes: Route[] = [
   { path: 'edit-task/:id', component: EditTaskComponent },
   { path: 'detalles-parte', component: DetailPartComponent },
   { path: 'consultar-tareas', component: TaskByResponsibleComponent },
-  {
-    path: 'asignar-responsable-tareas',
-    component: AssingResponsibleTaskComponent,
-  },
+  { path: 'asignar-responsable-tareas',component: AssingResponsibleTaskComponent, },
   { path: 'consultar-alertas', component: AlertsByResponsibleComponent },
-  {
-    path: 'configurar-requerimientos-etapa',
-    component: SetStageRequirementsComponent,
-  },
+  { path: 'configurar-requerimientos-etapa',component: SetStageRequirementsComponent, },
   { path: 'crear-tarea', component: CreateTaskComponent },
   { path: 'configurar-flujo-etapas',component: ConfigureFlowStagesComponent},
   { path: 'configurar-flujo-tareas',component: ConfigureFlowTasksComponent},

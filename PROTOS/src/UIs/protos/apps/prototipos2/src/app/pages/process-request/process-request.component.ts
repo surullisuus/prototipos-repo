@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 interface ProcessRequest {
-  nombreProceso: string;
+    nombreProceso: string;
   numeroSolicitud: number;
   fechaCreacion: Date;
   fechaFin: Date;
