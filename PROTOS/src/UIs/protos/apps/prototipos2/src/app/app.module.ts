@@ -42,6 +42,11 @@ import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-do
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { CreateTaskConfigComponent } from './pages/create-task-configs/create-task-config.component';
+import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
+import { CreateRequirementComponent } from './pages/create-requirement/create-requirement.component';
+import { EditRequirementComponent } from './pages/edit-requirement/edit-requirement.component';
+import { CreateTaskComponent } from './pages/createTask/createTask.component';
+import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +88,11 @@ import { CreateTaskConfigComponent } from './pages/create-task-configs/create-ta
     SeeTaskDetailsComponent,
     EditTaskComponent,
     CreateTaskConfigComponent,
+    SetStageRequirementsComponent,
+    CreateRequirementComponent,
+    EditRequirementComponent,
+    CreateTaskComponent,
+    ConfigureFlowStagesComponent,
   ],
   imports: [
     BrowserModule,

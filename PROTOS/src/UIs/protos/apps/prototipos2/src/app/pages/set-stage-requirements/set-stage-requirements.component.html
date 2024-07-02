@@ -1,0 +1,149 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CONFIGURAR REQUISITOS ETAPA</span></h3>
+<div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryScheme">
+
+
+  <div class="row">
+
+    <!--Proceso-->
+    <div class="col-md-4">
+        <subsidios-input
+        [control]="$any(formQueryScheme.get('keyword'))"
+        type="text"
+        label="Proceso"
+        placeholder="Ej. 234"
+        [showStatus]="false"
+        [maxLength]="100"
+        [minLength]="1"
+        typeValidation="alphanumeric"
+        note="Ingrese un proceso"
+      ></subsidios-input>
+    </div>
+    <!--Etapa-->
+    <div class="col-md-4">
+      <subsidios-input
+      [control]="$any(formQueryScheme.get('keyword'))"
+      type="text"
+      label="Etapa"
+      placeholder="Ej. 234"
+      [showStatus]="false"
+      [maxLength]="100"
+      [minLength]="1"
+      typeValidation="alphanumeric"
+      note="Ingrese una palabra"
+    ></subsidios-input>
+    </div>
+    <!--Requisitos-->
+
+    <div class="col-md-4">
+        <subsidios-input
+        [control]="$any(formQueryScheme.get('keyword'))"
+        type="text"
+        label="Requisito"
+        placeholder="Ej. 234"
+        [showStatus]="false"
+        [maxLength]="500"
+        [minLength]="1"
+        typeValidation="alphanumeric"
+        note="Ingrese una etapa"
+      ></subsidios-input>
+      </div>
+
+    </div>
+
+  <div class="row mt-4 mb-3 text-left">
+    <div class="col-md-12">
+      <a class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#crearEsquemaModal" href="#"
+        #openbuttoncreate></a>
+      <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+        Buscar
+      </button>
+
+      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+        Limpiar
+      </button>
+      <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbutton
+      data-bs-target="#crearRequisito" href="#"></a>
+      <button
+      type="button"
+      class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+      (click)="onCreateRequirementModal()"
+    >
+      Crear&nbsp;requisito
+    </button>
+    </div>
+  </div>
+
+  <!--Tabla-->
+
+  <div class="row">
+    <div class="col-md-10">
+      <h4 class="h4-tipografia-govco mt-3 mb-2">
+        <span class="govcolor-marine">
+          Resultado de consulta
+        </span>
+      </h4>
+    </div>
+    <div class="col-md-2">
+      <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+        Total registros: {{ 3 }}
+      </p>
+    </div>
+  </div>
+
+  <div class="table-responsive" style="padding-top: 3%;" >
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+      <thead class="encabezado-tabla">
+        <tr>
+          <th class="columna-especial" role="button">Requisito</th>
+       
+          <th style="text-align: center !important;">Acciones</th>
+        </tr>
+      </thead>
+
+      <tbody class="contenido-tablas">
+        <tr *ngFor="let item of processRequests">
+          <td class="text-left">{{ item.nombreProceso }}</td>
+        
+         
+          <td style="text-align: center !important; padding-right: 10px;">
+
+
+            <!-- Acciones-->
+            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonEdit
+              data-bs-target="#editarRequisito" ></a>
+            <a  type="button"  (click)="onEditRequirementModal()" class="me-0"  tabindex="0">Editar /</a>
+
+            <!--eliminaaaar modal-->
+
+            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttondelete data-bs-target="#modalDelete"
+              href="#"></a>
+            <a type="button" class="me-0" (click)="onDeleteModal()" tabindex="0">Eliminar
+            </a>
+
+          </td>
+        </tr>
+      </tbody>
+
+      <!--<tbody >
+      <tr>
+        <td colspan="7">
+          No se encuentra información con los criterios de búsqueda seleccionados
+        </td>
+      </tr>
+    </tbody>-->
+
+      <!--  <tbody >
+      <tr>
+        <td colspan="7">
+          <entidades-loading-modal></entidades-loading-modal>
+        </td>
+      </tr>
+    </tbody>-->
+    </table>
+    <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+  </div>
+
+<app-create-requirement></app-create-requirement>
+<app-edit-requirement></app-edit-requirement>
+<div #dialog></div>
+</div>
