@@ -48,6 +48,11 @@ import { CreateNotificationTypeComponent } from './pages/create-notification-typ
 import { EditNotificationTypeComponent } from './pages/edit-notification-type/edit-notification-type.component';
 import { DetailNotificationTypeComponent } from './pages/detail-notification-type/detail-notification-type.component';
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
+import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
+import { CreateRequirementComponent } from './pages/create-requirement/create-requirement.component';
+import { EditRequirementComponent } from './pages/edit-requirement/edit-requirement.component';
+
+import { CreateTaskComponent } from './pages/createTask/createTask.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +100,10 @@ import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoVie
     AssingResponsibleTaskComponent,
     AlertsByResponsibleComponent,
     VerRadicadoViewComponent,
+    SetStageRequirementsComponent,
+    CreateRequirementComponent,
+    EditRequirementComponent,
+    CreateTaskComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule,UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],

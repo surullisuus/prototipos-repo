@@ -3,8 +3,14 @@
   <div class="row">
     <!--tipo id-->
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Tipo identificación*:" note="Seleccione un tipo." idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+      <subsidios-dropdown-list
+       labelText="Tipo identificación*:" 
+       [lista]="typesList"
+       note="Seleccione un tipo de identificaci&oacute;n" 
+       idList="type-345676" 
+       type="basic"
+       [disabled]="false">
+      </subsidios-dropdown-list>
     </div>
     <!--Numero de id-->
     <div class="col-md-4">
@@ -21,14 +27,23 @@
       ></subsidios-input>
     </div>
     <!--logo de buscar-->
-    <div class="col-md-4">
-      <!-- Puedes agregar contenido aquí si es necesario -->
+    <div class="col-md-4" style="padding-top: 9px;">
+        <button (click)="onSearch()" type="button"  class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-4">
+        Buscar
+      </button>
     </div>
     <!-- Tipo de parte-->
     <div class="col-md-8 mb-4">
-      <subsidios-dropdown-list labelText="Tipo de parte*:" note="Seleccione el tipo de parte" idList="type-345676" type="basic"
-      [disabled]="false"></subsidios-dropdown-list>
-    </div>
+      <label for='tipoParte' class='form-label govcolor-tundora'>Tipo de parte*:</label>
+      <select class='form-select select-dark-border' name='tipoParte' id='tipoParte' formControlName='tipoParte'
+           autocomplete='off'>
+           <option value="5" disabled selected hidden >Escoger</option> 
+<option *ngFor='let row of typesListParts' [value]='row.value'>
+{{ row.text }}
+</option>
+</select>
+<label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione un tipo de parte</label>
+  </div>
     <!-- Razón social -->
     <div class="col-md-12">
       <subsidios-input
@@ -43,16 +58,32 @@
         note="Ingrese su identificación"
       ></subsidios-input>
     </div>
-    <!-- Departamento -->
-    <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Departamento*:" note="Seleccione el departamento" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+     <!-- Departamento -->
+     <div class="col-md-4">
+      <label for='departamento' class='form-label govcolor-tundora'>Departamento*:</label>
+      <select class='form-select select-dark-border' name='departamento' id='departamento' formControlName='departamento' autocomplete='off'>
+        <option value="5" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of typesListDepartment' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione un departamento</label>
     </div>
+    
+
     <!-- Municipio -->
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Municipio*:" note="Seleccione el municipio" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
-    </div>
+      <label for='municipio' class='form-label govcolor-tundora'>Municipio*:</label>
+      <select class='form-select select-dark-border' name='municipio' id='municipio' formControlName='municipio'
+           autocomplete='off'>
+           <option value="5" disabled selected hidden>Escoger</option> 
+<option *ngFor='let row of typesListMunicipal' [value]='row.value'>
+{{ row.text }}
+</option>
+</select>
+<label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione un municipio</label>
+  </div>
+  
     <!-- Dirección -->
     <div class="col-md-4">
       <subsidios-input

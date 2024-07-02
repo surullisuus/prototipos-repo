@@ -54,6 +54,13 @@ export class ManageProcessComponent {
     },
   ];
 
+  data={
+    grupo:"Subdirección 1",
+    proceso: "proceso 1",
+    noSolicitud:234,
+    noProyecto:123
+  }
+
   onPerformanceModal() {
     if (this.openbuttonperformance) {
       this.openbuttonperformance.nativeElement.click();
@@ -84,14 +91,14 @@ export class ManageProcessComponent {
             this.openbutton.nativeElement.click();
           }
 
-          this.isVisible = true;
+      
         } else {
           dialogAction.eventClose.emit();
         }
       });
   }
 
-  showSuccessAlertState(body: string) {
+  showSuccessAlert(body: string) {
     const dialogData = new DialogData();
     dialogData.title = body;
     dialogData.type = DialogType.success;

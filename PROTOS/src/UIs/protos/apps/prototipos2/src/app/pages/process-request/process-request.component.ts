@@ -35,7 +35,7 @@ export class ProcessRequestComponent {
       numeroSolicitud: 103,
       fechaCreacion: new Date('2023-03-01'),
       fechaFin: new Date('2023-03-15'),
-      estado: "3"
+      estado: "1"
     }
   ];
 

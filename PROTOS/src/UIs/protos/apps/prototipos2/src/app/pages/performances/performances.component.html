@@ -105,9 +105,16 @@
         <div class="modal-body">
           <div class="row">
             <div class="mt-3 col-md-12">
-           <a href="#"> 123131090</a><br>
-           <a href="#"> 238729430</a><br>
-           <a href="#"> 347728892</a>
+              
+           <a class="button-modal-enabled-none" data-bs-toggle="modal" #openPreliminar
+              data-bs-target="#verPreliminar" ></a>
+           <a type="button" class="link-tipografia-govco" (click)="onPreliminarDocuments()"> 123131090</a><br>
+         
+         <a type="button" class="link-tipografia-govco" (click)="onPreliminarDocuments()"> 238729430</a><br>
+        
+        <a type="button" class="link-tipografia-govco" (click)="onPreliminarDocuments()"> 347728892</a>
+
+          
             </div>
           </div>
           <div class="row">
@@ -116,6 +123,49 @@
         </div>
         <div class="modal-footer d-flex justify-content-center">
 
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<div #dialog ></div>
+
+
+<!--vista preeliminar documentos-->
+
+
+<div class="modal fade" id="verPreliminar" tabindex="-1" aria-labelledby="#verPreliminar" aria-hidden="true">
+  <form>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class='row'>
+            <h3 class="h3-tipografia-govco mt-3"> 
+              <span class=" govcolor-marine">
+                Vista preliminar
+              </span>
+              </h3>
+            
+          </div>
+          <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close" aria-expanded="false">
+            <span class="modal-close-govco govco-times"></span>
+
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+           
+              <div style="justify-content:center;">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa.
+              Fusce lacinia arcu et nulla. Nulla vitae mauris non felis mollis faucibus. Praesent sed enim vel turpis blandit imperdiet ac ac felis. Donec turpis libero, dapibus nec, pretium sit amet, tempor quis. In neque felis, bibendum a, aliquet vel, viverra sit amet, magna. In vehicula metus eget est volutpat consectetur. Ut dapibus purus sapien, vel aliquam velit scelerisque eget. Curabitur scelerisque vulputate turpis, vitae suscipit orci. Morbi tempus lorem eget orci posuere, eu tempor nulla gravida.
+              Quisque vel lacus lorem. Nam lobortis.
+          </div>
+          </div>
+         
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          
+          <button type="button"  #closeModal  data-bs-dismiss='modal' class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space" (click)="onCloseModal()">Cerrar</button>
         </div>
       </div>
     </div>
