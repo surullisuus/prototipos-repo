@@ -4,24 +4,12 @@
 <div class="rounded-3 mb-5 mt-3">
     <div class="row">
         <div  class="col-md-4">
-            <label for="lista-procesos" class="label-desplegable-govco">Procesos:</label>
-            <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-procesos" data-type="basic">
-              <select aria-invalid="false" aria-describedby="alert-id">
-                <option disabled selected>Escoger</option>
-                <option value="1">Opciones...</option>
-              </select>
-            </div>
-            <span class="alert-desplegable-govco" id="alert-id">Seleccione el proceso</span> 
+            <subsidios-dropdown-list labelText="Procesos" note="Seleccione el proceso" idList="type-345676" type="basic"
+            [disabled]="false"></subsidios-dropdown-list>
         </div>
         <div class="col-md-4">
-            <label for="lista-etapas" class="label-desplegable-govco">Etapas:</label>
-            <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-etapas" data-type="basic">
-              <select aria-invalid="false" aria-describedby="alert-id">
-                <option disabled selected>Escoger</option>
-                <option value="1">Opciones...</option>
-              </select>
-            </div>
-            <span class="alert-desplegable-govco" id="alert-id">Seleccione la etapa</span> 
+          <subsidios-dropdown-list labelText="Etapas" note="Seleccione la etapa" idList="type-345676" type="basic"
+          [disabled]="false"></subsidios-dropdown-list>
         </div>
     </div>
     <div class="row mt-4 mb-3 text-left">
@@ -88,6 +76,16 @@
                             (click)="AcceptModal()"
                             >
                             Eliminar
+                          </a>
+                          <a type="button"
+                          class="me-1"
+                          tabindex="0">
+                          Gestionar requisitos
+                          </a>
+                          <a type="button"
+                          class="me-1"
+                          tabindex="0">
+                          Ordenar tareas
                           </a>
                         </td>
                       </tr>
