@@ -1,4 +1,14 @@
-import { Component, Input, Output, OnInit, EventEmitter, AfterViewInit, SimpleChanges, HostListener, ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  OnInit,
+  EventEmitter,
+  AfterViewInit,
+  SimpleChanges,
+  HostListener,
+  ChangeDetectorRef,
+} from '@angular/core';
 
 @Component({
   selector: 'subsidios-dropdown-list',
@@ -6,7 +16,6 @@ import { Component, Input, Output, OnInit, EventEmitter, AfterViewInit, SimpleCh
   styleUrls: ['./dropdown-list.component.css'],
 })
 export class DropdownListComponent implements OnInit, AfterViewInit {
-  
   @Input() lista!: any[];
   @Input() labelText = '';
   @Input() idList = '';
@@ -21,34 +30,35 @@ export class DropdownListComponent implements OnInit, AfterViewInit {
   @Input() isNotValid = false;
   @Input() isTouched = false;
   @Output() eventlist = new EventEmitter<any>();
-  
-  @HostListener("click")
+
+  @HostListener('click')
   clicked() {
     this.inside = true;
   }
-  
-  @HostListener("document:click")
+
+  @HostListener('document:click')
   clickedOut() {
     if (!this.inside) {
       this.seelist = false;
     }
-    this.inside = false;    
+    this.inside = false;
   }
-  
+
   filter = false;
   basic = false;
   multiple = false;
   seelist: boolean = false;
-  title: string = "Escoger";
+  title: string = 'Escoger';
   inside: boolean = false;
   selectOption: string = 'desplegable-selected-option';
-  selectOptionRequired: string = 'desplegable-selected-option error-desplegable-govco';
+  selectOptionRequired: string =
+    'desplegable-selected-option error-desplegable-govco';
   selectOptionSuccess: string = 'desplegable-selected-option border-success';
 
-  constructor(private cdr: ChangeDetectorRef) { }
+  constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit(): void {        
-    this.getTipo(); 
+  ngOnInit(): void {
+    this.getTipo();
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -65,21 +75,21 @@ export class DropdownListComponent implements OnInit, AfterViewInit {
     if (this.basic) {
       const varAux = 'lista-desplegables' + this.idList;
       let sel = document.getElementById(varAux);
-      sel?.addEventListener("click", (e) => {
+      sel?.addEventListener('click', (e) => {
         this.getVal(e);
       });
     }
     if (this.filter) {
       const varAux = 'lista-filtro-busqueda' + this.idList;
       let sel = document.getElementById(varAux);
-      sel?.addEventListener("click", (e) => {
+      sel?.addEventListener('click', (e) => {
         this.getVal(e);
       });
     }
     if (this.multiple) {
       const varAux = 'lista-check' + this.idList;
       let sel = document.getElementById(varAux);
-      sel?.addEventListener("click", (e) => {
+      sel?.addEventListener('click', (e) => {
         this.getVal(e);
       });
     }
@@ -106,7 +116,7 @@ export class DropdownListComponent implements OnInit, AfterViewInit {
     }
   }
 
-  seeList(): void {    
+  seeList(): void {
     this.isTouched = true;
     this.seelist = !this.seelist;
     this.cdr.detectChanges(); // Forzar la detección de cambios

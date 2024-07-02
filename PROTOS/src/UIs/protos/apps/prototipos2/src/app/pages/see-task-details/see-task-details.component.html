@@ -1,0 +1,124 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine">Ver detalle tarea</span></h3>
+
+<ng-container *ngIf="loading">
+    <div class="spinner-indicador-de-carga-govco" role="status" style="width: 60px; height: 60px; border-width: 8px;">
+        <span class="visually-hidden">Cargando</span>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="!loading">
+
+    <div class="rounded-3 mb-5 mt-5">
+
+        <h5 class="h5-tipografia-govco mt-3"><span class="govcolor-marine">Información básica</span></h5>
+
+        <div class="row mt-5">
+            <!--proceso-->
+            <div class="col-md-4">
+                <p class="text2-tipografia-govco">Proceso*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Nombre proceso</p>
+            </div>
+            <!--Etapa-->
+            <div class="col-md-4">
+                <p class="text2-tipografia-govco">Etapa*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Nombre etapa</p>
+            </div>
+            <!--Tarea-->
+            <div class="col-md-4">
+                <p class="text2-tipografia-govco">Tarea*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Nombre tarea</p>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Descripción-->
+            <div class="col-md-12">
+                <p class="text2-tipografia-govco">Descripción*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Descripción tarea.............</p>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--tiempo en días-->
+            <div class="col-md-6">
+                <p class="text2-tipografia-govco">Tiempo tarea en días*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">12</p>
+            </div>
+            <!--habiles-->
+            <div class="col-md-6">
+                <p class="text2-tipografia-govco">Hábiles/Calendario*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Hábiles</p>
+            </div>
+            <!--tiempo alerta en días-->
+            <div class="col-md-6">
+                <p class="text2-tipografia-govco">Tiempo alerta en días*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">12</p>
+            </div>
+            <!--habiles-->
+            <div class="col-md-6">
+                <p class="text2-tipografia-govco">Hábiles/Calendario*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Hábiles</p>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Descripción-->
+            <div class="col-md-10">
+                <p class="text2-tipografia-govco">Asignación de responsable</p>
+                <p class="text3-tipografia-govco">Seleccione si se asigna el responsable desde el motor de procesos</p>
+            </div>
+            <div class="checkbox-seleccion-govco col-md-2">
+                <input id="opt1" type="checkbox" [disabled]="true" />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Descripción-->
+            <div class="col-md-10">
+                <p class="text2-tipografia-govco">Ejecución de tarea desde el motor</p>
+                <p class="text3-tipografia-govco">Selecciones si la tarea se ejecuta desde el motor de procesos</p>
+            </div>
+            <div class="checkbox-seleccion-govco col-md-2">
+                <input id="opt1" type="checkbox" [disabled]="true" />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Descripción-->
+            <div class="col-md-10">
+                <p class="text2-tipografia-govco">Activar tarea</p>
+                <p class="text3-tipografia-govco">Selecciones si la tarea estará activa en el motor de procesos</p>
+            </div>
+            <div class="checkbox-seleccion-govco col-md-2">
+                <input id="opt1" type="checkbox" [disabled]="true" checked />
+            </div>
+        </div>
+
+
+        <h5 class="h5-tipografia-govco mt-5"><span class="govcolor-marine">Información asociada</span></h5>
+
+        <div class="row mt-3">
+            <!--roles asociados-->
+            <div class="col-md-4">
+                <p class="text2-tipografia-govco">Roles ejecutores*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Rol 1</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Rol 2</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Rol 3</p>
+            </div>
+            <!--Etapa-->
+            <div class="col-md-4">
+                <p class="text2-tipografia-govco">Tipos documentales de salida*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Tipo documental 1</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Tipo documental 2</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Tipo documental 3</p>
+            </div>
+
+        </div>
+    </div>
+
+    <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
+        routerLink="/configuracionEtapasProceso">
+        Cerrar
+    </button>
+</ng-container>
