@@ -1,0 +1,185 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine">Editar tarea</span></h3>
+
+<ng-container *ngIf="loading">
+    <div class="spinner-indicador-de-carga-govco" role="status" style="width: 60px; height: 60px; border-width: 8px;">
+        <span class="visually-hidden">Cargando</span>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!loading">
+    <div class="rounded-3 mb-5 mt-5">
+
+        <h5 class="h5-tipografia-govco mt-3"><span class="govcolor-marine">Información básica</span></h5>
+
+        <div class="row mt-5">
+            <!--proceso-->
+            <div class="col-md-6">
+                <p class="text2-tipografia-govco">Proceso*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Nombre proceso</p>
+            </div>
+            <!--Etapa-->
+            <div class="col-md-6">
+                <p class="text2-tipografia-govco">Etapa*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Nombre etapa</p>
+            </div>
+
+        </div>
+
+        <div class="row mt-3">
+            <!--Tarea-->
+            <div class="col-md-12">
+                <p class="text2-tipografia-govco">Tarea*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Nombre tarea</p>
+            </div>
+            <!--Descripción-->
+            <div class="col-md-12">
+                <p class="text2-tipografia-govco">Descripción*:</p>
+                <p class="text2-tipografia-govco bold-tipografia-govco">Descripción tarea.............</p>
+            </div>
+        </div>
+
+
+        <div class="row mt-3">
+            <!--tiempo en días-->
+            <div class="col-md-6 entradas-de-texto-govco">
+                <label for="input-basico-id">Tiempo tarea (en días)*:</label>
+                <input type="number" id="input-basico-id" placeholder="Ejemplo: 12" />
+            </div>
+
+            <!--habiles-->
+            <div class="col-md-6 entradas-de-texto-govco">
+                <p class="text2-tipografia-govco"> Días hábiles/Calendario*:</p>
+                <div class="row">
+                    <div class="checkbox-seleccion-govco col-md-6">
+                        <input id="opt1" type="checkbox" />
+                        <label for="opt1">Hábiles</label>
+                    </div>
+                    <div class="checkbox-seleccion-govco col-md-6">
+                        <input id="opt1" type="checkbox" />
+                        <label for="opt1">Calendario</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--tiempo alerta en días-->
+            <div class="col-md-6 entradas-de-texto-govco">
+                <label for="input-basico-id">Tiempo alerta (en días)*:</label>
+                <input type="number" id="input-basico-id" placeholder="Ejemplo: 12" />
+            </div>
+
+            <!--habiles-->
+            <div class="col-md-6 entradas-de-texto-govco">
+                <p class="text2-tipografia-govco"> Días hábiles/Calendario*:</p>
+                <div class="row">
+                    <div class="checkbox-seleccion-govco col-md-6">
+                        <input id="opt1" type="checkbox" />
+                        <label for="opt1">Hábiles</label>
+                    </div>
+                    <div class="checkbox-seleccion-govco col-md-6">
+                        <input id="opt1" type="checkbox" />
+                        <label for="opt1">Calendario</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <!--Descripción-->
+            <div class="col-md-10">
+                <p class="text2-tipografia-govco">Asignación de responsable</p>
+                <p class="text3-tipografia-govco">Seleccione si se asigna el responsable desde el motor de procesos</p>
+            </div>
+            <div class="checkbox-seleccion-govco col-md-2">
+                <input id="opt1" type="checkbox" />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Descripción-->
+            <div class="col-md-10">
+                <p class="text2-tipografia-govco">Ejecución de tarea desde el motor</p>
+                <p class="text3-tipografia-govco">Selecciones si la tarea se ejecuta desde el motor de procesos</p>
+            </div>
+            <div class="checkbox-seleccion-govco col-md-2">
+                <input id="opt1" type="checkbox" />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Descripción-->
+            <div class="col-md-10">
+                <p class="text2-tipografia-govco">Activar tarea</p>
+                <p class="text3-tipografia-govco">Selecciones si la tarea estará activa en el motor de procesos</p>
+            </div>
+            <div class="checkbox-seleccion-govco col-md-2">
+                <input id="opt1" type="checkbox" checked />
+            </div>
+        </div>
+
+
+        <h5 class="h5-tipografia-govco mt-5"><span class="govcolor-marine">Información asociada</span></h5>
+
+        <div class="row mt-3">
+            <!--roles asociados-->
+            <div class="col-md-6">
+                <p class="text2-tipografia-govco">Roles ejecutores*:</p>
+                <div class="checkbox-seleccion-govco col-md-6 ">
+                    <input id="opt1" type="checkbox" />
+                    <label for="opt1">Opción 1</label>
+                </div>
+                <div class="checkbox-seleccion-govco col-md-6 mt-3">
+                    <input id="opt1" type="checkbox" />
+                    <label for="opt1">Opción 2</label>
+                </div>
+                <div class="checkbox-seleccion-govco col-md-6 mt-3">
+                    <input id="opt1" type="checkbox" />
+                    <label for="opt1">Opción 3</label>
+                </div>
+                <div class="checkbox-seleccion-govco col-md-6 mt-3">
+                    <input id="opt1" type="checkbox" />
+                    <label for="opt1">Opción 4</label>
+                </div>
+            </div>
+            <!--Etapa-->
+            <div class="col-md-6">
+                <p class="text2-tipografia-govco">Tipos documentales de salida*:</p>
+                <div class="checkbox-seleccion-govco col-md-6 ">
+                    <input id="opt1" type="checkbox" />
+                    <label for="opt1">Opción 1</label>
+                </div>
+                <div class="checkbox-seleccion-govco col-md-6 mt-3">
+                    <input id="opt1" type="checkbox" />
+                    <label for="opt1">Opción 2</label>
+                </div>
+                <div class="checkbox-seleccion-govco col-md-6 mt-3">
+                    <input id="opt1" type="checkbox" />
+                    <label for="opt1">Opción 3</label>
+                </div>
+                <div class="checkbox-seleccion-govco col-md-6 mt-3">
+                    <input id="opt1" type="checkbox" />
+                    <label for="opt1">Opción 4</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end">
+                Guardar
+            </button>
+        </div>
+
+        <div class="col-md-4">
+            <button type="button"
+                class="btn-govco outline-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
+                routerLink="/configuracionEtapasProceso">
+                Cancelar
+            </button>
+        </div>
+
+    </div>
+</ng-container>
