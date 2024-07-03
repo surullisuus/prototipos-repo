@@ -54,8 +54,13 @@ export class ManageTaskComponent implements OnInit {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   @ViewChild('closeModal') closeModal!: ElementRef;
   @ViewChild('openbutton') openbutton!: ElementRef;
+
   @ViewChild('openButtonCloseTaskAnormal')
   openButtonCloseTaskAnormal!: ElementRef;
+
+  @ViewChild('openSeeRadicadoModal')
+  openSeeRadicadoModal!: ElementRef;
+
   subscription!: Subscription;
 
   solicitudId = 101;
@@ -390,5 +395,12 @@ export class ManageTaskComponent implements OnInit {
         dialogAction.eventClose.emit();
         location.reload();
       });
+  }
+
+  showSeeRadicadoModal() {
+    console.log('see radicado modal');
+    if (this.openSeeRadicadoModal) {
+      this.openSeeRadicadoModal.nativeElement.click();
+    }
   }
 }
