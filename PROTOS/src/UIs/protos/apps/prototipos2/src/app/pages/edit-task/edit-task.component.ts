@@ -15,6 +15,17 @@ export class EditTaskComponent {
   ableAlertDays = false;
   ableAlertHours = false;
 
+  campos:any[] = [];
+
+  agregarCampo() {
+    const nuevoCampo = { id: this.campos.length + 1 };
+    this.campos.push(nuevoCampo);
+  }
+
+  eliminarCampo(campo: any) {
+    this.campos = this.campos.filter(c => c !== campo);
+  }
+
   constructor(private _route: ActivatedRoute) {
     _route.params.subscribe((params) => {
       this.task = params['id'];

@@ -12,6 +12,17 @@ export class CreateTaskConfigComponent {
   ableAlertDays = false;
   ableAlertHours = false;
 
+  campos:any[] = [];
+
+  agregarCampo() {
+    const nuevoCampo = { id: this.campos.length + 1 };
+    this.campos.push(nuevoCampo);
+  }
+
+  eliminarCampo(campo: any) {
+    this.campos = this.campos.filter(c => c !== campo);
+  }
+
   onAbleTaskDays() {
     this.ableTaskDays = !this.ableTaskDays;
     this.ableTaskHours = false;
