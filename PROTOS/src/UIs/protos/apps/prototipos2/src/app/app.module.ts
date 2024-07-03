@@ -48,6 +48,7 @@ import { EditRequirementComponent } from './pages/edit-requirement/edit-requirem
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
 import { SeePlantillasCorreosComponent } from './pages/see-plantillas-correo/see-plantillas-correos.component';
+import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { SeePlantillasCorreosComponent } from './pages/see-plantillas-correo/see
     CreateTaskComponent,
     ConfigureFlowStagesComponent,
     SeePlantillasCorreosComponent,
+    CreateEmailTemplateComponent,
   ],
   imports: [
     BrowserModule,

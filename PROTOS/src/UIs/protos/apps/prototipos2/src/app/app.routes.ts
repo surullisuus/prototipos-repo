@@ -23,6 +23,7 @@ import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-detai
 import { CreateTaskConfigComponent } from './pages/create-task-configs/create-task-config.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { SeePlantillasCorreosComponent } from './pages/see-plantillas-correo/see-plantillas-correos.component';
+import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -67,5 +68,9 @@ export const appRoutes: Route[] = [
   {
     path: 'consultar-plantillas-correo',
     component: SeePlantillasCorreosComponent,
+  },
+  {
+    path: 'crear-plantilla-correo',
+    component: CreateEmailTemplateComponent,
   },
 ];
