@@ -22,6 +22,7 @@ import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-do
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
 import { CreateTaskConfigComponent } from './pages/create-task-configs/create-task-config.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { SeePlantillasCorreosComponent } from './pages/see-plantillas-correo/see-plantillas-correos.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -63,4 +64,8 @@ export const appRoutes: Route[] = [
   },
   { path: 'crear-tarea', component: CreateTaskComponent },
   { path: 'configurar-flujo-etapas', component: ConfigureFlowStagesComponent },
+  {
+    path: 'consultar-plantillas-correo',
+    component: SeePlantillasCorreosComponent,
+  },
 ];
