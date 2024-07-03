@@ -46,13 +46,15 @@
         <div class="col-md-6 entradas-de-texto-govco">
             <p class="text2-tipografia-govco"> Días hábiles/Calendario*:</p>
             <div class="row">
-                <div class="checkbox-seleccion-govco col-md-6">
-                    <input id="opt1" type="checkbox" />
-                    <label for="opt1">Hábiles</label>
+                <div class="switch-seleccion-govco form-switch col-md-6" style="padding-inline: 1rem;">
+                    <input class="form-check-input" type="checkbox" id="opt3" (click)="onAbleTaskDays()"
+                        [checked]="taskDays">
+                    <label for="opt3">Hábiles</label>
                 </div>
-                <div class="checkbox-seleccion-govco col-md-6">
-                    <input id="opt1" type="checkbox" />
-                    <label for="opt1">Calendario</label>
+                <div class="switch-seleccion-govco form-switch col-md-6" style="padding-inline: 0;">
+                    <input class="form-check-input" type="checkbox" id="opt4" (click)="onAbleTaskHours()"
+                        [checked]="taskHours">
+                    <label for="opt4">Calendario</label>
                 </div>
             </div>
         </div>
@@ -69,13 +71,15 @@
         <div class="col-md-6 entradas-de-texto-govco">
             <p class="text2-tipografia-govco"> Días hábiles/Calendario*:</p>
             <div class="row">
-                <div class="checkbox-seleccion-govco col-md-6">
-                    <input id="opt1" type="checkbox" />
-                    <label for="opt1">Hábiles</label>
+                <div class="switch-seleccion-govco form-switch col-md-6" style="padding-inline: 1rem;">
+                    <input class="form-check-input" type="checkbox" id="opt5" (click)="onAbleAlertDays()"
+                        [checked]="alertDays">
+                    <label for="opt3">Hábiles</label>
                 </div>
-                <div class="checkbox-seleccion-govco col-md-6">
-                    <input id="opt1" type="checkbox" />
-                    <label for="opt1">Calendario</label>
+                <div class="switch-seleccion-govco form-switch col-md-6" style="padding-inline: 0;">
+                    <input class="form-check-input" type="checkbox" id="opt6" (click)="onAbleAlertHours()"
+                        [checked]="alertHours">
+                    <label for="opt4">Calendario</label>
                 </div>
             </div>
         </div>
