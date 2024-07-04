@@ -24,6 +24,7 @@ import { CreateTaskConfigComponent } from './pages/create-task-configs/create-ta
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
 import { SeePlantillasCorreosComponent } from './pages/see-plantillas-correo/see-plantillas-correos.component';
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
+import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -72,5 +73,9 @@ export const appRoutes: Route[] = [
   {
     path: 'crear-plantilla-correo',
     component: CreateEmailTemplateComponent,
+  },
+  {
+    path: 'editar-plantilla-correo/:id',
+    component: EditEmailTemplateComponent,
   },
 ];

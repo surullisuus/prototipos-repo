@@ -49,6 +49,7 @@ import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
 import { SeePlantillasCorreosComponent } from './pages/see-plantillas-correo/see-plantillas-correos.component';
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
+import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { CreateEmailTemplateComponent } from './pages/create-email-template/crea
     ConfigureFlowStagesComponent,
     SeePlantillasCorreosComponent,
     CreateEmailTemplateComponent,
+    EditEmailTemplateComponent,
   ],
   imports: [
     BrowserModule,
