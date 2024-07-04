@@ -61,6 +61,8 @@ import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 
+import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -119,6 +121,7 @@ import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/config
     CreateTaskComponent,
     ConfigureFlowStagesComponent,
     ConfigureFlowTasksComponent,
+    SeeReadPermissionsComponent
   ],
   imports: [
     BrowserModule,

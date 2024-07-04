@@ -36,6 +36,7 @@ import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-do
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
 import { CreateTaskConfigComponent } from './pages/create-task-configs/create-task-config.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -81,4 +82,5 @@ export const appRoutes: Route[] = [
   { path: 'crear-tarea', component: CreateTaskComponent },
   { path: 'configurar-flujo-etapas',component: ConfigureFlowStagesComponent},
   { path: 'configurar-flujo-tareas',component: ConfigureFlowTasksComponent},
+  { path: 'permisos-lectura', component: SeeReadPermissionsComponent },
 ];
