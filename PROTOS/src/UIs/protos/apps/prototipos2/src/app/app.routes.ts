@@ -22,9 +22,10 @@ import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-do
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
 import { CreateTaskConfigComponent } from './pages/create-task-configs/create-task-config.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
-import { SeePlantillasCorreosComponent } from './pages/see-plantillas-correo/see-plantillas-correos.component';
+import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-correo/manage-plantillas-correos.component';
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
+import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -68,7 +69,7 @@ export const appRoutes: Route[] = [
   { path: 'configurar-flujo-etapas', component: ConfigureFlowStagesComponent },
   {
     path: 'consultar-plantillas-correo',
-    component: SeePlantillasCorreosComponent,
+    component: ManagePlantillasCorreosComponent,
   },
   {
     path: 'crear-plantilla-correo',
@@ -77,5 +78,9 @@ export const appRoutes: Route[] = [
   {
     path: 'editar-plantilla-correo/:id',
     component: EditEmailTemplateComponent,
+  },
+  {
+    path: 'consultar-plantilla-correo/:id',
+    component: SeeEmailTemplateComponent,
   },
 ];

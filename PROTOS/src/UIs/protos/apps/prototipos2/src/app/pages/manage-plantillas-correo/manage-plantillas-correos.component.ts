@@ -9,11 +9,11 @@ interface Process {
 }
 
 @Component({
-  selector: 'app-see-plantillas-correos',
-  templateUrl: './see-plantillas-correos.component.html',
-  styleUrl: './see-plantillas-correos.component.css',
+  selector: 'app-manage-plantillas-correos',
+  templateUrl: './manage-plantillas-correos.component.html',
+  styleUrl: './manage-plantillas-correos.component.css',
 })
-export class SeePlantillasCorreosComponent {
+export class ManagePlantillasCorreosComponent {
   selectedProcess: string | null = null;
   selectedDocument: string | null = null;
 

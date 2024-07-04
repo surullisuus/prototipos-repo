@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SeePlantillasCorreosComponent } from './see-plantillas-correos.component';
+import { ManagePlantillasCorreosComponent } from './manage-plantillas-correos.component';
 
 describe('SeePlantillasCorreosComponent', () => {
-  let component: SeePlantillasCorreosComponent;
-  let fixture: ComponentFixture<SeePlantillasCorreosComponent>;
+  let component: ManagePlantillasCorreosComponent;
+  let fixture: ComponentFixture<ManagePlantillasCorreosComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SeePlantillasCorreosComponent],
+      imports: [ManagePlantillasCorreosComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SeePlantillasCorreosComponent);
+    fixture = TestBed.createComponent(ManagePlantillasCorreosComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

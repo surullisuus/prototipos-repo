@@ -1,0 +1,120 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Consultar plantillas correo electrónico </span></h3>
+
+
+<ng-container *ngIf="loading">
+    <div class="spinner-indicador-de-carga-govco" role="status" style="width: 60px; height: 60px; border-width: 8px;">
+        <span class="visually-hidden">Cargando</span>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!loading">
+    <div class="rounded-3 mb-5 mt-3">
+
+        <div class="row mt-5">
+
+            <!--Proceso-->
+
+            <div class="col-md-4">
+
+                <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676"
+                    type="basic" [disabled]="true" [lista]="processOptions()" (eventlist)="setSelectedProcess($event)"
+                    [title]="currentProcessId.process">
+                </subsidios-dropdown-list>
+            </div>
+
+            <!--Tipo documental-->
+            <div class="col-md-4">
+                <subsidios-dropdown-list labelText="Tipo documental" note="Seleccione una opción" idList="type-345676"
+                    type="basic" [disabled]="true" [lista]="documentOptions()" (eventlist)="setSelectedDocument($event)"
+                    [title]="currentProcessId.documentType">
+                </subsidios-dropdown-list>
+            </div>
+
+        </div>
+
+
+        <div class="row mt-3">
+            <!--Nombre tarea-->
+            <div class="col-md-2 entradas-de-texto-govco">
+                <label for="input-basico-id">Nombre</label>
+            </div>
+            <div class="col-md-10 entradas-de-texto-govco">
+                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                    [value]="currentProcessId.name" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Nombre tarea-->
+            <div class="col-md-2 entradas-de-texto-govco">
+                <label for="input-basico-id">Descripción</label>
+            </div>
+            <div class="col-md-10 entradas-de-texto-govco">
+                <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                    style="min-height: 5rem; min-width: 100%;" disabled> {{ currentProcessId.description }} </textarea>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Nombre tarea-->
+            <div class="col-md-2 entradas-de-texto-govco">
+                <label for="input-basico-id">Desde</label>
+            </div>
+            <div class="col-md-10 entradas-de-texto-govco">
+                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                    [value]="currentProcessId.desde" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Nombre tarea-->
+            <div class="col-md-2 entradas-de-texto-govco">
+                <label for="input-basico-id">CC</label>
+            </div>
+            <div class="col-md-10 entradas-de-texto-govco">
+                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                    [value]="currentProcessId.cc" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Nombre tarea-->
+            <div class="col-md-2 entradas-de-texto-govco">
+                <label for="input-basico-id">Asunto</label>
+            </div>
+            <div class="col-md-10 entradas-de-texto-govco">
+                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                    [value]="currentProcessId.asunto" disabled />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <!--Nombre tarea-->
+            <div class="col-md-2 entradas-de-texto-govco">
+                <label for="input-basico-id">Cuerpo del correo</label>
+            </div>
+            <div class="col-md-10 entradas-de-texto-govco">
+                <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                    style="min-height: 10rem; min-width: 100%;" disabled>{{currentProcessId.cuerpo}}</textarea>
+
+            </div>
+        </div>
+
+
+        <div class="row mt-4 mb-3 text-center">
+            <div class="col-md-12">
+                <button type="button"
+                    class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
+                    routerLink="/consultar-plantillas-correo">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <div #dialog></div>
+</ng-container>
