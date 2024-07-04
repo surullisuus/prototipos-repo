@@ -1,0 +1,84 @@
+<div
+  class="modal fade"
+  id="addRolesModal"
+  tabindex="-1"
+  aria-labelledby="addRolesModalLabel"
+  aria-hidden="true"
+>
+  <form>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="row">
+            <h4 class="h4-tipografia-govco">
+              <span class="govcolor-marine">
+                AÑADIR ROLES
+              </span>
+            </h4>
+          </div>
+          <a
+            href="#"
+            role="button"
+            data-bs-dismiss="modal"
+            class="close-btn-modal"
+            aria-label="Close"
+            aria-expanded="false"
+          >
+            <span class="modal-close-govco govco-times"></span>
+          </a>
+        </div>
+        <div class="modal-body">
+            <div class="row mb-3">
+                <div class="col">
+                    <subsidios-dropdown-list labelText="Seleccione el Grupo/Subdirección*:"  idList="type-345676" type="basic" [disabled]="false"/>
+                </div>
+                <div class="col d-flex align-items-end">
+                    <button
+                    type="button"
+                    class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mb-2"
+                  >
+                    Buscar
+                  </button>
+                </div>
+            </div>
+
+          <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th style="text-align: center !important">Grupo/Subdirección</th>
+                    <th style="text-align: center !important">Rol</th>
+                    <th style="text-align: center !important">Selección</th>
+                </tr>
+            </thead>
+            <tbody class="contenido-tablas">
+                <tr *ngFor="let group of internalGroups">
+                    <td style="text-align: center !important">{{ group.name }}</td>
+                    <td style="text-align: center !important">{{ group.role }}</td>
+                    <td style="text-align: center !important">
+                        <div class="checkbox-seleccion-govco d-flex justify-content-center ">
+                            <input id="opt1" type="checkbox" [checked]="group.selected" />
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+          <button
+            type="button"
+            class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+            (click)="onAddRoles($event)"
+          >
+            Añadir
+          </button>
+
+          <button
+            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space"
+            data-bs-dismiss="modal"
+            (click)="onCancel($event)"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

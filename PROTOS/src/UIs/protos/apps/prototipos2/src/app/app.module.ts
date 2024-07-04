@@ -62,6 +62,7 @@ import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/conf
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 
 import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
+import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.component';
 
 @NgModule({
   declarations: [
@@ -121,7 +122,8 @@ import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-re
     CreateTaskComponent,
     ConfigureFlowStagesComponent,
     ConfigureFlowTasksComponent,
-    SeeReadPermissionsComponent
+    SeeReadPermissionsComponent,
+    AddRolesModalComponent
   ],
   imports: [
     BrowserModule,

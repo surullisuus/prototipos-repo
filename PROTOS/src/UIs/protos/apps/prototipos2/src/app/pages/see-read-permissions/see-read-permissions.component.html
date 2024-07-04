@@ -8,82 +8,115 @@
             <p lang="en" class="text2-tipografia-govco">Seleccione el usuario*:</p>
             <div class="d-flex ms-2">
                 <div class="radio-seleccion-govco">
-                    <input type="radio" id="radio11" formControlName="usuario" value="interno">
+                    <input type="radio" id="radio11" formControlName="usuario" value="interno"
+                        (change)="onRadioChange()">
                     <label for="radio11">Usuario interno</label>
                 </div>
                 <div class="radio-seleccion-govco ms-4">
-                    <input type="radio" id="radio12" formControlName="usuario" value="externo">
+                    <input type="radio" id="radio12" formControlName="usuario" value="externo"
+                        (change)="onRadioChange()">
                     <label for="radio12">Usuario externo</label>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row mb-3">
+    <div class="row mb-3" *ngIf="form.value.usuario">
         <div class="col-6 col-xl-5">
             <div class="entradas-de-texto-govco pb-0 text-nowrap">
                 <label for="input-basico-id">No. Solicitud*:</label>
                 <div class="row">
                     <div class="col-11">
                         <input type="text" id="input-basico-id" formControlName="numeroSolicitud" />
-                        <span class="govco-search" style="font-size: 1.4rem; color: #3366CC; cursor: pointer;" (click)="onSearchNumberApplication()"></span>
+                        <span *ngIf="!isExternalUser" class="govco-search ms-1"
+                            style="font-size: 1.4rem; color: #3366CC; cursor: pointer;"
+                            (click)="onSearchNumberApplication()"></span>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-6 col-xl-5 pt-2 select-etapa" *ngIf="clickedSearchNumberApplication">
-            <subsidios-dropdown-list labelText="Etapa*:" idList="type-345676" type="basic" [disabled]="false" [lista]="opciones" formControlName="etapa"></subsidios-dropdown-list>
+        <div class="col-6 col-xl-5 pt-2 select-etapa" *ngIf="clickedSearchNumberApplication && !isExternalUser">
+            <subsidios-dropdown-list labelText="Etapa*:" idList="type-345676" type="basic" [disabled]="false"
+                [lista]="opciones" formControlName="etapa"></subsidios-dropdown-list>
         </div>
     </div>
 
-    <div class="row mb-4" *ngIf="clickedSearchNumberApplication">
+    <div class="row mb-4" *ngIf="clickedSearchNumberApplication && !isExternalUser || isExternalUser">
         <div class="col">
-            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space bg-marine mt-1" (click)="onSearchButton()">Buscar</button>
-            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1" (click)="onCleanInputs()">Limpiar</button>
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space bg-marine mt-1"
+                (click)="onSearchButton()">Buscar</button>
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+                (click)="onCleanInputs()">Limpiar</button>
         </div>
     </div>
 </form>
 
 <div class="row" *ngIf="clickedSearchButton">
     <h4 class="h4-tipografia-govco mt-3 mb-4">
-        <span class="govcolor-marine">ROLES CON PERMISOS</span>
+        <span class="govcolor-marine">PERMISOS DE LECTURA</span>
     </h4>
     <div class="col-6 col-xl-5">
-        <p lang="en" class="text2-tipografia-govco">No. Solicitud</p>
-        <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">{{form.value.numeroSolicitud}}</p>
+        <p lang="en" class="text2-tipografia-govco">No. Solicitud:</p>
+        <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">12345678</p>
     </div>
     <div class="col-6 col-xl-5">
         <p lang="en" class="text2-tipografia-govco">Etapa:</p>
-        <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">{{form.value.etapa}}</p>
+        <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">Nombe etapa en ejecución</p>
     </div>
-    <div class="table-responsive table-process">
+    <ng-container *ngIf="!isExternalUser; else tableExternalUser">
+        <div class="table-responsive table-process">
+            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                <thead class="encabezado-tabla">
+                    <tr>
+                        <th style="text-align: center !important">Grupo/Subdirección</th>
+                        <th style="text-align: center !important">Rol</th>
+                        <th style="text-align: center !important">Acción</th>
+                    </tr>
+                </thead>
+                <tbody class="contenido-tablas">
+                    <tr *ngFor="let group of internalGroups">
+                        <td style="text-align: center !important">{{ group.name }}</td>
+                        <td style="text-align: center !important">{{ group.role }}</td>
+                        <td style="text-align: center !important">
+                            <div class="d-flex justify-content-center text-nowrap px-2">
+                                <a class="ms-2 me-2" tabindex="0" data-bs-target="#verRadicadoViewModal"
+                                    data-bs-toggle="modal" style="cursor: pointer">Ver permisos</a> /
+                                <a class="ms-2" tabindex="0" style="cursor: pointer">Eliminar</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+                data-bs-toggle="modal" data-bs-target="#addRolesModal">Añadir</button>
+        </div>
+    </ng-container>
+    <ng-template #tableExternalUser>
         <table class="table table-general table-basic" aria-describedby="tableDescBasic">
             <thead class="encabezado-tabla">
                 <tr>
-                    <th style="text-align: center !important">Grupo/Subdirección</th>
-                    <th style="text-align: center !important">Rol</th>
-                    <th style="text-align: center !important">Acción</th>
+                    <th style="text-align: center !important">Actuación</th>
+                    <th style="text-align: center !important">Nombre archivo</th>
+                    <th style="text-align: center !important">Tipo documento</th>
+                    <th style="text-align: center !important">Lectura</th>
                 </tr>
             </thead>
             <tbody class="contenido-tablas">
-                <tr *ngFor="let group of groups">
-                    <td style="text-align: center !important">{{ group.name }}</td>
-                    <td style="text-align: center !important">{{ group.role}}</td>
+                <tr *ngFor="let group of externalGroups">
+                    <td style="text-align: center !important">{{ group.actuacion }}</td>
+                    <td style="text-align: center !important">{{ group.nombreArchivo }}</td>
+                    <td style="text-align: center !important">{{ group.tipoDocumento }}</td>
                     <td style="text-align: center !important">
-                        <div class="d-flex justify-content-center text-nowrap px-2">
-                            <a class="ms-2 me-2" tabindex="0" data-bs-target="#verRadicadoViewModal" data-bs-toggle="modal" style="cursor: pointer">Ver permisos</a> /
-                            <a class="ms-2" tabindex="0" style="cursor: pointer">Eliminar</a>
+                        <div class="checkbox-seleccion-govco d-flex justify-content-center ">
+                            <input id="opt1" type="checkbox" [checked]="group.lectura" />
                         </div>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
-    </div>
-
-    <div class="col">
-        <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1">Añadir</button>
-    </div>
+    </ng-template>
 </div>
-
 <div #dialog></div>
+<app-add-roles-modal [internalGroups]="internalGroups"></app-add-roles-modal>

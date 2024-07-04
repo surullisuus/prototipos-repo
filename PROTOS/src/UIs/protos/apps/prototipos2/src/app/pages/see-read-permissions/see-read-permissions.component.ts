@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef, OnInit } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef, OnInit, ElementRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { DialogData } from '../../components/dialog/models/dialog-data';
@@ -13,34 +13,63 @@ import { DialogService } from '../../components/dialog/services/dialog.service';
 })
 export class SeeReadPermissionsComponent implements OnInit {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
+
+
   form!: FormGroup;
   subscription!: Subscription;
   clickedSearchNumberApplication = false;
   clickedSearchButton = false;
+  isExternalUser = false;
 
   opciones = [
     { id: 1, text: 'Terminado' },
     { id: 2, text: 'En ejecución' },
   ];
 
-  groups = [
+  internalGroups = [
     {
       name: 'Usuario interno',
       id: 1,
       role: 'ABC',
-      permisos: [
-        { name: 'Ver documento', id: 1 },
-        { name: 'Borrar documento', id: 2 },
-      ],
+      selected: true,
     },
     {
-      name: 'Usuario externo',
+      name: 'Usuario interno',
       id: 2,
       role: 'ABC',
-      permisos: [
-        { name: 'Ver documento', id: 1 },
-        { name: 'Borrar documento', id: 2 },
-      ],
+      selected: true,
+
+    },
+    {
+      name: 'Usuario interno',
+      id: 3,
+      role: 'ABC',
+      selected: false,
+
+    },
+  ];
+
+  externalGroups = [
+    {
+      actuacion: 'ABC',
+      id: 2,
+      nombreArchivo: 'XYZ',
+      tipoDocumento: 'Salida',
+      lectura: false,
+    },
+    {
+      actuacion: 'ABC',
+      id: 3,
+      nombreArchivo: 'XYZ',
+      tipoDocumento: 'Salida',
+      lectura: true,
+    },
+    {
+      actuacion: 'ABC',
+      id: 4,
+      nombreArchivo: 'XYZ',
+      tipoDocumento: 'Salida',
+      lectura: true,
     },
   ];
 
@@ -56,13 +85,12 @@ export class SeeReadPermissionsComponent implements OnInit {
 
   onSearchNumberApplication() {
     this.clickedSearchNumberApplication = true;
+    // buscar por numero de solicitud
   }
+
 
   onSearchButton() {
     this.clickedSearchButton = true;
-    if (this.form.invalid) {
-      this.showErrorAlertState();
-    }
   }
 
   onCleanInputs() {
@@ -71,9 +99,16 @@ export class SeeReadPermissionsComponent implements OnInit {
     this.form.reset();
   }
 
+  onRadioChange() {
+    const userType = this.form.get('usuario')?.value;
+    this.isExternalUser = userType === 'externo';
+    this.clickedSearchNumberApplication = false;
+    this.clickedSearchButton = false;
+  }
+
   showErrorAlertState() {
     const dialogData = new DialogData();
-    dialogData.title = `No se encontraron resultados que coincidan con la información suministrada y la opción ${"Cerrar"}`;
+    dialogData.title = `No se encontraron resultados que coincidan con la información suministrada y la opción ${'Cerrar'}`;
     dialogData.type = DialogType.danger;
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
