@@ -11,6 +11,8 @@ import { DialogService } from '../../components/dialog/services/dialog.service';
 
 interface ProcessRequest {
   nombreProceso: string;
+  nombreEtapa:string
+  nombreRequisito:string
   numeroSolicitud: number;
   fechaCreacion: Date;
   fechaFin: Date;
@@ -25,6 +27,8 @@ interface ProcessRequest {
 export class SetStageRequirementsComponent { processRequests: ProcessRequest[] = [
   {
     nombreProceso: 'Proceso 1',
+    nombreEtapa:"Etapa 1",
+    nombreRequisito:"requisito 1",
     numeroSolicitud: 101,
     fechaCreacion: new Date('2023-01-01'),
     fechaFin: new Date('2023-01-15'),
@@ -32,6 +36,8 @@ export class SetStageRequirementsComponent { processRequests: ProcessRequest[] =
   },
   {
     nombreProceso: 'Proceso 2',
+    nombreEtapa:"Etapa 2",
+    nombreRequisito:"Requisito 2",
     numeroSolicitud: 102,
     fechaCreacion: new Date('2023-02-01'),
     fechaFin: new Date('2023-02-15'),
@@ -39,6 +45,8 @@ export class SetStageRequirementsComponent { processRequests: ProcessRequest[] =
   },
   {
     nombreProceso: 'Proceso 3',
+    nombreEtapa:"Etapa 3",
+    nombreRequisito:"requisito 3",
     numeroSolicitud: 103,
     fechaCreacion: new Date('2023-03-01'),
     fechaFin: new Date('2023-03-15'),

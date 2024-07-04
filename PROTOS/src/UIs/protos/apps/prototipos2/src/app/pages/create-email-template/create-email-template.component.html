@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Consultar plantillas correo electrónico </span></h3>
 
 
@@ -107,4 +108,107 @@
 
 </div>
 
+=======
+<h3 class="h3-tipografia-govco">
+    <span class="govcolor-marine">Crear plantilla de correo electr&oacute;nico</span>
+</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <label for="lista-desplegables" class="label-desplegable-govco">
+                ID*:<span aria-required="true"></span
+              ></label>
+              <div class="form-group pt-0 entradas-de-texto-govco">
+                <div class="container-input-texto-govco">
+                  <ng-container>
+                    <input
+                      value="123"
+                      disabled
+                      type="text"
+                      placeholder="Ej. 23454"
+                    />
+                  </ng-container>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Proceso*" note="Seleccione el proceso" idList="type-345676" type="basic"
+            [disabled]="false"></subsidios-dropdown-list> 
+        </div>
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Tema*" note="Elija un tema" idList="type-345676" type="basic"
+            [disabled]="false"></subsidios-dropdown-list>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="entradas-de-texto-govco">
+                <label for="input-nombre">Nombre*:</label>
+                <input type="text" id="input-nombre" placeholder="Plantilla 1..."/>
+                <label for="input-nombre" type="text">Ingrese el Nombre</label>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="entradas-de-texto-govco">
+                <label for="input-descripcion">Descripci&oacute;n*:</label>
+                <input type="text" id="input-descripcion" placeholder="Plantilla de ejemplo..."/>
+                <label for="input-descripcion" type="text">Ingrese la Descripci&oacute;n</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="entradas-de-texto-govco">
+                <label for="input-desde">Desde*:</label>
+                <input type="text" id="input-desde" placeholder="usuario@dominio..."/>
+                <label for="input-desde" type="text">Ingrese el Texto</label>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="entradas-de-texto-govco">
+                <label for="input-destinatario">Destinatario:</label>
+                <input type="text" id="input-destinatario" placeholder="usuario@dominio...."/>
+                <label for="input-destinatario" type="text">Ingrese el Destinatario</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="entradas-de-texto-govco">   
+                <label for="input-cc">Cc:</label>
+                <input type="text" id="input-cc" placeholder="usuario@dominio....."/>
+                <label for="input-cc" type="text">Ingrese el Cc</label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="entradas-de-texto-govco">
+                <label for="input-asunto">Asunto*:</label>
+                <input type="text" id="input-asunto" placeholder="Importante......"/>
+                <label for="input-asunto" type="text">Ingrese el Asunto</label>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="entradas-de-texto-govco">
+                <label for="input-cuerpo-correo">Cuerpo del correo*</label>
+                <input type="text" id="input-cuerpo-correo" placeholder="Esto es un correo de ejmplo..."/>
+                <label for="input-cuerpo-correo" type="text">Ingrese el Texto</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button"
+             class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
+             (click)="SaveModal()">
+                Guardar
+               </button>   
+               <button type="button" 
+               class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+               [routerLink]="['/plantilla-correo']">
+                 Cancelar
+               </button>
+        </div>    
+    </div>
+</div>
+>>>>>>> origin/main
 <div #dialog></div>

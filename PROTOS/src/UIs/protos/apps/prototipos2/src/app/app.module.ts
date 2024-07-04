@@ -37,6 +37,18 @@ import { ManageProcessDesignComponent } from './pages/manage-process-design/mana
 import { GenerateExitDocumentComponent } from './pages/generate-exit-document/generate-exit-document.component';
 import { PreliminarViewComponent } from './pages/preliminar-view/preliminar-view.component';
 import { AssociateEntryDocComponent } from './pages/associate-entry-doc/associate-entry-doc.component';
+import { ProcessStagesComponent } from './pages/process-stages/process-stages.component';
+import { CreateStageProcessComponent } from './pages/create-stage-process/create-stage-process.component';
+import { EditStageProcessComponent } from './pages/edit-stage-process/edit-stage-process.component';
+import { DetailStageProcessComponent } from './pages/detail-stage-process/detail-stage-process.component';
+import { EmailTemplateComponent } from './pages/email-template/email-template.component';
+import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
+import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
+import { DetailEmailTemplateComponent } from './pages/detail-email-template/detail-email-template.component';
+import { NotificationTypeComponent } from './pages/notification-type/notification-type.component';
+import { CreateNotificationTypeComponent } from './pages/create-notification-type/create-notification-type.component';
+import { EditNotificationTypeComponent } from './pages/edit-notification-type/edit-notification-type.component';
+import { DetailNotificationTypeComponent } from './pages/detail-notification-type/detail-notification-type.component';
 import { VerRadicadoViewComponent } from './pages/verRadicadoView/verRadicadoView.component';
 import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
@@ -48,9 +60,8 @@ import { EditRequirementComponent } from './pages/edit-requirement/edit-requirem
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
 import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-correo/manage-plantillas-correos.component';
-import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
-import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
+import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +94,18 @@ import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-
     PreliminarViewComponent,
     AssociateEntryDocComponent,
     EditPartComponent,
+    ProcessStagesComponent,
+    CreateStageProcessComponent,
+    EditStageProcessComponent,
+    DetailStageProcessComponent,
+    EmailTemplateComponent,
+    CreateEmailTemplateComponent,
+    EditEmailTemplateComponent,
+    DetailEmailTemplateComponent,
+    NotificationTypeComponent,
+    CreateNotificationTypeComponent,
+    EditNotificationTypeComponent,
+    DetailNotificationTypeComponent,
     DetailPartComponent,
     TaskByResponsibleComponent,
     AssingResponsibleTaskComponent,
@@ -101,6 +124,7 @@ import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-
     CreateEmailTemplateComponent,
     EditEmailTemplateComponent,
     SeeEmailTemplateComponent,
+    ConfigureFlowTasksComponent,
   ],
   imports: [
     BrowserModule,
