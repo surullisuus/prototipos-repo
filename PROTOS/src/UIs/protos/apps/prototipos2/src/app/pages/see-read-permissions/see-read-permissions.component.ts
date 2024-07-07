@@ -1,9 +1,18 @@
-import { Component, ViewChild, ViewContainerRef, OnInit, ElementRef } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ViewContainerRef,
+  OnInit,
+  ElementRef,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
-import { DialogAction } from '../../components/dialog/models/dialog-action';
+import {
+  ActionType,
+  DialogAction,
+} from '../../components/dialog/models/dialog-action';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 
 @Component({
@@ -13,7 +22,10 @@ import { DialogService } from '../../components/dialog/services/dialog.service';
 })
 export class SeeReadPermissionsComponent implements OnInit {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
-
+  @ViewChild('openbuttonPermisosLectura')
+  openbuttonPermisosLectura!: ElementRef;
+  @ViewChild('openbuttonPermisosRoles') openbuttonPermisosRoles!: ElementRef;
+  @ViewChild('openbuttonpermisosLecturaInternoModal') openbuttonpermisosLecturaInternoModal!: ElementRef;
 
   form!: FormGroup;
   subscription!: Subscription;
@@ -38,17 +50,37 @@ export class SeeReadPermissionsComponent implements OnInit {
       id: 2,
       role: 'ABC',
       selected: true,
-
     },
     {
       name: 'Usuario interno',
       id: 3,
       role: 'ABC',
       selected: false,
-
     },
   ];
-
+  internalGroupsPermissions = [
+    {
+      actuacion: 'ABC',
+      id: 2,
+      nombreArchivo: 'XYZ',
+      tipoDocumento: 'Salida',
+      lectura: false,
+    },
+    {
+      actuacion: 'ABC',
+      id: 3,
+      nombreArchivo: 'XYZ',
+      tipoDocumento: 'Salida',
+      lectura: true,
+    },
+    {
+      actuacion: 'ABC',
+      id: 4,
+      nombreArchivo: 'XYZ',
+      tipoDocumento: 'Salida',
+      lectura: true,
+    },
+  ];
   externalGroups = [
     {
       actuacion: 'ABC',
@@ -86,17 +118,27 @@ export class SeeReadPermissionsComponent implements OnInit {
   onSearchNumberApplication() {
     this.clickedSearchNumberApplication = true;
     // buscar por numero de solicitud
+    // si no se encuentra, mostrar alerta de error
+    //showAlertState('No se encontraron resultados que coincidan con la información suministrada y la opción Cerrar');
   }
 
-
   onSearchButton() {
-    this.clickedSearchButton = true;
+    if (!this.isExternalUser) {
+      if (this.openbuttonPermisosRoles) {
+        this.openbuttonPermisosRoles.nativeElement.click();
+      }
+    } else {
+      if (this.openbuttonPermisosLectura) {
+        this.openbuttonPermisosLectura.nativeElement.click();
+      }
+    }
   }
 
   onCleanInputs() {
-    this.clickedSearchNumberApplication = false;
-    this.clickedSearchButton = false;
-    this.form.reset();
+    this.form.patchValue({
+      numeroSolicitud: '',
+      etapa: '',
+    });
   }
 
   onRadioChange() {
@@ -106,17 +148,74 @@ export class SeeReadPermissionsComponent implements OnInit {
     this.clickedSearchButton = false;
   }
 
-  showErrorAlertState() {
+  showAlertState(body: string, dialogType: DialogType) {
     const dialogData = new DialogData();
-    dialogData.title = `No se encontraron resultados que coincidan con la información suministrada y la opción ${'Cerrar'}`;
-    dialogData.type = DialogType.danger;
+    dialogData.title = body;
+    dialogData.type = dialogType;
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
 
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
+        location.reload();
         dialogAction.eventClose.emit();
       });
   }
+
+  showModalApplyPermissions = () => {
+    const dialogData = new DialogData();
+    dialogData.title = `¿Está seguro actualizar los permisos de lectura?`;
+    dialogData.type = DialogType.warning;
+    dialogData.buttonConfirm = true;
+    dialogData.textButtonConfirm = 'Aceptar';
+    dialogData.textButtonCancel = 'Cancelar';
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          //aplicar permisos en bd
+          dialogAction.eventClose.emit();
+          this.showAlertState(
+            'Configuración guardada exitosamente',
+            DialogType.success
+          );
+        } else {
+          dialogAction.eventClose.emit();
+          this.openbuttonpermisosLecturaInternoModal.nativeElement.click();
+
+        }
+      });
+  };
+  showModalDeleteRegister = (internalId: number) => {
+    const dialogData = new DialogData();
+    dialogData.title = `¿Está seguro de que desea eliminar el registro?`;
+    dialogData.type = DialogType.warning;
+    dialogData.buttonConfirm = true;
+    dialogData.textButtonConfirm = 'Aceptar';
+    dialogData.textButtonCancel = 'Cancelar';
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          //borrar registro en bd
+          const index = this.internalGroups.findIndex(
+            (item) => item.id === internalId
+          );
+          if (index !== -1) {
+            this.internalGroups.splice(index, 1);
+          }
+          dialogAction.eventClose.emit();
+          this.showAlertState(
+            'Registro eliminado de forma exitosa',
+            DialogType.success
+          );
+        } else {
+          dialogAction.eventClose.emit();
+          this.openbuttonPermisosRoles.nativeElement.click();
+        }
+      });
+  };
 }

@@ -51,72 +51,20 @@
     </div>
 </form>
 
-<div class="row" *ngIf="clickedSearchButton">
-    <h4 class="h4-tipografia-govco mt-3 mb-4">
-        <span class="govcolor-marine">PERMISOS DE LECTURA</span>
-    </h4>
-    <div class="col-6 col-xl-5">
-        <p lang="en" class="text2-tipografia-govco">No. Solicitud:</p>
-        <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">12345678</p>
-    </div>
-    <div class="col-6 col-xl-5">
-        <p lang="en" class="text2-tipografia-govco">Etapa:</p>
-        <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">Nombe etapa en ejecución</p>
-    </div>
-    <ng-container *ngIf="!isExternalUser; else tableExternalUser">
-        <div class="table-responsive table-process">
-            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-                <thead class="encabezado-tabla">
-                    <tr>
-                        <th style="text-align: center !important">Grupo/Subdirección</th>
-                        <th style="text-align: center !important">Rol</th>
-                        <th style="text-align: center !important">Acción</th>
-                    </tr>
-                </thead>
-                <tbody class="contenido-tablas">
-                    <tr *ngFor="let group of internalGroups">
-                        <td style="text-align: center !important">{{ group.name }}</td>
-                        <td style="text-align: center !important">{{ group.role }}</td>
-                        <td style="text-align: center !important">
-                            <div class="d-flex justify-content-center text-nowrap px-2">
-                                <a class="ms-2 me-2" tabindex="0" data-bs-target="#verRadicadoViewModal"
-                                    data-bs-toggle="modal" style="cursor: pointer">Ver permisos</a> /
-                                <a class="ms-2" tabindex="0" style="cursor: pointer">Eliminar</a>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col">
-            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
-                data-bs-toggle="modal" data-bs-target="#addRolesModal">Añadir</button>
-        </div>
-    </ng-container>
-    <ng-template #tableExternalUser>
-        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-            <thead class="encabezado-tabla">
-                <tr>
-                    <th style="text-align: center !important">Actuación</th>
-                    <th style="text-align: center !important">Nombre archivo</th>
-                    <th style="text-align: center !important">Tipo documento</th>
-                    <th style="text-align: center !important">Lectura</th>
-                </tr>
-            </thead>
-            <tbody class="contenido-tablas">
-                <tr *ngFor="let group of externalGroups">
-                    <td style="text-align: center !important">{{ group.actuacion }}</td>
-                    <td style="text-align: center !important">{{ group.nombreArchivo }}</td>
-                    <td style="text-align: center !important">{{ group.tipoDocumento }}</td>
-                    <td style="text-align: center !important">
-                        <div class="checkbox-seleccion-govco d-flex justify-content-center ">
-                            <input id="opt1" type="checkbox" [checked]="group.lectura" />
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </ng-template>
-</div>
+
+
+<app-modal-usuario-interno [internalGroups]="internalGroups"
+    [showModalDeleteRegister]="showModalDeleteRegister" [internalGroupsPermissions]="internalGroupsPermissions" [showModalApplyPermissions]="showModalApplyPermissions"></app-modal-usuario-interno>
+
+
+<app-modal-usuario-externo [externalGroups]="externalGroups"></app-modal-usuario-externo>
+
+
 <div #dialog></div>
 <app-add-roles-modal [internalGroups]="internalGroups"></app-add-roles-modal>
+<a #openbuttonPermisosLectura href="#" data-bs-toggle="modal" data-bs-target="#rolesPermisosLecturaModal">
+</a>
+<a #openbuttonPermisosRoles href="#" data-bs-toggle="modal" data-bs-target="#rolesPermisosModal">
+</a>
+<a #openbuttonpermisosLecturaInternoModal href="#" data-bs-toggle="modal" data-bs-target="#permisosLecturaInternoModal">
+</a>

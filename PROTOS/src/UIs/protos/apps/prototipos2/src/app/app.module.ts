@@ -64,6 +64,11 @@ import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/config
 import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
 import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.component';
 
+import { ModalUsuarioExternoComponent } from './pages/modal-usuario-externo/modal-usuario-externo.component';
+import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component';
+import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -123,7 +128,10 @@ import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.
     ConfigureFlowStagesComponent,
     ConfigureFlowTasksComponent,
     SeeReadPermissionsComponent,
-    AddRolesModalComponent
+    AddRolesModalComponent,
+    ModalUsuarioInternoComponent,
+    ModalUsuarioExternoComponent,
+    PermisosLecturaInternoModalComponent
   ],
   imports: [
     BrowserModule,

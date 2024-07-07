@@ -5,3 +5,8 @@
 .select-etapa {
   margin-top: .3063rem;
 }
+
+.dialog {
+  display: none;
+
+}
