@@ -60,6 +60,7 @@ import { EditRequirementComponent } from './pages/edit-requirement/edit-requirem
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
+import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alerts/configure-general-alerts.component';
 
 @NgModule({
   declarations: [
@@ -119,6 +120,7 @@ import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/config
     CreateTaskComponent,
     ConfigureFlowStagesComponent,
     ConfigureFlowTasksComponent,
+    ConfigureGeneralAlertsComponent,
   ],
   imports: [
     BrowserModule,
