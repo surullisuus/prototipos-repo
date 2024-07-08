@@ -94,6 +94,8 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
+          <th class="columna-especial" role="button">Proceso</th>
+          <th class="columna-especial" role="button">Etapa</th>
           <th class="columna-especial" role="button">Requisito</th>
        
           <th style="text-align: center !important;">Acciones</th>
@@ -103,6 +105,8 @@
       <tbody class="contenido-tablas">
         <tr *ngFor="let item of processRequests">
           <td class="text-left">{{ item.nombreProceso }}</td>
+          <td class="text-left">{{ item.nombreEtapa }}</td>
+          <td class="text-left">{{ item.nombreRequisito }}</td>
         
          
           <td style="text-align: center !important; padding-right: 10px;">

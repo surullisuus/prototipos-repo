@@ -1,0 +1,18 @@
+@media (max-width: 991px) {
+    .responsive-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+  }
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .responsive-col {
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+  }
+
+  .govco-times-circle{
+    font-size: 1.9rem;
+    color: red;
+    cursor: pointer;
+  }
