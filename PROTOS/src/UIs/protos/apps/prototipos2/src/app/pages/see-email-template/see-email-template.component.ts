@@ -22,11 +22,11 @@ interface CurrentProcess {
 }
 
 @Component({
-  selector: 'app-edit-email-template',
-  templateUrl: './edit-email-template.component.html',
-  styleUrl: './edit-email-template.component.css',
+  selector: 'app-see-email-template',
+  templateUrl: './see-email-template.component.html',
+  styleUrl: './see-email-template.component.css',
 })
-export class EditEmailTemplateComponent {
+export class SeeEmailTemplateComponent {
   selectedProcess: string | null = null;
   selectedDocument: string | null = null;
   currentProcessId: CurrentProcess = {

@@ -29,6 +29,7 @@ export class DropdownListComponent implements OnInit, AfterViewInit {
   @Input() isValid = false;
   @Input() isNotValid = false;
   @Input() isTouched = false;
+  @Input() title = 'Escoger';
   @Output() eventlist = new EventEmitter<any>();
 
   @HostListener('click')
@@ -48,7 +49,6 @@ export class DropdownListComponent implements OnInit, AfterViewInit {
   basic = false;
   multiple = false;
   seelist: boolean = false;
-  title: string = 'Escoger';
   inside: boolean = false;
   selectOption: string = 'desplegable-selected-option';
   selectOptionRequired: string =
