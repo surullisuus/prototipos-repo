@@ -17,7 +17,7 @@
             <div class="col-md-4">
 
                 <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676"
-                    type="basic" [disabled]="false" [lista]="processOptions()" (eventlist)="setSelectedProcess($event)"
+                    type="basic" [disabled]="true" [lista]="processOptions()" (eventlist)="setSelectedProcess($event)"
                     [title]="currentProcessId.process">
                 </subsidios-dropdown-list>
             </div>
@@ -25,8 +25,8 @@
             <!--Tipo documental-->
             <div class="col-md-4">
                 <subsidios-dropdown-list labelText="Tipo documental" note="Seleccione una opción" idList="type-345676"
-                    type="basic" [disabled]="false" [lista]="documentOptions()"
-                    (eventlist)="setSelectedDocument($event)" [title]="currentProcessId.documentType">
+                    type="basic" [disabled]="true" [lista]="documentOptions()" (eventlist)="setSelectedDocument($event)"
+                    [title]="currentProcessId.documentType">
                 </subsidios-dropdown-list>
             </div>
 
@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-10 entradas-de-texto-govco">
                 <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    [value]="currentProcessId.name" />
+                    [value]="currentProcessId.name" disabled />
             </div>
         </div>
 
@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-10 entradas-de-texto-govco">
                 <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    style="min-height: 5rem; min-width: 100%;"> {{ currentProcessId.description }} </textarea>
+                    style="min-height: 5rem; min-width: 100%;" disabled> {{ currentProcessId.description }} </textarea>
             </div>
         </div>
 
@@ -62,7 +62,7 @@
             </div>
             <div class="col-md-10 entradas-de-texto-govco">
                 <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    [value]="currentProcessId.desde" />
+                    [value]="currentProcessId.desde" disabled />
             </div>
         </div>
 
@@ -73,7 +73,7 @@
             </div>
             <div class="col-md-10 entradas-de-texto-govco">
                 <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    [value]="currentProcessId.cc" />
+                    [value]="currentProcessId.cc" disabled />
             </div>
         </div>
 
@@ -84,7 +84,7 @@
             </div>
             <div class="col-md-10 entradas-de-texto-govco">
                 <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    [value]="currentProcessId.asunto" />
+                    [value]="currentProcessId.asunto" disabled />
             </div>
         </div>
 
@@ -95,23 +95,18 @@
             </div>
             <div class="col-md-10 entradas-de-texto-govco">
                 <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    style="min-height: 10rem; min-width: 100%;">{{currentProcessId.cuerpo}}</textarea>
+                    style="min-height: 10rem; min-width: 100%;" disabled>{{currentProcessId.cuerpo}}</textarea>
 
             </div>
         </div>
 
 
-        <div class="row mt-4 mb-3 text-left">
+        <div class="row mt-4 mb-3 text-center">
             <div class="col-md-12">
-
-                <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
-                    Guardar
-                </button>
-
                 <button type="button"
                     class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
                     routerLink="/consultar-plantillas-correo">
-                    Cancelar
+                    Cerrar
                 </button>
             </div>
         </div>
