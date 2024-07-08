@@ -59,7 +59,10 @@ import { CreateRequirementComponent } from './pages/create-requirement/create-re
 import { EditRequirementComponent } from './pages/edit-requirement/edit-requirement.component';
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
+import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-correo/manage-plantillas-correos.component';
+import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
+import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alerts/configure-general-alerts.component';
 
 import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
 import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.component';
@@ -126,7 +129,12 @@ import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/moda
     EditRequirementComponent,
     CreateTaskComponent,
     ConfigureFlowStagesComponent,
+    ManagePlantillasCorreosComponent,
+    CreateEmailTemplateComponent,
+    EditEmailTemplateComponent,
+    SeeEmailTemplateComponent,
     ConfigureFlowTasksComponent,
+    ConfigureGeneralAlertsComponent,
     SeeReadPermissionsComponent,
     AddRolesModalComponent,
     ModalUsuarioInternoComponent,
