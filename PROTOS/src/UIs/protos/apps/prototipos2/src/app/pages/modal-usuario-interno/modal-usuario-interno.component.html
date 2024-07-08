@@ -1,0 +1,73 @@
+<div class="modal fade" id="rolesPermisosModal" tabindex="-1" aria-labelledby="rolesPermisosModalLabel"
+  aria-hidden="true">
+  <form>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="row">
+            <h4 class="h4-tipografia-govco">
+              <span class="govcolor-marine">
+                ROLES CON PERMISOS
+              </span>
+            </h4>
+          </div>
+          <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+            aria-expanded="false">
+            <span class="modal-close-govco govco-times"></span>
+          </a>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-6 col-xl-5">
+              <p lang="en" class="text2-tipografia-govco">No. Solicitud:</p>
+              <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">12345678</p>
+            </div>
+            <div class="col-6 col-xl-5">
+              <p lang="en" class="text2-tipografia-govco">Etapa:</p>
+              <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">Nombe etapa en ejecución</p>
+            </div>
+          </div>
+
+          <div class="table-responsive table-process" *ngIf="internalGroups.length>0; else noRoles">
+            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+              <thead class="encabezado-tabla">
+                <tr>
+                  <th style="text-align: center !important">Grupo/Subdirección</th>
+                  <th style="text-align: center !important">Rol</th>
+                  <th style="text-align: center !important">Acción</th>
+                </tr>
+              </thead>
+              <tbody class="contenido-tablas">
+                <tr *ngFor="let group of internalGroups">
+                  <td style="text-align: center !important">{{ group.name }}</td>
+                  <td style="text-align: center !important">{{ group.role }}</td>
+                  <td style="text-align: center !important">
+                    <div class="d-flex justify-content-center text-nowrap px-2">
+                      <a class="ms-2 me-2" tabindex="0" data-bs-toggle="modal" style="cursor: pointer"
+                        (click)="onViewPermisosLecturaInterno()">Ver permisos</a> /
+                      <a class="ms-2" tabindex="0" style="cursor: pointer" d data-bs-toggle="modal"
+                        (click)="showModalDeleteRegister(group.id)">Eliminar</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <ng-template #noRoles>
+            <p lang="en" class="text2-tipografia-govco">No se encontraron registros</p>
+          </ng-template>
+
+          <div class="col">
+            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+              data-bs-toggle="modal" data-bs-target="#addRolesModal">Añadir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+<app-permisos-lectura-interno-modal [internalGroups]="internalGroups"
+  [internalGroupsPermissions]="internalGroupsPermissions"
+  [showModalApplyPermissions]="showModalApplyPermissions"></app-permisos-lectura-interno-modal>
+<a #openbuttonPermisosRolesInterno href="#" data-bs-toggle="modal" data-bs-target="#permisosLecturaInternoModal">
+</a>

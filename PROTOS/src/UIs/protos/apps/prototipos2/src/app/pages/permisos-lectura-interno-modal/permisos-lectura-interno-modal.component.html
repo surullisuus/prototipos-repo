@@ -1,0 +1,70 @@
+<div class="modal fade" id="permisosLecturaInternoModal" tabindex="-1"
+    aria-labelledby="permisosLecturaInternoModalLabel" aria-hidden="true">
+    <form>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <h4 class="h4-tipografia-govco">
+                            <span class="govcolor-marine">
+                                PERMISOS DE LECTURA
+                            </span>
+                        </h4>
+                    </div>
+                    <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+                        aria-expanded="false">
+                        <span class="modal-close-govco govco-times"></span>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6 col-xl-5">
+                            <p lang="en" class="text2-tipografia-govco">No. Solicitud:</p>
+                            <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">12345678</p>
+                        </div>
+                        <div class="col-6 col-xl-5">
+                            <p lang="en" class="text2-tipografia-govco">Etapa:</p>
+                            <p lang="en" class="text2-tipografia-govco bold-tipografia-govco">Nombre etapa en ejecución
+                            </p>
+                        </div>
+                    </div>
+                    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                        <thead class="encabezado-tabla">
+                            <tr>
+                                <th style="text-align: center !important">Tarea/Actuación</th>
+                                <th style="text-align: center !important">Nombre archivo</th>
+                                <th style="text-align: center !important">Tipo documento</th>
+                                <th style="text-align: center !important">Lectura</th>
+                            </tr>
+                        </thead>
+                        <tbody class="contenido-tablas">
+                            <tr *ngFor="let group of internalGroupsPermissions">
+
+                                <td style="text-align: center !important">{{ group.actuacion }}</td>
+                                <td style="text-align: center !important">{{ group.nombreArchivo }}</td>
+                                <td style="text-align: center !important">{{ group.tipoDocumento }}</td>
+                                <td style="text-align: center !important">
+                                    <div class="checkbox-seleccion-govco d-flex justify-content-center ">
+                                        <input id="opt1" type="checkbox" [checked]="group.lectura" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button"
+                                class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1" (click)="showModalApplyPermissions()" data-bs-toggle="modal" data-bs-target="#permisosLecturaInternoModal">Aplicar
+                                permisos</button>
+                            <button type="button"
+                                class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+                                data-bs-toggle="modal" data-bs-target="#permisosLecturaInternoModal"
+                                data-bs-target="#rolesPermisosModal"
+                                >Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
