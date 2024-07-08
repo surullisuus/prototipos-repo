@@ -62,6 +62,7 @@ import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/conf
 import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-correo/manage-plantillas-correos.component';
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
+import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alerts/configure-general-alerts.component';
 
 @NgModule({
   declarations: [
@@ -125,6 +126,7 @@ import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/config
     EditEmailTemplateComponent,
     SeeEmailTemplateComponent,
     ConfigureFlowTasksComponent,
+    ConfigureGeneralAlertsComponent,
   ],
   imports: [
     BrowserModule,
