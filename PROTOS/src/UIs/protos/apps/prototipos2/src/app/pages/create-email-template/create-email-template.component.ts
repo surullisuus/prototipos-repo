@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { DialogData } from '../../components/dialog/models/dialog-data';
+import { DialogService } from '../../components/dialog/services/dialog.service';
+import { Subscription } from 'rxjs';
+import { DialogType } from '../../components/dialog/models/dialog-type';
 
 interface Process {
   id: number;
@@ -14,6 +19,7 @@ interface Process {
   styleUrl: './create-email-template.component.css',
 })
 export class CreateEmailTemplateComponent {
+  @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   selectedProcess: string | null = null;
   selectedDocument: string | null = null;
 
@@ -40,6 +46,9 @@ export class CreateEmailTemplateComponent {
       description: 'abc............',
     },
   ];
+  subscription!: Subscription;
+
+  constructor(private dialogService: DialogService) {}
 
   processOptions() {
     return [
@@ -81,5 +90,21 @@ export class CreateEmailTemplateComponent {
 
   setSelectedDocument(document: { id: number; text: string }) {
     this.selectedDocument = document.text;
+  }
+
+  showSuccessTaskInitializationAlertState(body: string) {
+    const dialogData = new DialogData();
+    dialogData.title = body;
+    dialogData.type = DialogType.success;
+    dialogData.buttonConfirm = false;
+    dialogData.textButtonCancel = 'Cerrar';
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        dialogAction.eventClose.emit();
+        location.reload();
+        location.replace('/consultar-plantillas-correo');
+      });
   }
 }
