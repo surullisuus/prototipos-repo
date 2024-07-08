@@ -7,6 +7,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 })
 export class AddRolesModalComponent {
     @Input() internalGroups: any;
+    @Input() showModalAddPermissions!: () => void;
 
     onCancel(event: Event) {
         event.preventDefault();
@@ -14,5 +15,6 @@ export class AddRolesModalComponent {
 
     onAddRoles(event: Event) {
         event.preventDefault();
+        this.showModalAddPermissions();
     }
 }

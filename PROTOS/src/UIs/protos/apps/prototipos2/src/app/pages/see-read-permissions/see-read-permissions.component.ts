@@ -26,6 +26,7 @@ export class SeeReadPermissionsComponent implements OnInit {
   openbuttonPermisosLectura!: ElementRef;
   @ViewChild('openbuttonPermisosRoles') openbuttonPermisosRoles!: ElementRef;
   @ViewChild('openbuttonpermisosLecturaInternoModal') openbuttonpermisosLecturaInternoModal!: ElementRef;
+  @ViewChild('openbuttonaddRolesModal') openbuttonaddRolesModal!: ElementRef;
 
   form!: FormGroup;
   subscription!: Subscription;
@@ -188,6 +189,33 @@ export class SeeReadPermissionsComponent implements OnInit {
         }
       });
   };
+
+  showModalAddPermissions = () => {
+    const dialogData = new DialogData();
+    dialogData.title = `¿Está seguro de añadir los roles?`;
+    dialogData.type = DialogType.warning;
+    dialogData.buttonConfirm = true;
+    dialogData.textButtonConfirm = 'Aceptar';
+    dialogData.textButtonCancel = 'Cancelar';
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          //añadir permisos en bd
+          dialogAction.eventClose.emit();
+          this.showAlertState(
+            'Roles añadidos exitosamente',
+            DialogType.success
+          );
+        } else {
+          dialogAction.eventClose.emit();
+          this.openbuttonaddRolesModal.nativeElement.click();
+
+        }
+      });
+  };
+
   showModalDeleteRegister = (internalId: number) => {
     const dialogData = new DialogData();
     dialogData.title = `¿Está seguro de que desea eliminar el registro?`;
