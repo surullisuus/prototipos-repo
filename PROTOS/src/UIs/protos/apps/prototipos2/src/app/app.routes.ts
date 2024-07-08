@@ -34,6 +34,8 @@ import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-do
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
 import { CreateTaskConfigComponent } from './pages/create-task-configs/create-task-config.component';
 import { EditTaskComponent } from './pages/edit-task/edit-task.component';
+import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
+import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alerts/configure-general-alerts.component';
 import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-correo/manage-plantillas-correos.component';
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
@@ -90,7 +92,6 @@ export const appRoutes: Route[] = [
     component: SetStageRequirementsComponent,
   },
   { path: 'crear-tarea', component: CreateTaskComponent },
-  { path: 'configurar-flujo-etapas', component: ConfigureFlowStagesComponent },
   {
     path: 'consultar-plantillas-correo',
     component: ManagePlantillasCorreosComponent,
@@ -109,4 +110,6 @@ export const appRoutes: Route[] = [
   },
   { path: 'configurar-flujo-etapas', component: ConfigureFlowStagesComponent },
   { path: 'configurar-flujo-tareas', component: ConfigureFlowTasksComponent },
+  { path: 'configurar-alertas-generales', component: ConfigureGeneralAlertsComponent},
+  { path: 'permisos-lectura', component: SeeReadPermissionsComponent },
 ];

@@ -62,6 +62,15 @@ import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/conf
 import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-correo/manage-plantillas-correos.component';
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
+import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alerts/configure-general-alerts.component';
+
+import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
+import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.component';
+
+import { ModalUsuarioExternoComponent } from './pages/modal-usuario-externo/modal-usuario-externo.component';
+import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component';
+import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
+
 
 @NgModule({
   declarations: [
@@ -125,6 +134,12 @@ import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/config
     EditEmailTemplateComponent,
     SeeEmailTemplateComponent,
     ConfigureFlowTasksComponent,
+    ConfigureGeneralAlertsComponent,
+    SeeReadPermissionsComponent,
+    AddRolesModalComponent,
+    ModalUsuarioInternoComponent,
+    ModalUsuarioExternoComponent,
+    PermisosLecturaInternoModalComponent
   ],
   imports: [
     BrowserModule,
