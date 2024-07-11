@@ -40,6 +40,8 @@ import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-corr
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
+import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component';
+import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -110,6 +112,14 @@ export const appRoutes: Route[] = [
   },
   { path: 'configurar-flujo-etapas', component: ConfigureFlowStagesComponent },
   { path: 'configurar-flujo-tareas', component: ConfigureFlowTasksComponent },
-  { path: 'configurar-alertas-generales', component: ConfigureGeneralAlertsComponent},
+  {
+    path: 'configurar-alertas-generales',
+    component: ConfigureGeneralAlertsComponent,
+  },
   { path: 'permisos-lectura', component: SeeReadPermissionsComponent },
+  {
+    path: 'seguimiento-notificaciones',
+    component: ManageSeguimientoNotificacionesComponent,
+  },
+  { path: 'editar-acuse-recibido', component: EditAcuseRecibidoComponent },
 ];

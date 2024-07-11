@@ -70,7 +70,8 @@ import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.
 import { ModalUsuarioExternoComponent } from './pages/modal-usuario-externo/modal-usuario-externo.component';
 import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component';
 import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
-
+import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component';
+import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
 
 @NgModule({
   declarations: [
@@ -139,7 +140,9 @@ import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/moda
     AddRolesModalComponent,
     ModalUsuarioInternoComponent,
     ModalUsuarioExternoComponent,
-    PermisosLecturaInternoModalComponent
+    PermisosLecturaInternoModalComponent,
+    ManageSeguimientoNotificacionesComponent,
+    EditAcuseRecibidoComponent,
   ],
   imports: [
     BrowserModule,
