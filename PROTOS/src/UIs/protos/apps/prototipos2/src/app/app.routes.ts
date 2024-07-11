@@ -42,6 +42,7 @@ import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-ema
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
 import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component';
 import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
+import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/see-consultar-radicado.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -122,4 +123,8 @@ export const appRoutes: Route[] = [
     component: ManageSeguimientoNotificacionesComponent,
   },
   { path: 'editar-acuse-recibido/:id', component: EditAcuseRecibidoComponent },
+  {
+    path: 'consultar-radicado-notificación/:id',
+    component: SeeConsultarRadicadoComponent,
+  },
 ];

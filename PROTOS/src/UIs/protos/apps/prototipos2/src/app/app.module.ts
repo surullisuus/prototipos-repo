@@ -72,6 +72,7 @@ import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-i
 import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
 import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component';
 import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
+import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/see-consultar-radicado.component';
 
 @NgModule({
   declarations: [
@@ -143,6 +144,7 @@ import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acu
     PermisosLecturaInternoModalComponent,
     ManageSeguimientoNotificacionesComponent,
     EditAcuseRecibidoComponent,
+    SeeConsultarRadicadoComponent,
   ],
   imports: [
     BrowserModule,

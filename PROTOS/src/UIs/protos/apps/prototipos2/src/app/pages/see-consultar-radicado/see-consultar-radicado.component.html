@@ -1,0 +1,74 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Consultar radicado </span></h3>
+
+
+<div class="rounded-3 mb-5 mt-3">
+
+    <div class="row mt-5">
+
+        <!--Proceso-->
+
+        <div class="col-md-12">
+
+            <div class="entradas-de-texto-govco">
+                <label for="input-basico-id">No. RADICADO*</label>
+                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="table-responsive" style="overflow: hidden;">
+
+        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+            <!-- headers -->
+            <thead class="encabezado-tabla">
+                <tr>
+                    <th style="text-align: center !important;">Seleccionar</th>
+                    <th style="text-align: center !important;">No. Radicado</th>
+                    <th style="text-align: center !important;">Fecha Radicado</th>
+
+                </tr>
+            </thead>
+
+            <tbody class="contenido-tablas">
+                <tr *ngFor="let radicado of radicados">
+                    <td class="text-center">
+                        <input id="opt1" type="checkbox" class="checkbox-seleccion-govco m-2"
+                            [checked]="radicado.selected" />
+                    </td>
+                    <td class="text-center">{{ radicado.number }}</td>
+                    <td class="text-center">{{ radicado.date.toLocaleDateString() }}</td>
+
+
+                </tr>
+            </tbody>
+        </table>
+        <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+    </div>
+
+
+
+    <div class="row mt-4 mb-3 text-left">
+        <div class="col-md-12">
+
+
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                (click)="showSuccessTaskInitializationAlertState('Radicado asociado de manera exitosa')">
+                Asociar
+            </button>
+
+
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                routerLink="/seguimiento-notificaciones">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+<div #dialog></div>

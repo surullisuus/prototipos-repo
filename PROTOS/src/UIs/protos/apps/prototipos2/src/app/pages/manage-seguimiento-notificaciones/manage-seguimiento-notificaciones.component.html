@@ -111,7 +111,9 @@
                             </ng-container>
                             <ng-container
                                 *ngIf="verifyNotificationStateWith(['Pendiente por adjuntar notificación personal/aviso'], notification.state)">
-                                <a type="button" class="button-modal-enabled-none">Pendiente por adjuntar notificación
+                                <a type="button" class="button-modal-enabled-none"
+                                    [routerLink]="['/consultar-radicado-notificación', notification.id]">Pendiente por
+                                    adjuntar notificación
                                     personal/aviso</a>
                             </ng-container>
                             <ng-container
