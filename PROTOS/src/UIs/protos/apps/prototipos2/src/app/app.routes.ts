@@ -121,5 +121,5 @@ export const appRoutes: Route[] = [
     path: 'seguimiento-notificaciones',
     component: ManageSeguimientoNotificacionesComponent,
   },
-  { path: 'editar-acuse-recibido', component: EditAcuseRecibidoComponent },
+  { path: 'editar-acuse-recibido/:id', component: EditAcuseRecibidoComponent },
 ];

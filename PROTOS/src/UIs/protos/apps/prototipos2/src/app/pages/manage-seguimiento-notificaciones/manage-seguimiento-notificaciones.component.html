@@ -106,7 +106,8 @@
                         <td class="text-center">
                             <ng-container
                                 *ngIf="verifyNotificationStateWith(['Pendiente por notificar'], notification.state)">
-                                <a type="button" class="button-modal-enabled-none">Acuse de recibido</a>
+                                <a type="button" class="button-modal-enabled-none"
+                                    [routerLink]="['/editar-acuse-recibido', notification.id]">Acuse de recibido</a>
                             </ng-container>
                             <ng-container
                                 *ngIf="verifyNotificationStateWith(['Pendiente por adjuntar notificación personal/aviso'], notification.state)">

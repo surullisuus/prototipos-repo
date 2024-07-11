@@ -1,1 +1,79 @@
-<p>edit-acuse-recibido works!</p>
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> ACUSE DE RECIBO </span>
+</h3>
+
+<div class="rounded-3 mb-5 mt-3">
+
+    <div class="row">
+
+        <!--Grupo/subdirección-->
+        <div class="col-md-12">
+            <subsidios-dropdown-list labelText="Entregó" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false" [lista]="[{text: 'Sí'}, {text: 'No'}]" (eventlist)="setDelivered($event)">
+            </subsidios-dropdown-list>
+        </div>
+
+        <div class="col-md-12"><br></div>
+
+        <ng-container *ngIf="isDelivered === true">
+            <!--No expediente-->
+            <div class="col-md-12">
+                <div class="entradas-de-texto-govco" style="padding: 0;">
+                    <label for="input-basico-id">No. Guía</label>
+                    <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                        (input)="setGuideNumber($event)" />
+                </div>
+            </div>
+
+            <div class="col-md-12"><br></div>
+
+            <!--Proceso-->
+            <div class="col-md-12">
+                <label for="calendario-govco" class="label-desplegable-govco">Fecha acuse de recibido<span
+                        aria-required="true">*</span></label>
+                <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco"
+                    style='width:280px;  height: 40px;' data-type="calendar">
+                    <div class="date desplegable-selected-option">
+                        <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off"
+                            days="true" placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12"><br></div>
+        </ng-container>
+
+        <ng-container *ngIf="isDelivered === false">
+            <!--Estado-->
+            <div class="col-md-12">
+                <subsidios-dropdown-list labelText="Casual" note="Seleccione una opción" idList="type-345676"
+                    type="basic" [disabled]="false">
+                </subsidios-dropdown-list>
+            </div>
+        </ng-container>
+
+
+
+
+
+    </div>
+
+    <div class="row mt-4 mb-3 text-left">
+        <div class="col-md-12">
+
+
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                (click)="showSuccessTaskInitializationAlertState('Se modificó la notificación de forma exitosa')">
+                Guardar
+            </button>
+
+
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                routerLink="/seguimiento-notificaciones">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+
+</div>
+
+<div #dialog></div>
