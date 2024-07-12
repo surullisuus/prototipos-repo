@@ -41,6 +41,7 @@ import { CreateEmailTemplateComponent } from './pages/create-email-template/crea
 import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
 import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
+import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -114,5 +115,6 @@ export const appRoutes: Route[] = [
   { path: 'configurar-alertas-generales', component: ConfigureGeneralAlertsComponent},
   { path: 'permisos-lectura', component: SeeReadPermissionsComponent },
   { path: 'consultar-radicado', component: ConsultFileComponent },
+  { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
 
 ];

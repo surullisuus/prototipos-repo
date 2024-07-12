@@ -71,6 +71,7 @@ import { ModalUsuarioExternoComponent } from './pages/modal-usuario-externo/moda
 import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component';
 import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
 import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
+import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 
 
 @NgModule({
@@ -141,7 +142,8 @@ import { ConsultFileComponent } from './pages/consult-file/consult-file.componen
     ModalUsuarioInternoComponent,
     ModalUsuarioExternoComponent,
     PermisosLecturaInternoModalComponent,
-    ConsultFileComponent
+    ConsultFileComponent,
+    AssociateDocumentsComponent
   ],
   imports: [
     BrowserModule,
