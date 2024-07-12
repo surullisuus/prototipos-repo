@@ -66,6 +66,14 @@ import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alert
 import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload-task-document.component';
 import { DocumentSigningComponent } from './pages/document-signing/document-signing.component';
 import { FileDocumentComponent } from './pages/file-document/file-document.component';
+import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
+import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.component';
+
+import { ModalUsuarioExternoComponent } from './pages/modal-usuario-externo/modal-usuario-externo.component';
+import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component';
+import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -132,6 +140,11 @@ import { FileDocumentComponent } from './pages/file-document/file-document.compo
     UploadTaskDocumentComponent,
     DocumentSigningComponent,
     FileDocumentComponent,
+    SeeReadPermissionsComponent,
+    AddRolesModalComponent,
+    ModalUsuarioInternoComponent,
+    ModalUsuarioExternoComponent,
+    PermisosLecturaInternoModalComponent
   ],
   imports: [
     BrowserModule,
