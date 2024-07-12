@@ -63,7 +63,9 @@ import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-corr
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alerts/configure-general-alerts.component';
-
+import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload-task-document.component';
+import { DocumentSigningComponent } from './pages/document-signing/document-signing.component';
+import { FileDocumentComponent } from './pages/file-document/file-document.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -127,6 +129,9 @@ import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alert
     SeeEmailTemplateComponent,
     ConfigureFlowTasksComponent,
     ConfigureGeneralAlertsComponent,
+    UploadTaskDocumentComponent,
+    DocumentSigningComponent,
+    FileDocumentComponent,
   ],
   imports: [
     BrowserModule,
