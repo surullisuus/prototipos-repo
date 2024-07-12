@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+.-mt-4{
+  margin-top: -0.8438rem !important;
+}
+
+.-mt-2{
+  margin-top: -0.3669rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .-mt-5{
+    margin-top: -1.21rem;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .-mt-5{
+    margin-top: 0.89rem;
+  }
+}
