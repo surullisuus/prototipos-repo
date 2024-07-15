@@ -40,7 +40,7 @@ import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-corr
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
-
+import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload-task-document.component';
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
   { path: 'procesos', component: ProcessRequestComponent },
@@ -111,5 +111,7 @@ export const appRoutes: Route[] = [
   { path: 'configurar-flujo-etapas', component: ConfigureFlowStagesComponent },
   { path: 'configurar-flujo-tareas', component: ConfigureFlowTasksComponent },
   { path: 'configurar-alertas-generales', component: ConfigureGeneralAlertsComponent},
+
+  { path: 'cargar-documento-tarea', component: UploadTaskDocumentComponent},
   { path: 'permisos-lectura', component: SeeReadPermissionsComponent },
 ];

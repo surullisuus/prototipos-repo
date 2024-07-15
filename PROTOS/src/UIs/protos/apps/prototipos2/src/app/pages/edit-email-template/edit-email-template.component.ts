@@ -1,10 +1,5 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DialogData } from '../../components/dialog/models/dialog-data';
-import { DialogAction } from '../../components/dialog/models/dialog-action';
-import { DialogService } from '../../components/dialog/services/dialog.service';
-import { Subscription } from 'rxjs';
-import { DialogType } from '../../components/dialog/models/dialog-type';
 
 interface Process {
   id: number;
@@ -32,9 +27,6 @@ interface CurrentProcess {
   styleUrl: './edit-email-template.component.css',
 })
 export class EditEmailTemplateComponent {
-  @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
-  subscription!: Subscription;
-
   selectedProcess: string | null = null;
   selectedDocument: string | null = null;
   currentProcessId: CurrentProcess = {
@@ -74,10 +66,7 @@ export class EditEmailTemplateComponent {
     },
   ];
 
-  constructor(
-    private _activeRoute: ActivatedRoute,
-    private dialogService: DialogService
-  ) {
+  constructor(private _activeRoute: ActivatedRoute) {
     this.loading = true;
     _activeRoute.queryParams.subscribe((params) => {
       this.currentProcessId = this.fetchCurrentProcess(params?.['id']);
@@ -143,21 +132,5 @@ export class EditEmailTemplateComponent {
 
   setSelectedDocument(document: { id: number; text: string }) {
     this.selectedDocument = document.text;
-  }
-
-  showSuccessTaskInitializationAlertState(body: string) {
-    const dialogData = new DialogData();
-    dialogData.title = body;
-    dialogData.type = DialogType.success;
-    dialogData.buttonConfirm = false;
-    dialogData.textButtonCancel = 'Cerrar';
-
-    this.subscription = this.dialogService
-      .openModal(this.dialog, dialogData)
-      .subscribe((dialogAction: DialogAction) => {
-        dialogAction.eventClose.emit();
-        location.reload();
-        location.replace('/consultar-plantillas-correo');
-      });
   }
 }
