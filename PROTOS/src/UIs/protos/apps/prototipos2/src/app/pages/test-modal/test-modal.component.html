@@ -1,0 +1,31 @@
+<!--Este componente es para probar modal's-->
+<h3 class="h3-tipografia-govco">Probar Modal(s)</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <span> Modal 1</span>
+        <a
+        class="ms-2 me-2"
+        tabindex="0"
+        data-bs-target="#documentSigningModal"
+        data-bs-toggle="modal"
+        style="cursor: pointer"
+      >
+        Firmar documento
+        </a>
+    </div>
+    <div class="row">
+        <span> Modal 2</span>
+        <a
+        class="ms-2 me-2"
+        tabindex="0"
+        data-bs-target="#fileDocumentModal"
+        data-bs-toggle="modal"
+        style="cursor: pointer"
+      >
+        Radicar Documentos
+        </a>
+    </div>
+</div>
+<app-document-signing></app-document-signing>
+<app-file-document></app-file-document>
+<div #dialog></div>
