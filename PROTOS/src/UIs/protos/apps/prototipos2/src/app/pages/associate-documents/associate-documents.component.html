@@ -102,10 +102,12 @@
     </table>
     <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
 </div>
-<button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1">
+<button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1" (click)="onAssociateDocuments()">
     Asociar
 </button>
 
 <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
     Cancelar
 </button>
+
+<div #dialog></div>

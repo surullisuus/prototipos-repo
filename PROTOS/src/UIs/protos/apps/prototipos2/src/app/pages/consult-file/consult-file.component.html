@@ -1,24 +1,24 @@
-<h4 class="h3-tipografia-govco mt-3 mb-4">
+<h4 class="h3-tipografia-govco mt-3">
   <span class="govcolor-marine">Consultar radicados</span>
 </h4>
 
 <form [formGroup]="formQueryScheme">
   <div class="row">
-    <div class="col-lg-12 col-xl-2">
+    <div class="col-md-4 col-xl-3">
       <subsidios-dropdown-list labelText="Proceso:" idList="type-345676" type="basic"
         [disabled]="false"></subsidios-dropdown-list>
     </div>
-    <div class="col-lg-12 col-xl-2">
+    <div class="col-md-4 col-xl-3">
       <div class="entradas-de-texto-govco -mt-4">
         <label for="input-basico-id">No. Radicado:</label>
         <input type="text" id="input-basico-id" maxlength="13" />
       </div>
     </div>
-    <div class="col-lg-12 col-xl-2">
+    <div class="col-md-4 col-xl-3">
       <subsidios-dropdown-list labelText="Tipo documento:" idList="type-345676" type="basic"
         [disabled]="false"></subsidios-dropdown-list>
     </div>
-    <div class="col-lg-12 col-xl-2">
+    <div class="col-md-4 xs-mt-3 label-filtrar">
       <p lang="en" class="text2-tipografia-govco text-nowrap -mt-5">Filtrar por periodo de radicación.</p>
       <div class="d-flex gap-4 -mt-4">
         <div>
