@@ -75,6 +75,7 @@ import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/moda
 import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component';
 import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
 import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/see-consultar-radicado.component';
+import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component';
 
 @NgModule({
   declarations: [
@@ -150,6 +151,7 @@ import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/se
     ManageSeguimientoNotificacionesComponent,
     EditAcuseRecibidoComponent,
     SeeConsultarRadicadoComponent,
+    SeeAsociarRadicadoNotificacionComponent,
   ],
   imports: [
     BrowserModule,

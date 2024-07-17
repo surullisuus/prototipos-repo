@@ -17,43 +17,12 @@
 
     </div>
 
-    <div class="table-responsive" style="overflow: hidden;">
-
-        <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-            <!-- headers -->
-            <thead class="encabezado-tabla">
-                <tr>
-                    <th style="text-align: center !important;">Seleccionar</th>
-                    <th style="text-align: center !important;">No. Radicado</th>
-                    <th style="text-align: center !important;">Fecha Radicado</th>
-
-                </tr>
-            </thead>
-
-            <tbody class="contenido-tablas">
-                <tr *ngFor="let radicado of radicados">
-                    <td class="text-center">
-                        <input id="opt1" type="checkbox" class="checkbox-seleccion-govco m-2"
-                            [checked]="radicado.selected" />
-                    </td>
-                    <td class="text-center">{{ radicado.number }}</td>
-                    <td class="text-center">{{ radicado.date.toLocaleDateString() }}</td>
-
-
-                </tr>
-            </tbody>
-        </table>
-        <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
-    </div>
-
-
-
     <div class="row mt-4 mb-3 text-left">
         <div class="col-md-12">
 
 
             <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
-                (click)="showSuccessTaskInitializationAlertState('Radicado asociado de manera exitosa')">
+                [routerLink]="['/asociar-radicado-notificacion', 1]">
                 Asociar
             </button>
 
