@@ -1,0 +1,87 @@
+<h4 class="h3-tipografia-govco mt-3">
+  <span class="govcolor-marine">Consultar radicados</span>
+</h4>
+
+<form [formGroup]="formQueryScheme">
+  <div class="row">
+    <div class="col-md-4 col-xl-3">
+      <subsidios-dropdown-list labelText="Proceso:" idList="type-345676" type="basic"
+        [disabled]="false"></subsidios-dropdown-list>
+    </div>
+    <div class="col-md-4 col-xl-3">
+      <div class="entradas-de-texto-govco -mt-4">
+        <label for="input-basico-id">No. Radicado:</label>
+        <input type="text" id="input-basico-id" maxlength="13" />
+      </div>
+    </div>
+    <div class="col-md-4 col-xl-3">
+      <subsidios-dropdown-list labelText="Tipo documento:" idList="type-345676" type="basic"
+        [disabled]="false"></subsidios-dropdown-list>
+    </div>
+    <div class="col-md-4 xs-mt-3 label-filtrar">
+      <p lang="en" class="text2-tipografia-govco text-nowrap -mt-5">Filtrar por periodo de radicación.</p>
+      <div class="d-flex gap-4 -mt-4">
+        <div>
+          <label for="calendario-govco" class="label-desplegable-govco">Fecha inicio<span
+              aria-required="true"></span></label>
+          <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco -mt-2"
+            style="width:240px; height: 40px;" data-type="calendar">
+            <div class="date desplegable-selected-option">
+              <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" placeholder="Fecha inicio">
+            </div>
+          </div>
+        </div>
+        <div>
+          <div>
+            <label for="calendario-govco" class="label-desplegable-govco">Fecha fin<span
+                aria-required="true"></span></label>
+          </div>
+          <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco -mt-2"
+            style="width:240px; height: 40px;" data-type="calendar">
+            <div class="date desplegable-selected-option">
+              <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" placeholder="Fecha fin">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+    (click)="onBuscar()">Buscar</button>
+  <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space bg-marine mt-4"
+    (click)="onLimpiar()">Limpiar</button>
+</form>
+
+<div class="row mt-4">
+  <div class="table-responsive">
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+      <thead class="encabezado-tabla">
+        <tr>
+          <th scope="col" role="button">No.&nbsp;Radicado</th>
+          <th scope="col" role="button" style="text-align: center !important;">Fecha radicación</th>
+          <th scope="col" role="button" style="text-align: center !important;">Tipo documento</th>
+          <th class="columna-especial" role="button" style="text-align: center !important;">Acci&oacute;n</th>
+        </tr>
+      </thead>
+      <tbody class="contenido-tablas">
+        <tr *ngFor="let item of radicados">
+          <td class="text-center">{{ item.numeroRadicado }}</td>
+          <td style="text-align: center !important;">
+            <p class="mb-0">
+              {{ item.fechaRadicado | date: 'dd/MM/yyyy' }}
+            </p>
+          </td>
+          <td class="text-center">{{ item.tipoDocumento }}</td>
+          <td style="text-align: center !important; padding-right: 10px;">
+            <a class="button-modal-accept-none ms-2 me-2" href="#" tabindex="0" data-bs-target="#verRadicadoViewModal"
+              data-bs-toggle="modal" (click)="setDocumentId(item.id)"> Ver documento</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-ver-radicado-view [documentId]="documentId"></app-ver-radicado-view>
+<div #dialog></div>

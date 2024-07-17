@@ -72,6 +72,8 @@ import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.
 import { ModalUsuarioExternoComponent } from './pages/modal-usuario-externo/modal-usuario-externo.component';
 import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component';
 import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
+import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
+import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 
 
 @NgModule({
@@ -144,7 +146,9 @@ import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/moda
     AddRolesModalComponent,
     ModalUsuarioInternoComponent,
     ModalUsuarioExternoComponent,
-    PermisosLecturaInternoModalComponent
+    PermisosLecturaInternoModalComponent,
+    ConsultFileComponent,
+    AssociateDocumentsComponent
   ],
   imports: [
     BrowserModule,
