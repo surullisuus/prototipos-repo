@@ -1,0 +1,43 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Consultar radicado </span></h3>
+
+
+<div class="rounded-3 mb-5 mt-3">
+
+    <div class="row mt-5">
+
+        <!--Proceso-->
+
+        <div class="col-md-12">
+
+            <div class="entradas-de-texto-govco">
+                <label for="input-basico-id">No. RADICADO*</label>
+                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-4 mb-3 text-left">
+        <div class="col-md-12">
+
+
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                [routerLink]="['/asociar-radicado-notificacion', 1]">
+                Asociar
+            </button>
+
+
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                routerLink="/seguimiento-notificaciones">
+                Cancelar
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+<div #dialog></div>

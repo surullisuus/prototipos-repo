@@ -72,9 +72,12 @@ import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { ModalUsuarioExternoComponent } from './pages/modal-usuario-externo/modal-usuario-externo.component';
 import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component';
 import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
+import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component';
+import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
+import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/see-consultar-radicado.component';
+import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component';
 import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
-
 
 @NgModule({
   declarations: [
@@ -147,6 +150,10 @@ import { AssociateDocumentsComponent } from './pages/associate-documents/associa
     ModalUsuarioInternoComponent,
     ModalUsuarioExternoComponent,
     PermisosLecturaInternoModalComponent,
+    ManageSeguimientoNotificacionesComponent,
+    EditAcuseRecibidoComponent,
+    SeeConsultarRadicadoComponent,
+    SeeAsociarRadicadoNotificacionComponent,
     ConsultFileComponent,
     AssociateDocumentsComponent,
     TestModalComponent,

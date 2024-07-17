@@ -40,7 +40,11 @@ import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-corr
 import { CreateEmailTemplateComponent } from './pages/create-email-template/create-email-template.component';
 import { EditEmailTemplateComponent } from './pages/edit-email-template/edit-email-template.component';
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
+import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component';
+import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
+import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/see-consultar-radicado.component';
 import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload-task-document.component';
+import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component';
 import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 import { TestModalComponent } from './pages/test-modal/test-modal.component';
@@ -114,12 +118,31 @@ export const appRoutes: Route[] = [
   },
   { path: 'configurar-flujo-etapas', component: ConfigureFlowStagesComponent },
   { path: 'configurar-flujo-tareas', component: ConfigureFlowTasksComponent },
-  { path: 'configurar-alertas-generales', component: ConfigureGeneralAlertsComponent},
+  {
+    path: 'configurar-alertas-generales',
+    component: ConfigureGeneralAlertsComponent,
+  },
+  {
+    path: 'configurar-alertas-generales',
+    component: ConfigureGeneralAlertsComponent,
+  },
 
-  { path: 'cargar-documento-tarea', component: UploadTaskDocumentComponent},
+  { path: 'cargar-documento-tarea', component: UploadTaskDocumentComponent },
   { path: 'permisos-lectura', component: SeeReadPermissionsComponent },
+  {
+    path: 'seguimiento-notificaciones',
+    component: ManageSeguimientoNotificacionesComponent,
+  },
+  { path: 'editar-acuse-recibido/:id', component: EditAcuseRecibidoComponent },
+  {
+    path: 'consultar-radicado-notificación/:id',
+    component: SeeConsultarRadicadoComponent,
+  },
+  {
+    path: 'asociar-radicado-notificacion/:id',
+    component: SeeAsociarRadicadoNotificacionComponent,
+  },
   { path: 'consultar-radicado', component: ConsultFileComponent },
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
-  { path: 'probar-modal', component: TestModalComponent},
-
+  { path: 'probar-modal', component: TestModalComponent },
 ];

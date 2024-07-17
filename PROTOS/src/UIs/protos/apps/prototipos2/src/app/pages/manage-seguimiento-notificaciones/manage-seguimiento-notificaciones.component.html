@@ -1,0 +1,158 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR SEGUIMIENTO NOTIFICACIONES </span>
+</h3>
+
+<div class="rounded-3 mb-5 mt-3">
+
+    <div class="row">
+
+        <!--Grupo/subdirección-->
+        <div class="col-md-5">
+            <subsidios-dropdown-list labelText="Grupo/Subdirección" note="Seleccione una opción" idList="type-345676"
+                type="basic" [disabled]="false" [lista]="getGroupList()" (eventlist)="setCurrentGroup($event)">
+            </subsidios-dropdown-list>
+        </div>
+
+        <!--Proceso-->
+        <div class="col-md-5">
+            <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false" [lista]="getProccesList()" (eventlist)="setCurrentProcess($event)">
+            </subsidios-dropdown-list>
+        </div>
+
+        <div class="col-md-12">
+            <br />
+        </div>
+        <!--No expediente-->
+        <div class="col-md-5">
+            <div class="entradas-de-texto-govco" style="padding: 0;">
+                <label for="input-basico-id">No. expediente</label>
+                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                    (input)="setCurrentNumber($event)" />
+            </div>
+        </div>
+
+        <!--Estado-->
+        <div class="col-md-5">
+            <subsidios-dropdown-list labelText="Estado" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false" [lista]="getStateList()" (eventlist)="setCurrentState($event)">
+            </subsidios-dropdown-list>
+        </div>
+
+    </div>
+
+    <div class="row mt-4 mb-3 text-left">
+        <div class="col-md-12">
+
+
+            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom">
+                Buscar
+            </button>
+
+
+            <button type="button" class="btn-govco outline-btn-govco mt-1 btn-govco-space btn-govco-custom">
+                Limpiar
+            </button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-10">
+            <h4 class="h4-tipografia-govco mt-3 mb-2">
+                <span class="govcolor-marine">
+                    Resultado de consulta
+                </span>
+            </h4>
+        </div>
+        <div class="col-md-2">
+            <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+                Total registros: {{notifications.length}}
+            </p>
+        </div>
+    </div>
+    <div class="rounded-3 mb-5 mt-3">
+
+        <!--Tabla-->
+        <div class="table-responsive" style="overflow: hidden;">
+
+            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                <!-- headers -->
+                <thead class="encabezado-tabla">
+                    <tr>
+                        <th style="text-align: center !important;">No. Radicado</th>
+                        <th style="text-align: center !important;">Grupo/Subdirección</th>
+                        <th style="text-align: center !important;">Proceso</th>
+                        <th style="text-align: center !important;">No. Expediente</th>
+                        <th style="text-align: center !important;">Documento de Salida</th>
+                        <th style="text-align: center !important;">Estado de la Notificación</th>
+                        <th style="text-align: center !important;">Tipo de Notificación</th>
+                        <th style="text-align: center !important;">Fecha de acuse de Recibido</th>
+                        <th style="text-align: center !important;">Tipo de parte</th>
+                        <th style="text-align: center !important;">Nombre y apellidos</th>
+                        <th style="text-align: center !important;">Constancia notificación personal/aviso</th>
+                        <th style="text-align: center !important;">Notificaciones por medios electrónicos</th>
+                    </tr>
+                </thead>
+
+                <tbody class="contenido-tablas">
+                    <tr *ngFor="let notification of notifications">
+                        <td class="text-center">{{ notification.solicitudeNumber }}</td>
+                        <td class="text-center">{{ notification.group }}</td>
+                        <td class="text-center">{{ notification.process }}</td>
+                        <td class="text-center">{{ notification.solicitudeNumber }}</td>
+                        <td class="text-center">{{ notification.exitDocument }}</td>
+                        <td class="text-center">{{ notification.state }}</td>
+                        <td class="text-center">{{ notification.notificationType }}</td>
+                        <td class="text-center">
+                            <ng-container
+                                *ngIf="verifyNotificationStateWith(['Pendiente por notificar'], notification.state)">
+                                <a type="button" class="button-modal-enabled-none"
+                                    [routerLink]="['/editar-acuse-recibido', notification.id]">Acuse de recibido</a>
+                            </ng-container>
+                            <ng-container
+                                *ngIf="verifyNotificationStateWith(['Pendiente por adjuntar notificación personal/aviso'], notification.state)">
+                                <a type="button" class="button-modal-enabled-none"
+                                    [routerLink]="['/consultar-radicado-notificación', notification.id]">Pendiente por
+                                    adjuntar notificación
+                                    personal/aviso</a>
+                            </ng-container>
+                            <ng-container
+                                *ngIf="verifyNotificationStateWith(['Pendiente por adjuntar notificación por correo electrónico'], notification.state)">
+                                <a type="button" class="button-modal-enabled-none">Pendiente por adjuntar notificación
+                                    por correo electrónico</a>
+                            </ng-container>
+                        </td>
+                        <td class="text-center">{{ notification.tipoParte }}</td>
+                        <td class="text-center">{{ notification.para }}</td>
+                        <td class="text-center">
+                            <ng-container
+                                *ngIf="verifyNotificationStateWith(['Notificado', 'Constancia personal/aviso', 'Constancia correo electrónico'], notification.state)">
+                                <a type="button" class="button-modal-enabled-none">Constancia personal/aviso</a>
+                                /
+                                <a type="button" class="button-modal-enabled-none">Constancia correo electrónico</a>
+                            </ng-container>
+
+
+
+                        </td>
+                        <td class="text-center">
+                            <ng-container
+                                *ngIf="verifyNotificationStateWith(['Pendiente por adjuntar notificación por correo electrónico'], notification.state) && notification.electronicNotification">
+                                <a type="button" class="button-modal-enabled-none">Enviar notificación por correo
+                                    electrónico</a>
+                            </ng-container>
+
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+        </div>
+
+
+
+    </div>
+</div>
+
+<div #dialog></div>
