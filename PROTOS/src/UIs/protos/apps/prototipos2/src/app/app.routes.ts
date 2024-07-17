@@ -45,6 +45,8 @@ import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acu
 import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/see-consultar-radicado.component';
 import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload-task-document.component';
 import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component';
+import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
+import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -139,4 +141,6 @@ export const appRoutes: Route[] = [
     path: 'asociar-radicado-notificacion/:id',
     component: SeeAsociarRadicadoNotificacionComponent,
   },
+  { path: 'consultar-radicado', component: ConsultFileComponent },
+  { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
 ];

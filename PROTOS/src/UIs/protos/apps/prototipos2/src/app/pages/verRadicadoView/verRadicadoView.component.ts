@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-ver-radicado-view',
@@ -6,5 +6,5 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrl: './verRadicadoView.component.css',
 })
 export class VerRadicadoViewComponent {
-
+  @Input() documentId: string | undefined;
 }

@@ -76,6 +76,8 @@ import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimi
 import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
 import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/see-consultar-radicado.component';
 import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component';
+import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
+import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 
 @NgModule({
   declarations: [
@@ -152,6 +154,8 @@ import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-rad
     EditAcuseRecibidoComponent,
     SeeConsultarRadicadoComponent,
     SeeAsociarRadicadoNotificacionComponent,
+    ConsultFileComponent,
+    AssociateDocumentsComponent,
   ],
   imports: [
     BrowserModule,

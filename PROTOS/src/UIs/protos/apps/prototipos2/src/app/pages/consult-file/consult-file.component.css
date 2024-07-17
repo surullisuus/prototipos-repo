@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.-mt-4{
+  margin-top: -0.8438rem !important;
+}
+
+.-mt-2{
+  margin-top: -0.3669rem;
+}
+
+@media  screen and (max-width: 768px) {
+  .label-filtrar{
+    margin-top: 0.7rem;
+  }
+}
