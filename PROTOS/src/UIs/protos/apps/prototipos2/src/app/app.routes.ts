@@ -43,6 +43,7 @@ import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-
 import { ManageSeguimientoNotificacionesComponent } from './pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component';
 import { EditAcuseRecibidoComponent } from './pages/edit-acuse-recibido/edit-acuse-recibido.component';
 import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/see-consultar-radicado.component';
+import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload-task-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -117,6 +118,12 @@ export const appRoutes: Route[] = [
     path: 'configurar-alertas-generales',
     component: ConfigureGeneralAlertsComponent,
   },
+  {
+    path: 'configurar-alertas-generales',
+    component: ConfigureGeneralAlertsComponent,
+  },
+
+  { path: 'cargar-documento-tarea', component: UploadTaskDocumentComponent },
   { path: 'permisos-lectura', component: SeeReadPermissionsComponent },
   {
     path: 'seguimiento-notificaciones',

@@ -1,0 +1,92 @@
+<div
+  class="modal fade"
+  id="documentSigningModal"
+  tabindex="-1"
+  aria-labelledby="documentSigningModalLabel"
+  aria-hidden="true"
+>
+  <form>
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="row">
+            <h4 class="h4-tipografia-govco">
+              <span class="govcolor-marine">
+                Cargar documento firmado
+              </span>
+            </h4>
+          </div>
+          <a
+            href="#"
+            role="button"
+            data-bs-dismiss="modal"
+            class="close-btn-modal"
+            aria-label="Close"
+            aria-expanded="false"
+          >
+            <span class="modal-close-govco govco-times"></span>
+          </a>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <button type="button"
+                 class="btn-govco fill-btn-govco"
+                 style="width: 300px; height: 42px;"
+                 >
+                 Descargar documento
+                </button>
+            </div>
+            <div class="row">
+              <div class="container-carga-de-archivo-govco">
+                <div class="loader-carga-de-archivo-govco">
+                  <div class="all-input-carga-de-archivo-govco">
+                    <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple/>
+                    <label for="inputFile" class="label-carga-de-archivo-govco">Selecciona el documento*</label>
+                    <label for="inputFile" class="container-input-carga-de-archivo-govco">
+                      <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
+                      <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
+                    </label>
+                    <span class="text-validation-carga-de-archivo-govco">Cualquier tipo de archivo. Peso máximo: 2 MB</span>
+                  </div>
+                  <div class="load-button-carga-de-archivo-govco">
+                    <div class="load-carga-de-archivo-govco">
+                      <!-- indicador de carga -->
+                      <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;" role="status">
+                        <span class="visually-hidden">Cargando...</span>
+                      </div>
+                      <!-- end indicador de carga -->
+                    </div>
+                    <button class="button-loader-carga-de-archivo-govco" disabled>Cargar archivo</button>
+                  </div>
+                </div>
+              
+                <div class="container-detail-carga-de-archivo-govco">
+                  <span class="alert-carga-de-archivo-govco visually-hidden"></span>
+                  <div class="attached-files-carga-de-archivo-govco"></div>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+              <p></p>
+                <button
+                type="button"
+                class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space"
+                data-bs-toggle="modal"
+                style="width: 165px; height: 42px;"
+                >
+                Siguiente
+                </button>
+    
+                <button
+                class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space"
+                data-bs-toggle="modal"
+                style="width: 165px; height: 42px;"
+                >
+                Cancelar
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

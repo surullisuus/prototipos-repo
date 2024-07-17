@@ -63,7 +63,9 @@ import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-corr
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alerts/configure-general-alerts.component';
-
+import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload-task-document.component';
+import { DocumentSigningComponent } from './pages/document-signing/document-signing.component';
+import { FileDocumentComponent } from './pages/file-document/file-document.component';
 import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
 import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.component';
 
@@ -137,6 +139,9 @@ import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/se
     SeeEmailTemplateComponent,
     ConfigureFlowTasksComponent,
     ConfigureGeneralAlertsComponent,
+    UploadTaskDocumentComponent,
+    DocumentSigningComponent,
+    FileDocumentComponent,
     SeeReadPermissionsComponent,
     AddRolesModalComponent,
     ModalUsuarioInternoComponent,

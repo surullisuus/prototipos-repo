@@ -1,0 +1,93 @@
+<h3 class="h3-tipografia-govco">
+    <span class="govcolor-marine">Gestionar documentos de tarea</span>
+</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="container-navbar-menu-govco blue-menu-govco">
+        <nav class="navbar navbar-expand-lg navbar-menu-govco" role="navigation" aria-label="Menú ejemplo entidad">
+        <div class="container-fluid container-second-navbar-menu-govco">
+            <a class="navbar-brand navbar-toggler icon-entidad-menu-govco" href="#"></a>
+            <button class="navbar-toggler button-responsive-menu-govco collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bars-menu-govco"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-collapse-menu-govco" id="navbarScroll">
+            <ul class="navbar-nav navbar-nav-menu-govco ms-auto">
+                <li class="nav-item">
+                <a class="nav-link dir-menu-govco" aria-current="page" href="#">
+                    <span class="text-item-menu-govco">
+                    Asociar documento desde SISFV
+                    </span>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link dir-menu-govco" aria-current="page" href="#">
+                    <span class="text-item-menu-govco">
+                    Asociar documento desde GesDoc
+                    </span>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dir-menu-govco active" aria-current="page" href="/cargar-documento-tarea">
+                    <span class="text-item-menu-govco">
+                        Cargar documento
+                    </span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+    </div>
+    <h4 class="h4-tipografia-govco">
+        <span class="govcolor-marine">Cargar documento</span>
+    </h4>
+    <p><span>Tipo documento*:</span></p>
+    <div class="d-flex align-items-center">
+        <div class="radio-seleccion-govco ms-4 mt-6">
+            <input type="radio" id="radio11" name="radioButton1" value="0">
+            <label for="radio11">Entrada</label>
+        </div>
+        <div class="radio-seleccion-govco ms-4 mt-6">
+            <input type="radio" id="radio12" name="radioButton1" value="1" checked>
+            <label for="radio12">Salida</label>
+        </div>
+    </div>
+    <p></p>
+    <p></p>
+    <div class="container-carga-de-archivo-govco">
+        <div class="loader-carga-de-archivo-govco">
+          <div class="all-input-carga-de-archivo-govco">
+            <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple/>
+            <label for="inputFile" class="label-carga-de-archivo-govco">Selecciona el documento*</label>
+            <label for="inputFile" class="container-input-carga-de-archivo-govco">
+              <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
+              <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
+            </label>
+            <span class="text-validation-carga-de-archivo-govco">Cualquier tipo de archivo. Peso máximo: 2 MB</span>
+          </div>
+          <div class="load-button-carga-de-archivo-govco">
+            <div class="load-carga-de-archivo-govco">
+              <!-- indicador de carga -->
+              <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;" role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <!-- end indicador de carga -->
+            </div>
+            <button class="button-loader-carga-de-archivo-govco" (click)="onFileUploaded()" disabled>Cargar archivo</button>
+          </div>
+        </div>
+      
+        <div class="container-detail-carga-de-archivo-govco">
+          <span class="alert-carga-de-archivo-govco visually-hidden"></span>
+          <div class="attached-files-carga-de-archivo-govco"></div>
+        </div>
+    </div>
+</div>
+<button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1" (click)="SaveModal()" [disabled]="!fileUploaded">
+    Cargar
+</button>   
+<button type="button" 
+class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+[routerLink]="['/']">
+    Cancelar
+</button>
+<div #dialog></div>
