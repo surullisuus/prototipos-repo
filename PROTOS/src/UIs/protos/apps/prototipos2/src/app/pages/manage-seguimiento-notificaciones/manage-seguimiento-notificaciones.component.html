@@ -6,14 +6,14 @@
     <div class="row">
 
         <!--Grupo/subdirección-->
-        <div class="col-md-6">
+        <div class="col-md-5">
             <subsidios-dropdown-list labelText="Grupo/Subdirección" note="Seleccione una opción" idList="type-345676"
                 type="basic" [disabled]="false" [lista]="getGroupList()" (eventlist)="setCurrentGroup($event)">
             </subsidios-dropdown-list>
         </div>
 
         <!--Proceso-->
-        <div class="col-md-6">
+        <div class="col-md-5">
             <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676" type="basic"
                 [disabled]="false" [lista]="getProccesList()" (eventlist)="setCurrentProcess($event)">
             </subsidios-dropdown-list>
@@ -23,7 +23,7 @@
             <br />
         </div>
         <!--No expediente-->
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="entradas-de-texto-govco" style="padding: 0;">
                 <label for="input-basico-id">No. expediente</label>
                 <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
@@ -32,7 +32,7 @@
         </div>
 
         <!--Estado-->
-        <div class="col-md-6">
+        <div class="col-md-5">
             <subsidios-dropdown-list labelText="Estado" note="Seleccione una opción" idList="type-345676" type="basic"
                 [disabled]="false" [lista]="getStateList()" (eventlist)="setCurrentState($event)">
             </subsidios-dropdown-list>
@@ -49,7 +49,7 @@
             </button>
 
 
-            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom">
+            <button type="button" class="btn-govco outline-btn-govco mt-1 btn-govco-space btn-govco-custom">
                 Limpiar
             </button>
         </div>
