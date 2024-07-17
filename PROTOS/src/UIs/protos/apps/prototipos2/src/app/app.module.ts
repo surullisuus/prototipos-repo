@@ -68,7 +68,7 @@ import { DocumentSigningComponent } from './pages/document-signing/document-sign
 import { FileDocumentComponent } from './pages/file-document/file-document.component';
 import { SeeReadPermissionsComponent } from './pages/see-read-permissions/see-read-permissions.component';
 import { AddRolesModalComponent } from './pages/add-roles-modal/add-roles-modal.component';
-
+import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { ModalUsuarioExternoComponent } from './pages/modal-usuario-externo/modal-usuario-externo.component';
 import { PermisosLecturaInternoModalComponent } from './pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component';
 import { ModalUsuarioInternoComponent } from './pages/modal-usuario-interno/modal-usuario-interno.component';
@@ -156,6 +156,7 @@ import { AssociateDocumentsComponent } from './pages/associate-documents/associa
     SeeAsociarRadicadoNotificacionComponent,
     ConsultFileComponent,
     AssociateDocumentsComponent,
+    TestModalComponent,
   ],
   imports: [
     BrowserModule,

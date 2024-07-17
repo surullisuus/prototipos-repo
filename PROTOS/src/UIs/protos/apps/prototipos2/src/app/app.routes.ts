@@ -47,6 +47,7 @@ import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload
 import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component';
 import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
+import { TestModalComponent } from './pages/test-modal/test-modal.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -143,4 +144,5 @@ export const appRoutes: Route[] = [
   },
   { path: 'consultar-radicado', component: ConsultFileComponent },
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
+  { path: 'probar-modal', component: TestModalComponent },
 ];
