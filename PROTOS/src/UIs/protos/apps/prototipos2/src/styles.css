@@ -8,6 +8,10 @@
     margin-bottom: 5px
   }
   
+  .select-dark-border {
+    border: 2px solid #737373; /* Cambia #555 por el color gris oscuro que prefieras */
+  }
+  
   .btn-cancel {
     border-color: #555!important;
     color: #555!important
