@@ -78,6 +78,7 @@ import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/se
 import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component';
 import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
+import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
 
 @NgModule({
   declarations: [
@@ -157,6 +158,7 @@ import { AssociateDocumentsComponent } from './pages/associate-documents/associa
     ConsultFileComponent,
     AssociateDocumentsComponent,
     TestModalComponent,
+    ConsultDocumentsComponent
   ],
   imports: [
     BrowserModule,
