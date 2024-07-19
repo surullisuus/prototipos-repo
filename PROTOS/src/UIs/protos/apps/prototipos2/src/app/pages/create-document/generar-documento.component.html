@@ -1,0 +1,90 @@
+<h4 class="h3-tipografia-govco mt-3">
+    <span class="govcolor-marine">GENERAR DOCUMENTO</span>
+</h4>
+
+<div class="rounded-3 mb-5 mt-3">
+    <form [formGroup]="formQueryScheme">
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <subsidios-dropdown-list labelText="Proceso*:" idList="type-345676" type="basic" [disabled]="false"
+                    [isRequired]="true" (eventlist)="registerProcess($event)"
+                    [lista]="listaProcesos"></subsidios-dropdown-list>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <subsidios-dropdown-list labelText="Programa/Procedimiento:" idList="type-345676" type="basic"
+                    [disabled]="false" (eventlist)="registerPrograma($event)"
+                    [lista]="listaProgramas"></subsidios-dropdown-list>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <subsidios-dropdown-list labelText="Tipo documental*:" idList="type-345676" type="basic"
+                    [disabled]="false" [isRequired]="true" (eventlist)="registerTipoDocumental($event)"
+                    [lista]="listaTipoDocumental"></subsidios-dropdown-list>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <subsidios-input [control]="$any(formQueryScheme.get('nombreDocumento'))" type="text"
+                    label="Nombre de documento*:" placeholder="Ej. 123456" [showStatus]="false" [maxLength]="50"
+                    [minLength]="1" typeValidation="alphanumericwhithspaces"
+                    note="Ingrese el nombre del documento"></subsidios-input>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
+                    <label for="calendario-govco" class="label-desplegable-govco">Fecha de creación</label>
+                    <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
+                        <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaInicio"
+                            placeholder="dd/mm/aaaa" id="calendario-govco" minlength="10" maxlength="10"
+                            aria-autocomplete="off" days="true">
+                    </div>
+                    <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de creación</label>
+                    <ng-container>
+                        <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert"
+                            aria-live="assertive">
+
+                        </span>
+                    </ng-container>
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <button type="button" class="btn-govco outline-secundary-btn-govco" style="width: 180px; height: 42px;"
+                    routerLink="/generar-documento" [disabled]="disbleProyection" (click)="proyectDocument()">Proyectar
+                </button>
+            </div>
+
+        </div>
+
+        <div style="display: flex; justify-content: center; margin-top: 3rem; margin-bottom: 3rem;">
+            <button type="button" class="btn-govco outline-secundary-btn-govco"
+                style="width: 170px; height: 42px; display: flex; justify-content: space-around; align-items: center;"
+                routerLink="/generar-documento" [disabled]="disableProyect">Vista previa
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                    class="bi bi-eye-fill" viewBox="0 0 16 16">
+                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" />
+                    <path
+                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
+                    [disabled]="disableProyect">
+                    Siguiente
+                </button>
+                <button type="button"
+                    class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+                    routerLink="/consultar-documentos">
+                    Cancelar
+                </button>
+
+            </div>
+        </div>
+    </form>
+
+
+    <div #dialog></div>
+</div>
