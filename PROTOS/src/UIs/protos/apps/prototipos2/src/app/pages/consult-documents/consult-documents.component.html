@@ -111,8 +111,10 @@
           </td>
           <td class="text-center">{{ item.estado }}</td>
           <td style="text-align: center !important; padding-right: 10px;">
-            <a class="button-modal-accept-none ms-2 me-2" href="#" tabindex="0" data-bs-target="#verRadicadoViewModal"
-              data-bs-toggle="modal" [routerLink]="['/editar-documento', item.proceso]">Editar</a>
+            <a class="button-modal-accept-none ms-2 me-2" href="#" tabindex="0"
+              [routerLink]="['/editar-documento', item.proceso]">Editar</a>
+            <a class="button-modal-accept-none ms-2 me-2" tabindex="0" data-bs-target="#deleteDocumentModal"
+              data-bs-toggle="modal">Eliminar</a>
           </td>
         </tr>
       </tbody>
@@ -120,5 +122,5 @@
   </div>
 </div>
 
-<app-ver-radicado-view [documentId]="documentId"></app-ver-radicado-view>
+<app-delete-document [documentId]="documentId"></app-delete-document>
 <div #dialog></div>

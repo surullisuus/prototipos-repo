@@ -82,6 +82,7 @@ import { ConsultDocumentsComponent } from './pages/consult-documents/consult-doc
 import { GenerarDocumentoComponent } from './pages/create-document/generar-documento.component';
 import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
 import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
+import { DeleteDocumentComponent } from './pages/delete-document/delete-document.component';
 
 @NgModule({
   declarations: [
@@ -165,6 +166,7 @@ import { EditarDocumentoComponent } from './pages/edit-document/editar-documento
     GenerarDocumentoComponent,
     VistaPreviaDocumentoComponent,
     EditarDocumentoComponent,
+    DeleteDocumentComponent,
   ],
   imports: [
     BrowserModule,
