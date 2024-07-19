@@ -50,6 +50,7 @@ import { AssociateDocumentsComponent } from './pages/associate-documents/associa
 import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
 import { GenerarDocumentoComponent } from './pages/create-document/generar-documento.component';
+import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -149,4 +150,5 @@ export const appRoutes: Route[] = [
   { path: 'probar-modal', component: TestModalComponent },
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
   { path: 'generar-documento', component: GenerarDocumentoComponent },
+  { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
 ];
