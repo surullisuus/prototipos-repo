@@ -112,7 +112,7 @@
           <td class="text-center">{{ item.estado }}</td>
           <td style="text-align: center !important; padding-right: 10px;">
             <a class="button-modal-accept-none ms-2 me-2" href="#" tabindex="0" data-bs-target="#verRadicadoViewModal"
-              data-bs-toggle="modal">Editar</a>
+              data-bs-toggle="modal" [routerLink]="['/editar-documento', item.proceso]">Editar</a>
           </td>
         </tr>
       </tbody>

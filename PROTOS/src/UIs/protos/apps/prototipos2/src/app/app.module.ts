@@ -81,6 +81,7 @@ import { AssociateDocumentsComponent } from './pages/associate-documents/associa
 import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
 import { GenerarDocumentoComponent } from './pages/create-document/generar-documento.component';
 import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
+import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
 
 @NgModule({
   declarations: [
@@ -163,6 +164,7 @@ import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vist
     ConsultDocumentsComponent,
     GenerarDocumentoComponent,
     VistaPreviaDocumentoComponent,
+    EditarDocumentoComponent,
   ],
   imports: [
     BrowserModule,
