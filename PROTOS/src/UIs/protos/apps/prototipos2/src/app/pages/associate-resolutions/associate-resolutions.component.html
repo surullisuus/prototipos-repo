@@ -1,0 +1,155 @@
+<h3 class="h3-tipografia-govco">
+    <span class="govcolor-marine">Gestionar documentos de tarea</span>
+</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="container-navbar-menu-govco blue-menu-govco">
+        <nav class="navbar navbar-expand-lg navbar-menu-govco" role="navigation" aria-label="Menú ejemplo entidad">
+        <div class="container-fluid container-second-navbar-menu-govco">
+            <a class="navbar-brand navbar-toggler icon-entidad-menu-govco" href="#"></a>
+            <button class="navbar-toggler button-responsive-menu-govco collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bars-menu-govco"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-collapse-menu-govco" id="navbarScroll">
+            <ul class="navbar-nav navbar-nav-menu-govco ms-auto">
+                <li class="nav-item">
+                <a class="nav-link dir-menu-govco" aria-current="page" href="/asociar-documento-SISFV">
+                    <span class="text-item-menu-govco">
+                    Asociar documento desde SISFV
+                    </span>
+                </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link dir-menu-govco" aria-current="page" href="/asociar-documento-GesDoc">
+                    <span class="text-item-menu-govco">
+                    Asociar documento desde GesDoc
+                    </span>
+                </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dir-menu-govco" aria-current="page" href="/cargar-documento-tarea">
+                    <span class="text-item-menu-govco">
+                        Cargar documento
+                    </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link dir-menu-govco active" aria-current="page" href="/asociar-resolucion">
+                    <span class="text-item-menu-govco">
+                        Asociar resoluciones
+                    </span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </nav>
+    </div>
+    <h4 class="h4-tipografia-govco">
+        <span class="govcolor-marine">Asociar resoluciones</span>
+    </h4>
+    <div class="row">
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Tipo Resolución:" note="Seleccione el tipo de resolución" idList="type-345676" type="basic"
+            [disabled]="false"></subsidios-dropdown-list>   
+        </div>
+        <div class="col-md-4">
+            <subsidios-input
+            [control]="$any(fromQueryScheme.get('keyword'))"
+            type="text"
+            label="No. Resolución:"
+            placeholder="123..."
+            [showStatus]="false"
+            [maxLength]="20"
+            [minLength]="1"
+            typeValidation="numeric"
+            note="Ingrese el número de resolución"
+          ></subsidios-input>
+        </div>
+        <div class="col-md-4">
+            <label for="calendario-govco" class="label-desplegable-govco">Buscar por fecha de creación:</label>
+            <div class="d-flex align-items-center">
+                <div id="fechaInicio" class="desplegable-govco desplegable-calendar-govco" style='width:280px;  height: 40px; padding-right: 10px;' data-type="calendar">
+                    <div class="date desplegable-selected-option">
+                        <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" days="true">
+                    </div>
+                </div>
+                <div id="fechaFin" class="desplegable-govco desplegable-calendar-govco" style='width:280px;  height: 40px; padding-right: 10px' data-type="calendar">
+                    <div class="date desplegable-selected-option">
+                        <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" days="true">
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+              Buscar
+            </button>
+      
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+              Limpiar
+            </button>
+          </div>
+    </div>
+    <div class="row">
+        <div class="row mt-4 mb-3 text-left">
+            <div class="col-md-10">        
+                <h4 class="h4-tipografia-govco mt-3 mb-2"><span class="govcolor-marine">Resultado de búsqueda</span></h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                    <thead class="encabezado-tabla">
+                        <tr>
+                            <th class="columna-pequena" role="button" style="text-align: center !important;">Tipo resolución</th>
+                            <th class="columna-pequena" role="button" style="text-align: center !important;">No. Resolución</th>
+                            <th class="columna-pequena" role="button" style="text-align: center !important;">Fecha de creación</th>
+                            <th class="columna-especial" style="text-align: center !important;">Seleccionar</th>
+                        </tr>
+                    </thead>
+                    <tbody class="contenido-tablas">
+                        <tr *ngFor="let item of resolutionsRequest">
+                            <td class="text-center">{{ item.tipoResolucion }}</td>
+                            <td style="text-align: center !important; padding-right: 10px">
+                                <!-- Accion-->
+                                 <!--Documento-->
+                                 <a
+                                 class="me-1"
+                                 tabindex="0"
+                                 data-bs-target="#seeTaskDocument"
+                                 data-bs-toggle="modal"
+                                 style="cursor: pointer"
+                               >
+                                123456789 
+                                </a>
+                            </td>
+                            <td style="text-align: center !important; padding-right: 10px">
+                                <p class="mb-0">
+                                  {{ item.fechaCreacion | date: 'dd/MM/yyyy' }}
+                                </p>
+                            </td>
+                            <td style="text-align: center !important; padding-left: 190px">
+                                <div class="checkbox-seleccion-govco m-2">
+                                    <input id="opt" type="checkbox"/>
+                                  </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" 
+class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1" 
+(click)="AssociateModal()">
+    Asociar
+</button>  
+<button type="button" 
+class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+[routerLink]="['/']">
+    Cancelar
+</button>
+<app-see-task-document></app-see-task-document>
+<div #dialog></div>
+
