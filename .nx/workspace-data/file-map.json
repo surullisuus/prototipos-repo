@@ -10,12 +10,216 @@
   "fileMap": {
     "nonProjectFiles": [
       {
+        "file": ".git/objects/af/cae73ebc6c4379cafd67e9ba02862336db70af",
+        "hash": "5285896827275611001"
+      },
+      {
+        "file": ".git/HEAD",
+        "hash": "6460185820263248482"
+      },
+      {
+        "file": ".git/index",
+        "hash": "16686495255910642246"
+      },
+      {
+        "file": ".git/logs/HEAD",
+        "hash": "12289093421882164837"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": ".git/objects/69/cd89b924ca6e2895926a512259c75256584717",
+        "hash": "15940558868721989411"
+      },
+      {
+        "file": ".git/objects/ce/87e9bf66d0580880a348207f91a8bcbcc7bc5d",
+        "hash": "17810883313707930293"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.vscode/extensions.json",
+        "hash": "17425123947026961272"
+      },
+      {
+        "file": ".git/objects/cb/1a3d971a903c3790869f1f22ef8b77d983c5ad",
+        "hash": "4952595463591508677"
+      },
+      {
+        "file": ".git/objects/46/155cd9c8f6cf15ccae73789fc45035b77aee01",
+        "hash": "70466591788727129"
+      },
+      {
+        "file": ".git/objects/57/e56fc8532a3bfdc7793f85b226c1e739793f0c",
+        "hash": "1198379333521260989"
+      },
+      {
+        "file": ".git/objects/b2/887b38b72f5844962834095196b2a45129e9f9",
+        "hash": "6167551359483002549"
+      },
+      {
+        "file": ".git/objects/e6/3daddbec305d7f7f1d50a7e9ac11f4e167c1ee",
+        "hash": "15286361001369277430"
+      },
+      {
+        "file": ".git/objects/1d/674373467c28c977e02c1e3667236d5416359b",
+        "hash": "3805710218085190148"
+      },
+      {
+        "file": ".git/objects/dc/a8d4ad78e3c2e368e065f9bef31612c4a1ec1a",
+        "hash": "5259236496533545442"
+      },
+      {
+        "file": ".git/objects/28/5be3cc804cf234ea114a5fbd44adb5f7808243",
+        "hash": "14740692621639722297"
+      },
+      {
+        "file": ".git/objects/pack/pack-26cb08dc7b889c142906a3ce7d05b8d81feb61eb.pack",
+        "hash": "6131807476251312802"
+      },
+      {
+        "file": ".git/objects/38/19c2edc702306338c4881a2683d4ff7ee4bb61",
+        "hash": "2880816445330071138"
+      },
+      {
+        "file": ".git/objects/e4/321d8e03edd9711058f30536872652491f10e3",
+        "hash": "17504829715305230164"
+      },
+      {
         "file": "PROTOS/src/UIs/protos/package.json",
         "hash": "12860609680295575283"
       },
       {
-        "file": "PROTOS/src/UIs/protos/.prettierrc",
-        "hash": "16267754514737964994"
+        "file": ".git/objects/cb/52998019836a6c61fc3002b99988a242eaf0bb",
+        "hash": "2241431781417434194"
+      },
+      {
+        "file": ".git/index.lock",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "634395127707124363"
+      },
+      {
+        "file": ".git/objects/7a/0543de41bab742a2ae546c8b502dd826622155",
+        "hash": "9216578435614711892"
+      },
+      {
+        "file": ".nx/workspace-data/file-map.json",
+        "hash": "16148974006195535579"
+      },
+      {
+        "file": ".git/objects/01/8ddfe4c02b68cc63c89d97d2e6fef7ddfcd8d4",
+        "hash": "4087597924785566129"
+      },
+      {
+        "file": ".git/objects/24/f81ab5571a3a92b7e7aafd83c290a950f6b99e",
+        "hash": "13747325423412449134"
+      },
+      {
+        "file": ".git/COMMIT_EDITMSG",
+        "hash": "14983506390139036982"
+      },
+      {
+        "file": ".git/objects/2d/ef47e6fa3eb41cf0c8e9feb54a040f7ac9a2c1",
+        "hash": "6478124398060722593"
+      },
+      {
+        "file": ".git/objects/c8/69cae1202ae73d7a71659d6de819b20e80bd13",
+        "hash": "2375302563315681678"
+      },
+      {
+        "file": ".git/objects/15/98249795f8bf2a2396e702dc2047a5c1dfbc48",
+        "hash": "14346371286599567415"
+      },
+      {
+        "file": ".git/objects/26/d832e7f96e38b9378eafbcccc70225341cfe5b",
+        "hash": "17146156506337336587"
+      },
+      {
+        "file": ".git/objects/02/1c0a9b66fd480f4c5192f261474bb1c3bcd9ff",
+        "hash": "1246885480561778976"
+      },
+      {
+        "file": ".git/objects/fd/ea27af7a10ac119f9103d2bcbfec60f5d7c783",
+        "hash": "1703350325653914530"
+      },
+      {
+        "file": ".git/objects/d3/acd5f5e754059f2a220ef35acd20b86ac94802",
+        "hash": "757742271455613366"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": ".git/objects/e1/dc1563ab4ac28d4b1dc12cee94488857cb7434",
+        "hash": "18396564648390755809"
+      },
+      {
+        "file": ".git/objects/7e/f7dc80a41f858cf02960cd5aab438388af22be",
+        "hash": "7166128639299067742"
+      },
+      {
+        "file": ".git/objects/bc/bc63964babdccb1b6d8f52f7f92faaa6321fab",
+        "hash": "7126562551581255010"
+      },
+      {
+        "file": ".git/objects/1a/5f838cbd7d8b75179580e850ba68f94d310e45",
+        "hash": "3668151056866717161"
+      },
+      {
+        "file": ".git/objects/76/ab213e11be896223101203f50ee47f062c6a5f",
+        "hash": "14405107929170174527"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.prettierignore",
+        "hash": "3395189204293871444"
+      },
+      {
+        "file": ".git/objects/e6/9de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "hash": "5237008789604435277"
+      },
+      {
+        "file": ".git/objects/f8/04a01385b1288d0c6195643fe09fe33e6aa84c",
+        "hash": "10062045996334923876"
+      },
+      {
+        "file": ".git/FETCH_HEAD",
+        "hash": "17131236671861073948"
+      },
+      {
+        "file": ".git/objects/b8/dd4e957094664268ae39a6de383553c70479de",
+        "hash": "17271486536829589065"
+      },
+      {
+        "file": ".git/objects/dc/8aa62851faa050d729932531e5ee4c40e34e6b",
+        "hash": "6402851998044361556"
+      },
+      {
+        "file": ".git/AUTO_MERGE",
+        "hash": "17906673992521349655"
+      },
+      {
+        "file": ".git/objects/d4/2efe1c02a555e4074abc4201ffcab66136347f",
+        "hash": "6948732023635979706"
+      },
+      {
+        "file": ".git/objects/50/6ce85e23036146e05ab54d787adca63c679eff",
+        "hash": "10335741211347398445"
+      },
+      {
+        "file": ".git/objects/41/177d27f79d7879918ef3dcb4024376cd34e6e0",
+        "hash": "2629871172202049445"
+      },
+      {
+        "file": ".git/objects/49/b25c0ccebc72fededada230f294b69b9348b6a",
+        "hash": "4671740099808173974"
+      },
+      {
+        "file": ".git/objects/f0/db63078dbc8d69bd6755f56ce0f2c1b971b191",
+        "hash": "14453132611473865747"
       },
       {
         "file": "PROTOS/src/UIs/protos/.eslintignore",
@@ -23,91 +227,243 @@
       },
       {
         "file": ".git/ORIG_HEAD",
-        "hash": "14621492344888609070"
+        "hash": "10609520041630074757"
       },
       {
-        "file": "PROTOS/src/UIs/protos/.prettierignore",
-        "hash": "3395189204293871444"
+        "file": ".git/objects/da/ee839a519bd9d2ffcc7542bef2278cf2c5b99f",
+        "hash": "10734130694270342988"
       },
       {
-        "file": "PROTOS/src/UIs/protos/.gitignore",
-        "hash": "8491837053101957257"
+        "file": ".git/objects/pack/pack-9215fb8774170219d9fcbd4de8c03d0144dd86ad.pack",
+        "hash": "12170327742891156877"
       },
       {
-        "file": "package-lock.json",
-        "hash": "634395127707124363"
+        "file": ".git/objects/70/9186aa686934ce7e2844e43efa0512ff3ce859",
+        "hash": "10707469457626533172"
       },
       {
-        "file": "PROTOS/src/UIs/protos/.eslintrc.json",
-        "hash": "18315524891129148814"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/README.md",
-        "hash": "17617539517234884743"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/.editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": "nx.json",
-        "hash": "5710489012492234158"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/nx.json",
-        "hash": "11917075900057292970"
-      },
-      {
-        "file": ".git/logs/HEAD",
-        "hash": "17705681034979194401"
-      },
-      {
-        "file": ".nx/workspace-data/file-map.json",
-        "hash": "6009205340339906687"
-      },
-      {
-        "file": "package.json",
-        "hash": "1901056353039060329"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/.vscode/extensions.json",
-        "hash": "17425123947026961272"
+        "file": ".git/objects/3c/4eb1dc248950b63fdc81fd6387379efb16fe5b",
+        "hash": "7962998990245588792"
       },
       {
         "file": "PROTOS/src/UIs/protos/tsconfig.base.json",
         "hash": "14900512597538786341"
       },
       {
-        "file": ".git/index",
-        "hash": "4624745711175792412"
+        "file": ".git/objects/a5/a108636530870394443a3b703b3a62d1289d62",
+        "hash": "4715386309388665478"
       },
       {
-        "file": ".nx/workspace-data/project-graph.json",
-        "hash": "9454177089558050596"
+        "file": ".git/objects/95/f45f537b2412ce7e9e2af49fda737dd549f614",
+        "hash": "8043227450950363145"
       },
       {
-        "file": ".git/HEAD",
-        "hash": "6460185820263248482"
+        "file": ".git/objects/cd/8d80d7b036b9f8500ba866697f33ab7f5f3387",
+        "hash": "2863505553243981279"
       },
       {
-        "file": "PROTOS/src/UIs/protos/package-lock.json",
-        "hash": "6557836008174197123"
+        "file": "PROTOS/src/UIs/protos/README.md",
+        "hash": "17617539517234884743"
       },
       {
-        "file": "PROTOS/src/UIs/protos/jest.preset.js",
-        "hash": "9430166341120122740"
+        "file": ".git/objects/c6/0b7ad63c5cbac2a90ac3598bd641dc68c483f8",
+        "hash": "17623249946059193834"
+      },
+      {
+        "file": ".git/objects/f0/95d932e38e660b7b8efe44d44a3985d0623d46",
+        "hash": "5176033318004660389"
+      },
+      {
+        "file": ".git/objects/0f/f6640d516c2a8702fd5acf00af650cadbe47c2",
+        "hash": "6961323182208060070"
+      },
+      {
+        "file": ".git/logs/refs/heads/main",
+        "hash": "3125653279515765084"
+      },
+      {
+        "file": ".git/objects/2f/e667a952823e1f067d734edd319b8383895abc",
+        "hash": "6827989110787738208"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.gitignore",
+        "hash": "8491837053101957257"
+      },
+      {
+        "file": ".git/objects/f0/1f6d480b241b35c24f21c664c8424c8c75eb32",
+        "hash": "12254054736658350747"
+      },
+      {
+        "file": ".git/objects/d6/d27e24fb8158e4bd9a940129795cc98f011f61",
+        "hash": "11306748440726581943"
+      },
+      {
+        "file": ".git/objects/b3/8ca6b7a01332bd36f65fc32d84b9072c35c38f",
+        "hash": "13239680963067858871"
+      },
+      {
+        "file": ".git/objects/8a/d39b7d340c28e0726960c24254680fe91ac93c",
+        "hash": "1204526965051920653"
+      },
+      {
+        "file": ".git/objects/c5/caa73682d69a9a383bbc22d2286700a61499f4",
+        "hash": "7615075599121041779"
       },
       {
         "file": "PROTOS/src/UIs/protos/jest.config.ts",
         "hash": "3494843969422251966"
       },
       {
-        "file": ".git/FETCH_HEAD",
-        "hash": "17131236671861073948"
+        "file": ".git/refs/heads/main",
+        "hash": "10609520041630074757"
       },
       {
-        "file": ".git/index.lock",
+        "file": ".git/objects/9e/a5fbf7ef95097985e86bcbda2ce9b2b12d5c65",
+        "hash": "17730661233962786416"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/package-lock.json",
+        "hash": "6557836008174197123"
+      },
+      {
+        "file": ".git/objects/bb/d47ea39b2a51ffea80acafafc804627587c0c6",
+        "hash": "9610765730505508091"
+      },
+      {
+        "file": ".git/objects/db/621fa17202e3f4abebef44835d39b2630cdd82",
+        "hash": "16968490434203487167"
+      },
+      {
+        "file": ".git/objects/db/2e757c5889bfef2493135b15bd532722a07658",
+        "hash": "14646806731857228642"
+      },
+      {
+        "file": ".git/objects/22/32aaf1016b7a99033c506bed076d4ac4c66a50",
+        "hash": "9922558532057633006"
+      },
+      {
+        "file": ".git/objects/de/fcd0905766bc8a7401c22d7d03dc01331e1868",
+        "hash": "16118237962812242423"
+      },
+      {
+        "file": ".git/objects/87/3df6773d1031e7cbf2252309d0f9cdf690671e",
+        "hash": "16387623665228455870"
+      },
+      {
+        "file": ".git/objects/85/1e2f28c5ff1443cbf46245f95cd4e3b0e757c9",
+        "hash": "8925598260837641805"
+      },
+      {
+        "file": ".git/objects/pack/pack-d7294ea7fbf26258413f311402bc467b929078ea.pack",
+        "hash": "14536416738466350949"
+      },
+      {
+        "file": ".nx/workspace-data/d/daemon.log",
         "hash": "3244421341483603138"
+      },
+      {
+        "file": ".git/objects/75/d5e73cb15996e53518beda687cca4cd32f0139",
+        "hash": "6044100833799027579"
+      },
+      {
+        "file": ".git/objects/ed/8580f5c55399b8cab6085f9663c9aa43b91b3a",
+        "hash": "14321837022712668683"
+      },
+      {
+        "file": ".git/objects/07/52b00c742c78ef58c99632599e3b94ce7a09c1",
+        "hash": "15902079403256733712"
+      },
+      {
+        "file": ".git/objects/6b/a1234bdcb134f0d32bebae9713ab1103532a70",
+        "hash": "11894331589555180502"
+      },
+      {
+        "file": ".git/objects/09/6bde2fc29480a907e56a10f6164e43f51f0f0d",
+        "hash": "12836751306252810725"
+      },
+      {
+        "file": ".git/objects/00/688768b3541dcdfe3b0832e831a41765ce5efb",
+        "hash": "18387644799931460104"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".git/objects/d6/e1ad2399a74c28c35096ab9a6e0347f602feda",
+        "hash": "15263475849297973243"
+      },
+      {
+        "file": ".git/objects/fd/effd64951b452d32040d30a1ddcca30a4ad524",
+        "hash": "7017171656884696737"
+      },
+      {
+        "file": ".git/objects/ea/617864d0c0d852490ffd72000bd1921f049b20",
+        "hash": "13583356267156766166"
+      },
+      {
+        "file": ".git/objects/0e/a3b461db868067e256a8b80f496d6e4313ef6a",
+        "hash": "5672719852350220471"
+      },
+      {
+        "file": ".nx/workspace-data/project-graph.json",
+        "hash": "9454177089558050596"
+      },
+      {
+        "file": ".git/objects/2e/76c004afcccfeea2ec81819d7645c8d7463f07",
+        "hash": "4173937353000787375"
+      },
+      {
+        "file": "package.json",
+        "hash": "1901056353039060329"
+      },
+      {
+        "file": ".git/objects/1b/4f624b620a97c0ed44ff993cd222605d39d18c",
+        "hash": "14471640476883417099"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".git/objects/30/6cfbbbeec94150ca7adddb20bad74dbc8da294",
+        "hash": "2478153865793642544"
+      },
+      {
+        "file": "nx.json",
+        "hash": "5710489012492234158"
+      },
+      {
+        "file": ".git/objects/80/ef9fd1240f674d8a01261a1a34982a05ef5aa0",
+        "hash": "7633607746569300293"
+      },
+      {
+        "file": ".git/objects/70/5962521bf62d3a794a44400d0fb452477a66b7",
+        "hash": "2519981958033787102"
+      },
+      {
+        "file": ".git/objects/63/deece897edf8d168e4b76466087adabc25e769",
+        "hash": "6162364529838017435"
+      },
+      {
+        "file": ".git/objects/09/f9d9da20f216fa325f5d57b84b89444574530f",
+        "hash": "2367906548559814421"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/nx.json",
+        "hash": "11917075900057292970"
+      },
+      {
+        "file": ".git/objects/ef/15a5ebecd60daf5d07efbb7ff0b21d0853ab50",
+        "hash": "15796561943896460933"
+      },
+      {
+        "file": ".git/objects/60/fdb6ad34363a6d8e8638c2ceb04138c6a52b1e",
+        "hash": "15177764814688273871"
+      },
+      {
+        "file": ".git/objects/2f/728751e456235787a709821e6a250a16ea4304",
+        "hash": "8242225937053575223"
       }
     ],
     "projectFileMap": {
@@ -1609,4 +1965,4 @@
           "hash": "16019101014373124625"
         },
         {
-          "file": "PROTOS/src/UIs/protos/apps/protos-
+          "file": "PROTOS/src/UIs/protos/apps/proto
