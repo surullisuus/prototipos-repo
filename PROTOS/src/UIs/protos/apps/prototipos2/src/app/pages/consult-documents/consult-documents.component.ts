@@ -102,16 +102,12 @@ export class ConsultDocumentsComponent implements AfterViewInit {
   onAprobar(documentId: string): void {
     console.log(documentId);
     this.documentId = documentId;
-
     this.showDialogDocument('aprobar', '¿Está seguro de APROBAR el documento?');
-
   }
 
-  onRechazar(): void {
-    this.showDialogDocument(
-      'rechazar',
-      '¿Está seguro de RECHAZAR el documento?'
-    );
+  onRechazar(documentId: string): void {
+    this.documentId = documentId;
+    this.openbuttonRechazarDocument.nativeElement.click();
   }
 
   onLimpiar(): void {
@@ -162,6 +158,7 @@ export class ConsultDocumentsComponent implements AfterViewInit {
           dialogAction.action === ActionType.confirm &&
           accion === 'rechazar'
         ) {
+          this.openbuttonRechazarDocument.nativeElement.click();
           dialogAction.eventClose.emit();
         } else {
           dialogAction.eventClose.emit();

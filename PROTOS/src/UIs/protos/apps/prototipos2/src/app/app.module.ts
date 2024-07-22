@@ -80,6 +80,7 @@ import { ConsultFileComponent } from './pages/consult-file/consult-file.componen
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
 import { ApproveDocumentModalComponent } from './pages/approve-document-modal/approve-document-modal.component';
+import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
 
 
 @NgModule({
@@ -161,7 +162,8 @@ import { ApproveDocumentModalComponent } from './pages/approve-document-modal/ap
     AssociateDocumentsComponent,
     TestModalComponent,
     ConsultDocumentsComponent,
-    ApproveDocumentModalComponent
+    ApproveDocumentModalComponent,
+    RejectDocumentComponent
   ],
   imports: [
     BrowserModule,
