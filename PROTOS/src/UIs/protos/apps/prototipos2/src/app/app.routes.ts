@@ -49,6 +49,9 @@ import { ConsultFileComponent } from './pages/consult-file/consult-file.componen
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
+import { GenerarDocumentoComponent } from './pages/create-document/generar-documento.component';
+import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
+import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -147,4 +150,7 @@ export const appRoutes: Route[] = [
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
   { path: 'probar-modal', component: TestModalComponent },
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
+  { path: 'generar-documento', component: GenerarDocumentoComponent },
+  { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
+  { path: 'editar-documento/:id', component: EditarDocumentoComponent },
 ];
