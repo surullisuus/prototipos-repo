@@ -1,7 +1,7 @@
 <h4 class="h3-tipografia-govco mt-3">
     <span class="govcolor-marine">CONSULTAR DOCUMENTOS</span>
   </h4>
-  
+
   <form [formGroup]="formQueryScheme">
     <div class="row">
       <div class="col-md-4 col-xl-3">
@@ -13,7 +13,7 @@
         <subsidios-dropdown-list labelText="Tipo documental:" idList="type-345676" type="basic"
           [disabled]="false"></subsidios-dropdown-list>
       </div>
-    
+
       <div class="col-md-4 col-xl-3">
         <subsidios-input
         [control]="$any(formQueryScheme.get('proceso'))"
@@ -38,7 +38,7 @@
           <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de inicio</label>
           <ng-container>
             <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
-  
+
             </span>
           </ng-container>
         </div>
@@ -54,20 +54,20 @@
           <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de fin</label>
           <ng-container>
             <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
-  
+
             </span>
           </ng-container>
         </div>
       </div>
-  
-  
-     
+
+
+
       <div class="col-md-4 col-xl-3">
         <subsidios-dropdown-list labelText="Estado:" idList="type-345676" type="basic"
           [disabled]="false"></subsidios-dropdown-list>
       </div>
     </div>
-  
+
     <div class="row">
       <div class="col-md-12">
           <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
@@ -76,15 +76,15 @@
           <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
             Limpiar
           </button>
-          <button type="button" 
-          class="btn-govco outline-secundary-btn-govco" 
+          <button type="button"
+          class="btn-govco outline-secundary-btn-govco"
           style="width: 180px; height: 42px;"
           >Crear documento
           </button>
         </div>
   </div>
   </form>
-  
+
   <div class="row mt-4">
     <div class="table-responsive">
       <table class="table table-general table-basic" aria-describedby="tableDescBasic">
@@ -102,9 +102,9 @@
         <tbody class="contenido-tablas">
           <tr *ngFor="let item of documentos">
             <td class="text-center">{{ item.proceso }}</td>
-            
+
             <td class="text-center">{{ item.tipoDocumental }}</td>
-            
+
             <td class="text-center">{{ item.nombreDocumento }}</td>
             <td style="text-align: center !important;">
               <p class="mb-0">
@@ -126,6 +126,10 @@
       </table>
     </div>
   </div>
-  
+
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1" (click)="onExportar()">Exportar</button>
+  </div>
+
   <app-ver-radicado-view [documentId]="documentId"></app-ver-radicado-view>
   <div #dialog></div>

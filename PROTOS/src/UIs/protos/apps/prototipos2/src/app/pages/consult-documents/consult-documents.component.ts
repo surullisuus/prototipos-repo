@@ -71,6 +71,9 @@ export class ConsultDocumentsComponent {
 
     //this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.danger);
   }
+  onExportar(): void {
+    // logica para exportar en archivo xlsx dependiendo de filtros seleccionados
+  }
 
   onLimpiar(): void {
     this.formQueryScheme.patchValue({
