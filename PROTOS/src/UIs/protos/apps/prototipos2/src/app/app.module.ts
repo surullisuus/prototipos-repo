@@ -81,6 +81,7 @@ import { AssociateDocumentsComponent } from './pages/associate-documents/associa
 import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
 import { ApproveDocumentModalComponent } from './pages/approve-document-modal/approve-document-modal.component';
 import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
+import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 
 
 @NgModule({
@@ -163,7 +164,8 @@ import { RejectDocumentComponent } from './pages/reject-document/reject-document
     TestModalComponent,
     ConsultDocumentsComponent,
     ApproveDocumentModalComponent,
-    RejectDocumentComponent
+    RejectDocumentComponent,
+    ManageTaskDocumentComponent
   ],
   imports: [
     BrowserModule,

@@ -49,6 +49,7 @@ import { ConsultFileComponent } from './pages/consult-file/consult-file.componen
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
+import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -147,4 +148,5 @@ export const appRoutes: Route[] = [
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
   { path: 'probar-modal', component: TestModalComponent },
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
+  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
 ];
