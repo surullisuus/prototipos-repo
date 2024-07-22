@@ -19,7 +19,7 @@
                 </a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link dir-menu-govco active" aria-current="page" href="/asociar-documento-GesDoc">
+                <a class="nav-link dir-menu-govco active" aria-current="page" href="/asociar-documento-entrada-GesDoc">
                     <span class="text-item-menu-govco">
                     Asociar documento desde GesDoc
                     </span>
@@ -45,10 +45,11 @@
         </nav>
     </div>
     <h4 class="h4-tipografia-govco">
-        <span class="govcolor-marine">Asociar documentos desde SISFV</span>
+        <p></p>
+        <span class="govcolor-marine">Asociar documentos desde GesDoc</span>
     </h4>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <subsidios-input
             [control]="$any(fromQueryScheme.get('keyword'))"
             type="text"
@@ -61,15 +62,20 @@
             note="Ingrese el número de radicado"
           ></subsidios-input>
         </div>
-        <div class="col-md-4">
-            <label for="calendario-govco" class="label-desplegable-govco">Buscar por fecha de creación:</label>
+        <div class="col-md-3">
+            <label for="calendario-govco" class="label-desplegable-govco">Fecha Inicio:</label>
             <div class="d-flex align-items-center">
-                <div id="fechaInicio" class="desplegable-govco desplegable-calendar-govco" style='width:280px;  height: 40px; padding-right: 10px;' data-type="calendar">
+                <div id="fechaInicio" class="desplegable-govco desplegable-calendar-govco" style='width:280px;  height: 40px;' data-type="calendar">
                     <div class="date desplegable-selected-option">
                         <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" days="true">
                     </div>
                 </div>
-                <div id="fechaFin" class="desplegable-govco desplegable-calendar-govco" style='width:280px;  height: 40px; padding-right: 10px' data-type="calendar">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <label for="calendario-govco" class="label-desplegable-govco">Fecha Fin:</label>
+            <div class="d-flex align-items-center">
+                <div id="fechaFin" class="desplegable-govco desplegable-calendar-govco" style='width:280px;  height: 40px;' data-type="calendar">
                     <div class="date desplegable-selected-option">
                         <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" days="true">
                     </div>
@@ -117,11 +123,11 @@
                                  <a
                                  class="me-1"
                                  tabindex="0"
-                                 data-bs-target="#seeTaskDocument"
+                                 data-bs-target="#seeDocumentModal"
                                  data-bs-toggle="modal"
                                  style="cursor: pointer"
                                >
-                                Documento 
+                                Ver Documento 
                                 </a>
                             </td>
                             <td style="text-align: center !important; padding-left: 190px">
@@ -146,6 +152,6 @@ class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel m
 [routerLink]="['/']">
     Cancelar
 </button>
-<app-see-task-document></app-see-task-document>
+<app-see-document-modal></app-see-document-modal>
 <div #dialog></div>
 
