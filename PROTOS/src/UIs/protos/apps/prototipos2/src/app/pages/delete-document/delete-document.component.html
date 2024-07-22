@@ -1,0 +1,37 @@
+<div class="modal fade" id="deleteDocumentModal" tabindex="-1" aria-labelledby="deleteDocumentModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="h4-tipografia-govco">
+                    <span class="govcolor-marine">Eliminar documento</span>
+                </h4>
+                <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+                    aria-expanded="false">
+                    <span class="modal-close-govco govco-times"></span>
+                </a>
+            </div>
+            <div class="modal-body">
+                <div class="me-4">
+                    <p style="font-weight: bold;">Causales de eliminación del documento</p>
+
+                    <subsidios-input [control]="$any(formQueryScheme.get('observation'))" type="text"
+                        label="Observación*:" placeholder="Ej. texto" [showStatus]="false" [maxLength]="150"
+                        [minLength]="1" typeValidation="alphanumericwhithspaces"
+                        note="Ingrese la observación"></subsidios-input>
+
+                    <p style="font-weight: bold;">¿Está seguro que desea eliminar el registro?</p>
+                    <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space ms-4"
+                        data-bs-target="#verRadicadoViewModal" data-bs-toggle="modal"
+                        (click)="showSuccessTaskInitializationAlertState('Documento eliminado de forma exitosa.')">
+                        Aceptar
+                    </button>
+                    <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space ms-4"
+                        data-bs-target="#verRadicadoViewModal" data-bs-toggle="modal">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div #dialog></div>
