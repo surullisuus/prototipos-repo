@@ -79,13 +79,13 @@ import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-rad
 import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
 import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
-import { ApproveDocumentModalComponent } from './pages/approve-document-modal/approve-document-modal.component';
-import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
-import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 import { GenerarDocumentoComponent } from './pages/create-document/generar-documento.component';
 import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
 import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
 import { DeleteDocumentComponent } from './pages/delete-document/delete-document.component';
+import { ApproveDocumentModalComponent } from './pages/approve-document-modal/approve-document-modal.component';
+import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
+import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 
 
 @NgModule({

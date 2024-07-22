@@ -151,8 +151,8 @@ export const appRoutes: Route[] = [
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
   { path: 'probar-modal', component: TestModalComponent },
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
+  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'generar-documento', component: GenerarDocumentoComponent },
   { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
   { path: 'editar-documento/:id', component: EditarDocumentoComponent },
-  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
 ];
