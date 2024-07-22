@@ -1,0 +1,59 @@
+<h4 class="h3-tipografia-govco mt-3">
+    <span class="govcolor-marine">Vista previa documento</span>
+</h4>
+
+<div class="rounded-3 mb-5 mt-3">
+
+    <div class="p-5" style="background-color: aliceblue; min-height: 20rem; min-width: 100%;">
+        <textarea
+            style="background-color: #fff; padding: 1rem; min-width: 100%; height: 50rem; resize: none; overflow-y: scroll; text-align: justify;"
+            [disabled]="enableEdit">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam laborum facilis quaerat, aliquam aut hic
+            itaque voluptas eveniet. Voluptates saepe, animi reprehenderit vero recusandae incidunt ex tenetur non.
+            Soluta, harum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem earum laboriosam vero,
+            exercitationem necessitatibus labore voluptatem a eaque unde odit quibusdam consequuntur? Aperiam
+            distinctio, earum assumenda asperiores minus nam repellat. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nemo nam animi fuga impedit vero quo est? Quidem, possimus ipsum. Fuga voluptatum qui
+            eveniet at nam quia odio, quibusdam assumenda eos. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Enim eos, inventore est doloribus illum suscipit adipisci sapiente explicabo exercitationem rem numquam
+            perspiciatis, voluptatibus consequatur asperiores fugiat iure soluta officiis accusantium!
+        </textarea>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <ng-container *ngIf="edit === true">
+                <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+                    (click)="setEnableEdit()">
+                    Guardar
+                </button>
+                <button type="button"
+                    class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+                    (click)="setEnableEdit()">
+                    Cancelar
+                </button>
+            </ng-container>
+
+            <ng-container *ngIf="edit === false">
+                <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
+                    (click)="setEnableEdit()">
+                    Editar
+                </button>
+                <button type="button"
+                    class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+                    routerLink="/generar-documento">
+                    Salir
+                </button>
+            </ng-container>
+
+
+
+        </div>
+    </div>
+
+
+
+    <div #dialog></div>
+</div>

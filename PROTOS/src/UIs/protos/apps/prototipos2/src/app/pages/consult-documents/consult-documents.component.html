@@ -1,140 +1,135 @@
 <h4 class="h3-tipografia-govco mt-3">
-    <span class="govcolor-marine">CONSULTAR DOCUMENTOS</span>
-  </h4>
+  <span class="govcolor-marine">CONSULTAR DOCUMENTOS</span>
+</h4>
 
-  <form [formGroup]="formQueryScheme">
-    <div class="row">
-      <div class="col-md-4 col-xl-3">
-        <subsidios-dropdown-list labelText="Proceso:" idList="type-345676" type="basic"
-          [disabled]="false"></subsidios-dropdown-list>
-      </div>
+<form [formGroup]="formQueryScheme">
+  <div class="row">
+    <div class="col-md-4 col-xl-3">
+      <subsidios-dropdown-list labelText="Proceso:" idList="type-345676" type="basic"
+        [disabled]="false"></subsidios-dropdown-list>
+    </div>
 
-      <div class="col-md-4 col-xl-3">
-        <subsidios-dropdown-list labelText="Tipo documental:" idList="type-345676" type="basic"
-          [disabled]="false"></subsidios-dropdown-list>
-      </div>
+    <div class="col-md-4 col-xl-3">
+      <subsidios-dropdown-list labelText="Tipo documental:" idList="type-345676" type="basic"
+        [disabled]="false"></subsidios-dropdown-list>
+    </div>
 
-      <div class="col-md-4 col-xl-3">
-        <subsidios-input
-        [control]="$any(formQueryScheme.get('proceso'))"
-        type="text"
-        label="Nombre documento:"
-        placeholder="Ej. Documento A"
-        [showStatus]="false"
-        [maxLength]="20"
-        [minLength]="1"
-        typeValidation="alphanumericwhithspaces"
-        note="Ingrese una palabra"
-      ></subsidios-input>
-      </div>
+    <div class="col-md-4 col-xl-3">
+      <subsidios-input [control]="$any(formQueryScheme.get('proceso'))" type="text" label="Nombre documento:"
+        placeholder="Ej. Documento A" [showStatus]="false" [maxLength]="20" [minLength]="1"
+        typeValidation="alphanumericwhithspaces" note="Ingrese una palabra"></subsidios-input>
+    </div>
 
-      <div class="col-md-4 col-xl-3">
-        <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
-          <label for="calendario-govco" class="label-desplegable-govco">Fecha inicio</label>
-          <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
-            <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaInicio" placeholder="dd/mm/aaaa"
-              id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off" days="true">
-          </div>
-          <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de inicio</label>
-          <ng-container>
-            <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
-
-            </span>
-          </ng-container>
+    <div class="col-md-4 col-xl-3">
+      <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
+        <label for="calendario-govco" class="label-desplegable-govco">Fecha inicio</label>
+        <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
+          <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaInicio"
+            placeholder="dd/mm/aaaa" id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off"
+            days="true">
         </div>
-      </div>
+        <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de inicio</label>
+        <ng-container>
+          <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
 
-      <div class="col-md-4 col-xl-3">
-        <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
-          <label for="calendario-govco" class="label-desplegable-govco">Fecha de fin</label>
-          <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
-            <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaFin" placeholder="dd/mm/aaaa"
-              id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off" days="true">
-          </div>
-          <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de fin</label>
-          <ng-container>
-            <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
-
-            </span>
-          </ng-container>
-        </div>
-      </div>
-
-
-
-      <div class="col-md-4 col-xl-3">
-        <subsidios-dropdown-list labelText="Estado:" idList="type-345676" type="basic"
-          [disabled]="false"></subsidios-dropdown-list>
+          </span>
+        </ng-container>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12">
-          <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
-            Buscar
-          </button>
-          <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
-            Limpiar
-          </button>
-          <button type="button"
-          class="btn-govco outline-secundary-btn-govco"
-          style="width: 180px; height: 42px;"
-          >Crear documento
-          </button>
+    <div class="col-md-4 col-xl-3">
+      <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
+        <label for="calendario-govco" class="label-desplegable-govco">Fecha de fin</label>
+        <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
+          <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaFin"
+            placeholder="dd/mm/aaaa" id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off"
+            days="true">
         </div>
-  </div>
-  </form>
+        <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de fin</label>
+        <ng-container>
+          <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
 
-  <div class="row mt-4">
-    <div class="table-responsive">
-      <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-        <thead class="encabezado-tabla">
-          <tr>
-            <th scope="col" role="button">Proceso</th>
-            <th scope="col" role="button">Tipo&nbsp;Documental</th>
-            <th scope="col" role="button" style="text-align: center !important;">Nombre&nbsp;Documento</th>
-            <th scope="col" role="button" style="text-align: center !important;">Fecha&nbsp;Creaci&oacute;n</th>
-            <th scope="col" role="button" style="text-align: center !important;">Fecha&nbsp;&uacute;ltima&nbsp;Actualizaci&oacute;n</th>
-            <th scope="col" role="button" style="text-align: center !important;">Estado</th>
-            <th class="columna-especial" role="button" style="text-align: center !important;">Acci&oacute;n</th>
-          </tr>
-        </thead>
-        <tbody class="contenido-tablas">
-          <tr *ngFor="let item of documentos">
-            <td class="text-center">{{ item.proceso }}</td>
+          </span>
+        </ng-container>
+      </div>
+    </div>
 
-            <td class="text-center">{{ item.tipoDocumental }}</td>
 
-            <td class="text-center">{{ item.nombreDocumento }}</td>
-            <td style="text-align: center !important;">
-              <p class="mb-0">
-                {{ item.fechaInicio | date: 'dd/MM/yyyy' }}
-              </p>
-            </td>
-            <td style="text-align: center !important;">
-              <p class="mb-0">
-                {{ item.fechaFin | date: 'dd/MM/yyyy' }}
-              </p>
-            </td>
-            <td class="text-center">{{ item.estado }}</td>
-            <td style="text-align: center !important; padding-right: 10px;">
-              <a class="button-modal-accept-none d-block mb-1" href="#" tabindex="0" data-bs-target="#verRadicadoViewModal"
-                data-bs-toggle="modal">Editar</a>
-                <a class="button-modal-accept-none d-block mb-1" style="cursor: pointer;" (click)="onAprobar(item.documentId)">Aprobar</a>
-                <a class="button-modal-accept-none d-block mb-1" style="cursor: pointer;"   (click)="onRechazar(item.documentId)">Rechazar</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+    <div class="col-md-4 col-xl-3">
+      <subsidios-dropdown-list labelText="Estado:" idList="type-345676" type="basic"
+        [disabled]="false"></subsidios-dropdown-list>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+        Buscar
+      </button>
+      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+        Limpiar
+      </button>
+      <button type="button" class="btn-govco outline-secundary-btn-govco" style="width: 180px; height: 42px;"
+        routerLink="/generar-documento">Crear documento
+      </button>
+    </div>
+  </div>
+</form>
+
+<div class="row mt-4">
+  <div class="table-responsive">
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+      <thead class="encabezado-tabla">
+        <tr>
+          <th scope="col" role="button">Proceso</th>
+          <th scope="col" role="button">Tipo&nbsp;Documental</th>
+          <th scope="col" role="button" style="text-align: center !important;">Nombre&nbsp;Documento</th>
+          <th scope="col" role="button" style="text-align: center !important;">Fecha&nbsp;Creaci&oacute;n</th>
+          <th scope="col" role="button" style="text-align: center !important;">
+            Fecha&nbsp;&uacute;ltima&nbsp;Actualizaci&oacute;n</th>
+          <th scope="col" role="button" style="text-align: center !important;">Estado</th>
+          <th class="columna-especial" role="button" style="text-align: center !important;">Acci&oacute;n</th>
+        </tr>
+      </thead>
+      <tbody class="contenido-tablas">
+        <tr *ngFor="let item of documentos">
+          <td class="text-center">{{ item.proceso }}</td>
+
+          <td class="text-center">{{ item.tipoDocumental }}</td>
+
+          <td class="text-center">{{ item.nombreDocumento }}</td>
+          <td style="text-align: center !important;">
+            <p class="mb-0">
+              {{ item.fechaInicio | date: 'dd/MM/yyyy' }}
+            </p>
+          </td>
+          <td style="text-align: center !important;">
+            <p class="mb-0">
+              {{ item.fechaFin | date: 'dd/MM/yyyy' }}
+            </p>
+          </td>
+          <td class="text-center">{{ item.estado }}</td>
+          <td style="text-align: center !important; padding-right: 10px;">
+            <a class="button-modal-accept-none ms-2 me-2 d-block mb-1" href="#" tabindex="0"
+              [routerLink]="['/editar-documento', item.proceso]">Editar</a>
+            <a class="button-modal-accept-none ms-2 me-2 d-block mb-1" tabindex="0" data-bs-target="#deleteDocumentModal" data-bs-toggle="modal" style="cursor: pointer;">Eliminar</a>
+            <a class="button-modal-accept-none d-block  ms-2 me-2 mb-1" style="cursor: pointer;" (click)="onAprobar(item.documentId)">Aprobar</a>
+            <a class="button-modal-accept-none d-block  ms-2 me-2 mb-1" style="cursor: pointer;"   (click)="onRechazar(item.documentId)">Rechazar</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<app-delete-document [documentId]="documentId"></app-delete-document>
+<div #dialog></div>
 
   <div class="d-flex justify-content-center">
     <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1" (click)="onExportar()">Exportar</button>
   </div>
 
-  <app-ver-radicado-view [documentId]="documentId"></app-ver-radicado-view>
-  <div #dialog></div>
  <app-approve-document-modal [documentId]="documentId" ></app-approve-document-modal>
  <app-reject-document [documentId]="documentId"></app-reject-document>
  <a #openbuttonApproveDocument class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#approveDocumentModal" href="#"></a>
