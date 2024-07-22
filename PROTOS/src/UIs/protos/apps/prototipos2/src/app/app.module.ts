@@ -88,6 +88,10 @@ import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vist
 import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
 import { DeleteDocumentComponent } from './pages/delete-document/delete-document.component';
 import { SeeDocumentModalComponent } from './pages/see-document-modal/see-document-modal.component';
+import { ApproveDocumentModalComponent } from './pages/approve-document-modal/approve-document-modal.component';
+import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
+import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
+
 
 @NgModule({
   declarations: [
@@ -167,15 +171,18 @@ import { SeeDocumentModalComponent } from './pages/see-document-modal/see-docume
     ConsultFileComponent,
     AssociateDocumentsComponent,
     TestModalComponent,
-    ConsultDocumentsComponent,
-    SeeTaskDocumentComponent,
-    AssociateOutboundDocumentSISFVComponent,
-    AssociateInboundDocumentGesDocComponent,
-    AssociateResolutionsComponent,
     GenerarDocumentoComponent,
     VistaPreviaDocumentoComponent,
     EditarDocumentoComponent,
     DeleteDocumentComponent,
+    ConsultDocumentsComponent,
+    ApproveDocumentModalComponent,
+    RejectDocumentComponent,
+    ManageTaskDocumentComponent,
+    SeeTaskDocumentComponent,
+    AssociateOutboundDocumentSISFVComponent,
+    AssociateInboundDocumentGesDocComponent,
+    AssociateResolutionsComponent,
     SeeDocumentModalComponent
   ],
   imports: [

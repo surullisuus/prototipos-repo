@@ -55,6 +55,7 @@ import { EditarDocumentoComponent } from './pages/edit-document/editar-documento
 import { AssociateOutboundDocumentSISFVComponent } from './pages/associate-outbound-document-SISFV/associate-outbound-document-SISFV.component';
 import { AssociateInboundDocumentGesDocComponent } from './pages/associate-inbound-document-GesDoc/associate-inbound-document-GesDoc.component';
 import { AssociateResolutionsComponent } from './pages/associate-resolutions/associate-resolutions.component';
+import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -160,4 +161,5 @@ export const appRoutes: Route[] = [
   { path: 'asociar-documento-SISFV', component: AssociateOutboundDocumentSISFVComponent},
   { path: 'asociar-documento-entrada-GesDoc', component: AssociateInboundDocumentGesDocComponent},
   { path: 'asociar-resolucion', component: AssociateResolutionsComponent}
+  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
 ];

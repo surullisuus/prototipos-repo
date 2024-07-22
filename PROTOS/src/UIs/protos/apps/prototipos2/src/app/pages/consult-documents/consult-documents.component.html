@@ -111,10 +111,11 @@
           </td>
           <td class="text-center">{{ item.estado }}</td>
           <td style="text-align: center !important; padding-right: 10px;">
-            <a class="button-modal-accept-none ms-2 me-2" href="#" tabindex="0"
+            <a class="button-modal-accept-none ms-2 me-2 d-block mb-1" href="#" tabindex="0"
               [routerLink]="['/editar-documento', item.proceso]">Editar</a>
-            <a class="button-modal-accept-none ms-2 me-2" tabindex="0" data-bs-target="#deleteDocumentModal"
-              data-bs-toggle="modal">Eliminar</a>
+            <a class="button-modal-accept-none ms-2 me-2 d-block mb-1" tabindex="0" data-bs-target="#deleteDocumentModal" data-bs-toggle="modal" style="cursor: pointer;">Eliminar</a>
+            <a class="button-modal-accept-none d-block  ms-2 me-2 mb-1" style="cursor: pointer;" (click)="onAprobar(item.documentId)">Aprobar</a>
+            <a class="button-modal-accept-none d-block  ms-2 me-2 mb-1" style="cursor: pointer;"   (click)="onRechazar(item.documentId)">Rechazar</a>
           </td>
         </tr>
       </tbody>
@@ -124,3 +125,12 @@
 
 <app-delete-document [documentId]="documentId"></app-delete-document>
 <div #dialog></div>
+
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1" (click)="onExportar()">Exportar</button>
+  </div>
+
+ <app-approve-document-modal [documentId]="documentId" ></app-approve-document-modal>
+ <app-reject-document [documentId]="documentId"></app-reject-document>
+ <a #openbuttonApproveDocument class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#approveDocumentModal" href="#"></a>
+ <a #openbuttonRechazarDocument class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#rejectDocumentModal" href="#"></a>

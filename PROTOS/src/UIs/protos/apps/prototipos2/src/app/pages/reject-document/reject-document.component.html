@@ -1,0 +1,43 @@
+<div class="modal fade" id="rejectDocumentModal" tabindex="-1" aria-labelledby="rejectDocumentModalLabel"
+    aria-hidden="true">
+    <form>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <h4 class="h4-tipografia-govco">
+                            <span class="govcolor-marine">
+                                Rechazar documento
+                            </span>
+                        </h4>
+                    </div>
+                    <a href="#" #closeRejectDocumentModal role="button" data-bs-dismiss="modal" class="close-btn-modal"
+                        aria-label="Close" aria-expanded="false">
+                        <span class="modal-close-govco govco-times"></span>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formQueryScheme">
+                        <div class="entradas-de-texto-govco py-0">
+                            <subsidios-input [control]="$any(formQueryScheme.get('causal'))" type="text"
+                                label="Causal de rechazo*:" placeholder="abc" [showStatus]="false" [maxLength]="20"
+                                [minLength]="1"></subsidios-input>
+                        </div>
+                        <div class="text-end mt-2">
+                            <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space"  data-bs-dismiss="modal" >
+                                Cancelar
+                            </button>
+                            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+                                (click)="onRejectDocument()">
+                                Aceptar
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div #dialog></div>
