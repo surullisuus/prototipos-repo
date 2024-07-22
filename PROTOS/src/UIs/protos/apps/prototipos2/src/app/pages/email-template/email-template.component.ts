@@ -58,7 +58,8 @@ initForm(): FormGroup {
 }
 AcceptModal() {
   const dialogData = new DialogData();
-  dialogData.title = "¿Está seguro de eliminar esta plantilla?";
+  dialogData.title = "Eliminar registro";
+  dialogData.body = "¿Está seguro que desea eliminar el registro?"
   dialogData.textButtonCancel = "Cerrar";
   dialogData.textButtonConfirm = "Aceptar";
   dialogData.type = DialogType.warning;
@@ -77,7 +78,7 @@ AcceptModal() {
 
 onAcceptedModal(){
   const dialogData = new DialogData();
-  dialogData.title = "Plantilla eliminada de forma exitosa";
+  dialogData.title = "Registro eliminado de forma exitosa";
   dialogData.buttonConfirm = false;
   dialogData.textButtonCancel = 'Cerrar';
   dialogData.type = DialogType.success;
