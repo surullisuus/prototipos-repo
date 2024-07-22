@@ -160,6 +160,6 @@ export const appRoutes: Route[] = [
 
   { path: 'asociar-documento-SISFV', component: AssociateOutboundDocumentSISFVComponent},
   { path: 'asociar-documento-entrada-GesDoc', component: AssociateInboundDocumentGesDocComponent},
-  { path: 'asociar-resolucion', component: AssociateResolutionsComponent}
+  { path: 'asociar-resolucion', component: AssociateResolutionsComponent},
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
 ];
