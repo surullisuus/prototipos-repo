@@ -1,0 +1,86 @@
+<div class="modal fade" id="approveDocumentModal" tabindex="-1" aria-labelledby="approveDocumentModalLabel"
+    aria-hidden="true">
+    <form>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <h4 class="h4-tipografia-govco">
+                            <span class="govcolor-marine">
+                                Enviar a aprobación
+                            </span>
+                        </h4>
+                    </div>
+                    <a href="#" #closeApproveDocumentModal role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+                        aria-expanded="false">
+                        <span class="modal-close-govco govco-times"></span>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formQueryScheme">
+                        <div class="text-center">
+                            <h4 class="h5-tipografia-govco text-primary">Tipo documental</h4>
+                            <h4 class="h5-tipografia-govco text-info">Proceso programa</h4>
+                            <h4 class="h5-tipografia-govco text-primary">Nombre documento</h4>
+                        </div>
+
+                        <div class="entradas-de-texto-govco py-0" style="padding: 0px !important;">
+                            <subsidios-input
+                            [control]="$any(formQueryScheme.get('elaboro'))"
+                            type="text"
+                            label="Elaboró:"
+                            placeholder="Ej. Maria Gomez"
+                            [showStatus]="false"
+                            [maxLength]="20"
+                            [minLength]="1"
+                          ></subsidios-input>
+                        </div>
+
+                        <div class="entradas-de-texto-govco " style="padding: 0px !important;">
+                            <subsidios-input
+                            [control]="$any(formQueryScheme.get('responsable'))"
+                            type="text"
+                            label="Responsable:"
+                            placeholder="Ej. Maria Gomez"
+                            [showStatus]="false"
+                            [maxLength]="20"
+                            [minLength]="1"
+                          ></subsidios-input>
+                        </div>
+
+                        <div class="entradas-de-texto-govco" style="padding: 0px !important;">
+                            <subsidios-input
+
+                            [control]="$any(formQueryScheme.get('responsableAprobacion'))"
+                            type="text"
+                            label="Responsable aprobación:"
+                            placeholder="Ej. Maria Gomez"
+                            [showStatus]="false"
+                            [maxLength]="20"
+                            [minLength]="1"
+                          ></subsidios-input>
+                        </div>
+                        <div class="border border-primary rounded-3 p-5 text-center">
+                            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+                                (click)="onSend()">
+                                Vista previa <span class="govco-eye"></span>
+                            </button>
+                        </div>
+                        <div class="text-end mt-2">
+                            <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+                                Cancelar
+                            </button>
+                            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+                                (click)="onSend()">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div #dialog></div>

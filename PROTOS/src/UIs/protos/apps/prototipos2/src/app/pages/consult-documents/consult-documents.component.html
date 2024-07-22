@@ -118,8 +118,11 @@
             </td>
             <td class="text-center">{{ item.estado }}</td>
             <td style="text-align: center !important; padding-right: 10px;">
-              <a class="button-modal-accept-none ms-2 me-2" href="#" tabindex="0" data-bs-target="#verRadicadoViewModal"
-                data-bs-toggle="modal" >Editar</a>
+              <a class="button-modal-accept-none d-block mb-1" href="#" tabindex="0" data-bs-target="#verRadicadoViewModal"
+                data-bs-toggle="modal">Editar</a>
+                <a class="button-modal-accept-none d-block mb-1" style="cursor: pointer;" (click)="onAprobar(item.documentId)">Aprobar</a>
+                <a class="button-modal-accept-none d-block" href="#" tabindex="0" data-bs-target="#verRadicadoViewModal"
+                data-bs-toggle="modal">Rechazar</a>
             </td>
           </tr>
         </tbody>
@@ -133,3 +136,6 @@
 
   <app-ver-radicado-view [documentId]="documentId"></app-ver-radicado-view>
   <div #dialog></div>
+ <app-approve-document-modal [documentId]="documentId" ></app-approve-document-modal>
+ <a #openbuttonApproveDocument class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#approveDocumentModal" href="#"></a>
+ <a #openbuttonRechazarDocument class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#approveDocumentModal" href="#"></a>
