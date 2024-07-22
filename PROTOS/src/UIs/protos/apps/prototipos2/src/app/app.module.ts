@@ -83,6 +83,10 @@ import { GenerarDocumentoComponent } from './pages/create-document/generar-docum
 import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
 import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
 import { DeleteDocumentComponent } from './pages/delete-document/delete-document.component';
+import { ApproveDocumentModalComponent } from './pages/approve-document-modal/approve-document-modal.component';
+import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
+import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
+
 
 @NgModule({
   declarations: [
@@ -162,11 +166,14 @@ import { DeleteDocumentComponent } from './pages/delete-document/delete-document
     ConsultFileComponent,
     AssociateDocumentsComponent,
     TestModalComponent,
-    ConsultDocumentsComponent,
     GenerarDocumentoComponent,
     VistaPreviaDocumentoComponent,
     EditarDocumentoComponent,
     DeleteDocumentComponent,
+    ConsultDocumentsComponent,
+    ApproveDocumentModalComponent,
+    RejectDocumentComponent,
+    ManageTaskDocumentComponent
   ],
   imports: [
     BrowserModule,

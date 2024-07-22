@@ -52,6 +52,7 @@ import { ConsultDocumentsComponent } from './pages/consult-documents/consult-doc
 import { GenerarDocumentoComponent } from './pages/create-document/generar-documento.component';
 import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
 import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
+import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -150,6 +151,7 @@ export const appRoutes: Route[] = [
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
   { path: 'probar-modal', component: TestModalComponent },
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
+  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'generar-documento', component: GenerarDocumentoComponent },
   { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
   { path: 'editar-documento/:id', component: EditarDocumentoComponent },
