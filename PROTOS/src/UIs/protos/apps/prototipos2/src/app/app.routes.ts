@@ -153,6 +153,4 @@ export const appRoutes: Route[] = [
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'generar-documento', component: GenerarDocumentoComponent },
-  { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
-  { path: 'editar-documento/:id', component: EditarDocumentoComponent },
 ];
