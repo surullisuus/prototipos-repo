@@ -5,6 +5,12 @@
 
     <div class="row mt-5">
 
+        <!--ID-->
+        <div class="col-md-4">
+            <subsidios-input [control]="$any(formQueryScheme.get('idPlantilla'))" type="text" label="ID"
+                placeholder="Ej. 123456" [showStatus]="false" [maxLength]="50" [minLength]="1"
+                typeValidation="alphanumericwhithspaces" note="Ingrese el ID de la plantilla"></subsidios-input>
+        </div>
         <!--Proceso-->
 
         <div class="col-md-4">
@@ -23,6 +29,7 @@
 
 
 
+
     </div>
 
     <div class="row mt-4 mb-3 text-left">
@@ -30,6 +37,10 @@
 
             <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
                 Buscar
+            </button>
+
+            <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+                Limpiar
             </button>
 
             <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
@@ -59,8 +70,9 @@
         <table class="table table-general table-basic" aria-describedby="tableDescBasic">
             <thead class="encabezado-tabla">
                 <tr>
+                    <th class="columna-especial" role="button">Id</th>
                     <th class="columna-especial" role="button">Proceso</th>
-                    <th role="button">Tipo documental</th>
+                    <th role="button">Tema</th>
                     <th role="button">Nombre</th>
                     <th role="button" style="text-align: center !important;">Descripción</th>
                     <th style="text-align: center !important;">Acciones</th>
@@ -69,8 +81,9 @@
 
             <tbody class="contenido-tablas">
                 <tr *ngFor="let phase of process">
+                    <td class="text-left">{{ phase.id }}</td>
                     <td class="text-left">{{ phase.process }}</td>
-                    <td class="text-left">{{ phase.documentType }}</td>
+                    <td class="text-left">{{ phase.tema }}</td>
                     <td class="text-center">{{ phase.name }}</td>
                     <td class="text-center">{{ phase.description }}</td>
 

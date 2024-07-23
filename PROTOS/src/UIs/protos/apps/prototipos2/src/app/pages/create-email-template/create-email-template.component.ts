@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 interface Process {
   id: number;
@@ -13,9 +14,10 @@ interface Process {
   templateUrl: './create-email-template.component.html',
   styleUrl: './create-email-template.component.css',
 })
-export class CreateEmailTemplateComponent {
+export class CreateEmailTemplateComponent implements OnInit {
   selectedProcess: string | null = null;
   selectedDocument: string | null = null;
+  formQueryScheme!: FormGroup;
 
   process: Process[] = [
     {
@@ -40,6 +42,18 @@ export class CreateEmailTemplateComponent {
       description: 'abc............',
     },
   ];
+
+  constructor(private _formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.formQueryScheme = this.initForm();
+  }
+
+  initForm(): FormGroup {
+    return this._formBuilder.group({
+      idPlantilla: [null],
+    });
+  }
 
   processOptions() {
     return [

@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 interface Process {
   id: number;
   name: string;
-  documentType: string;
+  tema: string;
   process: string;
   description: string;
 }
@@ -12,7 +12,7 @@ interface Process {
 interface CurrentProcess {
   id: number;
   name: string;
-  documentType: string;
+  tema: string;
   process: string;
   description: string;
   asunto: string;
@@ -32,7 +32,7 @@ export class SeeEmailTemplateComponent {
   currentProcessId: CurrentProcess = {
     id: 1,
     name: 'abc',
-    documentType: 'abc',
+    tema: 'abc',
     process: 'ABC',
     description: 'Abc............',
     asunto: 'Asunto',
@@ -46,21 +46,21 @@ export class SeeEmailTemplateComponent {
     {
       id: 1,
       name: 'abc',
-      documentType: 'abc',
+      tema: 'abc',
       process: 'ABC',
       description: 'Abc............',
     },
     {
       id: 2,
       name: 'abc',
-      documentType: 'abc',
+      tema: 'abc',
       process: 'abc',
       description: 'abc............',
     },
     {
       id: 3,
       name: 'abc',
-      documentType: 'abc',
+      tema: 'abc',
       process: 'abc',
       description: 'abc............',
     },
@@ -81,7 +81,7 @@ export class SeeEmailTemplateComponent {
     return {
       id: 1,
       name: 'Plantilla xyz',
-      documentType: 'Documento 1',
+      tema: 'Documento 1',
       process: 'Proceso 1',
       description: 'Esta plantilla de correo electrónico sirve para...',
       asunto: 'Asunto',

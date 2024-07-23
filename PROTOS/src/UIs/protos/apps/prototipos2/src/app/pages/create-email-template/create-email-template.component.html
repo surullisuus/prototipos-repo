@@ -5,6 +5,17 @@
 
     <div class="row mt-5">
 
+        <!--ID-->
+        <div class="col-md-4">
+            <subsidios-input [control]="$any(formQueryScheme.get('idPlantilla'))" type="text" label="ID"
+                placeholder="Ej. 123456" [showStatus]="false" [maxLength]="50" [minLength]="1"
+                typeValidation="alphanumericwhithspaces" note="Ingrese el ID de la plantilla"
+                [disabled]="true"></subsidios-input>
+        </div>
+
+        <div class="col-md-8">
+        </div>
+
         <!--Proceso-->
 
         <div class="col-md-4">
@@ -27,62 +38,42 @@
     <div class="row mt-3">
         <!--Nombre tarea-->
         <div class="col-md-2 entradas-de-texto-govco">
-            <label for="input-basico-id">Nombre</label>
+            <label for="input-basico-id">Nombre*</label>
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
+            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" maxlength="60" />
         </div>
     </div>
 
     <div class="row mt-3">
         <!--Nombre tarea-->
         <div class="col-md-2 entradas-de-texto-govco">
-            <label for="input-basico-id">Descripción</label>
+            <label for="input-basico-id">Descripción*</label>
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
             <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                style="min-height: 5rem; min-width: 100%;"></textarea>
+                style="min-height: 5rem; min-width: 100%;" maxlength="250"></textarea>
         </div>
     </div>
 
     <div class="row mt-3">
         <!--Nombre tarea-->
         <div class="col-md-2 entradas-de-texto-govco">
-            <label for="input-basico-id">Desde</label>
+            <label for="input-basico-id">Asunto*</label>
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
+            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" maxlength="60" />
         </div>
     </div>
 
     <div class="row mt-3">
         <!--Nombre tarea-->
         <div class="col-md-2 entradas-de-texto-govco">
-            <label for="input-basico-id">CC</label>
-        </div>
-        <div class="col-md-10 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
-        </div>
-    </div>
-
-    <div class="row mt-3">
-        <!--Nombre tarea-->
-        <div class="col-md-2 entradas-de-texto-govco">
-            <label for="input-basico-id">Asunto</label>
-        </div>
-        <div class="col-md-10 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
-        </div>
-    </div>
-
-    <div class="row mt-3">
-        <!--Nombre tarea-->
-        <div class="col-md-2 entradas-de-texto-govco">
-            <label for="input-basico-id">Cuerpo del correo</label>
+            <label for="input-basico-id">Cuerpo del correo*</label>
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
             <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                style="min-height: 10rem; min-width: 100%;"></textarea>
+                style="min-height: 10rem; min-width: 100%;" maxlength="500"></textarea>
 
         </div>
     </div>
