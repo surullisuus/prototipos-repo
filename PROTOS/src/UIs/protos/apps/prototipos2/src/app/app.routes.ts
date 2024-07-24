@@ -52,6 +52,9 @@ import { ConsultDocumentsComponent } from './pages/consult-documents/consult-doc
 import { GenerarDocumentoComponent } from './pages/create-document/generar-documento.component';
 import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
 import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
+import { AssociateOutboundDocumentSISFVComponent } from './pages/associate-outbound-document-SISFV/associate-outbound-document-SISFV.component';
+import { AssociateInboundDocumentGesDocComponent } from './pages/associate-inbound-document-GesDoc/associate-inbound-document-GesDoc.component';
+import { AssociateResolutionsComponent } from './pages/associate-resolutions/associate-resolutions.component';
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 
 export const appRoutes: Route[] = [
@@ -151,8 +154,12 @@ export const appRoutes: Route[] = [
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
   { path: 'probar-modal', component: TestModalComponent },
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
-  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'generar-documento', component: GenerarDocumentoComponent },
   { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
   { path: 'editar-documento/:id', component: EditarDocumentoComponent },
+
+  { path: 'asociar-documento-SISFV', component: AssociateOutboundDocumentSISFVComponent},
+  { path: 'asociar-documento-entrada-GesDoc', component: AssociateInboundDocumentGesDocComponent},
+  { path: 'asociar-resolucion', component: AssociateResolutionsComponent},
+  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
 ];

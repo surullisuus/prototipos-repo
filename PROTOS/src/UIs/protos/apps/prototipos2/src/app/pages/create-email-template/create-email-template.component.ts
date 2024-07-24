@@ -66,15 +66,15 @@ export class CreateEmailTemplateComponent {
     return [
       {
         id: 1,
-        text: 'Documento 1',
+        text: 'Tema 1',
       },
       {
         id: 2,
-        text: 'Documento 2',
+        text: 'Tema 2',
       },
       {
         id: 3,
-        text: 'Documento 3',
+        text: 'Tema 3',
       },
     ];
   }

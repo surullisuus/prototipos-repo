@@ -3,29 +3,26 @@
 <div class="rounded-3 mb-5 mt-3">
     <div class="row">
         <span> Modal 1</span>
-        <a
-        class="ms-2 me-2"
-        tabindex="0"
-        data-bs-target="#documentSigningModal"
-        data-bs-toggle="modal"
-        style="cursor: pointer"
-      >
-        Firmar documento
+        <a type="button" 
+        class="me-1" 
+        tabindex="0" 
+        (click)="DeleteModal()"
+        >
+        Borrar
         </a>
     </div>
     <div class="row">
         <span> Modal 2</span>
         <a
-        class="ms-2 me-2"
+        class="me-1"
         tabindex="0"
-        data-bs-target="#fileDocumentModal"
+        data-bs-target="#seeTaskDocument"
         data-bs-toggle="modal"
         style="cursor: pointer"
       >
-        Radicar Documentos
+        Ver Documento
         </a>
     </div>
 </div>
-<app-document-signing></app-document-signing>
-<app-file-document></app-file-document>
+<app-see-task-document></app-see-task-document>
 <div #dialog></div>
