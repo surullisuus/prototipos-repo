@@ -1,15 +1,16 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 interface Process {
   id: number;
   name: string;
-  documentType: string;
+  tema: string;
   process: string;
   description: string;
 }
@@ -19,38 +20,52 @@ interface Process {
   templateUrl: './manage-plantillas-correos.component.html',
   styleUrl: './manage-plantillas-correos.component.css',
 })
-export class ManagePlantillasCorreosComponent {
+export class ManagePlantillasCorreosComponent implements OnInit {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   subscription!: Subscription;
 
   selectedProcess: string | null = null;
   selectedDocument: string | null = null;
+  formQueryScheme!: FormGroup;
 
   process: Process[] = [
     {
       id: 1,
       name: 'abc',
-      documentType: 'abc',
+      tema: 'abc',
       process: 'ABC',
       description: 'Abc............',
     },
     {
       id: 2,
       name: 'abc',
-      documentType: 'abc',
+      tema: 'abc',
       process: 'abc',
       description: 'abc............',
     },
     {
       id: 3,
       name: 'abc',
-      documentType: 'abc',
+      tema: 'abc',
       process: 'abc',
       description: 'abc............',
     },
   ];
 
-  constructor(private dialogService: DialogService) {}
+  constructor(
+    private dialogService: DialogService,
+    private _formBuilder: FormBuilder
+  ) {}
+
+  ngOnInit(): void {
+    this.formQueryScheme = this.initForm();
+  }
+
+  initForm(): FormGroup {
+    return this._formBuilder.group({
+      idPlantilla: [null],
+    });
+  }
 
   processOptions() {
     return [

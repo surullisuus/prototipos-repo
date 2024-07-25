@@ -5,7 +5,7 @@
     <div class="row mt-4">
         <label>ID*:</label>
         <div class="col-md-2 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="123" disabled/>   
+            <input type="text" id="input-basico-id" placeholder="123" disabled />
         </div>
     </div>
     <div class="row mt-5">
@@ -20,8 +20,8 @@
 
         <!--Tema-->
         <div class="col-md-4">
-            <subsidios-dropdown-list labelText="Tema" note="Seleccione una opción" idList="type-345676"
-                type="basic" [disabled]="false" [lista]="documentOptions()" (eventlist)="setSelectedDocument($event)">
+            <subsidios-dropdown-list labelText="Tema" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false" [lista]="documentOptions()" (eventlist)="setSelectedDocument($event)">
             </subsidios-dropdown-list>
         </div>
 
@@ -34,7 +34,7 @@
             <label for="input-basico-id">Nombre*:</label>
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
+            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" maxlength="60" />
         </div>
     </div>
 
@@ -45,7 +45,7 @@
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
             <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                style="min-height: 5rem; min-width: 100%;"></textarea>
+                style="min-height: 5rem; min-width: 100%;" maxlength="250"></textarea>
         </div>
     </div>
 
@@ -55,7 +55,7 @@
             <label for="input-basico-id">Asunto*:</label>
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
+            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" maxlength="60" />
         </div>
     </div>
 
@@ -66,7 +66,7 @@
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
             <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                style="min-height: 10rem; min-width: 100%;"></textarea>
+                style="min-height: 10rem; min-width: 100%;" maxlength="500"></textarea>
 
         </div>
     </div>

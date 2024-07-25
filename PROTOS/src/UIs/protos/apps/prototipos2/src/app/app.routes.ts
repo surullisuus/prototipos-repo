@@ -158,8 +158,14 @@ export const appRoutes: Route[] = [
   { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
   { path: 'editar-documento/:id', component: EditarDocumentoComponent },
 
-  { path: 'asociar-documento-SISFV', component: AssociateOutboundDocumentSISFVComponent},
-  { path: 'asociar-documento-entrada-GesDoc', component: AssociateInboundDocumentGesDocComponent},
-  { path: 'asociar-resolucion', component: AssociateResolutionsComponent},
+  {
+    path: 'asociar-documento-SISFV',
+    component: AssociateOutboundDocumentSISFVComponent,
+  },
+  {
+    path: 'asociar-documento-entrada-GesDoc',
+    component: AssociateInboundDocumentGesDocComponent,
+  },
+  { path: 'asociar-resolucion', component: AssociateResolutionsComponent },
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
 ];

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, Input, ViewChild, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
 import { DialogData } from '../../components/dialog/models/dialog-data';
@@ -13,6 +13,7 @@ import { DialogService } from '../../components/dialog/services/dialog.service';
 export class EditarDocumentoComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   subscription!: Subscription;
+  @Input() documentId: string | undefined;
 
   constructor(private dialogService: DialogService) {}
 
