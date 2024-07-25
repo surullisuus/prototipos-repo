@@ -78,6 +78,20 @@ import { SeeConsultarRadicadoComponent } from './pages/see-consultar-radicado/se
 import { SeeAsociarRadicadoNotificacionComponent } from './pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component';
 import { ConsultFileComponent } from './pages/consult-file/consult-file.component';
 import { AssociateDocumentsComponent } from './pages/associate-documents/associate-documents.component';
+import { ConsultDocumentsComponent } from './pages/consult-documents/consult-documents.component';
+import { SeeTaskDocumentComponent } from './pages/see-task-document/see-task-document.component';
+import { AssociateOutboundDocumentSISFVComponent } from './pages/associate-outbound-document-SISFV/associate-outbound-document-SISFV.component';
+import { AssociateInboundDocumentGesDocComponent } from './pages/associate-inbound-document-GesDoc/associate-inbound-document-GesDoc.component';
+import { AssociateResolutionsComponent } from './pages/associate-resolutions/associate-resolutions.component';
+import { GenerarDocumentoComponent } from './pages/create-document/generar-documento.component';
+import { VistaPreviaDocumentoComponent } from './pages/see-preview-document/vista-previa-documento.component';
+import { EditarDocumentoComponent } from './pages/edit-document/editar-documento.component';
+import { DeleteDocumentComponent } from './pages/delete-document/delete-document.component';
+import { SeeDocumentModalComponent } from './pages/see-document-modal/see-document-modal.component';
+import { ApproveDocumentModalComponent } from './pages/approve-document-modal/approve-document-modal.component';
+import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
+import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
+
 
 @NgModule({
   declarations: [
@@ -157,6 +171,19 @@ import { AssociateDocumentsComponent } from './pages/associate-documents/associa
     ConsultFileComponent,
     AssociateDocumentsComponent,
     TestModalComponent,
+    GenerarDocumentoComponent,
+    VistaPreviaDocumentoComponent,
+    EditarDocumentoComponent,
+    DeleteDocumentComponent,
+    ConsultDocumentsComponent,
+    ApproveDocumentModalComponent,
+    RejectDocumentComponent,
+    ManageTaskDocumentComponent,
+    SeeTaskDocumentComponent,
+    AssociateOutboundDocumentSISFVComponent,
+    AssociateInboundDocumentGesDocComponent,
+    AssociateResolutionsComponent,
+    SeeDocumentModalComponent
   ],
   imports: [
     BrowserModule,

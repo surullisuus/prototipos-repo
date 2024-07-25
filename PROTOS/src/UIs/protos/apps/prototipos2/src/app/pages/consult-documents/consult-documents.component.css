@@ -1,0 +1,9 @@
+.table-general {
+    table-layout: fixed;
+    width: 80%;
+  }
+  
+  .table-general th, .table-general td {
+    
+    width: 14.3%; /* 100% / 8 columnas = 12.5% */
+  }

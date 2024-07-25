@@ -1,0 +1,54 @@
+<div class="modal fade" id="editDocumentModal" tabindex="-1" aria-labelledby="editDocumentModal" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <h4 class="h3-tipografia-govco mt-3">
+                <span class="govcolor-marine">Editar documento</span>
+            </h4>
+
+            <div class="rounded-3 mb-5 mt-3">
+
+                <div class="p-5" style="background-color: aliceblue; min-height: 20rem; min-width: 100%;">
+                    <textarea
+                        style="background-color: #fff; padding: 1rem; min-width: 100%; height: 40rem; resize: none; overflow-y: scroll; text-align: justify;">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam laborum facilis quaerat, aliquam aut hic
+            itaque voluptas eveniet. Voluptates saepe, animi reprehenderit vero recusandae incidunt ex tenetur non.
+            Soluta, harum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem earum laboriosam vero,
+            exercitationem necessitatibus labore voluptatem a eaque unde odit quibusdam consequuntur? Aperiam
+            distinctio, earum assumenda asperiores minus nam repellat. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Nemo nam animi fuga impedit vero quo est? Quidem, possimus ipsum. Fuga voluptatum qui
+            eveniet at nam quia odio, quibusdam assumenda eos. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Enim eos, inventore est doloribus illum suscipit adipisci sapiente explicabo exercitationem rem numquam
+            perspiciatis, voluptatibus consequatur asperiores fugiat iure soluta officiis accusantium!
+        </textarea>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+                            (click)="showSuccessTaskInitializationAlertState('Documento editado de forma exitosa.')">
+                            Guardar
+                        </button>
+                        <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space ms-4"
+                            data-bs-target="#verRadicadoViewModal" data-bs-toggle="modal">
+                            Cancelar
+                        </button>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+
+
+                <div #dialog></div>
+            </div>
+        </div>
+    </div>
+</div>
