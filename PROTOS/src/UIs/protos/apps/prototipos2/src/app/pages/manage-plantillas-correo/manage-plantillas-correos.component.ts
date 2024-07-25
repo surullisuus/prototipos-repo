@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 interface Process {
   id: number;
   name: string;
-  tema: string;
+  tipoDocumental: string;
   process: string;
   description: string;
 }
@@ -32,21 +32,21 @@ export class ManagePlantillasCorreosComponent implements OnInit {
     {
       id: 1,
       name: 'abc',
-      tema: 'abc',
+      tipoDocumental: 'abc',
       process: 'ABC',
       description: 'Abc............',
     },
     {
       id: 2,
       name: 'abc',
-      tema: 'abc',
+      tipoDocumental: 'abc',
       process: 'abc',
       description: 'abc............',
     },
     {
       id: 3,
       name: 'abc',
-      tema: 'abc',
+      tipoDocumental: 'abc',
       process: 'abc',
       description: 'abc............',
     },
