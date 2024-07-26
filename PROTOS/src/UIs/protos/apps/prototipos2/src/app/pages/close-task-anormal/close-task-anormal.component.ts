@@ -16,8 +16,22 @@ export class CloseTaskAnormalComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
 
   subscription!: Subscription;
+  showNotification = false;
 
   constructor(private dialogService: DialogService) {}
+
+  sendNotification() {
+    const users = ['user1', 'user2', 'user3'];
+    for (let index = 0; index < users.length; index++) {
+      const element = users[index];
+      //TODO
+      console.log('accion para enviar señal de notificación');
+    }
+    this.showNotification = true;
+    setTimeout(() => {
+      this.showNotification = false;
+    }, 1000);
+  }
 
   AcceptModal() {
     const dialogData = new DialogData();
@@ -31,6 +45,11 @@ export class CloseTaskAnormalComponent {
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
         dialogAction.eventClose.emit();
+        this.sendNotification();
       });
+  }
+
+  get show() {
+    return this.showNotification;
   }
 }
