@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 export class NotificationComponentComponent implements OnInit {
   @Input() text = '';
   @Input() type: 'asuccess' | 'aerror' | 'anotificacion' = 'anotificacion';
-  @Input() link = null;
+  @Input() link: string | null = null;
   @Input() showNotification = false;
 
   showNotificationFor = 10000; // Time in ms to show the notification

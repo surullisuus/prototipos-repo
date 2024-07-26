@@ -2,7 +2,7 @@
     <div class="container-alerta-govco" style="position: absolute; top: 0; right: 50px;">
         <div class="alert alerta-govco" [ngClass]="type" role="alert">
             <span class="alerta-icon-govco alerta-icon-notificacion-govco anotificacion"></span>
-            <p class="alerta-content-text">{{text}}
+            <p class="alerta-content-text" style="margin-right: 1rem;">{{text}}
                 <ng-container *ngIf="link">
                     <a href="javascript:void(0)" class="alert-link alerta-link anotificacion">{{link}}
                     </a>
