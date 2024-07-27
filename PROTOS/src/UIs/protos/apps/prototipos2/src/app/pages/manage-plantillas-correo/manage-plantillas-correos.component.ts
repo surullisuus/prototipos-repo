@@ -131,6 +131,50 @@ export class ManagePlantillasCorreosComponent implements OnInit {
       });
   }
 
+  onAsociarPlantilla($event: Event) {
+    $event.preventDefault();
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Asociar plantilla de correo';
+    dialogData.body = `¿Está seguro que desea asociar la plantilla de correo al tipo de alerta?`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          const body = `Transacción exitosa.`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
+  onAsociarPlantillaAlreadyPresent($event: Event) {
+    $event.preventDefault();
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Asociar plantilla de correo';
+    dialogData.body = `El tipo de alerta ya tiene una plantilla de correo asociada ¿Desea modificarla?`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.danger;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          const body = `Transacción exitosa.`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
   showSuccessTaskInitializationAlertState(body: string) {
     const dialogData = new DialogData();
     dialogData.title = body;
