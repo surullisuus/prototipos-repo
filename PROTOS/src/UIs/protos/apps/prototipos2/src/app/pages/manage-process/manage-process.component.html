@@ -93,7 +93,10 @@
                   href="#" hidden="true"></a>
                 <a type="button" class="me-0" tabindex="0" (click)="onCloseProcessModal()">Cerrar Etapa</a>
               </li>
-              <li><a class="dropdown-item dir-menu-govco" href="#">Devolver etapa</a></li>
+              <li>
+                <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonReturn data-bs-target="#devolverEtapaModal"
+                href="#" hidden="true"></a>
+                <a type="button" class="me-0" tabindex="0" (click)="onReturnStageModal()">Devolver etapa</a></li>
               <li>
                 <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonperformance data-bs-target="#Actuaciones"
                   href="#" hidden="true"></a>
@@ -123,6 +126,7 @@
   <app-see-requirements></app-see-requirements>
   <app-close-stage></app-close-stage>
   <app-performances></app-performances>
+  <app-return-stage></app-return-stage>
 
 </div>
 

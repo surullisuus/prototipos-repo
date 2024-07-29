@@ -92,6 +92,7 @@ import { ApproveDocumentModalComponent } from './pages/approve-document-modal/ap
 import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
+import { ReturnStageComponent } from './pages/return-stage/return-stage.component';
 
 
 @NgModule({
@@ -185,7 +186,8 @@ import { SendEmailNotificationComponent } from './pages/send-email-notification/
     AssociateInboundDocumentGesDocComponent,
     AssociateResolutionsComponent,
     SeeDocumentModalComponent,
-    SendEmailNotificationComponent
+    SendEmailNotificationComponent,
+    ReturnStageComponent
   ],
   imports: [
     BrowserModule,

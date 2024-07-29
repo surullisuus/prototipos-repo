@@ -22,6 +22,7 @@ import { Modal } from '@protos/lib';
 export class ManageProcessComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   @ViewChild('openbutton') openbutton!: ElementRef;
+  @ViewChild('openbuttonReturn') openbuttonReturn!: ElementRef;
   @ViewChild('openbuttonseeRequirements')
   openbuttonseeRequirements!: ElementRef;
   @ViewChild('openbuttonperformance') openbuttonperformance!: ElementRef;
@@ -71,6 +72,32 @@ export class ManageProcessComponent {
     if (this.openbuttonseeRequirements) {
       this.openbuttonseeRequirements.nativeElement.click();
     }
+  }
+
+  onReturnStageModal(){
+    const dialogData = new DialogData();
+    dialogData.title = '¿Está seguro de devolver la etapa?';
+    dialogData.body =
+      'Se cerrará la etapa actual y se activará la etapa anterior. '
+       + ' Recuerde que esta acción es irreversible.';
+    dialogData.textButtonCancel = 'Cerrar';
+    dialogData.type = DialogType.warning;
+
+    this.dialogService.resultActionModal;
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          if (this.openbuttonReturn) {
+            dialogAction.eventClose.emit();
+            this.openbuttonReturn.nativeElement.click();
+          }
+
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+
   }
 
   onCloseProcessModal() {
