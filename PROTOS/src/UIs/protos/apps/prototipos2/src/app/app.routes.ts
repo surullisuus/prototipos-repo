@@ -71,10 +71,10 @@ export const appRoutes: Route[] = [
   { path: 'gestionar-proceso-diseno', component: ManageProcessDesignComponent },
   { path: 'gestionar-tareas', component: ManageTaskComponent },
   {
-    path: 'configuracionEtapasProceso',
+    path: 'configurar-tareas-etapa',
     component: ManageProcessConfigsComponent,
   },
-  { path: 'etapas-proceso', component: ProcessStagesComponent },
+  { path: 'consultar-etapas-proceso', component: ProcessStagesComponent },
   { path: 'crear-etapa', component: CreateStageProcessComponent },
   { path: 'editar-etapa', component: EditStageProcessComponent },
   { path: 'ver-etapa', component: DetailStageProcessComponent },
@@ -82,7 +82,7 @@ export const appRoutes: Route[] = [
   { path: 'crear-plantilla', component: CreateEmailTemplateComponent },
   { path: 'editar-plantilla', component: EditEmailTemplateComponent },
   { path: 'ver-plantilla', component: DetailEmailTemplateComponent },
-  { path: 'tipo-notificacion', component: NotificationTypeComponent },
+  { path: 'Consultar-tipo-notificacion', component: NotificationTypeComponent },
   { path: 'crear-notificacion', component: CreateNotificationTypeComponent },
   { path: 'editar-notificacion', component: EditNotificationTypeComponent },
   { path: 'ver-notificacion', component: DetailNotificationTypeComponent },
@@ -137,7 +137,7 @@ export const appRoutes: Route[] = [
   },
 
   { path: 'cargar-documento-tarea', component: UploadTaskDocumentComponent },
-  { path: 'permisos-lectura', component: SeeReadPermissionsComponent },
+  { path: 'consultar-permisos-lectura', component: SeeReadPermissionsComponent },
   {
     path: 'seguimiento-notificaciones',
     component: ManageSeguimientoNotificacionesComponent,
