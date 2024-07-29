@@ -91,6 +91,7 @@ import { SeeDocumentModalComponent } from './pages/see-document-modal/see-docume
 import { ApproveDocumentModalComponent } from './pages/approve-document-modal/approve-document-modal.component';
 import { RejectDocumentComponent } from './pages/reject-document/reject-document.component';
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
+import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
 
 
 @NgModule({
@@ -183,7 +184,8 @@ import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage
     AssociateOutboundDocumentSISFVComponent,
     AssociateInboundDocumentGesDocComponent,
     AssociateResolutionsComponent,
-    SeeDocumentModalComponent
+    SeeDocumentModalComponent,
+    SendEmailNotificationComponent
   ],
   imports: [
     BrowserModule,

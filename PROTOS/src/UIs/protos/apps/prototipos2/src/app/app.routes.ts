@@ -56,6 +56,7 @@ import { AssociateOutboundDocumentSISFVComponent } from './pages/associate-outbo
 import { AssociateInboundDocumentGesDocComponent } from './pages/associate-inbound-document-GesDoc/associate-inbound-document-GesDoc.component';
 import { AssociateResolutionsComponent } from './pages/associate-resolutions/associate-resolutions.component';
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
+import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -168,4 +169,6 @@ export const appRoutes: Route[] = [
   },
   { path: 'asociar-resolucion', component: AssociateResolutionsComponent },
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
+  { path: 'enviar-notificacion', component: SendEmailNotificationComponent},
+
 ];
