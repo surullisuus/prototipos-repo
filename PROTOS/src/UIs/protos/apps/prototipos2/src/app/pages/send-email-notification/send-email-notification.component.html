@@ -1,0 +1,71 @@
+<h3 class="h3-tipografia-govco mt-3">
+    <span class="govcolor-marine">Enviar Notificación por correo electrónico</span>
+</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="entradas-de-texto-govco">
+                <label for="input-basico-id">Número de expediente:</label>
+                <input type="text" id="input-basico-id" placeholder=""/>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="entradas-de-texto-govco">
+                <label for="input-basico-id">Tipo Documental:</label>
+                <input type="text" id="input-basico-id" placeholder=""/>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="entradas-de-texto-govco">
+                <label for="input-basico-id">Asunto:</label>
+                <input type="text" id="input-basico-id" placeholder=""/>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a
+            class="me-1"
+            tabindex="0"
+            data-bs-target="#seeTaskDocument"
+            data-bs-toggle="modal"
+            style="cursor: pointer"
+          >
+           Ver Documento Adjunto 
+           </a>
+        </div>
+    </div>
+    <div class="row">
+        <p></p>
+        <p></p>
+        <div class="col-md-2 entradas-de-texto-govco">
+            <label for="input-basico-id">Cuerpo del correo:</label>
+        </div>
+        <div class="col-md-10 entradas-de-texto-govco">
+            <textarea id="input-basico-id" placeholder="Ejemplo: Cuerpo del correo..."
+                style="min-height: 10rem; min-width: 100%;"></textarea>
+        </div>
+    </div>
+    <div class="row">
+        <p></p>
+        <p></p>
+        <div class="col-md-12">
+            <button type="button"
+             class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
+             (click)="SendModal()">
+                Enviar
+               </button>   
+               <button type="button" 
+               class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+               [routerLink]="['/']">
+                 Cancelar
+               </button>
+        </div>    
+    </div>
+</div>
+<app-see-task-document></app-see-task-document>
+<div #dialog></div>
