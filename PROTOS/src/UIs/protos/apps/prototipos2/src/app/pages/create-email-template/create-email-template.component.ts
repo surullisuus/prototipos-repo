@@ -91,15 +91,15 @@ export class CreateEmailTemplateComponent implements OnInit {
     return [
       {
         id: 1,
-        text: 'Tema 1',
+        text: 'Tipo documental 1',
       },
       {
         id: 2,
-        text: 'Tema 2',
+        text: 'Tipo documental 2',
       },
       {
         id: 3,
-        text: 'Tema 3',
+        text: 'Tipo documental 3',
       },
     ];
   }

@@ -61,7 +61,6 @@
         <table class="table table-general table-basic" aria-describedby="tableDescBasic">
             <thead class="encabezado-tabla">
                 <tr>
-                    <th class="columna-especial" role="button">Id</th>
                     <th class="columna-especial" role="button">Proceso</th>
                     <th role="button">Tipo documental</th>
                     <th role="button">Nombre</th>
@@ -72,7 +71,6 @@
 
             <tbody class="contenido-tablas">
                 <tr *ngFor="let phase of process">
-                    <td class="text-left">{{ phase.id }}</td>
                     <td class="text-left">{{ phase.process }}</td>
                     <td class="text-left">{{ phase.tipoDocumental }}</td>
                     <td class="text-center">{{ phase.name }}</td>
