@@ -57,6 +57,7 @@ import { AssociateInboundDocumentGesDocComponent } from './pages/associate-inbou
 import { AssociateResolutionsComponent } from './pages/associate-resolutions/associate-resolutions.component';
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
+import { RegisterCdgRequestComponent } from './pages/register-cdg-request/register-cdg-request.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -170,5 +171,5 @@ export const appRoutes: Route[] = [
   { path: 'asociar-resolucion', component: AssociateResolutionsComponent },
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent},
-
+  { path: 'registrar-solicitud-cdg', component: RegisterCdgRequestComponent},
 ];
