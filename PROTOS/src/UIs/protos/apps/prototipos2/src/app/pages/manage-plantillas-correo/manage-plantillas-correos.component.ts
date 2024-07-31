@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 interface Process {
   id: number;
   name: string;
-  tema: string;
+  tipoDocumental: string;
   process: string;
   description: string;
 }
@@ -32,21 +32,21 @@ export class ManagePlantillasCorreosComponent implements OnInit {
     {
       id: 1,
       name: 'abc',
-      tema: 'abc',
+      tipoDocumental: 'abc',
       process: 'ABC',
       description: 'Abc............',
     },
     {
       id: 2,
       name: 'abc',
-      tema: 'abc',
+      tipoDocumental: 'abc',
       process: 'abc',
       description: 'abc............',
     },
     {
       id: 3,
       name: 'abc',
-      tema: 'abc',
+      tipoDocumental: 'abc',
       process: 'abc',
       description: 'abc............',
     },
@@ -123,6 +123,50 @@ export class ManagePlantillasCorreosComponent implements OnInit {
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
           const body = `Plantilla eliminada de forma exitosa.`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
+  onAsociarPlantilla($event: Event) {
+    $event.preventDefault();
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Asociar plantilla de correo';
+    dialogData.body = `¿Está seguro que desea asociar la plantilla de correo al tipo de alerta?`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          const body = `Transacción exitosa.`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
+  onAsociarPlantillaAlreadyPresent($event: Event) {
+    $event.preventDefault();
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Asociar plantilla de correo';
+    dialogData.body = `El tipo de alerta ya tiene una plantilla de correo asociada ¿Desea modificarla?`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.danger;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          const body = `Transacción exitosa.`;
           dialogAction.eventClose.emit();
           this.showSuccessTaskInitializationAlertState(body);
         } else {

@@ -2,12 +2,7 @@
 
 
 <div class="rounded-3 mb-5 mt-3">
-    <div class="row mt-4">
-        <label>ID*:</label>
-        <div class="col-md-2 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="123" disabled />
-        </div>
-    </div>
+
     <div class="row mt-5">
         <!--Proceso-->
 
@@ -20,8 +15,8 @@
 
         <!--Tema-->
         <div class="col-md-4">
-            <subsidios-dropdown-list labelText="Tema" note="Seleccione una opción" idList="type-345676" type="basic"
-                [disabled]="false" [lista]="documentOptions()" (eventlist)="setSelectedDocument($event)">
+            <subsidios-dropdown-list labelText="Tipo documental" note="Seleccione una opción" idList="type-345676"
+                type="basic" [disabled]="false" [lista]="documentOptions()" (eventlist)="setSelectedDocument($event)">
             </subsidios-dropdown-list>
         </div>
 
@@ -42,6 +37,17 @@
         <!--Nombre tarea-->
         <div class="col-md-2 entradas-de-texto-govco">
             <label for="input-basico-id">Descripción*:</label>
+        </div>
+        <div class="col-md-10 entradas-de-texto-govco">
+            <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
+                style="min-height: 5rem; min-width: 100%;" maxlength="250"></textarea>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <!--Nombre tarea-->
+        <div class="col-md-2 entradas-de-texto-govco">
+            <label for="input-basico-id">CC*:</label>
         </div>
         <div class="col-md-10 entradas-de-texto-govco">
             <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
@@ -75,7 +81,8 @@
     <div class="row mt-4 mb-3 text-left">
         <div class="col-md-12">
 
-            <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+            <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
+                (click)="showSuccessTaskInitializationAlertState('Plantilla de correo creada de forma exitosa.')">
                 Guardar
             </button>
 

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Solicitud de procesos';
+
+  showNotification = true;
+
+  get show() {
+    return this.showNotification;
+  }
 }

@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { DialogService } from '../../components/dialog/services/dialog.service';
+import { DialogData } from '../../components/dialog/models/dialog-data';
+import { DialogType } from '../../components/dialog/models/dialog-type';
+import { DialogAction } from '../../components/dialog/models/dialog-action';
 
 interface Process {
   id: number;
@@ -15,6 +20,9 @@ interface Process {
   styleUrl: './create-email-template.component.css',
 })
 export class CreateEmailTemplateComponent implements OnInit {
+  @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
+  subscription!: Subscription;
+
   selectedProcess: string | null = null;
   selectedDocument: string | null = null;
   formQueryScheme!: FormGroup;
@@ -43,7 +51,10 @@ export class CreateEmailTemplateComponent implements OnInit {
     },
   ];
 
-  constructor(private _formBuilder: FormBuilder) {}
+  constructor(
+    private _formBuilder: FormBuilder,
+    private dialogService: DialogService
+  ) {}
 
   ngOnInit(): void {
     this.formQueryScheme = this.initForm();
@@ -80,20 +91,36 @@ export class CreateEmailTemplateComponent implements OnInit {
     return [
       {
         id: 1,
-        text: 'Tema 1',
+        text: 'Tipo documental 1',
       },
       {
         id: 2,
-        text: 'Tema 2',
+        text: 'Tipo documental 2',
       },
       {
         id: 3,
-        text: 'Tema 3',
+        text: 'Tipo documental 3',
       },
     ];
   }
 
   setSelectedDocument(document: { id: number; text: string }) {
     this.selectedDocument = document.text;
+  }
+
+  showSuccessTaskInitializationAlertState(body: string) {
+    const dialogData = new DialogData();
+    dialogData.title = body;
+    dialogData.type = DialogType.success;
+    dialogData.buttonConfirm = false;
+    dialogData.textButtonCancel = 'Cerrar';
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        dialogAction.eventClose.emit();
+        location.reload();
+        location.replace('/consultar-plantillas-correo');
+      });
   }
 }

@@ -1,4 +1,4 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Consultar plantillas correo electrónico </span></h3>
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Ver plantilla de correo electrónico </span></h3>
 
 
 <ng-container *ngIf="loading">
@@ -57,6 +57,15 @@
             <div class="row">
                 <span class="text3-tipografia-govco govcolor-silver">Descripción:</span>
                 <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.description}}</span>
+            </div>
+        </div>
+
+
+        <div class="row mt-5">
+            <!--Nombre tarea-->
+            <div class="row">
+                <span class="text3-tipografia-govco govcolor-silver">CC:</span>
+                <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.cc}}</span>
             </div>
         </div>
 
