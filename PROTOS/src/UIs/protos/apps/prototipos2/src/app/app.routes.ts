@@ -57,6 +57,8 @@ import { AssociateInboundDocumentGesDocComponent } from './pages/associate-inbou
 import { AssociateResolutionsComponent } from './pages/associate-resolutions/associate-resolutions.component';
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
+import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
+import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -171,4 +173,6 @@ export const appRoutes: Route[] = [
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent},
 
+  { path: 'ver-comentarios-tarea', component: TaskCommentsViewComponent},
+  { path: 'diligenciar-acampos-tarea', component: FillAdditionalTaskFieldsComponent},
 ];
