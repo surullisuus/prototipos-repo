@@ -102,7 +102,10 @@ export class RegisterCdgRequestComponent implements OnInit {
   }
 
   onLoadDocument() {
-    return true
+    this.showAlertState(
+      'El documento se ha cargado con éxito',
+      DialogType.success
+    );
   }
 
   showDialogDocument(title: string) {
