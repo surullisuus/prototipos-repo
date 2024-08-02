@@ -7,45 +7,18 @@ import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 
-interface UploadedHistory{
-  estado: string;
-  nombreArchivo: string;
-  fechaCarga: Date;
-  usuarioCarga: string;
-}
 @Component({
-  selector: 'app-upload-info-modal',
-  templateUrl: './upload-info-modal.component.html',
-  styleUrl: './upload-info-modal.component.css',
+  selector: 'app-upload-selected-document',
+  templateUrl: './upload-selected-document.component.html',
+  styleUrl: './upload-selected-document.component.css',
 })
-export class UploadInfoModalComponent {
+export class UploadSelectedDocumentComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
-
-  uploadedHistory: UploadedHistory[] = [
-    {
-      estado: 'Estado 1',
-      nombreArchivo: 'Archivo1',
-      fechaCarga: new Date('2024-08-1'),
-      usuarioCarga: 'Usuario 1'
-    },
-    {
-      estado: 'Estado 2',
-      nombreArchivo: 'Archivo2',
-      fechaCarga: new Date('2024-08-1'),
-      usuarioCarga: 'Usuario 2'
-    },
-    {
-      estado: 'Estado 3',
-      nombreArchivo: 'Archivo3',
-      fechaCarga: new Date('2024-08-1'),
-      usuarioCarga: 'Usuario 3'
-    }
-  ]
 
   formQueryScheme!: FormGroup;
   subscription!: Subscription;
   fileUploaded = false;
-
+  
   constructor(private dialogService: DialogService) {}
 
   onFileUploaded(): void {

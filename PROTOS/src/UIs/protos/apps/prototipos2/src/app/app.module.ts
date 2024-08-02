@@ -100,6 +100,9 @@ import { PerformDocumentsUploadComponent } from './pages/perform-documents-uploa
 import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
 import { UploadInfoModalComponent } from './pages/upload-info-modal/upload-info-modal.component';
 import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded-info-table.component';
+import { SelectedDocumentObservationsComponent } from './pages/selected-document-observations/selected-document-observations.component';
+import { UploadSelectedDocumentComponent } from './pages/upload-selected-document/upload-selected-document.component';
+import { ViewSelectedDocumentComponent } from './pages/view-selected-document/view-selected-document.component';
 
 @NgModule({
   declarations: [
@@ -200,7 +203,10 @@ import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded
     PerformDocumentsUploadComponent,
     PerformInformationUploadComponent,
     UploadInfoModalComponent,
-    UploadedInfoTableComponent
+    UploadedInfoTableComponent,
+    SelectedDocumentObservationsComponent,
+    UploadSelectedDocumentComponent,
+    ViewSelectedDocumentComponent
   ],
   imports: [
     BrowserModule,
