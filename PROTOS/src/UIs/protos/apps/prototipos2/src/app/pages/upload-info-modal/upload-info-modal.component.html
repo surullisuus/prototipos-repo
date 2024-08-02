@@ -1,0 +1,99 @@
+<div class="modal fade" id="uploadInfoModal" tabindex="-1" aria-labelledby="uploadInfoModal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="h4-tipografia-govco">
+          <span class="govcolor-marine">Cargue &lt;&lt; Proceso Seleccionado &gt;&gt;</span>
+        </h4>
+        <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+          aria-expanded="false">
+          <span class="modal-close-govco govco-times"></span>
+        </a>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-carga-de-archivo-govco">
+                    <div class="loader-carga-de-archivo-govco">
+                      <div class="all-input-carga-de-archivo-govco">
+                        <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active" data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple/>
+                        <label for="inputFile" class="label-carga-de-archivo-govco">Selecciona el documento*</label>
+                        <label for="inputFile" class="container-input-carga-de-archivo-govco">
+                          <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
+                          <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
+                        </label>
+                        <span class="text-validation-carga-de-archivo-govco">Sólo archivos Word, ZIP, Excel, PNG o PDF. Peso máximo: 2 MB</span>
+                      </div>
+                      <div class="load-button-carga-de-archivo-govco">
+                        <div class="load-carga-de-archivo-govco">
+                          <!-- indicador de carga -->
+                          <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;" role="status">
+                            <span class="visually-hidden">Cargando...</span>
+                          </div>
+                          <!-- end indicador de carga -->
+                        </div>
+                        <button class="button-loader-carga-de-archivo-govco" (click)="onFileUploaded()" data-bs-toggle="modal" data-bs-target="#uploadedTableModal" disabled>Cargar</button>
+                      </div>
+                    </div>
+                    <div class="container-detail-carga-de-archivo-govco" >
+                      <span class="alert-carga-de-archivo-govco visually-hidden"></span>
+                      <div class="attached-files-carga-de-archivo-govco"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <h4 class="h4-tipografia-govco">
+            <span class="govcolor-marine">Historial de carga</span>
+          </h4>
+          <div class="table-responsive">
+              <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                  <thead class="encabezado-tabla">
+                      <tr>
+                          <th class="columna-pequena" role="button" style="text-align: center !important;">Estado</th>
+                          <th class="columna-pequena" role="button" style="text-align: center !important;">Nombre archivo</th>
+                          <th class="columna-pequena" role="button" style="text-align: center !important;">Fecha de carga</th>
+                          <th class="columna-pequena" role="button" style="text-align: center !important;">Usuario que realizó la carga</th>
+                          <th style="text-align: center !important;">Errores</th>
+                      </tr>
+                  </thead>
+                  <tbody class="contenido-tablas">
+                      <tr *ngFor="let item of uploadedHistory">
+                          <td class="text-center">{{ item.estado}}</td>
+                          <td class="text-center">{{ item.nombreArchivo}}</td>
+                          <td class="text-center">{{ item.fechaCarga  | date: 'dd/MM/yyyy' }}</td>
+                          <td class="text-center">{{ item.usuarioCarga}}</td>
+                          <td style="text-align: center !important; padding-right: 10px">
+                            <!-- Accion-->
+                             <!--Documento-->
+                             <a
+                             class="me-1"
+                             tabindex="0"
+                             data-bs-target=""
+                             data-bs-toggle="modal"
+                             style="cursor: pointer"
+                           >
+                            Archivo de errores 
+                            </a>
+                        </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button #closeModal type="button" data-bs-dismiss='modal'
+                class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+                Salir
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-uploaded-info-table></app-uploaded-info-table>
+<div #dialog></div>
+

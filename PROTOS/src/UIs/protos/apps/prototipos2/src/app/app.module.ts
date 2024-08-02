@@ -96,6 +96,10 @@ import { SendEmailNotificationComponent } from './pages/send-email-notification/
 import { ReturnStageComponent } from './pages/return-stage/return-stage.component';
 import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
 import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
+import { PerformDocumentsUploadComponent } from './pages/perform-documents-upload/perform-documents-upload.component';
+import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
+import { UploadInfoModalComponent } from './pages/upload-info-modal/upload-info-modal.component';
+import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded-info-table.component';
 
 @NgModule({
   declarations: [
@@ -192,7 +196,11 @@ import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-
     SendEmailNotificationComponent,
     ReturnStageComponent,
     TaskCommentsViewComponent,
-    FillAdditionalTaskFieldsComponent
+    FillAdditionalTaskFieldsComponent,
+    PerformDocumentsUploadComponent,
+    PerformInformationUploadComponent,
+    UploadInfoModalComponent,
+    UploadedInfoTableComponent
   ],
   imports: [
     BrowserModule,
