@@ -61,6 +61,7 @@ import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comme
 import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
 import { PerformDocumentsUploadComponent } from './pages/perform-documents-upload/perform-documents-upload.component';
 import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
+import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -174,6 +175,7 @@ export const appRoutes: Route[] = [
   { path: 'asociar-resolucion', component: AssociateResolutionsComponent },
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent},
+  { path: 'configurar-plantilla-tipo-alerta', component: TemplateEmailAlertTypeComponent},
 
   { path: 'ver-comentarios-tarea', component: TaskCommentsViewComponent},
   { path: 'diligenciar-acampos-tarea', component: FillAdditionalTaskFieldsComponent},

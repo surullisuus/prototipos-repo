@@ -1,0 +1,41 @@
+<h4 class="h3-tipografia-govco mt-3">
+    <span class="govcolor-marine">CONFIGURAR PLANTILLA DE CORREO PARA TIPO ALERTA</span>
+  </h4>
+  
+  <form [formGroup]="formQueryScheme">
+    <div class="row">
+      <div class="col-md-4 col-xl-3">
+        <subsidios-dropdown-list labelText="Tipo alerta:" idList="type-345676" type="basic"
+          [disabled]="false"></subsidios-dropdown-list>
+      </div>
+  
+      <div class="col-md-4 col-xl-3">
+        <subsidios-dropdown-list labelText="Plantilla:" idList="type-345676" type="basic"
+          [disabled]="false"></subsidios-dropdown-list>
+      </div>
+  
+   
+  
+    </div>
+  
+    <div class="row" style="padding-top: 6%;">
+      <div class="col-md-12">
+        
+        <button type="button" class="btn-govco outline-secundary-btn-govco" style="width: 180px; height: 42px;"
+        (click)="onSaveModal()" (keypress)="onSaveModal()"
+        >Asociar plantilla
+        </button>
+
+        <button type="button" class="btn-govco outline-secundary-btn-govco" style="width: 210px; height: 42px;"
+        (click)="onAsociarPlantillaAlreadyPresent($event)" (keypress)="onAsociarPlantillaAlreadyPresent($event)"
+        >Asociar plantilla (2.0)
+        </button>
+        <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+            Cancelar
+             </button>
+      </div>
+    </div>
+  </form>
+  
+
+  <div #dialog></div>

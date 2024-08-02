@@ -103,6 +103,7 @@ import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded
 import { SelectedDocumentObservationsComponent } from './pages/selected-document-observations/selected-document-observations.component';
 import { UploadSelectedDocumentComponent } from './pages/upload-selected-document/upload-selected-document.component';
 import { ViewSelectedDocumentComponent } from './pages/view-selected-document/view-selected-document.component';
+import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
 
 @NgModule({
   declarations: [
@@ -206,7 +207,9 @@ import { ViewSelectedDocumentComponent } from './pages/view-selected-document/vi
     UploadedInfoTableComponent,
     SelectedDocumentObservationsComponent,
     UploadSelectedDocumentComponent,
-    ViewSelectedDocumentComponent
+    ViewSelectedDocumentComponent,
+    TemplateEmailAlertTypeComponent
+
   ],
   imports: [
     BrowserModule,
