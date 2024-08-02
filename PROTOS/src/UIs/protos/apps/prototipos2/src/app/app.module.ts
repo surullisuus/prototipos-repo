@@ -94,6 +94,8 @@ import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage
 import { NotificationComponentComponent } from './components/notification/notification-component.component';
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
 import { ReturnStageComponent } from './pages/return-stage/return-stage.component';
+import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
+import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
 import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
 
 @NgModule({
@@ -190,6 +192,8 @@ import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-ty
     NotificationComponentComponent,
     SendEmailNotificationComponent,
     ReturnStageComponent,
+    TaskCommentsViewComponent,
+    FillAdditionalTaskFieldsComponent,
     TemplateEmailAlertTypeComponent
   ],
   imports: [
