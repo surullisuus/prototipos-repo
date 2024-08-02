@@ -95,6 +95,9 @@ import { NotificationComponentComponent } from './components/notification/notifi
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
 import { ReturnStageComponent } from './pages/return-stage/return-stage.component';
 import { RegisterCdgRequestComponent } from './pages/register-cdg-request/register-cdg-request.component';
+import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
+import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
+import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
 
 @NgModule({
   declarations: [
@@ -191,6 +194,9 @@ import { RegisterCdgRequestComponent } from './pages/register-cdg-request/regist
     SendEmailNotificationComponent,
     ReturnStageComponent,
     RegisterCdgRequestComponent,
+    TaskCommentsViewComponent,
+    FillAdditionalTaskFieldsComponent,
+    TemplateEmailAlertTypeComponent
   ],
   imports: [
     BrowserModule,

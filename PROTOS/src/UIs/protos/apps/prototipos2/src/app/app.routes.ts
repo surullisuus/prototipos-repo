@@ -58,6 +58,9 @@ import { AssociateResolutionsComponent } from './pages/associate-resolutions/ass
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
 import { RegisterCdgRequestComponent } from './pages/register-cdg-request/register-cdg-request.component';
+import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
+import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
+import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -172,4 +175,7 @@ export const appRoutes: Route[] = [
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent},
   { path: 'registrar-solicitud-cdg', component: RegisterCdgRequestComponent},
+  { path: 'configurar-plantilla-tipo-alerta', component: TemplateEmailAlertTypeComponent},
+  { path: 'ver-comentarios-tarea', component: TaskCommentsViewComponent},
+  { path: 'diligenciar-acampos-tarea', component: FillAdditionalTaskFieldsComponent},
 ];
