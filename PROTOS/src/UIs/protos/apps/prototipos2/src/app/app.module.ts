@@ -99,11 +99,11 @@ import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-
 import { PerformDocumentsUploadComponent } from './pages/perform-documents-upload/perform-documents-upload.component';
 import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
 import { UploadInfoModalComponent } from './pages/upload-info-modal/upload-info-modal.component';
-import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded-info-table.component';
-import { SelectedDocumentObservationsComponent } from './pages/selected-document-observations/selected-document-observations.component';
 import { UploadSelectedDocumentComponent } from './pages/upload-selected-document/upload-selected-document.component';
-import { ViewSelectedDocumentComponent } from './pages/view-selected-document/view-selected-document.component';
 import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
+import { SelectedDocumentObservationsComponent } from './pages/selected-document-observations/selected-document-observations.component';
+import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded-info-table.component';
+import { ViewSelectedDocumentComponent } from './pages/view-selected-document/view-selected-document.component';
 
 @NgModule({
   declarations: [
@@ -203,11 +203,11 @@ import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-ty
     FillAdditionalTaskFieldsComponent,
     PerformDocumentsUploadComponent,
     PerformInformationUploadComponent,
-    UploadInfoModalComponent,
     UploadedInfoTableComponent,
     SelectedDocumentObservationsComponent,
     UploadSelectedDocumentComponent,
     ViewSelectedDocumentComponent,
+    UploadInfoModalComponent,
     TemplateEmailAlertTypeComponent
 
   ],
