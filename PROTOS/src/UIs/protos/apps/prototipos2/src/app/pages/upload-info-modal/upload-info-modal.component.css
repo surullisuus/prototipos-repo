@@ -22,3 +22,6 @@
   .encabezado-tabla .columna-especial {
     width: 40%; 
   }
+  .custom-margin {
+    margin-right: 15px; /* Ajusta este valor según sea necesario */
+  }
