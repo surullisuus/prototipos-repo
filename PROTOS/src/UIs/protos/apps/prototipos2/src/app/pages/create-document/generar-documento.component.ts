@@ -72,16 +72,19 @@ export class GenerarDocumentoComponent implements OnInit {
     });
   }
 
-  registerProcess(proceso: string): void {
-    this.formQueryScheme.controls['proceso'].patchValue(proceso);
+  registerProcess(proceso: any): void {
+    console.log('Proceso registrado', proceso);
+    this.formQueryScheme.controls['proceso'].patchValue(proceso.text);
   }
 
-  registerPrograma(programa: string): void {
-    this.formQueryScheme.controls['programa'].patchValue(programa);
+  registerPrograma(programa: any): void {
+    this.formQueryScheme.controls['programa'].patchValue(programa.text);
   }
 
-  registerTipoDocumental(tipoDocumental: string): void {
-    this.formQueryScheme.controls['tipoDocumental'].patchValue(tipoDocumental);
+  registerTipoDocumental(tipoDocumental: any): void {
+    this.formQueryScheme.controls['tipoDocumental'].patchValue(
+      tipoDocumental.text
+    );
   }
 
   get disbleProyection(): boolean {
