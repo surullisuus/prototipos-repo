@@ -1,0 +1,38 @@
+<div class="modal fade" id="viewSelectedDocumentModal" tabindex="-1" aria-labelledby="viewSelectedDocumentModal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="h4-tipografia-govco">
+          <span class="govcolor-marine">Ver &lt;&lt; Documento Seleccionado &gt;&gt;</span>
+        </h4>
+        <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+          aria-expanded="false">
+          <span class="modal-close-govco govco-times"></span>
+        </a>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <span>Contenido del documento...</span>
+            </div>
+        </div>
+        <div class="row">
+            <p></p>
+            <p></p>
+            <div class="col-md-4">
+                <button #closeModal type="button" data-bs-dismiss='modal'
+                class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+                Salir
+                </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-uploaded-info-table></app-uploaded-info-table>
+<div #dialog></div>
+
+
+
