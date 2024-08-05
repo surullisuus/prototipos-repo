@@ -61,6 +61,7 @@ import { RegisterCdgRequestComponent } from './pages/register-cdg-request/regist
 import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
 import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
 import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
+import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -178,4 +179,5 @@ export const appRoutes: Route[] = [
   { path: 'configurar-plantilla-tipo-alerta', component: TemplateEmailAlertTypeComponent},
   { path: 'ver-comentarios-tarea', component: TaskCommentsViewComponent},
   { path: 'diligenciar-acampos-tarea', component: FillAdditionalTaskFieldsComponent},
+  { path: 'publicar-documento', component: PublishDocumentComponent},
 ];

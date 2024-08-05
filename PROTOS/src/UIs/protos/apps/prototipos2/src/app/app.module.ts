@@ -98,6 +98,7 @@ import { RegisterCdgRequestComponent } from './pages/register-cdg-request/regist
 import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
 import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
 import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
+import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 
 @NgModule({
   declarations: [
@@ -196,7 +197,8 @@ import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-ty
     RegisterCdgRequestComponent,
     TaskCommentsViewComponent,
     FillAdditionalTaskFieldsComponent,
-    TemplateEmailAlertTypeComponent
+    TemplateEmailAlertTypeComponent,
+    PublishDocumentComponent
   ],
   imports: [
     BrowserModule,
