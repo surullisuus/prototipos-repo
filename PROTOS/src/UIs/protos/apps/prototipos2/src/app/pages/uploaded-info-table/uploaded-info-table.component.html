@@ -1,0 +1,51 @@
+<div class="modal fade" id="uploadedTableModal" tabindex="-1" aria-labelledby="uploadedTableModal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="h4-tipografia-govco">
+          <span class="govcolor-marine">Información cargada</span>
+          <p><span>Fecha de carga*: <b>dd/mm/aaaa</b></span></p>
+        </h4>
+        <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+          aria-expanded="false">
+          <span class="modal-close-govco govco-times"></span>
+        </a>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                    <thead class="encabezado-tabla">
+                        <tr>
+                            <th class="columna-pequena" role="button" style="text-align: center !important;">Título 1</th>
+                            <th class="columna-pequena" role="button" style="text-align: center !important;">Título 2</th>
+                            <th class="columna-pequena" role="button" style="text-align: center !important;">Título 3</th>
+                            <th class="columna-pequena" role="button" style="text-align: center !important;">Errores</th>
+                        </tr>
+                    </thead>
+                    <tbody class="contenido-tablas">
+                        <tr *ngFor="let item of infoUploaded">
+                            <td class="text-center">{{ item.titulo1}}</td>
+                            <td class="text-center">{{ item.titulo2}}</td>
+                            <td class="text-center">{{ item.titulo3}}</td>
+                            <td class="text-center">{{ item.errores}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+              <button type="button" data-bs-dismiss='modal'
+              class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space"
+              data-bs-toggle="modal"
+              data-bs-target="#uploadInfoModal">
+              Salir
+              </button>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

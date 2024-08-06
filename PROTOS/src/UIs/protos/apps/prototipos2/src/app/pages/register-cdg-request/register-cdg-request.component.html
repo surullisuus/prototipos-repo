@@ -1,0 +1,106 @@
+<h4 class="h4-tipografia-govco mt-3 mb-2">
+    <span class="govcolor-marine">Registrar solicitud</span>
+</h4>
+
+<h4 class="h4-tipografia-govco mt-3 mb-2">
+    <span class="govcolor-marine">Cancelación de gravámenes y limitantes al derecho de dominio a favor del ICT INURBE -
+        MVCT</span>
+</h4>
+
+<form [formGroup]="formQueryScheme">
+    <div class="row mb-sm-3">
+        <div class="col-sm-12 col-md-6 col-lg-5">
+            <div class="entradas-de-texto-govco py-0" style="padding: 0px !important;">
+                <subsidios-input [control]="$any(formQueryScheme.get('noRadicado'))" type="number"
+                    label="No. Radicado *:" placeholder="Ej. 6012345678" [showStatus]="false" [maxLength]="13"
+                    [required]="true">
+                    >
+                </subsidios-input>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-5">
+            <label for="calendario-govco" class="label-desplegable-govco">Fecha<span aria-required="true">
+                    *:</span></label>
+            <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco"
+                style='width:100%; height: 40px;' data-type="calendar">
+                <div class="date desplegable-selected-option">
+                    <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" days="true"
+                        #fechaInput placeholder="dd/mm/aaaa">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6 text-nowrap col-lg-5">
+            <subsidios-input [control]="$any(formQueryScheme.get('noMatricula'))" type="text"
+                label="No. Matrícula inmobiliaria individual *:" placeholder="Ej. 6012345678" [showStatus]="false"
+                [maxLength]="11" [required]="true">
+
+            </subsidios-input>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-5">
+            <subsidios-input [control]="$any(formQueryScheme.get('noExpediente'))" type="number"
+                label="No. Expediente *:" placeholder="Ej. 6012345678" [showStatus]="false" [maxLength]="8"
+                [required]="true">
+
+            </subsidios-input>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6 text-nowrap col-lg-5">
+            <subsidios-input [control]="$any(formQueryScheme.get('profesionalAsignado'))" type="text"
+                label="Profesional asignado para el trámite *:" placeholder="Ej. Luisa Pérez" [showStatus]="false"
+                [maxLength]="50" [required]="true">
+
+            </subsidios-input>
+        </div>
+    </div>
+
+    <h5 class="h5-tipografia-govco mt-3 mb-2">
+        <span class="govcolor-marine">Información de peticionario</span>
+    </h5>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-5">
+            <subsidios-input [control]="$any(formQueryScheme.get('peticionario.nombre'))" type="text" label="Nombre *:"
+                placeholder="Ej. Luisa Pérez" [showStatus]="false" [maxLength]="20" [required]="true">
+
+            </subsidios-input>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-5">
+            <subsidios-input [control]="$any(formQueryScheme.get('peticionario.tipoDocumento'))" type="text"
+                label="Tipo de documento *:" placeholder="Ej. Luisa Pérez" [showStatus]="false" [required]="true">
+
+            </subsidios-input>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-sm-12 col-md-6 col-lg-5">
+            <subsidios-input [control]="$any(formQueryScheme.get('peticionario.noIdentificacion'))" type="number"
+                label="No. Identificación *:" placeholder="Ej. 6012345678" [showStatus]="false" [maxLength]="20"
+                [required]="true">
+
+            </subsidios-input>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-5">
+            <subsidios-dropdown-list labelText="En condición de *:" idList="type-345676" type="basic" [disabled]="false"
+                [lista]="processOptions()" (eventlist)="setCondicion($event)" [isRequired]="true">
+            </subsidios-dropdown-list>
+
+        </div>
+    </div>
+    <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mb-4"
+        (click)="onLoadDocument()">Cargar
+        documento</button>
+    <div class="flex gap-2">
+        <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space"
+            (click)="onSave()">Guardar</button>
+        <button type="button"
+            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space bg-marine mt-1">Cancelar</button>
+    </div>
+</form>
+
+<div #dialog></div>

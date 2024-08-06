@@ -1,0 +1,80 @@
+<h3 class="h3-tipografia-govco">
+    <span class="govcolor-marine">
+        Cargar Documentos/Soportes
+    </span>
+</h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                <thead class="encabezado-tabla">
+                    <tr>
+                        <th class="columna-pequena" role="button" style="text-align: center !important;">Documento requerido</th>
+                        <th style="text-align: center !important;">Documento cargado</th>
+                        <th class="columna-pequena" role="button" style="text-align: center !important;">Fecha carga</th>
+                        <th class="columna-pequena" role="button" style="text-align: center !important;">Estado</th>
+                        <th class="columna-pequena" role="button" style="text-align: center !important;">Usuario</th>
+                        <th style="text-align: center !important;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="contenido-tablas">
+                    <tr *ngFor="let item of documentsRequest">
+                        <td class="text-center">{{ item.documentoRequerido}}</td>
+                        <td style="text-align: center !important; padding-right: 10px">
+                            <!-- Accion-->
+                             <!--Documento-->
+                             <a
+                             class="me-1"
+                             tabindex="0"
+                             data-bs-toggle="modal"
+                             data-bs-target="#viewSelectedDocumentModal"
+                             style="cursor: pointer"
+                           >
+                            Abc...
+                            </a>
+                        </td>
+                        <td class="text-center">{{ item.fechaCarga  | date: 'dd/MM/yyyy' }}</td>
+                        <td class="text-center">{{ item.estado}}</td>
+                        <td class="text-center">{{ item.usuario}}</td>
+                        <td style="text-align: center !important; padding-right: 10px">
+                          <!-- Acciones-->
+                           <!--Cargar Documento-->
+                           <a
+                           class="me-1"
+                           tabindex="0"
+                           data-bs-toggle="modal"
+                           data-bs-target="#uploadSelectedDocumentModal"
+                           style="cursor: pointer"
+                         >
+                          Cargar documento 
+                          </a>
+                          <!--Observaciones-->
+                           <a
+                           class="me-1"
+                           tabindex="0"
+                           data-bs-toggle="modal"
+                           data-bs-target="#selectedDocumentObservationsModal"
+                           style="cursor: pointer"
+                         >
+                          Observaciones 
+                          </a>
+                      </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <p></p>
+        <div class="col-md-4">
+            <button type="button"
+            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+            Salir
+            </button>
+        </div>
+    </div>
+</div>
+<app-selected-document-observations></app-selected-document-observations>
+<app-upload-selected-document></app-upload-selected-document>
+<app-view-selected-document></app-view-selected-document>
+<div #dialog></div>

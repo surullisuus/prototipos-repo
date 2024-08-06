@@ -1,0 +1,9 @@
+:host {
+  display: block;
+}
+
+/* @media screen and (max-width: 1025px) {
+  .xs-gap-4{
+    gap: 50px;
+  }
+} */

@@ -1,32 +1,34 @@
-import { Component, ElementRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { DialogService } from '../../components/dialog/services/dialog.service';
-import { DialogData } from '../../components/dialog/models/dialog-data';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
+import { DialogService } from '../../components/dialog/services/dialog.service';
 
 @Component({
-  selector: 'app-upload-task-document',
-  templateUrl: './upload-task-document.component.html',
-  styleUrls: ['./upload-task-document.component.css'],
+  selector: 'app-upload-selected-document',
+  templateUrl: './upload-selected-document.component.html',
+  styleUrl: './upload-selected-document.component.css',
 })
-export class UploadTaskDocumentComponent {
+export class UploadSelectedDocumentComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
+
   formQueryScheme!: FormGroup;
   subscription!: Subscription;
   fileUploaded = false;
-
+  
   constructor(private dialogService: DialogService) {}
 
   onFileUploaded(): void {
-    this.SaveModal();
+    this.fileUploaded = true;
+    //this.SaveModal();
   }
 
   SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Desea guardar el documento y asociarlo a la tarea?";
+    dialogData.title = "";
     dialogData.textButtonCancel = "Cancelar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
@@ -46,7 +48,7 @@ export class UploadTaskDocumentComponent {
 
   onSavedModal() {
     const dialogData = new DialogData();
-    dialogData.title = "Documento guardado y asociado de forma exitosa";
+    dialogData.title = "";
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.success;

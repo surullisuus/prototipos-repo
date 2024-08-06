@@ -1,0 +1,93 @@
+<h3 class="h3-tipografia-govco mt-3 mb-2">
+    <span class="govcolor-marine">Info. publicación</span>
+</h3>
+
+<div class="border border-primary rounded-3 p-5 text-center my-5">
+    <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1" (click)="true">
+        Vista previa <span class="govco-eye ps-5"></span>
+    </button>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-4">
+        <div class="entradas-de-texto-govco py-0" style="padding: 0px !important;">
+            <subsidios-input [control]="$any(formQueryScheme.get('idPublicacion'))" type="text" label="ID publicación:"
+                placeholder="Ej. 1.000.000.000" [showStatus]="false" [maxLength]="100" [required]="true"
+                [minLength]="1"></subsidios-input>
+        </div>
+    </div>
+    <div class="col-12 col-md-4">
+        <div class="entradas-de-texto-govco py-0" style="padding: 0px !important;">
+            <subsidios-input [control]="$any(formQueryScheme.get('enlaceUnoPublicacion'))" type="text"
+                label="Enlace 1 publicación:" placeholder="Ej. httpa://www.ejemplo.com" [showStatus]="false"
+                [maxLength]="100" [required]="true" [minLength]="1"></subsidios-input>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+        <subsidios-input [control]="$any(formQueryScheme.get('enlaceDosPublicacion'))" type="text"
+            label="Enlace 2 publicación:" placeholder="Ej. httpa://www.ejemplo.com" [showStatus]="false"
+            [maxLength]="100" [minLength]="1"></subsidios-input>
+    </div>
+</div>
+
+<button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1 mb-3"
+    (click)="onSavePublication()">Guardar</button>
+
+<div class="table-responsive table-process mb-3">
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+        <thead class="encabezado-tabla">
+            <tr>
+                <th style="text-align: center !important">ID</th>
+                <th style="text-align: center !important">Publicación</th>
+                <th style="text-align: center !important">Proceso</th>
+                <th style="text-align: center !important">Tipo documental</th>
+                <th style="text-align: start !important">Elaboró</th>
+                <th style="text-align: start !important">Firmó</th>
+                <th style="text-align: center !important;">Fecha&nbsp;de&nbsp;firma</th>
+
+            </tr>
+        </thead>
+        <tbody class="contenido-tablas">
+            <tr *ngFor="let publicacion of publicaciones">
+                <td style="text-align: center !important">{{ publicacion.id }}</td>
+                <td style="text-align: center !important">{{ publicacion.publicacion }}</td>
+                <td style="text-align: center !important">{{ publicacion.proceso }}</td>
+                <td style="text-align: center !important ">{{ publicacion.tipoDocumental }}</td>
+                <td style="text-align: center !important ; text-wrap: nowrap; ">{{ publicacion.elaboro }}</td>
+                <td style="text-align: start !important; text-wrap: nowrap;">{{ publicacion.firmo }}</td>
+                <td style="text-align: center !important">{{ publicacion.fechaFirma }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="table-responsive table-process">
+    <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+        <thead class="encabezado-tabla">
+            <tr>
+                <th style="text-align: left !important">Fase</th>
+                <th style="text-align: center !important">Responsable</th>
+                <th style="text-align: center !important">Estado</th>
+            </tr>
+        </thead>
+        <tbody class="contenido-tablas">
+            <tr *ngFor="let historico of historicoDocumentos">
+                <td style="text-align: left !important">{{ historico.fase }}</td>
+                <td style="text-align: center !important ">{{ historico.responsable }}</td>
+                <td class="d-flex justify-content-center">
+                    <div class="checkbox-seleccion-govco m-2">
+                        <input id="opt1" type="checkbox" [checked]="historico.estado" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="text-end">
+    <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1 mb-3">Cerrar</button>
+</div>
+
+<div #dialog></div>

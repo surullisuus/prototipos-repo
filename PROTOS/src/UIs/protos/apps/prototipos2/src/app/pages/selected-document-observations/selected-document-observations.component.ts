@@ -1,52 +1,45 @@
-import { Component, ElementRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DialogService } from '../../components/dialog/services/dialog.service';
-import { DialogData } from '../../components/dialog/models/dialog-data';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
+import { DialogService } from '../../components/dialog/services/dialog.service';
 
 @Component({
-  selector: 'app-upload-task-document',
-  templateUrl: './upload-task-document.component.html',
-  styleUrls: ['./upload-task-document.component.css'],
+  selector: 'app-selected-document-observations',
+  templateUrl: './selected-document-observations.component.html',
+  styleUrl: './selected-document-observations.component.css',
 })
-export class UploadTaskDocumentComponent {
+export class SelectedDocumentObservationsComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
-  formQueryScheme!: FormGroup;
-  subscription!: Subscription;
-  fileUploaded = false;
-
   constructor(private dialogService: DialogService) {}
-
-  onFileUploaded(): void {
-    this.SaveModal();
-  }
-
+  isDisabledSubmit = false;
+  subscription!: Subscription;
   SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Desea guardar el documento y asociarlo a la tarea?";
-    dialogData.textButtonCancel = "Cancelar";
+    dialogData.title = "Guardar observación";
+    dialogData.body = "¿Está seguro de guardar esta observación?";
+    dialogData.textButtonCancel = "Cerrar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
-          // subir documento
-          this.fileUploaded = true;
           dialogAction.eventClose.emit();
-          this.onSavedModal();
+          location.reload();
+          this.onSavedModal(); 
+          // Aquí puedes agregar el setTimeout si es necesario
         } else {
           dialogAction.eventClose.emit();
         }
       });
   }
 
-  onSavedModal() {
+  onSavedModal(){
     const dialogData = new DialogData();
-    dialogData.title = "Documento guardado y asociado de forma exitosa";
+    dialogData.title = "Observación guardada de forma exitosa";
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.success;
@@ -55,8 +48,7 @@ export class UploadTaskDocumentComponent {
       .subscribe((DialogAction: DialogAction) => {
           DialogAction.eventClose.emit()
           location.reload();
-      });
+      })
   }
-
   onCloseModal() {}
 }

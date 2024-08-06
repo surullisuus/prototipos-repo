@@ -1,19 +1,47 @@
-import { Component, ElementRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { DialogService } from '../../components/dialog/services/dialog.service';
-import { DialogData } from '../../components/dialog/models/dialog-data';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
+import { DialogService } from '../../components/dialog/services/dialog.service';
 
+interface UploadedHistory{
+  estado: string;
+  nombreArchivo: string;
+  fechaCarga: Date;
+  usuarioCarga: string;
+}
 @Component({
-  selector: 'app-upload-task-document',
-  templateUrl: './upload-task-document.component.html',
-  styleUrls: ['./upload-task-document.component.css'],
+  selector: 'app-upload-info-modal',
+  templateUrl: './upload-info-modal.component.html',
+  styleUrl: './upload-info-modal.component.css',
 })
-export class UploadTaskDocumentComponent {
+export class UploadInfoModalComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
+
+  uploadedHistory: UploadedHistory[] = [
+    {
+      estado: 'Estado 1',
+      nombreArchivo: 'Archivo1',
+      fechaCarga: new Date('2024-08-1'),
+      usuarioCarga: 'Usuario 1'
+    },
+    {
+      estado: 'Estado 2',
+      nombreArchivo: 'Archivo2',
+      fechaCarga: new Date('2024-08-1'),
+      usuarioCarga: 'Usuario 2'
+    },
+    {
+      estado: 'Estado 3',
+      nombreArchivo: 'Archivo3',
+      fechaCarga: new Date('2024-08-1'),
+      usuarioCarga: 'Usuario 3'
+    }
+  ]
+
   formQueryScheme!: FormGroup;
   subscription!: Subscription;
   fileUploaded = false;
@@ -21,12 +49,13 @@ export class UploadTaskDocumentComponent {
   constructor(private dialogService: DialogService) {}
 
   onFileUploaded(): void {
-    this.SaveModal();
+    this.fileUploaded = true;
+    //this.SaveModal();
   }
 
   SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Desea guardar el documento y asociarlo a la tarea?";
+    dialogData.title = "";
     dialogData.textButtonCancel = "Cancelar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
@@ -46,7 +75,7 @@ export class UploadTaskDocumentComponent {
 
   onSavedModal() {
     const dialogData = new DialogData();
-    dialogData.title = "Documento guardado y asociado de forma exitosa";
+    dialogData.title = "";
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.success;

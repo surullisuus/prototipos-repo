@@ -49,8 +49,8 @@
         <span class="govcolor-marine">Cargar documento</span>
     </h4>
     <p><span>Tipo documento*:</span></p>
-    <div class="d-flex align-items-center">
-        <div class="radio-seleccion-govco ms-4 mt-6">
+    <div class="d-flex align-items-center mb-3">
+        <div class="radio-seleccion-govco ms-1 mt-6">
             <input type="radio" id="radio11" name="radioButton1" value="0">
             <label for="radio11">Entrada</label>
         </div>
@@ -59,8 +59,6 @@
             <label for="radio12">Salida</label>
         </div>
     </div>
-    <p></p>
-    <p></p>
     <div class="container-carga-de-archivo-govco">
         <div class="loader-carga-de-archivo-govco">
           <div class="all-input-carga-de-archivo-govco">
@@ -70,7 +68,7 @@
               <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
               <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
             </label>
-            <span class="text-validation-carga-de-archivo-govco">Cualquier tipo de archivo. Peso máximo: 2 MB</span>
+            <span class="text-validation-carga-de-archivo-govco">Sólo archivos Word, ZIP, Excel, PNG o PDF. Peso máximo: 2 MB</span>
           </div>
           <div class="load-button-carga-de-archivo-govco">
             <div class="load-carga-de-archivo-govco">
@@ -80,21 +78,17 @@
               </div>
               <!-- end indicador de carga -->
             </div>
-            <button class="button-loader-carga-de-archivo-govco" (click)="onFileUploaded()" disabled>Cargar archivo</button>
+            <button class="button-loader-carga-de-archivo-govco" (click)="onFileUploaded()" disabled>Cargar</button>
           </div>
         </div>
-      
-        <div class="container-detail-carga-de-archivo-govco">
+        <div class="container-detail-carga-de-archivo-govco" >
           <span class="alert-carga-de-archivo-govco visually-hidden"></span>
           <div class="attached-files-carga-de-archivo-govco"></div>
         </div>
     </div>
 </div>
-<button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1" (click)="SaveModal()" [disabled]="!fileUploaded">
-    Cargar
-</button>   
-<button type="button" 
-class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+<button type="button"
+class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel ms-2"
 [routerLink]="['/']">
     Cancelar
 </button>
