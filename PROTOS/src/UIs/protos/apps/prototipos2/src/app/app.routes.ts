@@ -63,6 +63,7 @@ import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-
 import { PerformDocumentsUploadComponent } from './pages/perform-documents-upload/perform-documents-upload.component';
 import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
 import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
+import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -182,4 +183,5 @@ export const appRoutes: Route[] = [
   { path: 'diligenciar-acampos-tarea', component: FillAdditionalTaskFieldsComponent},
   { path: 'realizar-cargue-documentos', component: PerformDocumentsUploadComponent},
   { path: 'realizar-cargue-informacion', component: PerformInformationUploadComponent},
+  { path: 'publicar-documento', component: PublishDocumentComponent},
 ];

@@ -105,6 +105,7 @@ import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-ty
 import { SelectedDocumentObservationsComponent } from './pages/selected-document-observations/selected-document-observations.component';
 import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded-info-table.component';
 import { ViewSelectedDocumentComponent } from './pages/view-selected-document/view-selected-document.component';
+import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 
 @NgModule({
   declarations: [
@@ -203,6 +204,8 @@ import { ViewSelectedDocumentComponent } from './pages/view-selected-document/vi
     RegisterCdgRequestComponent,
     TaskCommentsViewComponent,
     FillAdditionalTaskFieldsComponent,
+    TemplateEmailAlertTypeComponent,
+    PublishDocumentComponent,
     PerformDocumentsUploadComponent,
     PerformInformationUploadComponent,
     UploadedInfoTableComponent,
@@ -210,8 +213,6 @@ import { ViewSelectedDocumentComponent } from './pages/view-selected-document/vi
     UploadSelectedDocumentComponent,
     ViewSelectedDocumentComponent,
     UploadInfoModalComponent,
-    TemplateEmailAlertTypeComponent
-
   ],
   imports: [
     BrowserModule,
