@@ -40,18 +40,21 @@
             <tr>
                 <th style="text-align: center !important">ID</th>
                 <th style="text-align: center !important">Publicación</th>
+                <th style="text-align: center !important">Proceso</th>
                 <th style="text-align: center !important">Tipo documental</th>
-                <th style="text-align: center !important">Elaboró</th>
+                <th style="text-align: start !important">Elaboró</th>
                 <th style="text-align: start !important">Firmó</th>
                 <th style="text-align: center !important;">Fecha&nbsp;de&nbsp;firma</th>
+
             </tr>
         </thead>
         <tbody class="contenido-tablas">
             <tr *ngFor="let publicacion of publicaciones">
                 <td style="text-align: center !important">{{ publicacion.id }}</td>
-                <td style="text-align: center !important ">{{ publicacion.publicacion }}</td>
-                <td style="text-align: center !important">{{ publicacion.tipoDocumental }}</td>
-                <td style="text-align: center !important">{{ publicacion.elaboro }}</td>
+                <td style="text-align: center !important">{{ publicacion.publicacion }}</td>
+                <td style="text-align: center !important">{{ publicacion.proceso }}</td>
+                <td style="text-align: center !important ">{{ publicacion.tipoDocumental }}</td>
+                <td style="text-align: center !important ; text-wrap: nowrap; ">{{ publicacion.elaboro }}</td>
                 <td style="text-align: start !important; text-wrap: nowrap;">{{ publicacion.firmo }}</td>
                 <td style="text-align: center !important">{{ publicacion.fechaFirma }}</td>
             </tr>

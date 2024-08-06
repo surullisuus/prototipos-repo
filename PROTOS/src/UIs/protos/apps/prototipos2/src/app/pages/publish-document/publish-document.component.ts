@@ -4,7 +4,7 @@ import { DialogService } from '../../components/dialog/services/dialog.service';
 import { Subscription } from 'rxjs';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogData } from '../../components/dialog/models/dialog-data';
-import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { ActionType, DialogAction } from '../../components/dialog/models/dialog-action';
 
 @Component({
     selector: 'app-publish-document',
@@ -21,6 +21,7 @@ export class PublishDocumentComponent implements OnInit {
         {
             id: 123,
             publicacion: 'www.ejemplo.com',
+            proceso: 'Convocatoria',
             tipoDocumental: 'Mi Casa Ya',
             elaboro: 'Ej. Maria Gomez',
             firmo: 'Ej. Maria Gomez',
@@ -92,9 +93,6 @@ export class PublishDocumentComponent implements OnInit {
         this.formQueryScheme = this.initForm();
       }
 
-      onSavePublication(): void {
-        this.showAlertState('Publicación registrada exitosamente', DialogType.success);
-      }
 
       showAlertState(body: string, dialogType: DialogType) {
         const dialogData = new DialogData();
@@ -108,6 +106,25 @@ export class PublishDocumentComponent implements OnInit {
           .subscribe((dialogAction: DialogAction) => {
             location.reload();
             dialogAction.eventClose.emit();
+          });
+      }
+
+      onSavePublication(): void {
+        const dialogData = new DialogData();
+        dialogData.title = "Guardar publicación";
+        dialogData.body = "¿Esta seguro de guardar la publicación?";
+        dialogData.textButtonCancel = "Cerrar";
+        dialogData.textButtonConfirm = "Aceptar";
+        dialogData.type = DialogType.warning;
+        this.subscription = this.dialogService
+          .openModal(this.dialog, dialogData)
+          .subscribe((dialogAction: DialogAction) => {
+              if (dialogAction.action === ActionType.confirm) {
+                dialogAction.eventClose.emit();
+                this.showAlertState('Publicación guardada exitosamente', DialogType.success);
+            } else {
+              dialogAction.eventClose.emit();
+            }
           });
       }
 }
