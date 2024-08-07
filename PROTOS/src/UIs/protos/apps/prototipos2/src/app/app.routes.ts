@@ -57,6 +57,7 @@ import { AssociateInboundDocumentGesDocComponent } from './pages/associate-inbou
 import { AssociateResolutionsComponent } from './pages/associate-resolutions/associate-resolutions.component';
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
+import { FlujoDocumentoComponent } from './pages/flujo-documento/flujo-documento.component';
 import { RegisterCdgRequestComponent } from './pages/register-cdg-request/register-cdg-request.component';
 import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
 import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
@@ -144,7 +145,10 @@ export const appRoutes: Route[] = [
   },
 
   { path: 'cargar-documento-tarea', component: UploadTaskDocumentComponent },
-  { path: 'consultar-permisos-lectura', component: SeeReadPermissionsComponent },
+  {
+    path: 'consultar-permisos-lectura',
+    component: SeeReadPermissionsComponent,
+  },
   {
     path: 'seguimiento-notificaciones',
     component: ManageSeguimientoNotificacionesComponent,
@@ -176,12 +180,26 @@ export const appRoutes: Route[] = [
   },
   { path: 'asociar-resolucion', component: AssociateResolutionsComponent },
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
-  { path: 'enviar-notificacion', component: SendEmailNotificationComponent},
-  { path: 'registrar-solicitud-cdg', component: RegisterCdgRequestComponent},
-  { path: 'configurar-plantilla-tipo-alerta', component: TemplateEmailAlertTypeComponent},
-  { path: 'ver-comentarios-tarea', component: TaskCommentsViewComponent},
-  { path: 'diligenciar-acampos-tarea', component: FillAdditionalTaskFieldsComponent},
-  { path: 'realizar-cargue-documentos', component: PerformDocumentsUploadComponent},
-  { path: 'realizar-cargue-informacion', component: PerformInformationUploadComponent},
-  { path: 'publicar-documento', component: PublishDocumentComponent},
+  { path: 'enviar-notificacion', component: SendEmailNotificationComponent },
+  { path: 'flujo-documento', component: FlujoDocumentoComponent },
+  { path: 'enviar-notificacion', component: SendEmailNotificationComponent },
+  { path: 'registrar-solicitud-cdg', component: RegisterCdgRequestComponent },
+  {
+    path: 'configurar-plantilla-tipo-alerta',
+    component: TemplateEmailAlertTypeComponent,
+  },
+  { path: 'ver-comentarios-tarea', component: TaskCommentsViewComponent },
+  {
+    path: 'diligenciar-acampos-tarea',
+    component: FillAdditionalTaskFieldsComponent,
+  },
+  {
+    path: 'realizar-cargue-documentos',
+    component: PerformDocumentsUploadComponent,
+  },
+  {
+    path: 'realizar-cargue-informacion',
+    component: PerformInformationUploadComponent,
+  },
+  { path: 'publicar-documento', component: PublishDocumentComponent },
 ];

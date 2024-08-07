@@ -94,6 +94,7 @@ import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage
 import { NotificationComponentComponent } from './components/notification/notification-component.component';
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
 import { ReturnStageComponent } from './pages/return-stage/return-stage.component';
+import { FlujoDocumentoComponent } from './pages/flujo-documento/flujo-documento.component';
 import { RegisterCdgRequestComponent } from './pages/register-cdg-request/register-cdg-request.component';
 import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
 import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
@@ -201,9 +202,8 @@ import { PublishDocumentComponent } from './pages/publish-document/publish-docum
     NotificationComponentComponent,
     SendEmailNotificationComponent,
     ReturnStageComponent,
-    RegisterCdgRequestComponent,
+    FlujoDocumentoComponent,
     TaskCommentsViewComponent,
-    FillAdditionalTaskFieldsComponent,
     TemplateEmailAlertTypeComponent,
     PublishDocumentComponent,
     PerformDocumentsUploadComponent,
@@ -214,12 +214,7 @@ import { PublishDocumentComponent } from './pages/publish-document/publish-docum
     ViewSelectedDocumentComponent,
     UploadInfoModalComponent,
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    UisModule,
-    RouterModule.forRoot(appRoutes),
-  ],
+  imports: [ReactiveFormsModule, UisModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })
