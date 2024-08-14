@@ -1,59 +1,34 @@
 <h4 class="h3-tipografia-govco mt-3 mb-4">
-    <span class="govcolor-marine">Asociar documentos de entrada del GesDoc</span>
+    <span class="govcolor-marine">Asociar documentos de entrada desde GESDOC</span>
 </h4>
 
 <div class="row">
-    <div class="col-12 col-lg-3">
-        <subsidios-input [control]="$any(formQueryScheme.get('keyword'))" type="text" label="No. Radicado"
-            placeholder="Ej. 234" [showStatus]="false" [maxLength]="13" [minLength]="5" formControlName="noRadicado"
+    <div class="col-md-5">
+        <subsidios-input [control]="$any(formQueryScheme.get('keyword'))" type="text" label="No. Radicado:"
+            placeholder="Ej. 234" [showStatus]="false" [maxLength]="13" formControlName="noRadicado"
             typeValidation="alphanumeric"></subsidios-input>
     </div>
 
-    <div class="col-12 col-md-6 col-lg-3">
-        <label for="calendario-govco-1" class="label-desplegable-govco">
-            Fecha inicio: <span aria-required="true"></span>
-        </label>
-        <div id="miCalendario1" class="desplegable-govco desplegable-calendar-govco" style="width: 100%; height: 40px"
-            data-type="calendar">
-            <div class="date desplegable-selected-option">
-                <input class="browser-default" type="text" id="calendario-govco-1" aria-autocomplete="off" days="true"
-                    style="width: 100%; height: 40px" />
-            </div>
-        </div>
-        <div class="texto-informativo text-nowrap">
-            <small>Filtrar por periodo de radicación.</small>
-        </div>
-    </div>
+    <div class="col-md-7 md-mt-5">
+        <div class="d-flex">
+            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space"
+                (click)="onSearchDocuments()">
+                Buscar
+            </button>
+            <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+                Limpiar
+            </button>
 
-    <div class="col-12 col-md-6 col-lg-3">
-        <label for="calendario-govco-2" class="label-desplegable-govco">
-            Fecha fin: <span aria-required="true"></span>
-        </label>
-        <div id="miCalendario2" class="desplegable-govco desplegable-calendar-govco" style="width: 100%; height: 40px"
-            data-type="calendar">
-            <div class="date desplegable-selected-option">
-                <input class="browser-default" type="text" id="calendario-govco-2" aria-autocomplete="off" days="true"
-                    style="width: 100%; height: 40px" />
-            </div>
         </div>
     </div>
 </div>
 
-<div class="mt-2">
-    <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1">
-        Buscar
-    </button>
-    <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
-        Limpiar
-    </button>
-</div>
 
 <div class="table-responsive mt-4">
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
         <thead class="encabezado-tabla">
             <tr>
                 <th role="button">No.&nbsp;Radicado</th>
-                <th role="button">Fecha&nbsp;radicado</th>
                 <th style="text-align: center !important">Acción</th>
                 <th style="text-align: center !important">Seleccionar</th>
             </tr>
@@ -62,12 +37,6 @@
         <tbody class="contenido-tablas">
             <tr *ngFor="let item of data">
                 <td class="text-left">{{ item.numeroRadicado }}</td>
-                <td style="text-align: left !important">
-                    <p class="mb-0">
-                        {{ item.fechaRadicacion }}
-                    </p>
-                </td>
-
                 <td style="text-align: center !important; padding-right: 10px">
                     <!-- Acciones-->
                     <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
@@ -102,7 +71,8 @@
     </table>
     <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
 </div>
-<button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1" (click)="onAssociateDocuments()">
+<button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+    (click)="onAssociateAlert()">
     Asociar
 </button>
 
