@@ -20,14 +20,10 @@ export class ConsultFileComponent implements OnInit {
     {
       id: '232',
       numeroRadicado: '123',
-      fechaRadicado: '01/01/2022',
-      tipoDocumento: 'ABC',
     },
     {
       id: '233',
       numeroRadicado: '456',
-      fechaRadicado: '01/01/2022',
-      tipoDocumento: 'ABC',
     },
   ];
 
@@ -39,11 +35,7 @@ export class ConsultFileComponent implements OnInit {
 
   initForm(): FormGroup {
     return this.fb.group({
-      proceso: [null],
       numeroRadicado: [null],
-      tipoDocumento: [null],
-      fechaInicio: [null],
-      fechaFin: [null],
     });
   }
 
@@ -56,11 +48,7 @@ export class ConsultFileComponent implements OnInit {
 
   onLimpiar(): void {
     this.formQueryScheme.patchValue({
-      proceso: '',
       numeroRadicado: '',
-      tipoDocumento: '',
-      fechaInicio: null,
-      fechaFin: null,
     });
   }
 
