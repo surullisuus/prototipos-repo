@@ -164,7 +164,7 @@ export const appRoutes: Route[] = [
   },
   { path: 'consultar-radicado', component: ConsultFileComponent },
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
-  { path: 'probar-modal', component: TestModalComponent },
+  { path: 'firmar-radicar-documento', component: TestModalComponent },
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
   { path: 'generar-documento', component: GenerarDocumentoComponent },
   { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
