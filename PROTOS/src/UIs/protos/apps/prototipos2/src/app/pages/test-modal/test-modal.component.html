@@ -1,28 +1,167 @@
-<!--Este componente es para probar modal's-->
-<h3 class="h3-tipografia-govco">Probar Modal(s)</h3>
-<div class="rounded-3 mb-5 mt-3">
+<h4 class="h3-tipografia-govco mt-3">
+    <span class="govcolor-marine">CONSULTAR DOCUMENTOS</span>
+  </h4>
+  
+  <form [formGroup]="formQueryScheme">
     <div class="row">
-        <span> Modal 1</span>
-        <a type="button" 
-        class="me-1" 
-        tabindex="0" 
-        (click)="DeleteModal()"
-        >
-        Borrar
-        </a>
-    </div>
-    <div class="row">
-        <span> Modal 2</span>
-        <a
-        class="me-1"
-        tabindex="0"
-        data-bs-target="#seeTaskDocument"
-        data-bs-toggle="modal"
-        style="cursor: pointer"
-      >
-        Ver Documento
-        </a>
-    </div>
+
+      <div class="col-md-4 col-xl-3">
+      <label for='proceso' class='form-label govcolor-tundora'>Proceso*:</label>
+      <select class='form-select select-dark-border' name='proceso' id='proceso' formControlName='proceso'
+           autocomplete='off'>
+           <option value="1" disabled selected hidden >Escoger</option> 
+<option *ngFor='let row of typeProcess' [value]='row.value'>
+{{ row.text }}
+</option>
+</select>
 </div>
-<app-see-task-document></app-see-task-document>
-<div #dialog></div>
+  
+      <div class="col-md-4 col-xl-3">
+        <label for='tipoDocumental' class='form-label govcolor-tundora'>Tipo documental*:</label>
+        <select style="height: 40px" class='form-select select-dark-border' name='tipoDocumental' id='tipoDocumental' formControlName='tipoDocumental'
+             autocomplete='off'>
+             <option value="1" disabled selected hidden >Escoger</option> 
+  <option *ngFor='let row of typesDocumental' [value]='row.value'>
+  {{ row.text }}
+  </option>
+  </select>
+      </div>
+  
+      <div class="col-md-4 col-xl-3">
+        <subsidios-input [control]="$any(formQueryScheme.get('nombreDocumento'))" type="text" label="Nombre documento:"
+          placeholder="Ej. Documento A" [showStatus]="false" [maxLength]="20" [minLength]="1"
+          typeValidation="alphanumericwhithspaces" note="Ingrese una palabra"></subsidios-input>
+      </div>
+  
+      <div class="col-md-4 col-xl-3">
+        <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
+          <label for="calendario-govco" class="label-desplegable-govco">Fecha inicio:</label>
+          <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
+            <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaInicio"
+              placeholder="dd/mm/aaaa" id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off"
+              days="true">
+          </div>
+          <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de inicio</label>
+          <ng-container>
+            <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
+  
+            </span>
+          </ng-container>
+        </div>
+      </div>
+  
+      <div class="col-md-4 col-xl-3">
+        <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
+          <label for="calendario-govco" class="label-desplegable-govco">Fecha de fin:</label>
+          <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
+            <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaFin"
+              placeholder="dd/mm/aaaa" id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off"
+              days="true">
+          </div>
+          <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de fin</label>
+          <ng-container>
+            <span class="error-texto-govco alert-entradas-de-texto-govco" role="alert" aria-live="assertive">
+  
+            </span>
+          </ng-container>
+        </div>
+      </div>
+  
+  
+  
+      <div class="col-md-4 col-xl-3">
+     
+        <label for='estado' class='form-label govcolor-tundora'>Estado*:</label>
+        <select class='form-select select-dark-border' style="height: 40px" name='estado' id='estado' formControlName='estado'
+             autocomplete='off'>
+             <option value="1" disabled selected hidden >Escoger</option> 
+  <option *ngFor='let row of states' [value]='row.value'>
+  {{ row.text }}
+  </option>
+  </select>
+  </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+          Buscar
+        </button>
+        <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+          Limpiar
+        </button>
+        <button type="button" class="btn-govco outline-secundary-btn-govco" style="width: 180px; height: 42px;"
+          routerLink="/generar-documento">Crear documento
+        </button>
+      </div>
+    </div>
+  </form>
+  
+  <div class="row mt-4">
+    <div class="table-responsive">
+      <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+        <thead class="encabezado-tabla">
+          <tr>
+            <th scope="col" role="button">Proceso</th>
+            <th scope="col"  style="text-align: center !important;" role="button">Tipo&nbsp;Documental</th>
+            <th scope="col" role="button" style="text-align: center !important;">Nombre&nbsp;Documento</th>
+            <th scope="col" role="button" style="text-align: center !important;">Fecha&nbsp;Creaci&oacute;n</th>
+            <th scope="col" role="button" style="text-align: center !important;">
+              Fecha&nbsp;&uacute;ltima&nbsp;Actualizaci&oacute;n</th>
+            <th scope="col" role="button" style="text-align: center !important;">Estado</th>
+            <th class="columna-especial" role="button" style="text-align: center !important;">Acci&oacute;n</th>
+          </tr>
+        </thead>
+        <tbody class="contenido-tablas">
+          <tr *ngFor="let item of documentos">
+            <td class="text-center">{{ item.proceso }}</td>
+  
+            <td class="text-center">{{ item.tipoDocumental }}</td>
+  
+            <td class="text-center">{{ item.nombreDocumento }}</td>
+            <td style="text-align: center !important;">
+              <p class="mb-0">
+                {{ item.fechaInicio | date: 'dd/MM/yyyy' }}
+              </p>
+            </td>
+            <td style="text-align: center !important;">
+              <p class="mb-0">
+                {{ item.fechaFin | date: 'dd/MM/yyyy' }}
+              </p>
+            </td>
+            <td class="text-center">{{ item.estado }}</td>
+            <td style="text-align: center !important; padding-right: 10px;">
+
+                
+              <a class="button-modal-accept-none d-block  ms-2 me-2 mb-1"
+              
+              data-bs-toggle="modal"  style="cursor: pointer;"
+              (click)="item.estado === 'Por Firma' ? onSign(item.documentId) : onRadicar(item.documentId)">
+              {{ item.estado === 'Por Firma' ? 'Firmar' : 'Radicar' }}
+            </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+
+
+  <div #dialog></div>
+ 
+  
+  <div class="d-flex justify-content-center">
+    <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+      (click)="onExportar()">Exportar</button>
+  </div>
+
+  <app-document-signing></app-document-signing>
+  <app-file-document></app-file-document>
+<app-reject-document [documentId]="documentId"></app-reject-document>
+<a #openbutton class="button-modal-enabled-none" data-bs-toggle="modal"
+  data-bs-target="#documentSigningModal" href="#"></a>
+<a #openbuttonRadicarDocument class="button-modal-enabled-none" data-bs-toggle="modal"
+  data-bs-target="#fileDocumentModal" href="#"></a>
+  
+  

@@ -18,7 +18,7 @@ export class ApproveDocumentModalComponent implements OnInit {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   @ViewChild('closeApproveDocumentModal')
   closeApproveDocumentModal!: ElementRef;
-  constructor(private readonly fb: FormBuilder, private dialogService: DialogService) {}
+  constructor(private readonly fb: FormBuilder, private dialogService: DialogService) { }
   @ViewChild('openbuttonApproveDocument')
   openbuttonApproveDocument!: ElementRef;
   subscription!: Subscription;
@@ -33,6 +33,10 @@ export class ApproveDocumentModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.formQueryScheme = this.initForm();
+  }
+
+  onSeePreview(){
+    
   }
   onSend(): void {
     console.log(this.formQueryScheme.value);
