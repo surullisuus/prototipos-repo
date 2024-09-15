@@ -312,6 +312,28 @@ export class ManageTaskComponent implements OnInit {
       });
   }
 
+OnRejectTask(){
+  
+  const dialogData = new DialogData();
+  dialogData.title = '¿Está seguro que desea rechazar la tarea?';
+  dialogData.body = `Recuerde que esta acción es irreversible.`;
+  dialogData.textButtonCancel = 'Cancelar';
+  dialogData.type = DialogType.warning;
+
+  this.subscription = this.dialogService
+    .openModal(this.dialog, dialogData)
+    .subscribe((dialogAction: DialogAction) => {
+      if (dialogAction.action === ActionType.confirm) {
+     
+        const body = `La tarea fue rechazada de forma exitosa.`;
+        dialogAction.eventClose.emit();
+        this.showSuccessTaskInitializationAlertState(body);
+       
+      } else {
+        dialogAction.eventClose.emit();
+      }
+    });
+}
   onFinishTasktModal(task: PhaseTask, $event: Event) {
     $event.preventDefault();
     console.log('taks', task);
