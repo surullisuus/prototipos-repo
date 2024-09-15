@@ -179,7 +179,7 @@ export const appRoutes: Route[] = [
     component: AssociateInboundDocumentGesDocComponent,
   },
   { path: 'asociar-resolucion', component: AssociateResolutionsComponent },
-  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
+  { path: 'gestionar-documento-tarea', component: ManageProcessDesignComponent },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent },
   { path: 'flujo-documento', component: FlujoDocumentoComponent },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent },

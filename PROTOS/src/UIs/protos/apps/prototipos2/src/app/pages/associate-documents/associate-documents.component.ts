@@ -18,11 +18,13 @@ export class AssociateDocumentsComponent {
       id: 1,
       numeroRadicado: '234',
       seleccionado: false,
+      fechaRadicado: "01/12/2022",
     },
     {
       id: 2,
       numeroRadicado: '235',
       seleccionado: false,
+      fechaRadicado: "01/12/2022",
     },
   ];
   subscription!: Subscription;
@@ -39,17 +41,14 @@ export class AssociateDocumentsComponent {
 
   initForm(): FormGroup {
     return this.fb.group({
-      keyword: [null],
-      status: [null],
+      noRadicado: [null],
+      fechaInicio: [null],
+      fechaFin: [null],
     });
   }
 
-
-
-  onSearchDocuments(){
-        // si no hay resultados
-    //this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.danger);
-
+  onSearchDocuments() {
+    this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.warning);
   }
 
   onAssociateAlert(){

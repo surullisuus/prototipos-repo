@@ -1,25 +1,45 @@
 <h4 class="h3-tipografia-govco mt-3 mb-4">
-    <span class="govcolor-marine">Asociar documentos de entrada desde GESDOC</span>
+    <span class="govcolor-marine">Asociar documentos de entrada del GesDoc</span>
 </h4>
 
 <div class="row">
-    <div class="col-md-5">
-        <subsidios-input [control]="$any(formQueryScheme.get('keyword'))" type="text" label="No. Radicado:"
+    <div class="col-md-4">
+        <subsidios-input [control]="$any(formQueryScheme.get('noRadicado'))" type="text" label="No. Radicado:"
             placeholder="Ej. 234" [showStatus]="false" [maxLength]="13" formControlName="noRadicado"
             typeValidation="alphanumeric"></subsidios-input>
     </div>
 
-    <div class="col-md-7 md-mt-5">
-        <div class="d-flex">
-            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space"
-                (click)="onSearchDocuments()">
-                Buscar
-            </button>
-            <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
-                Limpiar
-            </button>
-
+    <div class="col-md-4">
+        <label for="fechaInicio" class="label-desplegable-govco">Fecha Inicio:</label>
+        <div id="fechaInicio" class="desplegable-govco desplegable-calendar-govco" style='width:auto; height: 40px;'
+            data-type="calendar">
+            <div class="date desplegable-selected-option">
+                <input class="browser-default" type="text" id="fechaInicio" aria-autocomplete="off" days="true">
+            </div>
         </div>
+        <label class="label-desplegable-govco">Filtrar por per&iacute;odo de radicaci&oacute;n.</label>
+    </div>
+
+    <div class="col-md-4">
+        <label for="fechaFin" class="label-desplegable-govco">Fecha Fin:</label>
+        <div id="fechaFin" class="desplegable-govco desplegable-calendar-govco" style='width:auto; height: 40px;'
+            data-type="calendar">
+            <div class="date desplegable-selected-option">
+                <input class="browser-default" type="text" id="fechaFin" aria-autocomplete="off" days="true">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-md-12">
+        <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space"
+            (click)="onSearchDocuments()">
+            Buscar
+        </button>
+        <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+            Limpiar
+        </button>
     </div>
 </div>
 
@@ -29,6 +49,7 @@
         <thead class="encabezado-tabla">
             <tr>
                 <th role="button">No.&nbsp;Radicado</th>
+                <th role="button" style="text-align: center !important">Fecha Radicado</th>
                 <th style="text-align: center !important">Acción</th>
                 <th style="text-align: center !important">Seleccionar</th>
             </tr>
@@ -37,6 +58,7 @@
         <tbody class="contenido-tablas">
             <tr *ngFor="let item of data">
                 <td class="text-left">{{ item.numeroRadicado }}</td>
+                <td style="text-align: center !important">{{ item.fechaRadicado }}</td>
                 <td style="text-align: center !important; padding-right: 10px">
                     <!-- Acciones-->
                     <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
