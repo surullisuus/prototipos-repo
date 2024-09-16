@@ -44,7 +44,7 @@
 
 <!--Menú para manejar los proceso-->
 <div class="navbar-menu-govco blue-menu-govco">
-  <nav class="navbar navbar-expand-lg navbar-menu-govco flex-column" role="navigation" aria-label="Menú ejemplo entidad">
+  <!--<nav class="navbar navbar-expand-lg navbar-menu-govco flex-column" role="navigation" aria-label="Menú ejemplo entidad">
     <div class="container-fluid container-second-navbar-menu-govco">
       <a class="navbar-brand navbar-toggler icon-entidad-menu-govco" href="#"></a>
       <button class="navbar-toggler button-responsive-menu-govco collapsed" type="button" data-bs-toggle="collapse"
@@ -86,7 +86,7 @@
                 <a class="dropdown-item dir-menu-govco me-0" type="button" tabindex="0" (click)="onSeeRequirementsModal()">
                   Ver requisitos</a>
               </li>
-              <!-- Validacion criterio de aceptación 3 carpeta 11 Gestion de tareas  - solo mostrar boton si el estado esta en ejecución o en "revisar la hu " -->
+
               <li *ngIf="'En ejecución' === 'En ejecución'"><a class="dropdown-item dir-menu-govco" routerLink="/gestionar-tareas">Gestionar tareas</a></li>
               <li>
                 <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbutton data-bs-target="#cerrarEtapaModal"
@@ -121,8 +121,109 @@
       </div>
     </div>
    
-  </nav>
+  </nav> 
+-->
 
+  <!--Prueba-->
+  <nav aria-label="Menú principal de componentes" class="navbar-light">
+    <ul class="navbar-nav">
+      <!-- Seccion procesos -->
+      <li class="nav-item">
+        <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#EtapaProceso"
+          aria-expanded="true" aria-controls="EtapaProceso">
+          <span class="item-text-container">ETAPAS DEL PROCESO</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
+            <path fill-rule="evenodd"
+              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-up">
+            <path fill-rule="evenodd"
+              d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"></path>
+          </svg>
+        </button>
+        <div class="collapse show" id="EtapaProceso">
+          <ul>
+            <li class="nav-item">
+              <a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" class="nav-link"
+              >Lista de chequeo</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" id="navbarDropdown1" role="button" aria-expanded="false">
+                <span class="container-text-icon-menu-govco">
+                  <span>Estudio de viabilidad</span>
+                  <span style="padding-top: 0,9px;" class="icon-caret-menu-govco"></span>
+                </span>
+              </a>
+              
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="#" id="navbarDropdown2" role="button" data-bs-toggle="collapse" aria-expanded="false">
+                <span class="container-text-icon-menu-govco">
+                  <span class="nav-link" >Información financiera</span>
+                  <span style="padding-top: 8px;" class="icon-caret-menu-govco"></span>
+                </span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
+                <li>
+                  <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonseeRequirements
+                    data-bs-target="#verRequisitos" href="#" hidden="true"></a>
+                  <a class="dropdown-item dir-menu-govco me-0" type="button" tabindex="0" (click)="onSeeRequirementsModal()">
+                    Ver requisitos</a>
+                </li>
+                <!-- Validacion criterio de aceptación 3 carpeta 11 Gestion de tareas  - solo mostrar boton si el estado esta en ejecución o en "revisar la hu " -->
+                <li *ngIf="'En ejecución' === 'En ejecución'"><a class="dropdown-item dir-menu-govco" routerLink="/gestionar-tareas">Gestionar tareas</a></li>
+                <li>
+                  <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbutton data-bs-target="#cerrarEtapaModal"
+                    href="#" hidden="true"></a>
+                  <a type="button" class="me-0" tabindex="0" (click)="onCloseProcessModal()">Cerrar Etapa</a>
+                </li>
+                <li>
+                  <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonReturn data-bs-target="#devolverEtapaModal"
+                  href="#" hidden="true"></a>
+                  <a type="button" class="me-0" tabindex="0" (click)="onReturnStageModal()">Devolver etapa</a></li>
+                <li>
+                  <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonperformance data-bs-target="#Actuaciones"
+                    href="#" hidden="true"></a>
+                  <a class="dropdown-item dir-menu-govco me-0" type="button" tabindex="0" (click)="onPerformanceModal()">Actuaciones</a>
+                </li>
+                <li><a class="dropdown-item dir-menu-govco" href="#"> Visor de alertas
+                  <span class="gov-co-ico govco-bell" style="font-size: 100;"></span></a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" class="nav-link  dir-menu-govco disabled"
+                [routerLink]="'/procesos'">Resolución</a>
+            </li>
+            <li class="nav-item">
+              <a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" class="nav-link  dir-menu-govco disabled"
+                [routerLink]="'/procesos'">Oficio Remisorio</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+  
+      <!-- Seccion PARTES INTERESADAS -->
+      <li class="nav-item">
+        <button type="button"class="nav-item-text"  data-bs-toggle="collapse" class="nav-item-text"  aria-expanded="false" data-bs-target="#partesInteresadas" 
+          aria-controls="partesInteresadas">
+          <span class="item-text-container">PARTES INTERESADAS</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
+            <path fill-rule="evenodd"
+              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-up">
+            <path fill-rule="evenodd"
+              d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"></path>
+          </svg>
+        </button>
+        <div  class="collapse show"  id="partesInteresadas">
+          
+        </div>
+      </li>
+    </ul>
+  </nav>
+  
+  
   <div #dialog></div>
   <app-see-requirements></app-see-requirements>
   <app-close-stage></app-close-stage>
@@ -130,5 +231,6 @@
   <app-return-stage></app-return-stage>
 
 </div>
+
 
 
