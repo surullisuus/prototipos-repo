@@ -124,7 +124,7 @@ export class SeeDocumentalTypesComponent {
 
     const dialogData = new DialogData();
     dialogData.title = 'Eliminar registro';
-    dialogData.body = `¿Está seguro de eliminar el registro ${proccess.process}?`;
+    dialogData.body = `¿Está seguro de eliminar el registro?`;
     dialogData.textButtonCancel = 'Cancelar';
     dialogData.type = DialogType.warning;
 

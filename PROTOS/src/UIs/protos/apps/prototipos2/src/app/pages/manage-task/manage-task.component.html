@@ -154,8 +154,8 @@
                             (click)="onMakeSuggestedTasktModal(task, $event)"
                             (keypress)="onMakeSuggestedTasktModal(task, $event)">Realizar</a>
                         <span>&nbsp;/&nbsp;</span>
-                        <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                            data-bs-target="#verEsquemaModal" href="#">Aprobar</a>
+                        <a class="button-modal-enabled-none" [routerLink]="'/asignar-responsable-tareas'"
+                            href="#">Asignar</a>
                         <span>&nbsp;/&nbsp;</span>
                         <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
                             data-bs-target="#verEsquemaModal" href="#">Rechazar</a>

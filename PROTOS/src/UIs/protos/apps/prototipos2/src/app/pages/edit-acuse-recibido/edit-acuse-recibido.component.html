@@ -41,16 +41,13 @@
             <div class="col-md-12"><br></div>
         </ng-container>
 
-        <ng-container *ngIf="isDelivered === false">
-            <!--Estado-->
-            <div class="col-md-12">
-                <subsidios-dropdown-list labelText="Causal" note="Seleccione una opción" idList="type-345676"
-                    type="basic" [disabled]="false">
-                </subsidios-dropdown-list>
-            </div>
-        </ng-container>
 
-
+        <!--Estado-->
+        <div class="col-md-12">
+            <subsidios-dropdown-list labelText="Causal" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false">
+            </subsidios-dropdown-list>
+        </div>
 
 
 

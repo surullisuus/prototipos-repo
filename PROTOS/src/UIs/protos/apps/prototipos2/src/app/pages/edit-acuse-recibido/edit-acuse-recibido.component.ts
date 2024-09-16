@@ -16,6 +16,7 @@ export class EditAcuseRecibidoComponent {
 
   delivered?: boolean;
   guideNumber = '';
+  casual?: string;
 
   constructor(private dialogService: DialogService) {}
 
@@ -25,6 +26,10 @@ export class EditAcuseRecibidoComponent {
 
   setGuideNumber($event: any) {
     this.guideNumber = $event.target.value;
+  }
+
+  setCasual($event: any) {
+    this.casual = $event.target.value;
   }
 
   get isDelivered() {
