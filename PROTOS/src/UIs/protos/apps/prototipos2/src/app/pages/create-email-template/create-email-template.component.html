@@ -1,4 +1,4 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Crear plantilla de correo electrónico</span></h3>
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CREAR PLANTILLA DE CORREO ELECTRÓNICO</span></h3>
 
 <div class="rounded-3 mb-5 mt-3">
   <div class="row">
@@ -11,14 +11,28 @@
   </div>
   <div class="row mt-5">
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676" type="basic"
-        [disabled]="false">
-      </subsidios-dropdown-list>
+      <label for="lista-desplegables" class="label-desplegable-govco">Proceso</label>
+      <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables" data-type="basic">
+        <select aria-invalid="false" aria-describedby="alert-id">
+          <option disabled selected>Escoger</option>
+          <option value="1">Proceso 1</option>
+          <option value="2">Proceso 2</option>
+          <option value="3">Proceso 3</option>
+        </select>
+      </div>
+      <span class="alert-desplegable-govco" id="alert-id">Seleccione una opción</span>
     </div>
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Tipo documental" note="Seleccione una opción" idList="type-345676" type="basic"
-        [disabled]="false">
-      </subsidios-dropdown-list>
+      <label for="lista-desplegables2" class="label-desplegable-govco">Tema</label>
+      <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables2" data-type="basic">
+        <select aria-invalid="false" aria-describedby="alert-id">
+          <option disabled selected>Escoger</option>
+          <option value="1">Tema 1</option>
+          <option value="2">Tema 2</option>
+          <option value="3">Tema 3</option>
+        </select>
+      </div>
+      <span class="alert-desplegable-govco" id="alert-id">Seleccione una opción</span>
     </div>
   </div>
   <div class="row mt-3">
@@ -80,7 +94,7 @@
         Guardar
       </button>
       <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
-        [routerLink]="['/consultar-plantillas-correo']">
+        [routerLink]="['/plantilla-correo']">
         Cancelar
       </button>
     </div>
