@@ -1,0 +1,44 @@
+<div class="modal fade" id="selectedDocumentObservationsModal" tabindex="-1" aria-labelledby="selectedDocumentObservationsModal"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="h4-tipografia-govco">
+          <span class="govcolor-marine">Observaciones &lt;&lt; Documento Seleccionado &gt;&gt;</span>
+        </h4>
+        <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+          aria-expanded="false">
+          <span class="modal-close-govco govco-times"></span>
+        </a>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="entradas-de-texto-govco">
+                    <label for="input-basico-id">Observación*:</label>
+                    <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"/>
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button #closeModal type="button"
+                 class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space  mt-1"
+                 data-bs-dismiss='modal'
+                 (click)="SaveModal()">
+                    Guardar
+                   </button>   
+                   <button #closeModal type="button" data-bs-dismiss='modal'
+                   class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+                   Cancelar
+                   </button>
+            </div>    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-uploaded-info-table></app-uploaded-info-table>
+<div #dialog></div>
+
+

@@ -68,10 +68,12 @@
             </div>
             <div class="row">
               <p></p>
+              <a #openbuttonApproveDocument class="button-modal-enabled-none" data-bs-toggle="modal"
+  data-bs-target="#approveDocumentModal" href="#"></a>
                 <button
                 type="button"
                 class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space"
-                data-bs-toggle="modal"
+                (click)="onEnviarNumeracionFecha()"
                 style="width: 165px; height: 42px;"
                 >
                 Siguiente
@@ -90,3 +92,126 @@
     </div>
   </form>
 </div>
+
+<div class="modal fade" id="approveDocumentModal" tabindex="-1" aria-labelledby="approveDocumentModalLabel"
+    aria-hidden="true">
+    <form>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="row">
+                        <h4 class="h4-tipografia-govco">
+                            <span class="govcolor-marine">
+                                Enviar a numeración y fecha
+                            </span>
+                        </h4>
+                    </div>
+                    <a href="#" #closeApproveDocumentModal role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close"
+                        aria-expanded="false">
+                        <span class="modal-close-govco govco-times"></span>
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="formQueryScheme">
+                        <div class="text-center">
+                            <h4 class="h5-tipografia-govco text-primary">Tipo documental</h4>
+                            <h4 class="h5-tipografia-govco text-info">Proceso programa</h4>
+                            <h4 class="h5-tipografia-govco text-primary">Nombre documento</h4>
+                        </div>
+
+                        <div class="entradas-de-texto-govco py-0" style="padding: 0px !important;">
+                            <subsidios-input
+                            [control]="$any(formQueryScheme.get('elaboro'))"
+                            type="text"
+                            label="Elaboró:"
+                           [disabled]="true"
+                            placeholder="Ej. Maria Gomez"
+                            [showStatus]="false"
+                            [maxLength]="20"
+                            [minLength]="1"
+                          ></subsidios-input>
+                        </div>
+
+                        <div class="entradas-de-texto-govco " style="padding: 0px !important;">
+                            <subsidios-input
+                            [control]="$any(formQueryScheme.get('responsable'))"
+                            type="text"
+                            label="Responsable revisión:"
+                           [disabled]="true"
+                            placeholder="Ej. Maria Gomez"
+                            [showStatus]="false"
+                            [maxLength]="20"
+                            [minLength]="1"
+                          ></subsidios-input>
+                        </div>
+
+                        <div class="entradas-de-texto-govco" style="padding: 0px !important;">
+                            <subsidios-input
+
+                            [control]="$any(formQueryScheme.get('responsableAprobacion'))"
+                            type="text"
+                            label="Responsable aprobación:"
+                           [disabled]="true"
+                            placeholder="Ej. Maria Gomez"
+                            [showStatus]="false"
+                            [maxLength]="20"
+                            [minLength]="1"
+                          ></subsidios-input>
+                        </div>
+
+                        <div class="entradas-de-texto-govco" style="padding: 0px !important;">
+                          <subsidios-input
+
+                          [control]="$any(formQueryScheme.get('responsableFirma'))"
+                          type="text"
+                          label="Responsable firma:"
+                         [disabled]="true"
+                          placeholder="Ej. Maria Gomez"
+                          [showStatus]="false"
+                          [maxLength]="20"
+                          [minLength]="1"
+                        ></subsidios-input>
+                      </div>
+
+                      <div class="entradas-de-texto-govco" style="padding: 0px !important;">
+                        <subsidios-input
+
+                        [control]="$any(formQueryScheme.get('responsableNumeracion'))"
+                        type="text"
+                        label="Responsable numeración:"
+                       [disabled]="true"
+                        placeholder="Ej. Maria Gomez"
+                        [showStatus]="false"
+                        [maxLength]="20"
+                        [minLength]="1"
+                      ></subsidios-input>
+                    </div>
+                        <div class="border border-primary rounded-3 p-5 text-center">
+                          <a #seePreview class="button-modal-enabled-none" data-bs-toggle="modal"
+                          data-bs-target="#vistaPreviaDocumentModal" href="#"></a>
+                            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+                                 (click)="onSeePreview()">
+                                Vista previa <span class="govco-eye"></span>
+                            </button>
+                        </div>
+                        <div class="text-end mt-2">
+                            <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space"  data-bs-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
+                                (click)="onSend()">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+<div #dialog></div>

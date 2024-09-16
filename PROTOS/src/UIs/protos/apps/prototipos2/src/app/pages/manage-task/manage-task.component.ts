@@ -293,8 +293,8 @@ export class ManageTaskComponent implements OnInit {
     console.log('taks', task);
 
     const dialogData = new DialogData();
-    dialogData.title = 'Asignar Solicitud';
-    dialogData.body = `¿Está seguro de asignar la tarea ${task.taskName}?`;
+    dialogData.title = 'Iniciar tarea';
+    dialogData.body = `¿Está seguro de iniciar la tarea?`;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.warning;
 

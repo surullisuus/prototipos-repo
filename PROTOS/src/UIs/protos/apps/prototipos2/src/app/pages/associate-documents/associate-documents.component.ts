@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogData } from '../../components/dialog/models/dialog-data';
-import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { ActionType, DialogAction } from '../../components/dialog/models/dialog-action';
 
 @Component({
   selector: 'app-associate-documents',
@@ -17,13 +17,11 @@ export class AssociateDocumentsComponent {
     {
       id: 1,
       numeroRadicado: '234',
-      fechaRadicacion: '01/12/2022',
       seleccionado: false,
     },
     {
       id: 2,
       numeroRadicado: '235',
-      fechaRadicacion: '01/12/2022',
       seleccionado: false,
     },
   ];
@@ -43,16 +41,37 @@ export class AssociateDocumentsComponent {
     return this.fb.group({
       keyword: [null],
       status: [null],
-      date: [null],
     });
   }
 
-  onAssociateDocuments() {
-    //si la asociacion fue exitosa mostrar alerta de exito
-    this.showAlertState(
-      'Documentos asociados exitosamente',
-      DialogType.success
-    );
+
+
+  onSearchDocuments(){
+        // si no hay resultados
+    //this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.danger);
+
+  }
+
+  onAssociateAlert(){
+      const dialogData = new DialogData();
+      dialogData.title = '¿Está seguro que desea asociar los documentos?'
+      dialogData.textButtonCancel = "Cancelar";
+      dialogData.type = DialogType.warning;
+
+      this.subscription = this.dialogService
+        .openModal(this.dialog, dialogData)
+        .subscribe((dialogAction: DialogAction) => {
+          if (dialogAction.action === ActionType.confirm) {
+            dialogAction.eventClose.emit();
+            this.showAlertState(
+                'Documentos asociados exitosamente',
+                DialogType.success
+              )
+          } else {
+            dialogAction.eventClose.emit();
+          }
+        });
+
   }
 
   showAlertState(body: string, dialogType: DialogType) {

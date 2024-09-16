@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule,ExtraOptions} from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { MainComponent } from './components/main/main.component';
@@ -22,7 +22,7 @@ import { PartsProcessComponent } from './pages/parts-process/parts-process.compo
 import { SeeRequirementsComponent } from './pages/see-requirements/see-requirements.component';
 import { CreatePartComponent } from './pages/create-part/create-part.component';
 import { EditPartComponent } from './pages/edit-part/edit-part.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailPartComponent } from './pages/detail-part/detail-part.component';
 import { TaskByResponsibleComponent } from './pages/task-by-responsible/task-by-responsible.component';
 import { AssingResponsibleTaskComponent } from './pages/assing-responsible-task/assing-responsible-task.component';
@@ -95,6 +95,19 @@ import { NotificationComponentComponent } from './components/notification/notifi
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
 import { ReturnStageComponent } from './pages/return-stage/return-stage.component';
 import { FlujoDocumentoComponent } from './pages/flujo-documento/flujo-documento.component';
+import { RegisterCdgRequestComponent } from './pages/register-cdg-request/register-cdg-request.component';
+import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
+import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
+import { PerformDocumentsUploadComponent } from './pages/perform-documents-upload/perform-documents-upload.component';
+import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
+import { UploadInfoModalComponent } from './pages/upload-info-modal/upload-info-modal.component';
+import { UploadSelectedDocumentComponent } from './pages/upload-selected-document/upload-selected-document.component';
+import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
+import { SelectedDocumentObservationsComponent } from './pages/selected-document-observations/selected-document-observations.component';
+import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded-info-table.component';
+import { ViewSelectedDocumentComponent } from './pages/view-selected-document/view-selected-document.component';
+import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -191,13 +204,22 @@ import { FlujoDocumentoComponent } from './pages/flujo-documento/flujo-documento
     SendEmailNotificationComponent,
     ReturnStageComponent,
     FlujoDocumentoComponent,
+    TaskCommentsViewComponent,
+    TemplateEmailAlertTypeComponent,
+    PublishDocumentComponent,
+    PerformDocumentsUploadComponent,
+    PerformInformationUploadComponent,
+    UploadedInfoTableComponent,
+    SelectedDocumentObservationsComponent,
+    UploadSelectedDocumentComponent,
+    ViewSelectedDocumentComponent,
+    UploadInfoModalComponent,
+    RegisterCdgRequestComponent,
+    FillAdditionalTaskFieldsComponent
   ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    UisModule,
-    RouterModule.forRoot(appRoutes),
-  ],
+  imports: [ReactiveFormsModule,
+    RouterModule, BrowserModule,
+    FormsModule, UisModule,CommonModule, RouterModule.forRoot(appRoutes,{useHash: true})],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -58,6 +58,13 @@ import { AssociateResolutionsComponent } from './pages/associate-resolutions/ass
 import { ManageTaskDocumentComponent } from './pages/manage-task-document/manage-task-document.component';
 import { SendEmailNotificationComponent } from './pages/send-email-notification/send-email-notification.component';
 import { FlujoDocumentoComponent } from './pages/flujo-documento/flujo-documento.component';
+import { RegisterCdgRequestComponent } from './pages/register-cdg-request/register-cdg-request.component';
+import { TaskCommentsViewComponent } from './pages/task-comments-view/task-comments-view.component';
+import { FillAdditionalTaskFieldsComponent } from './pages/fill-additional-task-fields/fill-additional-task-fields.component';
+import { PerformDocumentsUploadComponent } from './pages/perform-documents-upload/perform-documents-upload.component';
+import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
+import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
+import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -157,7 +164,7 @@ export const appRoutes: Route[] = [
   },
   { path: 'consultar-radicado', component: ConsultFileComponent },
   { path: 'asociar-documentos-gesdoc', component: AssociateDocumentsComponent },
-  { path: 'probar-modal', component: TestModalComponent },
+  { path: 'firmar-radicar-documento', component: TestModalComponent },
   { path: 'consultar-documentos', component: ConsultDocumentsComponent },
   { path: 'generar-documento', component: GenerarDocumentoComponent },
   { path: 'vista-previa-documento', component: VistaPreviaDocumentoComponent },
@@ -175,4 +182,24 @@ export const appRoutes: Route[] = [
   { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent },
   { path: 'flujo-documento', component: FlujoDocumentoComponent },
+  { path: 'enviar-notificacion', component: SendEmailNotificationComponent },
+  { path: 'registrar-solicitud-cdg', component: RegisterCdgRequestComponent },
+  {
+    path: 'configurar-plantilla-tipo-alerta',
+    component: TemplateEmailAlertTypeComponent,
+  },
+  { path: 'ver-comentarios-tarea', component: TaskCommentsViewComponent },
+  {
+    path: 'diligenciar-acampos-tarea',
+    component: FillAdditionalTaskFieldsComponent,
+  },
+  {
+    path: 'realizar-cargue-documentos',
+    component: PerformDocumentsUploadComponent,
+  },
+  {
+    path: 'realizar-cargue-informacion',
+    component: PerformInformationUploadComponent,
+  },
+  { path: 'publicar-documento', component: PublishDocumentComponent },
 ];

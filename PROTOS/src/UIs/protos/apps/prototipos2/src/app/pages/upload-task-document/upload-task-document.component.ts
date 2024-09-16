@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ElementRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { DialogService } from '../../components/dialog/services/dialog.service';
@@ -16,26 +16,28 @@ export class UploadTaskDocumentComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   formQueryScheme!: FormGroup;
   subscription!: Subscription;
-  fileUploaded: boolean = false;
+  fileUploaded = false;
 
   constructor(private dialogService: DialogService) {}
 
   onFileUploaded(): void {
-    this.fileUploaded = true;
+    this.SaveModal();
   }
 
   SaveModal() {
     const dialogData = new DialogData();
     dialogData.title = "¿Desea guardar el documento y asociarlo a la tarea?";
-    dialogData.textButtonCancel = "Cerrar";
+    dialogData.textButtonCancel = "Cancelar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
+          // subir documento
+          this.fileUploaded = true;
           dialogAction.eventClose.emit();
-          this.onSavedModal(); 
+          this.onSavedModal();
         } else {
           dialogAction.eventClose.emit();
         }

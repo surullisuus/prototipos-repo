@@ -4,21 +4,21 @@
 </h4>
 
 <div>
-    <h5 class="govcolor-blue-dark text-center">Tipo: {{type}}</h5>
-    <h5 class="govcolor-blue-dark text-center">Proceso: {{process}}</h5>
-    <h5 class="govcolor-blue-dark text-center">Nombre documento: {{documentName}}</h5>
+    <h5 class="govcolor-blue-dark text-center">Tipo documental</h5>
+    <h5 class="govcolor-blue-dark text-center">Proceso {{process}}</h5>
+    <h5 class="govcolor-blue-dark text-center">Nombre documento {{documentName}}</h5>
 </div>
 
 <div class="rounded-3 mb-5 mt-3">
     <div class="row">
         <div class="col-md-12 col-xl-12">
-            <subsidios-dropdown-list labelText="Elaborado:" idList="type-345676" type="basic" [disabled]="false"
+            <subsidios-dropdown-list labelText="Elaboró:" idList="type-345676" type="basic" [disabled]="false"
                 [isRequired]="true" [title]="'Juan perez'" [disabled]="true"></subsidios-dropdown-list>
         </div>
 
         <div class="col-md-12 col-xl-12">
-            <subsidios-dropdown-list labelText="Responsable*:" idList="type-345676" type="basic" [disabled]="false"
-                (eventlist)="registerResponsible($event)"
+            <subsidios-dropdown-list labelText="Responsable revisión*:" idList="type-345676" type="basic"
+                [disabled]="false" (eventlist)="registerResponsible($event)"
                 [disabled]="phase === 'approvement' || phase === 'signature'"></subsidios-dropdown-list>
         </div>
 
