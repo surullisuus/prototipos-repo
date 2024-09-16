@@ -126,11 +126,11 @@ export const appRoutes: Route[] = [
     component: CreateEmailTemplateComponent,
   },
   {
-    path: 'editar-plantilla-correo/:id',
+    path: 'editar-plantilla-correo',
     component: EditEmailTemplateComponent,
   },
   {
-    path: 'consultar-plantilla-correo/:id',
+    path: 'ver-plantilla-correo',
     component: SeeEmailTemplateComponent,
   },
   { path: 'configurar-flujo-etapas', component: ConfigureFlowStagesComponent },
