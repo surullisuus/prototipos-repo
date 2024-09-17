@@ -90,7 +90,7 @@ export const appRoutes: Route[] = [
   { path: 'crear-plantilla', component: CreateEmailTemplateComponent },
   { path: 'editar-plantilla', component: EditEmailTemplateComponent },
   { path: 'ver-plantilla', component: DetailEmailTemplateComponent },
-  { path: 'Consultar-tipo-notificacion', component: NotificationTypeComponent },
+  { path: 'consultar-tipo-notificacion', component: NotificationTypeComponent },
   { path: 'crear-notificacion', component: CreateNotificationTypeComponent },
   { path: 'editar-notificacion', component: EditNotificationTypeComponent },
   { path: 'ver-notificacion', component: DetailNotificationTypeComponent },
@@ -120,14 +120,6 @@ export const appRoutes: Route[] = [
   {
     path: 'consultar-plantillas-correo',
     component: ManagePlantillasCorreosComponent,
-  },
-  {
-    path: 'crear-plantilla-correo',
-    component: CreateEmailTemplateComponent,
-  },
-  {
-    path: 'editar-plantilla-correo',
-    component: EditEmailTemplateComponent,
   },
   {
     path: 'ver-plantilla-correo',
