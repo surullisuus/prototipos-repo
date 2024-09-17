@@ -11,23 +11,37 @@
         <div class="collapse navbar-collapse navbar-collapse-menu-govco" id="navbarScroll">
         <ul class="navbar-nav navbar-nav-menu-govco ms-auto">
             <li class="nav-item">
-            <a class="nav-link dir-menu-govco" aria-current="page" href="#">
+                <a class="nav-link dir-menu-govco active" aria-current="page" href="/#/gestionar-documento-tarea">
+                <span class="text-item-menu-govco">
+                    Gestionar documento tarea
+                </span>
+                </a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link dir-menu-govco" aria-current="page" href="/#/asociar-documento-SISFV">
                 <span class="text-item-menu-govco">
                 Asociar documento desde SISFV
                 </span>
             </a>
             </li>
             <li class="nav-item">
-            <a class="nav-link dir-menu-govco" aria-current="page" href="#">
+            <a class="nav-link dir-menu-govco" aria-current="page" href="/#/asociar-documento-entrada-GesDoc">
                 <span class="text-item-menu-govco">
                 Asociar documento desde GesDoc
                 </span>
             </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link dir-menu-govco" aria-current="page" href="/cargar-documento-tarea">
+                <a class="nav-link dir-menu-govco" aria-current="page" href="/#/cargar-documento-tarea">
                 <span class="text-item-menu-govco">
                     Cargar documento
+                </span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link dir-menu-govco" aria-current="page" href="/#/asociar-resolucion">
+                <span class="text-item-menu-govco">
+                    Asociar resoluciones
                 </span>
                 </a>
             </li>
@@ -60,14 +74,15 @@
 
                     <td style="text-align: center !important; padding-right: 10px;">
                         <a *ngIf="item.tipoDocumento === 'Entrada' || item.tipoDocumento === 'Salida'"
-                            class="button-modal-accept-none d-inline-block mx-1" style="cursor: pointer;">Borrar</a>
+                            class="button-modal-accept-none d-inline-block mx-1" style="cursor: pointer;" (click)="DeleteModal()">Borrar</a>
                         <ng-container *ngIf="item.tipoDocumento === 'Entrada' || item.tipoDocumento === 'Salida'">
                             <ng-container *ngIf="item.tipoDocumento === 'Salida' || hasVerDocumento(item)">
                                 <span> / </span>
                             </ng-container>
                         </ng-container>
 
-                        <a class="button-modal-accept-none d-inline-block mx-1" tabindex="0"  style="cursor: pointer;"
+                        <a class="button-modal-accept-none d-inline-block mx-1" tabindex="0" data-bs-target="#seeRadicado"
+                        data-bs-toggle="modal" style="cursor: pointer;"
                             >Ver documento</a>
 
                         <ng-container *ngIf="item.tipoDocumento === 'Salida'">
@@ -85,3 +100,5 @@
     </div>
 </div>
 <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space ms-4 mt-1">Cerrar</button>
+<div #dialog></div>
+<app-see-radicado></app-see-radicado>

@@ -11,7 +11,10 @@ interface DocumentRequest{
   tipoDocumental: string;
   fechaCreacion: Date;
 }
-
+interface documentalType {
+  documentalName: string;
+  id: number;
+}
 @Component({
   selector: 'app-associate-outbound-document-sisfv',
   templateUrl: './associate-outbound-document-SISFV.component.html',
@@ -35,6 +38,21 @@ export class AssociateOutboundDocumentSISFVComponent {
       fechaCreacion: new Date('2023-07-20')
     }
   ]
+  documentalTypes: documentalType[] = [
+    {
+      id: 1,
+      documentalName: 'ABC',
+    },
+    {
+      id: 2,
+      documentalName: 'ABC',
+    },
+    {
+      id: 3,
+      documentalName: 'ABC',
+    },
+  ];
+
   subscription!: Subscription;
   fromQueryScheme!: FormGroup;
 
@@ -50,6 +68,12 @@ export class AssociateOutboundDocumentSISFVComponent {
       date: [null],
     });
   }
+  documentalTypeOptions() {
+    return this.documentalTypes.map((documentalType) => {
+      return { id: documentalType.documentalName, text: documentalType.documentalName };
+    });
+  }
+
   AssociateModal() {
     const dialogData = new DialogData();
     dialogData.title = "Asociar documentos";

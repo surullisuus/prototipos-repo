@@ -74,6 +74,12 @@
 
                             <span>&nbsp;/&nbsp;</span>
 
+                            <a type="button" class="ms-2 me-2" tabindex="0"
+                            [routerLink]="'/diligenciar-acampos-tarea'">Campos Adicionales</a>
+
+                        <span>&nbsp;/&nbsp;</span>
+
+
                             <a type="button" class="button-modal-enabled-none"
                                 (click)="onCloseTaskAnormalModal(task, $event)"
                                 (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
@@ -97,6 +103,9 @@
 
                             <a class="button-modal-enabled-none" (click)="onCloseTaskAnormalModal(task, $event)"
                                 (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
+                                <span>&nbsp;/&nbsp;</span>
+
+                                <a  [routerLink]="'/ver-comentarios-tarea'" class="button-modal-enabled-none">Ver Comentarios</a>
 
                         </ng-container>
 
@@ -158,7 +167,7 @@
                             data-bs-target="#verEsquemaModal" href="#">Aprobar</a>
                         <span>&nbsp;/&nbsp;</span>
                         <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                            data-bs-target="#verEsquemaModal" href="#">Rechazar</a>
+                          (click)="OnRejectTask()"  data-bs-target="#verEsquemaModal" href="#">Rechazar</a>
 
 
                     </td>

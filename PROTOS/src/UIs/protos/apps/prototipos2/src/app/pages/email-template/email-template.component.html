@@ -18,11 +18,11 @@
         </div>
         <div class="col-md-4">
             <subsidios-dropdown-list labelText="Proceso" note="Seleccione el proceso" idList="type-345676" type="basic"
-            [disabled]="false"></subsidios-dropdown-list>
+            [disabled]="false" [lista]="processOptions()"></subsidios-dropdown-list>
         </div>
         <div class="col-md-4">
             <subsidios-dropdown-list labelText="Tema" note="Seleccione un tema" idList="type-345676" type="basic"
-            [disabled]="false"></subsidios-dropdown-list>
+            [disabled]="false" [lista]="themeOptions()"></subsidios-dropdown-list>
         </div>    
     </div>
     <div class="row">
@@ -35,7 +35,7 @@
             </button>
             <button type="button" 
             class="btn-govco outline-secundary-btn-govco" 
-            style="width: 165px; height: 42px;"
+            style="width: 165px; height: 47px;"
             [routerLink]="['/crear-plantilla']">
               Crear plantilla
             </button>
@@ -96,7 +96,8 @@
                     </td>
                   </tr>
             </tbody>
-        </table>   
+        </table> 
+        <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
     </div>
 </div>
 <div #dialog></div>

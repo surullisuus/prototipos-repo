@@ -4,12 +4,14 @@
 <div class="rounded-3 mb-5 mt-3">
   <div class="row">
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Procesos" note="Seleccione el proceso" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+      <subsidios-dropdown-list labelText="Procesos:" note="Seleccione una opción" idList="type-345676" type="basic"
+        [disabled]="false" [lista]="processOptions()">
+      </subsidios-dropdown-list>
     </div>
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Etapas" note="Seleccione la etapa" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+      <subsidios-dropdown-list labelText="Etapas:" note="Seleccione una opción" idList="type-345676" type="basic"
+        [disabled]="false" [lista]="stageOptions()">
+      </subsidios-dropdown-list>
     </div>
   </div>
   <div class="row mt-4 mb-3 text-left">
@@ -20,7 +22,7 @@
       <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
         Limpiar
       </button>
-      <button type="button" class="btn-govco outline-secundary-btn-govco" style="width: 165px; height: 42px;"
+      <button type="button" class="btn-govco outline-secundary-btn-govco" style="width: 165px; height: 47px;"
         [routerLink]="['/crear-etapa']">
         Crear etapa
       </button>
@@ -45,7 +47,7 @@
           <tr *ngFor="let item of processStages">
             <td class="text-left">{{ item.nombreProceso }}</td>
             <td class="text-left">{{ item.nombreEtapa }}</td>
-            <td style="text-align: left !important; padding-right: 10px">
+            <td style="text-align: center !important; padding-right: 10px">
               <!-- Acciones-->
               <!--ver detalles-->
               <a type="button" [routerLink]="['/ver-etapa']" class="me-1" href="#" tabindex="0">
@@ -61,16 +63,17 @@
               <a type="button" class="me-1" tabindex="0" (click)="AcceptModal()">
                 Eliminar
               </a>
-              <a type="button" class="me-1" tabindex="0">
+              <a type="button" class="me-1" tabindex="0" [routerLink]="'/configurar-requerimientos-etapa'">
                 Gestionar requisitos
               </a>
-              <a type="button" class="me-1" tabindex="0" data-bs-target="#configurarFlujoModal" data-bs-toggle="modal">
+              <a type="button" class="me-1" tabindex="0">
                 Ordenar tareas
               </a>
             </td>
           </tr>
         </tbody>
       </table>
+      <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
     </div>
   </div>
 </div>

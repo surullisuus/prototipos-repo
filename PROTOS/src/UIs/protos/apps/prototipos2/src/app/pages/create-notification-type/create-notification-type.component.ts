@@ -6,6 +6,18 @@ import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 
+
+interface processOption{
+  processName: string;
+}
+
+interface documentalOption{
+  documentalName: string;
+}
+
+interface notificationOption{
+  notificationName: string;
+}
 @Component({
   selector: 'app-create-notification-type',
   templateUrl: './create-notification-type.component.html',
@@ -16,9 +28,58 @@ export class CreateNotificationTypeComponent {
   constructor(private dialogService: DialogService) {}
   isDisabledSubmit = false;
   subscription!: Subscription;
+  processTypes: processOption[] = [
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+  ]
+  documentalTypes: documentalOption[] = [
+    {
+     documentalName: 'ABC',
+    },
+    {
+      documentalName: 'ABC',
+    },
+    {
+      documentalName: 'ABC',
+    },
+  ]
+  notificationTypes: notificationOption[] = [
+    {
+      notificationName: 'ABC',
+    },
+    {
+      notificationName: 'ABC',
+    },
+    {
+      notificationName: 'ABC',
+    },
+  ]
+  processOptions() {
+    return this.processTypes.map((processOption) => {
+      return { id: processOption.processName, text: processOption.processName };
+    });
+  }
+  notificationOptions() {
+    return this.notificationTypes.map((notificationOption) => {
+      return { id: notificationOption.notificationName, text: notificationOption.notificationName };
+    });
+  }
+  documentalOptions() {
+    return this.documentalTypes.map((documentalOption) => {
+      return { id: documentalOption.documentalName, text: documentalOption.documentalName };
+    });
+  }
   SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Está seguro de guardar este tipo de notificación?";
+    dialogData.title = "Guardar tipo de notificación"
+    dialogData.body = "¿Está seguro de guardar este tipo de notificación?";
     dialogData.textButtonCancel = "Cerrar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
