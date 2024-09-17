@@ -28,6 +28,7 @@ export class SeeDocumentalTypesComponent {
   subscription!: Subscription;
   selectedProcess: string | null = null;
   selectedDocumentType: string | null = null;
+  showTable = false;
 
   tiposDocumentales: DocumentType[] = [
     {
@@ -79,7 +80,6 @@ export class SeeDocumentalTypesComponent {
 
   setProcess(processSelected: { id: number; text: string }) {
     this.selectedProcess = processSelected.text;
-    console.log('selectedDocumentType', this.selectedDocumentType);
   }
 
   setDocumentType(documentType: { id: number; text: string }) {
@@ -87,13 +87,17 @@ export class SeeDocumentalTypesComponent {
   }
 
   get activeSaveButton(): boolean {
-    console.log('selectedProcess', this.selectedProcess);
     return this.selectedProcess !== null && this.selectedDocumentType !== null;
+  }
+
+  onSearch() {
+    this.showTable = true;
   }
 
   cancelSearch() {
     this.selectedProcess = null;
     this.selectedDocumentType = null;
+    this.showTable = false;
   }
 
   // MODALES
