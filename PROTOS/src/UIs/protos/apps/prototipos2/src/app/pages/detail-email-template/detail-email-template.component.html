@@ -1,60 +1,62 @@
-<h3 class="h3-tipografia-govco">
-    <span class="govcolor-marine">Ver plantilla de correo electrónico</span>
-</h3>
-<div class="rounded-3 mb-5 mt-3"> 
-    <div class="row">
-        <label>ID*:</label>
-        <div class="col-md-2 entradas-de-texto-govco">
-            <input type="text" id="input-basico-id" placeholder="123" disabled/>   
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> VER PLANTILLA DE CORREO ELECTRÓNICO </span></h3>
+
+
+<ng-container *ngIf="loading">
+    <div class="spinner-indicador-de-carga-govco" role="status" style="width: 60px; height: 60px; border-width: 8px;">
+        <span class="visually-hidden">Cargando</span>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!loading">
+    <div class="rounded-3 mb-5 mt-3">
+        <ng-container *ngIf="!loading">
+            <div class="rounded-3 mb-5 mt-3">
+                <div class="row">
+                    <span>ID*:</span>
+                    <span><b>123</b></span>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <!--Proceso-->
+                    <div class="col-md-4">
+                        <span>Proceso*:</span>
+                        <p><span><b>ABC</b></span></p>
+                    </div>
+                    <div class="col-md-4">
+                        <span>Tema*:</span>
+                        <p><span><b>ABC</b></span></p>
+                    </div>
+            
+                </div>
+                <div class="row">
+                    <span>Nombre*:</span>
+                    <span><b>ABC........................................................................................................................</b></span>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <span>Descripción*:</span>
+                    <span><b>ABC........................................................................................................................</b></span>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <span>Asunto*:</span>
+                    <span><b>ABC........................................................................................................................</b></span>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <span>Cuerpo del correo*:</span>
+                    <span><b>ABC........................................................................................................................</b></span>
+                    <p></p>
+                </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button"
+                    class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
+                    routerLink="/plantilla-correo">
+                    Cerrar
+                </button>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <!--Proceso-->
-        <div class="col-md-4 entradas-de-texto-govco">
-            <label>Proceso:</label>
-            <p></p>
-                <input type="text" id="input-basico-id" placeholder="Proceso 1" disabled/>   
-        </div>
-        <!--Tema-->
-        <div class="col-md-4 entradas-de-texto-govco">
-            <label>Tema:</label>
-            <p></p>
-                <input type="text" id="input-basico-id" placeholder="Tema 1" disabled/>   
-        </div>
-    </div>  
-    <div class="row">
-        <div class="col-md-4 entradas-de-texto-govco">
-            <label>Nombre*:</label>
-            <p></p>
-                <input type="text" id="input-basico-id" placeholder="Nombre..." disabled/>   
-        </div>
-        <div class="col-md-4 entradas-de-texto-govco">
-            <label>Descripción*:</label>
-            <p></p>
-                <input type="text" id="input-basico-id" placeholder="Descripción..." disabled/>   
-        </div>
-        <div class="col-md-4 entradas-de-texto-govco">
-            <label>Asunto*:</label>
-            <p></p>
-                <input type="text" id="input-basico-id" placeholder="Asunto..." disabled/>   
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 entradas-de-texto-govco">
-            <label>Cuerpo del correo*:</label>
-            <p></p>
-                <input type="text" id="input-basico-id" placeholder="Cuerpo del correo..." style="min-height: 10rem; min-width: 100%;" disabled/>   
-        </div>
-        <p></p>
-        <p></p>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <button type="button" 
-            class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
-            [routerLink]="['/plantilla-correo']">
-                Cerrar
-               </button>   
-        </div>    
-    </div>
-</div>
+    <div #dialog></div>
+</ng-container>

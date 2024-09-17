@@ -9,33 +9,19 @@
     </h4>
     <div class="row">
         <div class="col-md-4">
-            <label for="lista-desplegables" class="label-desplegable-govco">Proceso<span aria-required="true">*:</span></label>
-            <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables" data-type="basic">
-            <select aria-invalid="false" aria-describedby="alert-id">
-                <option disabled selected>Escoger</option>
-                <option value="1">Proceso 1</option>
-                <option value="2">Proceso 2</option>
-                <option value="3">Proceso 3</option>
-            </select>
-            </div>
-            <span class="alert-desplegable-govco" id="alert-id">Seleccione un proceso</span>
+          <subsidios-dropdown-list labelText="Proceso:" note="Seleccione una opción" idList="type-345676" type="basic"
+          [disabled]="false" [lista]="processOptions()">
+      </subsidios-dropdown-list>
         </div>
         <div class="col-md-4">
-            <label for="lista-desplegables" class="label-desplegable-govco">Etapa<span aria-required="true">*:</span></label>
-            <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables2" data-type="basic">
-            <select aria-invalid="false" aria-describedby="alert-id">
-                <option disabled selected>Escoger</option>
-                <option value="1">Etapa 1</option>
-                <option value="2">Etapa 2</option>
-                <option value="3">Etapa 3</option>
-            </select>
-            </div>
-            <span class="alert-desplegable-govco" id="alert-id">Seleccione una etapa</span>
+          <subsidios-dropdown-list labelText="Estapa:" note="Seleccione una opción" idList="type-345676" type="basic"
+          [disabled]="false" [lista]="stageOptions()">
+      </subsidios-dropdown-list>
         </div>
-        <p></p>
-        <p></p>
     </div>
     <div class="row">
+        <p></p>
+        <p></p>
         <div class="col-md-1">
             <span>Tarea:</span>
         </div>
