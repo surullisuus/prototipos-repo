@@ -38,62 +38,59 @@
             </button>
 
 
-            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+            <button type="button" class="btn-govco outline-btn-govco mt-1 btn-govco-space btn-govco-custom"
                 (click)="cancelSearch()">
                 Cancelar
             </button>
         </div>
     </div>
 
-    <ng-container *ngIf="showTable">
 
-
-        <div class="row">
-            <div class="col-md-10">
-                <h4 class="h4-tipografia-govco mt-3 mb-2">
-                    <span class="govcolor-marine">
-                        Resultado de consulta
-                    </span>
-                </h4>
-            </div>
-            <div class="col-md-2">
-                <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
-                    Total registros: {{ tiposDocumentales.length }}
-                </p>
-            </div>
+    <div class="row">
+        <div class="col-md-10">
+            <h4 class="h4-tipografia-govco mt-3 mb-2">
+                <span class="govcolor-marine">
+                    Resultado de consulta
+                </span>
+            </h4>
         </div>
-        <div class="rounded-3 mb-5 mt-3">
-
-            <!--Tabla-->
-            <div class="table-responsive" style="overflow: hidden;">
-                <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-                    <!-- headers -->
-                    <thead class="encabezado-tabla">
-                        <tr>
-                            <th style="text-align: center !important;">Proceso</th>
-                            <th style="text-align: center !important;">Tipos documentales</th>
-                            <th style="text-align: center !important;">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody class="contenido-tablas">
-                        <tr *ngFor="let process of tiposDocumentales">
-                            <td class="text-center">{{ process.process }}</td>
-                            <td class="text-center">{{ process.documents }}</td>
-                            <td style="text-align: center !important; padding-right: 10px;">
-                                <!-- ACCIONES PRA TAREAS GENERALES ASIGNADAS -->
-                                <a type="button" class="button-modal-enabled-none"
-                                    (click)="showDeleteProcessModal(process, $event)">Eliminar</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
-            </div>
-
-
-
+        <div class="col-md-2">
+            <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
+                Total registros: {{ tiposDocumentales.length }}
+            </p>
         </div>
-    </ng-container>
+    </div>
+    <div class="rounded-3 mb-5 mt-3">
+
+        <!--Tabla-->
+        <div class="table-responsive" style="overflow: hidden;">
+            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                <!-- headers -->
+                <thead class="encabezado-tabla">
+                    <tr>
+                        <th style="text-align: center !important;">Proceso</th>
+                        <th style="text-align: center !important;">Tipos documentales</th>
+                        <th style="text-align: center !important;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody class="contenido-tablas">
+                    <tr *ngFor="let process of tiposDocumentales">
+                        <td class="text-center">{{ process.process }}</td>
+                        <td class="text-center">{{ process.documents }}</td>
+                        <td style="text-align: center !important; padding-right: 10px;">
+                            <!-- ACCIONES PRA TAREAS GENERALES ASIGNADAS -->
+                            <a type="button" class="button-modal-enabled-none"
+                                (click)="showDeleteProcessModal(process, $event)">Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <subsidios-paginator [totalCount]="4" [pageSize]="5" [currentPage]="2"></subsidios-paginator>
+        </div>
+
+
+
+    </div>
 
 </div>
 

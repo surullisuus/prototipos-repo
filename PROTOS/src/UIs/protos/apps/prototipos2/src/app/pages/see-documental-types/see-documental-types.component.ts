@@ -51,6 +51,11 @@ export class SeeDocumentalTypesComponent {
       process: 'Proceso de liquidación',
       documents: ['Acta de liquidación', 'Acta de apertura', 'Acta de cierre'],
     },
+    {
+      id: 5,
+      process: 'No existe proceso',
+      documents: ['No existe documento'],
+    },
   ];
 
   constructor(private dialogService: DialogService) {}
@@ -75,6 +80,10 @@ export class SeeDocumentalTypesComponent {
         id: 3,
         text: 'Acta de cierre',
       },
+      {
+        id: 4,
+        text: 'No existe documento',
+      },
     ];
   }
 
@@ -91,6 +100,13 @@ export class SeeDocumentalTypesComponent {
   }
 
   onSearch() {
+    if (
+      this.selectedProcess === 'No existe proceso' &&
+      this.selectedDocumentType === 'No existe documento'
+    ) {
+      this.showNoDataTableModal();
+      this.showTable = false;
+    }
     this.showTable = true;
   }
 
@@ -101,6 +117,18 @@ export class SeeDocumentalTypesComponent {
   }
 
   // MODALES
+  showNoDataTableModal() {
+    const dialogData = new DialogData();
+    dialogData.title = 'No se han encontrado coincidencias';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        dialogAction.eventClose.emit();
+      });
+  }
+
   showSaveInformationModal(proccess: DocumentType[], $event: Event) {
     $event.preventDefault();
 

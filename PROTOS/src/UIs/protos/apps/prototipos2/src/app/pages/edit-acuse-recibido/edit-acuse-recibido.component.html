@@ -26,18 +26,21 @@
 
             <div class="col-md-12"><br></div>
 
-            <!--Proceso-->
-            <div class="col-md-12">
-                <label for="calendario-govco" class="label-desplegable-govco">Fecha acuse de recibido<span
-                        aria-required="true">*</span></label>
-                <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco"
-                    style='width:280px;  height: 40px;' data-type="calendar">
+            <div class="col-12 col-md-6 col-lg-4">
+                <label for="calendario-govco-1" class="label-desplegable-govco">
+                    Fecha acuse de recibido: <span aria-required="true"></span>
+                </label>
+                <div id="miCalendario1" class="desplegable-govco desplegable-calendar-govco"
+                    style="width: 100%; height: 40px" data-type="calendar">
                     <div class="date desplegable-selected-option">
-                        <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off"
-                            days="true" placeholder="dd/mm/yyyy">
+                        <input class="browser-default" type="text" id="calendario-govco-1" aria-autocomplete="off"
+                            days="true" style="width: 100%; height: 40px" (input)="setDate($event)"
+                            placeholder="dd/mm/yyyy" />
                     </div>
                 </div>
             </div>
+
+            <!--Proceso-->
             <div class="col-md-12"><br></div>
         </ng-container>
 
@@ -65,7 +68,7 @@
             </button>
 
 
-            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+            <button type="button" class="btn-govco outline-btn-govco mt-1 btn-govco-space btn-govco-custom"
                 routerLink="/seguimiento-notificaciones">
                 Cancelar
             </button>
