@@ -363,8 +363,8 @@ export class ManageTaskComponent implements OnInit {
     $event.preventDefault();
 
     const dialogData = new DialogData();
-    dialogData.title = 'Asignar tarea';
-    dialogData.body = `¿Está seguro de realizar la tarea seleccionada? Con esta acción la tarea "${task.taskName}" le será asignada.`;
+    dialogData.title = 'Realizar tarea';
+    dialogData.body = `¿Está seguro de realizar la tarea"?`;
     dialogData.textButtonCancel = 'Cancelar';
     dialogData.type = DialogType.warning;
 
@@ -373,7 +373,30 @@ export class ManageTaskComponent implements OnInit {
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
           this.changeTaskState(task.taskId, TaskStateEnum.EnEjecucion);
-          const body = `La tarea seleccionada pasó a su listado de tareas actuales.`;
+          const body = `La tarea se ha realizado con éxito`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
+  onRejectionTasktModal(task: SuggestedTask, $event: Event) {
+    $event.preventDefault();
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Rechazar tarea';
+    dialogData.body = `¿Está seguro de rechazar la tarea"?`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          this.changeTaskState(task.taskId, TaskStateEnum.EnEjecucion);
+          const body = `La tarea se ha rechazado con éxito`;
           dialogAction.eventClose.emit();
           this.showSuccessTaskInitializationAlertState(body);
         } else {

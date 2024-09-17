@@ -44,9 +44,10 @@
                         </p>
                     </td>
                     <td class="text-center">
-                        <div style="display: flex; justify-content: space-between;">
+                        <div style="display: flex; justify-content:center;">
                             <p>&nbsp;</p>
-                            {{ task.temporalStatus }}
+                            <p style="min-width: 7rem;">{{ task.temporalStatus }}</p>
+
                             <ng-container [ngSwitch]="task.temporalStatus">
                                 <p *ngSwitchCase="'Vencida'" class="govcolor-red-flag"> <span
                                         class="govco-exclamation-triangle"></span></p>
@@ -157,8 +158,8 @@
                         <a class="button-modal-enabled-none" [routerLink]="'/asignar-responsable-tareas'"
                             href="#">Asignar</a>
                         <span>&nbsp;/&nbsp;</span>
-                        <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                            data-bs-target="#verEsquemaModal" href="#">Rechazar</a>
+                        <a class="button-modal-enabled-none" type="button" (click)="onRejectionTasktModal(task, $event)"
+                            (keypress)="onRejectionTasktModal(task, $event)">Rechazar</a>
 
 
                     </td>
