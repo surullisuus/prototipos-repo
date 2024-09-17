@@ -29,7 +29,7 @@
                                 Cancelar
                             </button>
                             <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space mt-1"
-                                (click)="onRejectDocument()">
+                                (click)="onRejectDocument()" [disabled]="formQueryScheme.invalid">
                                 Aceptar
                             </button>
                         </div>
