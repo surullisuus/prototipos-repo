@@ -57,9 +57,7 @@ export class ProcessRequestComponent {
 
   formQueryScheme!: FormGroup;
 
-
   constructor( private readonly fb: FormBuilder,){}
-
 
   filterResults() {
     const procesoSeleccionado = this.formQueryScheme.value.proceso;
@@ -95,8 +93,6 @@ export class ProcessRequestComponent {
       { text: 'Aprobado', value: 4 },
      
     ];
-  
-
   }
   
 
