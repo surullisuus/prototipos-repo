@@ -44,8 +44,9 @@
 
         <!--Estado-->
         <div class="col-md-12">
-            <subsidios-dropdown-list labelText="Causal" note="Seleccione una opción" idList="type-345676" type="basic"
-                [disabled]="false">
+            <subsidios-dropdown-list labelText="Casual" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false" [lista]="[{text: 'estado casual 1'}, {text: 'Estado casual 2'}]"
+                (eventlist)="setCasual($event)">
             </subsidios-dropdown-list>
         </div>
 
@@ -58,7 +59,8 @@
 
 
             <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
-                (click)="showSuccessTaskInitializationAlertState('Se modificó la notificación de forma exitosa')">
+                (click)="showSuccessTaskInitializationAlertState('Se modificó la notificación de forma exitosa')"
+                [disabled]="!activeSaveButton">
                 Guardar
             </button>
 

@@ -29,11 +29,27 @@ export class EditAcuseRecibidoComponent {
   }
 
   setCasual($event: any) {
-    this.casual = $event.target.value;
+    this.casual = $event.text;
   }
 
   get isDelivered() {
     return this.delivered;
+  }
+
+  get activeSaveButton() {
+    console.log(this.delivered, this.guideNumber, this.casual);
+
+    if (this.delivered === undefined) {
+      return false;
+    }
+
+    if (!this.delivered && this.casual !== '') {
+      return true;
+    }
+
+    return (
+      this.delivered && this.guideNumber !== '' && this.casual !== undefined
+    );
   }
 
   showSuccessTaskInitializationAlertState(body: string) {
