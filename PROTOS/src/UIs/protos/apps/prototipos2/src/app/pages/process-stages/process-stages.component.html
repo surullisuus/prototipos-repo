@@ -4,28 +4,14 @@
 <div class="rounded-3 mb-5 mt-3">
   <div class="row">
     <div class="col-md-4">
-      <label for="lista-desplegables" class="label-desplegable-govco">Procesos</label>
-      <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables" data-type="basic">
-        <select aria-invalid="false" aria-describedby="alert-id">
-          <option disabled selected>Escoger</option>
-          <option value="1">Proceso 1</option>
-          <option value="2">Proceso 2</option>
-          <option value="3">Proceso 3</option>
-        </select>
-      </div>
-      <span class="alert-desplegable-govco" id="alert-id">Seleccione una opción</span>
+        <subsidios-dropdown-list labelText="Procesos:" note="Seleccione una opción" idList="type-345676" type="basic"
+        [disabled]="false" [lista]="processOptions()">
+        </subsidios-dropdown-list>
     </div>
     <div class="col-md-4">
-      <label for="lista-desplegables2" class="label-desplegable-govco">Etapas</label>
-      <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables2" data-type="basic">
-        <select aria-invalid="false" aria-describedby="alert-id">
-          <option disabled selected>Escoger</option>
-          <option value="1">Etapa 1</option>
-          <option value="2">Etapa 2</option>
-          <option value="3">Etapa 3</option>
-        </select>
-      </div>
-      <span class="alert-desplegable-govco" id="alert-id">Seleccione una opción</span>
+      <subsidios-dropdown-list labelText="Etapas:" note="Seleccione una opción" idList="type-345676" type="basic"
+      [disabled]="false" [lista]="stageOptions()">
+      </subsidios-dropdown-list>
     </div>
   </div>
     <div class="row mt-4 mb-3 text-left">

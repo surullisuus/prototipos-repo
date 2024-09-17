@@ -6,7 +6,12 @@ import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { ActionType, DialogAction } from '../../components/dialog/models/dialog-action';
 
-
+interface processOption{
+  processName: string;
+}
+interface themeOption{
+  themeName: string;
+}
 @Component({
   selector: 'app-create-email-template',
   templateUrl: './create-email-template.component.html',
@@ -15,7 +20,6 @@ import { ActionType, DialogAction } from '../../components/dialog/models/dialog-
 export class CreateEmailTemplateComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   subscription!: Subscription;
-
   nombre: string = '';
   descripcion: string = '';
   asunto: string = '';
@@ -25,6 +29,38 @@ export class CreateEmailTemplateComponent {
     private dialogService: DialogService
   ) {}
 
+  processTypes: processOption[] = [
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+  ]
+  themeTypes: themeOption[] = [
+    {
+      themeName: 'ABC',
+    },
+    {
+      themeName: 'ABC',
+    },
+    {
+      themeName: 'ABC',
+    },
+  ]
+  processOptions() {
+    return this.processTypes.map((processOption) => {
+      return { id: processOption.processName, text: processOption.processName };
+    });
+  }
+  themeOptions() {
+    return this.themeTypes.map((themeOption) => {
+      return { id: themeOption.themeName, text: themeOption.themeName };
+    });
+  }
   checkFilledFields(){
     if (!this.nombre || !this.descripcion || !this.asunto || !this.cuerpoCorreo) {
       document.querySelectorAll('input, textarea').forEach((input) => {

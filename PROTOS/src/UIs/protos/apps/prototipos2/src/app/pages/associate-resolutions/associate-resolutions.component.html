@@ -57,16 +57,9 @@
     </h4>
     <div class="row">
         <div class="col-md-3">
-            <label for="lista-desplegables" class="label-desplegable-govco">Tipo Resolución:</label>
-            <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables" data-type="basic">
-              <select aria-invalid="false" aria-describedby="alert-id">
-                <option disabled selected>Escoger</option>
-                <option value="1">Tipo resolución 1</option>
-                <option value="2">Tipo resolución 2</option>
-                <option value="3">Tipo resolución 3</option>
-              </select>
-            </div>
-            <span class="alert-desplegable-govco" id="alert-id">Seleccione el tipo de resolución</span>
+            <subsidios-dropdown-list labelText="Tipo resolución:" note="Seleccione una opción" idList="type-345676" type="basic"
+                [disabled]="false" [lista]="resolutionOptions()">
+            </subsidios-dropdown-list>
         </div>
         <div class="col-md-3">
             <subsidios-input

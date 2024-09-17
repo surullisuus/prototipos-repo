@@ -4,16 +4,19 @@
 <div class="rounded-3 mb-5 mt-3">
     <div class="row">
         <div class="col-md-4">
-            <subsidios-dropdown-list labelText="Proceso*" note="Seleccione el proceso" idList="type-345676" type="basic"
-            [disabled]="false"></subsidios-dropdown-list> 
+            <subsidios-dropdown-list labelText="Proceso*:" note="Seleccione una opción" idList="type-345676" type="basic"
+            [disabled]="false" [lista]="processOptions()">
+            </subsidios-dropdown-list>
         </div>
         <div class="col-md-4">
-            <subsidios-dropdown-list labelText="Tipo documental*" note="Seleccione el tipo documental" idList="type-345676" type="basic"
-            [disabled]="false"></subsidios-dropdown-list> 
+            <subsidios-dropdown-list labelText="Tipo documental*:" note="Seleccione una opción" idList="type-345676" type="basic"
+            [disabled]="false" [lista]="documentalOptions()">
+            </subsidios-dropdown-list>
         </div>
         <div class="col-md-4">
-            <subsidios-dropdown-list labelText="Tipo notificacion*" note="Elija un tipo de notificación" idList="type-345676" type="basic"
-            [disabled]="false"></subsidios-dropdown-list>
+            <subsidios-dropdown-list labelText="Tipo notificación*:" note="Seleccione una opción" idList="type-345676" type="basic"
+            [disabled]="false" [lista]="notificationOptions()">
+            </subsidios-dropdown-list>
         </div>
     </div>
     <div class="row">

@@ -11,28 +11,14 @@
   </div>
   <div class="row mt-5">
     <div class="col-md-4">
-      <label for="lista-desplegables" class="label-desplegable-govco">Proceso</label>
-      <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables" data-type="basic">
-        <select aria-invalid="false" aria-describedby="alert-id">
-          <option disabled selected>Escoger</option>
-          <option value="1">Proceso 1</option>
-          <option value="2">Proceso 2</option>
-          <option value="3">Proceso 3</option>
-        </select>
-      </div>
-      <span class="alert-desplegable-govco" id="alert-id">Seleccione una opción</span>
+      <subsidios-dropdown-list labelText="Proceso:" note="Seleccione una opción" idList="type-345676" type="basic"
+      [disabled]="false" [lista]="processOptions()">
+      </subsidios-dropdown-list>
     </div>
     <div class="col-md-4">
-      <label for="lista-desplegables2" class="label-desplegable-govco">Tema</label>
-      <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables2" data-type="basic">
-        <select aria-invalid="false" aria-describedby="alert-id">
-          <option disabled selected>Escoger</option>
-          <option value="1">Tema 1</option>
-          <option value="2">Tema 2</option>
-          <option value="3">Tema 3</option>
-        </select>
-      </div>
-      <span class="alert-desplegable-govco" id="alert-id">Seleccione una opción</span>
+      <subsidios-dropdown-list labelText="Tema:" note="Seleccione una opción" idList="type-345676" type="basic"
+      [disabled]="false" [lista]="themeOptions()">
+  </subsidios-dropdown-list>
     </div>
   </div>
   <div class="row mt-3">

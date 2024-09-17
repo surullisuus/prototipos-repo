@@ -3,8 +3,9 @@
 </h3>
 <div class="rounded-3 mb-5 mt-3">
     <div class="row">
-        <subsidios-dropdown-list labelText="Proceso*" note="Seleccione el proceso" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+        <subsidios-dropdown-list labelText="Proceso*:" note="Seleccione una opción" idList="type-345676" type="basic"
+        [disabled]="false" [lista]="processOptions()">
+        </subsidios-dropdown-list>
     </div>
     <div class="row">
         <div class="entradas-de-texto-govco">
