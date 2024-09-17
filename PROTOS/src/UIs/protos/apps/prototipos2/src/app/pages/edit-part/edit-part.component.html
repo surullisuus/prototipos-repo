@@ -30,6 +30,7 @@
         <label for='tipoParte' class='form-label govcolor-tundora'>Tipo de parte*:</label>
         <select class='form-select select-dark-border' name='tipoParte' id='tipoParte' formControlName='tipoParte'
              autocomplete='off'>
+             <option disabled selected hidden >Escoger</option> 
 <option *ngFor='let row of typesListParts' [value]='row.value'>
   {{ row.text }}
 </option>
