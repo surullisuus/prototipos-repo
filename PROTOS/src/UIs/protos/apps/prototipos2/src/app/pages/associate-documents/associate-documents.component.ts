@@ -16,15 +16,18 @@ export class AssociateDocumentsComponent {
   public data = [
     {
       id: 1,
-      numeroRadicado: '234',
+      numeroRadicado: '123',
       seleccionado: false,
-      fechaRadicado: "01/12/2022",
     },
     {
       id: 2,
-      numeroRadicado: '235',
-      seleccionado: false,
-      fechaRadicado: "01/12/2022",
+      numeroRadicado: '123',
+      seleccionado: true,
+    },
+        {
+      id: 3,
+      numeroRadicado: '123',
+      seleccionado: true,
     },
   ];
   subscription!: Subscription;

@@ -25,7 +25,6 @@
         <thead class="encabezado-tabla">
             <tr>
                 <th role="button">No.&nbsp;Radicado</th>
-                <th role="button" style="text-align: center !important">Fecha Radicado</th>
                 <th style="text-align: center !important">Acción</th>
                 <th style="text-align: center !important">Seleccionar</th>
             </tr>
@@ -34,7 +33,6 @@
         <tbody class="contenido-tablas">
             <tr *ngFor="let item of data">
                 <td class="text-left">{{ item.numeroRadicado }}</td>
-                <td style="text-align: center !important">{{ item.fechaRadicado }}</td>
                 <td style="text-align: center !important; padding-right: 10px">
                     <!-- Acciones-->
                     <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
@@ -43,8 +41,8 @@
                 </td>
                 <td style="text-align: center !important;">
                     <div class="d-flex justify-content-center">
-                        <input class="form-check-input" type="checkbox"
-                            id="input-tratamiento-{{ item.numeroRadicado }}" />
+                        <input class="form-check-input" type="checkbox" id="input-tratamiento-{{ item.numeroRadicado }}"
+                            [checked]="item.seleccionado" disabled />
                         <label class="form-check-label" for="input-tratamiento-{{ item.numeroRadicado }}"></label>
                     </div>
                 </td>
