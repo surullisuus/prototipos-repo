@@ -57,8 +57,16 @@
     </h4>
     <div class="row">
         <div class="col-md-3">
-            <subsidios-dropdown-list labelText="Tipo documental:" note="Seleccione el tipo documental" idList="type-345676" type="basic"
-            [disabled]="false"></subsidios-dropdown-list>   
+            <label for="lista-desplegables" class="label-desplegable-govco">Tipo documental</label>
+            <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables" data-type="basic">
+              <select aria-invalid="false" aria-describedby="alert-id">
+                <option disabled selected>Escoger</option>
+                <option value="1">Tipo documental 1</option>
+                <option value="2">Tipo documental 2</option>
+                <option value="3">Tipo documental 3</option>
+              </select>
+            </div>
+            <span class="alert-desplegable-govco" id="alert-id">Seleccione el tipo documental</span>
         </div>
         <div class="col-md-3">
             <subsidios-input
@@ -149,6 +157,7 @@
                         </tr>
                     </tbody>
                 </table>
+                <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
             </div>
         </div>
     </div>

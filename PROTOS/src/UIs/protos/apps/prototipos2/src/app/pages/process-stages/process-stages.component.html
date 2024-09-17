@@ -2,16 +2,32 @@
     <span class="govcolor-marine">Configurar Etapas del Proceso</span>
 </h3>
 <div class="rounded-3 mb-5 mt-3">
-    <div class="row">
-        <div  class="col-md-4">
-            <subsidios-dropdown-list labelText="Procesos" note="Seleccione el proceso" idList="type-345676" type="basic"
-            [disabled]="false"></subsidios-dropdown-list>
-        </div>
-        <div class="col-md-4">
-          <subsidios-dropdown-list labelText="Etapas" note="Seleccione la etapa" idList="type-345676" type="basic"
-          [disabled]="false"></subsidios-dropdown-list>
-        </div>
+  <div class="row">
+    <div class="col-md-4">
+      <label for="lista-desplegables" class="label-desplegable-govco">Procesos</label>
+      <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables" data-type="basic">
+        <select aria-invalid="false" aria-describedby="alert-id">
+          <option disabled selected>Escoger</option>
+          <option value="1">Proceso 1</option>
+          <option value="2">Proceso 2</option>
+          <option value="3">Proceso 3</option>
+        </select>
+      </div>
+      <span class="alert-desplegable-govco" id="alert-id">Seleccione una opción</span>
     </div>
+    <div class="col-md-4">
+      <label for="lista-desplegables2" class="label-desplegable-govco">Etapas</label>
+      <div class="desplegable-govco" style="width:255px; height: 40px;" id="lista-desplegables2" data-type="basic">
+        <select aria-invalid="false" aria-describedby="alert-id">
+          <option disabled selected>Escoger</option>
+          <option value="1">Etapa 1</option>
+          <option value="2">Etapa 2</option>
+          <option value="3">Etapa 3</option>
+        </select>
+      </div>
+      <span class="alert-desplegable-govco" id="alert-id">Seleccione una opción</span>
+    </div>
+  </div>
     <div class="row mt-4 mb-3 text-left">
         <div class="col-md-12">
           <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
@@ -47,7 +63,7 @@
                     <tr *ngFor="let item of processStages">
                         <td class="text-left">{{ item.nombreProceso }}</td>
                         <td class="text-left">{{ item.nombreEtapa }}</td>
-                        <td style="text-align: left !important; padding-right: 10px">
+                        <td style="text-align: center !important; padding-right: 10px">
                             <!-- Acciones-->
                              <!--ver detalles-->
                              <a type="button"  
@@ -90,7 +106,8 @@
                         </td>
                       </tr>
                 </tbody>
-            </table>   
+            </table>
+            <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>  
         </div>
     </div>
 </div>
