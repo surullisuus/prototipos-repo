@@ -18,86 +18,17 @@
             <div class="collapse show" id="solicitudes">
                 <ul>
                     <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link" [routerLink]="'/procesos'">Consultar
-                            Procesos</a>
+                            aria-controls="navbarSupportedContent" class="nav-link" [routerLink]="'/procesos'">Consultar solicitud por proceso</a>
                     </li>
-
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/gestionar-procesos'">Gestionar Procesos</a>
-                    </li>
-                                  </ul>
+                 </ul>
             </div>
         </li>
-        <!--Seccion solicitudes-->
-        <li _ngcontent-tjn-c53="" class="nav-item">
-            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-                aria-expanded="true" aria-controls="catalogos"><span class="item-text-container"> Solicitudes
-                </span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-down">
-                    <path fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-                    </path>
-                </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-up">
-                    <path fill-rule="evenodd"
-                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-                    </path>
-                </svg></button>
-            <div class="collapse show" id="catalogos" style="">
-                <ul>
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/asignar-solicitud'">Asignar Solicitud</a>
-                    </li>
-
-                </ul>
-            </div>
-        </li>
-
-        <!--seccion partes-->
-        <li _ngcontent-tjn-c53="" class="nav-item">
-            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-                aria-expanded="true" aria-controls="catalogos"><span class="item-text-container"> Partes del
-                    proceso</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-down">
-                    <path fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-                    </path>
-                </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-up">
-                    <path fill-rule="evenodd"
-                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-                    </path>
-                </svg></button>
-            <div class="collapse show" id="catalogos" style="">
-                <ul>
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/partes-procesos'">Consultar Parte</a>
-                    </li>
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link" [routerLink]="'/crear-parte'">Crear
-                            Parte</a>
-                    </li>
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/editar-parte'">Editar Parte</a>
-                    </li>
-
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/detalles-parte'">Detalle Parte Interesada</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-
+  
         <!--seccion tareas por responsable-->
 
         <li _ngcontent-tjn-c53="" class="nav-item">
-            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-                aria-expanded="true" aria-controls="catalogos"><span class="item-text-container"> Tareas por
+            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#TareasResponsable"
+                aria-expanded="true" aria-controls="TareasResponsable"><span class="item-text-container"> Tareas por
                     Responsable</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" class="bi bi-chevron-down">
                     <path fill-rule="evenodd"
@@ -109,26 +40,21 @@
                         d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
                     </path>
                 </svg></button>
-            <div class="collapse show" id="catalogos" style="">
+            <div class="collapse show" id="TareasResponsable" style="">
                 <ul>
                     <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" class="nav-link"
                             [routerLink]="'/consultar-tareas'">Consultar Tareas por Responsable</a>
                     </li>
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/asignar-responsable-tareas'">Asignar Responsable a Tarea</a>
-                    </li>
-
-                </ul>
+                 </ul>
             </div>
         </li>
 
         <!--seccion alertas por responsable-->
 
         <li _ngcontent-tjn-c53="" class="nav-item">
-            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-                aria-expanded="true" aria-controls="catalogos"><span class="item-text-container"> Alertas por
+            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#AlertaResponsable"
+                aria-expanded="true" aria-controls="AlertaResponsable"><span class="item-text-container"> Alertas por
                     Responsable</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     viewBox="0 0 16 16" class="bi bi-chevron-down">
                     <path fill-rule="evenodd"
@@ -140,7 +66,7 @@
                         d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
                     </path>
                 </svg></button>
-            <div class="collapse show" id="catalogos" style="">
+            <div class="collapse show" id="AlertaResponsable" style="">
                 <ul>
                     <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" class="nav-link"
@@ -150,92 +76,11 @@
             </div>
         </li>
 
-        <!--seccion gestion tareas-->
-
-        <li _ngcontent-tjn-c53="" class="nav-item">
-            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-                aria-expanded="true" aria-controls="catalogos"><span class="item-text-container"> Gesti&oacute;n
-                    Tareas</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-down">
-                    <path fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-                    </path>
-                </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-up">
-                    <path fill-rule="evenodd"
-                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-                    </path>
-                </svg></button>
-            <div class="collapse show" id="catalogos" style="">
-                <ul>
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/gestionar-tareas'">Gestionar Tareas Activas de Etapa</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-
-        <!--gestionar documentos-->
-        <!--seccion gestion tareas-->
-
-        <li _ngcontent-tjn-c53="" class="nav-item">
-            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-                aria-expanded="true" aria-controls="catalogos"><span class="item-text-container"> Gesti&oacute;n
-                    Documentos</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-down">
-                    <path fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-                    </path>
-                </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-up">
-                    <path fill-rule="evenodd"
-                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-                    </path>
-                </svg></button>
-            <div class="collapse show" id="catalogos" style="">
-                <ul>
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/gestionar-proceso-diseno'">Gestionar documentos de tarea</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-
-        <!--seccion parametrización-->
-
-        <li _ngcontent-tjn-c53="" class="nav-item">
-            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-                aria-expanded="true" aria-controls="catalogos"><span class="item-text-container"> Parametrización
-                </span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-down">
-                    <path fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-                    </path>
-                </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    viewBox="0 0 16 16" class="bi bi-chevron-up">
-                    <path fill-rule="evenodd"
-                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-                    </path>
-                </svg></button>
-            <div class="collapse show" id="catalogos" style="">
-                <ul>
-                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent" class="nav-link"
-                            routerLink="/consultar-plantillas-correo">Consultar plantillas correo electrónico</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-
-      
-
         <!--Carpeta 14 configurar etapas proceso-->
         <li _ngcontent-tjn-c53="" class="nav-item">
-            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-                aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-                    Consultar Etapas de Proceso</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#ConfigurarEtapas"
+                aria-expanded="true" aria-controls="ConfigurarEtapas"><span class="item-text-container">
+                    Configuraci&oacute;n</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
                     <path fill-rule="evenodd"
                         d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
@@ -246,47 +91,44 @@
                         d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
                     </path>
                 </svg></button>
-            <div class="collapse show" id="catalogos" style="">
+            <div class="collapse show" id="ConfigurarEtapas" style="">
                 <ul>
                     <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" class="nav-link"
-                            [routerLink]="'/consultar-etapas-proceso'">Configurar Etapas Proceso</a>
+                            [routerLink]="'/consultar-etapas-proceso'">Etapas Por Proceso</a>
                     </li>
+
+                    <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" class="nav-link"
+                        [routerLink]="'/configurar-tareas-etapa'">Tareas Por Etapa</a>
+                </li>
+
+                <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="justify-content: center;"
+                    aria-controls="navbarSupportedContent" class="nav-link"
+                    [routerLink]="'/Consultar-tipo-notificacion'">Tipo Notificaci&oacute;n Para Tipos Documentales De Un Proceso</a>
+            </li>
+
+            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="justify-content: center;"
+                aria-controls="navbarSupportedContent" class="nav-link"
+                [routerLink]="'/consultar-permisos-lectura'">Permisos de Lectura de Solicitudes </a>
+        </li>
+
+        <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" style="justify-content: center;"
+            aria-controls="navbarSupportedContent" class="nav-link"
+            [routerLink]="'/configurar-alertas-generales'">Configurar Alertas</a>
+    </li>
+
 
                 </ul>
             </div>
         </li>
-<!--Carpeta 15  y 16 consultar tareas por etapa-->
-<li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Consultar Tareas por Etapa</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
-            <path fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-            </path>
-        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            viewBox="0 0 16 16" class="bi bi-chevron-up">
-            <path fill-rule="evenodd"
-                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-            </path>
-        </svg></button>
-    <div class="collapse show" id="catalogos" style="">
-        <ul>
-            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" class="nav-link"
-                    [routerLink]="'/configurar-tareas-etapa'">Configurar Tareas por Etapa</a>
-            </li>
 
-        </ul>
-    </div>
-</li>
 
 <!--Carpeta 17 Configurar flujo etapas -->
 
 <li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
+    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#FlujoEtapas"
+        aria-expanded="true" aria-controls="FlujoEtapas"><span class="item-text-container">
             Configurar Flujo Etapas</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
             <path fill-rule="evenodd"
@@ -298,37 +140,11 @@
                 d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
             </path>
         </svg></button>
-    <div class="collapse show" id="catalogos" style="">
+    <div class="collapse show" id="FlujoEtapas" style="">
         <ul>
             <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" class="nav-link"
-                    [routerLink]="'/configurar-flujo-etapas'">Configuración flujo de etapas</a>
-            </li>
-
-        </ul>
-    </div>
-</li>
-
-<!--Carpeta 18 Configurar flujo tareas-->
-<li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Configurar Flujo Tareas</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
-            <path fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-            </path>
-        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            viewBox="0 0 16 16" class="bi bi-chevron-up">
-            <path fill-rule="evenodd"
-                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-            </path>
-        </svg></button>
-    <div class="collapse show" id="catalogos" style="">
-        <ul>
-            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" class="nav-link"
-                    [routerLink]="'/configurar-flujo-tareas'">Configuración Flujo de Tareas</a>
+                    [routerLink]="'/configurar-flujo-etapas'">Ordenar Etapas</a>
             </li>
 
         </ul>
@@ -337,8 +153,8 @@
 
 <!--Carpeta 19 Configurar tipos documentales proceso-->
 <li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
+    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#TipoDocumental"
+        aria-expanded="true" aria-controls="TipoDocumental"><span class="item-text-container">
             Configurar Tipos Documentales Proceso</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
             <path fill-rule="evenodd"
@@ -350,7 +166,7 @@
                 d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
             </path>
         </svg></button>
-    <div class="collapse show" id="catalogos" style="">
+    <div class="collapse show" id="TipoDocumental" style="">
         <ul>
             <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" class="nav-link"
@@ -360,12 +176,14 @@
         </ul>
     </div>
 </li>
-<!--Carpeta 20 -->
-<li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Configurar Requisitos Etapa</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
+
+ <!--seccion parametrización-->
+
+ <li _ngcontent-tjn-c53="" class="nav-item">
+    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#parametrizacion"
+        aria-expanded="true" aria-controls="parametrizacion"><span class="item-text-container"> Parametrización
+        </span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            viewBox="0 0 16 16" class="bi bi-chevron-down">
             <path fill-rule="evenodd"
                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
             </path>
@@ -375,125 +193,28 @@
                 d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
             </path>
         </svg></button>
-    <div class="collapse show" id="catalogos" style="">
+    <div class="collapse show" id="parametrizacion" style="">
         <ul>
             <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" class="nav-link"
+                    routerLink="/plantilla-correo">Plantillas correo electrónico por proceso</a>
+            </li>
+            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" class="nav-link"
-                [routerLink]="'/configurar-requerimientos-etapa'">Configuración Requisitos de Etapa</a>
+                routerLink="/consultar-plantillas-correo">Plantillas correo electrónico</a>
         </li>
-
+        <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" class="nav-link"
+            routerLink="/configurar-plantilla-tipo-alerta">Configurar plantilla de correo electrónico para un tipo de alerta</a>
+    </li>
         </ul>
     </div>
 </li>
 
-<!--Carpeta 23 Configurar tipo de notificación-->
-
+<!--Carpeta 30 y 32 Consultar seguimiento notificaciones-->
 <li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Configurar Tipo Notificación Documental</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
-            <path fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-            </path>
-        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            viewBox="0 0 16 16" class="bi bi-chevron-up">
-            <path fill-rule="evenodd"
-                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-            </path>
-        </svg></button>
-    <div class="collapse show" id="catalogos" style="">
-        <ul>
-            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" class="nav-link"
-                [routerLink]="'/Consultar-tipo-notificacion'">Consultar Tipo Notificación para un Tipo Documental</a>
-        </li>
-
-        </ul>
-    </div>
-</li>
-
-<!--Carpeta 24 Configurar permisos de lectura de expedientes-->
-<li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Configurar Permisos de Lectura Expedientes</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
-            <path fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-            </path>
-        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            viewBox="0 0 16 16" class="bi bi-chevron-up">
-            <path fill-rule="evenodd"
-                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-            </path>
-        </svg></button>
-    <div class="collapse show" id="catalogos" style="">
-        <ul>
-            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" class="nav-link"
-                [routerLink]="'/consultar-permisos-lectura'">Consultar Permisos de Lectura</a>
-        </li>
-
-        </ul>
-    </div>
-</li>
-
-<!--Carpeta 26 Generar alertas correo-->
-<li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Generar Alertas Correo</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
-            <path fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-            </path>
-        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            viewBox="0 0 16 16" class="bi bi-chevron-up">
-            <path fill-rule="evenodd"
-                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-            </path>
-        </svg></button>
-    <div class="collapse show" id="catalogos" style="">
-        <ul>
-            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" class="nav-link"
-                [routerLink]="'/consultar-permisos-lectura'">Consultar Permisos de Lectura</a>
-        </li>
-
-        </ul>
-    </div>
-</li>
-
-<!--Carpeta 27 crear alertas generales-->
-<li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Crear Alertas Generales</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
-            <path fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-            </path>
-        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            viewBox="0 0 16 16" class="bi bi-chevron-up">
-            <path fill-rule="evenodd"
-                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-            </path>
-        </svg></button>
-    <div class="collapse show" id="catalogos" style="">
-        <ul>
-            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" class="nav-link"
-                [routerLink]="'/configurar-alertas-generales'">Configurar Alertas Generales</a>
-        </li>
-
-        </ul>
-    </div>
-</li>
-<!--Carpeta 30 Consultar seguimiento notificaciones-->
-<li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
+    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#notificaciones"
+        aria-expanded="true" aria-controls="notificaciones"><span class="item-text-container">
             Consultar Seguimiento Notificaciones</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
             fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
             <path fill-rule="evenodd"
@@ -505,11 +226,40 @@
                 d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
             </path>
         </svg></button>
-    <div class="collapse show" id="catalogos" style="">
+    <div class="collapse show" id="notificaciones" style="">
         <ul>
             <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" class="nav-link"
                 routerLink="/seguimiento-notificaciones">Seguimiento notificaciones</a>
+        </li>
+        <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" class="nav-link"
+            routerLink="/enviar-notificacion">Env&iacute;o Notificaci&oacute;n Por Correo Electr&oacute;nico</a>
+    </li>
+        </ul>
+    </div>
+</li>
+<!--Carpeta 33-->
+<li _ngcontent-tjn-c53="" class="nav-item">
+    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#SolicitudCDG"
+        aria-expanded="true" aria-controls="SolicitudCDG"><span class="item-text-container">
+            Titulaci&oacute;n Saneamiento Predial/Cancelaci&oacute;n de Gravámenes del SISFV
+</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
+            <path fill-rule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
+            </path>
+        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            viewBox="0 0 16 16" class="bi bi-chevron-up">
+            <path fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
+            </path>
+        </svg></button>
+    <div class="collapse show" id="SolicitudCDG" style="">
+        <ul>
+            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" class="nav-link"
+                routerLink="/registrar-solicitud-cdg">Registrar solicitud</a>
         </li>
 
         </ul>
@@ -542,12 +292,11 @@
     </div>
 </li>
 
-<!--Carpeta 38 Observaciones-->
 <li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Consultar Observaciones</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
+    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#gestionDocs"
+        aria-expanded="true" aria-controls="gestionDocs"><span class="item-text-container"> Gesti&oacute;n
+            Documentos</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            viewBox="0 0 16 16" class="bi bi-chevron-down">
             <path fill-rule="evenodd"
                 d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
             </path>
@@ -557,46 +306,20 @@
                 d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
             </path>
         </svg></button>
-    <div class="collapse show" id="catalogos" style="">
+    <div class="collapse show" id="gestionDocs" style="">
         <ul>
+
             <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" class="nav-link"
-                routerLink="/observacion-documento">Observaciones Documentos</a>
+                [routerLink]="'/consultar-documentos'">Consultar Documentos</a>
         </li>
-
+            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" class="nav-link"
+                    [routerLink]="'/gestionar-proceso-diseno'">Gestionar documentos de tarea</a>
+            </li>
         </ul>
     </div>
 </li>
-
-<!--Carpeta 39 Consultar radicados GESDOC-->
-<li _ngcontent-tjn-c53="" class="nav-item">
-    <button type="button" data-bs-toggle="collapse" class="nav-item-text" data-bs-target="#catalogos"
-        aria-expanded="true" aria-controls="catalogos"><span class="item-text-container">
-            Consulta de Radicados en GesDoc</span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-            fill="currentColor" viewBox="0 0 16 16" class="bi bi-chevron-down">
-            <path fill-rule="evenodd"
-                d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z">
-            </path>
-        </svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-            viewBox="0 0 16 16" class="bi bi-chevron-up">
-            <path fill-rule="evenodd"
-                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z">
-            </path>
-        </svg></button>
-    <div class="collapse show" id="catalogos" style="">
-        <ul>
-            <li class="nav-item"><a data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" class="nav-link"
-                routerLink="/asociar-documentos-gesdoc">Asociar Documentos de Entrada GesDoc</a>
-        </li>
-
-        </ul>
-    </div>
-</li>
-
-
-
-
 
 
 
