@@ -116,9 +116,9 @@
             <a class="button-modal-accept-none ms-2 me-2 d-block mb-1" tabindex="0"
               data-bs-target="#deleteDocumentModal" data-bs-toggle="modal" style="cursor: pointer;">Eliminar</a>
             <a class="button-modal-accept-none d-block  ms-2 me-2 mb-1" style="cursor: pointer;"
-              (click)="onAprobar(item.documentId)">Aprobar</a>
+              (click)="onAprobar(item.documentId)" data-bs-target="#approveDocumentModal">Aprobar</a>
             <a class="button-modal-accept-none d-block  ms-2 me-2 mb-1" style="cursor: pointer;"
-              (click)="onRechazar(item.documentId)">Rechazar</a>
+              (click)="onRechazar(item.documentId)" data-bs-target="#rejectDocumentModal">Rechazar</a>
           </td>
         </tr>
       </tbody>
