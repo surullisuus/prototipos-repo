@@ -54,7 +54,7 @@ export class AssociateDocumentsComponent {
     this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.warning);
   }
 
-  onClearSearch() {
+  onLimpiar(){
     this.formQueryScheme.reset();
   }
 

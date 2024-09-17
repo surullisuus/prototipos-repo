@@ -28,16 +28,18 @@
                 <div class="row">
                     <div class="col-11">
                         <input type="text" id="input-basico-id" formControlName="numeroSolicitud" />
+
                         <span *ngIf="!isExternalUser" class="govco-search ms-1"
-                            style="font-size: 1.4rem; color: #3366CC; cursor: pointer;"
-                            (click)="onSearchNumberApplication()"></span>
+                            [ngStyle]="{'font-size': '1.4rem', 'color': form.value.numeroSolicitud ? '#3366CC' : '#A0A0A0', 'cursor': 'pointer'}"
+                            (click)="form.value.numeroSolicitud ? onSearchNumberApplication() : null"></span>
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-6 col-xl-5 pt-2 select-etapa" *ngIf="clickedSearchNumberApplication && !isExternalUser">
             <subsidios-dropdown-list labelText="Etapa*:" idList="type-345676" type="basic" [disabled]="false"
-                [lista]="opciones" formControlName="etapa"></subsidios-dropdown-list>
+                [lista]="opciones" formControlName="etapa" [isRequired]="true"></subsidios-dropdown-list>
         </div>
     </div>
 
@@ -53,15 +55,17 @@
 
 
 
-<app-modal-usuario-interno [internalGroups]="internalGroups"
-    [showModalDeleteRegister]="showModalDeleteRegister" [internalGroupsPermissions]="internalGroupsPermissions" [showModalApplyPermissions]="showModalApplyPermissions"></app-modal-usuario-interno>
+<app-modal-usuario-interno [internalGroups]="internalGroups" [showModalDeleteRegister]="showModalDeleteRegister"
+    [internalGroupsPermissions]="internalGroupsPermissions"
+    [showModalApplyPermissions]="showModalApplyPermissions"></app-modal-usuario-interno>
 
 
 <app-modal-usuario-externo [externalGroups]="externalGroups"></app-modal-usuario-externo>
 
 
 <div #dialog></div>
-<app-add-roles-modal [internalGroups]="internalGroups" [showModalAddPermissions]="showModalAddPermissions"></app-add-roles-modal>
+<app-add-roles-modal [internalGroups]="internalGroups"
+    [showModalAddPermissions]="showModalAddPermissions"></app-add-roles-modal>
 <a #openbuttonPermisosLectura href="#" data-bs-toggle="modal" data-bs-target="#rolesPermisosLecturaModal">
 </a>
 <a #openbuttonPermisosRoles href="#" data-bs-toggle="modal" data-bs-target="#rolesPermisosModal">

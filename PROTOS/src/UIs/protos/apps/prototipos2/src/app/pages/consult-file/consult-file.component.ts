@@ -43,13 +43,11 @@ export class ConsultFileComponent implements OnInit {
     console.log(this.formQueryScheme.value);
     // si no se encuentra, mostrar alerta de error
 
-    //this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.danger);
+    this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.warning);
   }
 
   onLimpiar(): void {
-    this.formQueryScheme.patchValue({
-      numeroRadicado: '',
-    });
+    this.formQueryScheme.reset();
   }
 
   setDocumentId(value: string | undefined) {
@@ -66,8 +64,8 @@ export class ConsultFileComponent implements OnInit {
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
-        location.reload();
         dialogAction.eventClose.emit();
+        location.reload();
       });
   }
 }
