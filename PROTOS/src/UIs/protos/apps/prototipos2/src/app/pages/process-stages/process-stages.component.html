@@ -1,97 +1,78 @@
 <h3 class="h3-tipografia-govco">
-    <span class="govcolor-marine">Configurar Etapas del Proceso</span>
+  <span class="govcolor-marine">Configurar Etapas del Proceso</span>
 </h3>
 <div class="rounded-3 mb-5 mt-3">
-    <div class="row">
-        <div  class="col-md-4">
-            <subsidios-dropdown-list labelText="Procesos" note="Seleccione el proceso" idList="type-345676" type="basic"
-            [disabled]="false"></subsidios-dropdown-list>
-        </div>
-        <div class="col-md-4">
-          <subsidios-dropdown-list labelText="Etapas" note="Seleccione la etapa" idList="type-345676" type="basic"
-          [disabled]="false"></subsidios-dropdown-list>
-        </div>
+  <div class="row">
+    <div class="col-md-4">
+      <subsidios-dropdown-list labelText="Procesos" note="Seleccione el proceso" idList="type-345676" type="basic"
+        [disabled]="false"></subsidios-dropdown-list>
     </div>
-    <div class="row mt-4 mb-3 text-left">
-        <div class="col-md-12">
-          <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
-            Buscar
-          </button>
-          <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
-            Limpiar
-          </button>
-          <button type="button" 
-          class="btn-govco outline-secundary-btn-govco" 
-          style="width: 165px; height: 42px;"
-          [routerLink]="['/crear-etapa']">
-            Crear etapa
-          </button>
-        </div>
-      </div>
-    <div class="row mt-4 mb-3 text-left">
-        <h4 class="h4-tipografia-govco mt-3 mb-2">
-            <span class="govcolor-marine">
-            Resultado de consulta
-            </span>
-        </h4>
-        <div class="table-responsive">
-            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-                <thead class="encabezado-tabla">
-                    <tr>
-                        <th class="columna-especial" role="button">Proceso</th>
-                        <th role="button">Etapa</th>
-                        <th style="text-align: center !important;">Acciones</th>
-                    </tr>
-                </thead>
-                <tbody class="contenido-tablas">
-                    <tr *ngFor="let item of processStages">
-                        <td class="text-left">{{ item.nombreProceso }}</td>
-                        <td class="text-left">{{ item.nombreEtapa }}</td>
-                        <td style="text-align: left !important; padding-right: 10px">
-                            <!-- Acciones-->
-                             <!--ver detalles-->
-                             <a type="button"  
-                             [routerLink]="['/ver-etapa']" 
-                             class="me-1" 
-                             href="#" 
-                             tabindex="0"
-                             >
-                            Ver Detalles 
-                            </a>
+    <div class="col-md-4">
+      <subsidios-dropdown-list labelText="Etapas" note="Seleccione la etapa" idList="type-345676" type="basic"
+        [disabled]="false"></subsidios-dropdown-list>
+    </div>
+  </div>
+  <div class="row mt-4 mb-3 text-left">
+    <div class="col-md-12">
+      <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+        Buscar
+      </button>
+      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+        Limpiar
+      </button>
+      <button type="button" class="btn-govco outline-secundary-btn-govco" style="width: 165px; height: 42px;"
+        [routerLink]="['/crear-etapa']">
+        Crear etapa
+      </button>
+    </div>
+  </div>
+  <div class="row mt-4 mb-3 text-left">
+    <h4 class="h4-tipografia-govco mt-3 mb-2">
+      <span class="govcolor-marine">
+        Resultado de consulta
+      </span>
+    </h4>
+    <div class="table-responsive">
+      <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+        <thead class="encabezado-tabla">
+          <tr>
+            <th class="columna-especial" role="button">Proceso</th>
+            <th role="button">Etapa</th>
+            <th style="text-align: center !important;">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="contenido-tablas">
+          <tr *ngFor="let item of processStages">
+            <td class="text-left">{{ item.nombreProceso }}</td>
+            <td class="text-left">{{ item.nombreEtapa }}</td>
+            <td style="text-align: left !important; padding-right: 10px">
+              <!-- Acciones-->
+              <!--ver detalles-->
+              <a type="button" [routerLink]="['/ver-etapa']" class="me-1" href="#" tabindex="0">
+                Ver Detalles
+              </a>
 
-                            <!--editar-->
-                            <a type="button"  
-                            [routerLink]="['/editar-etapa']" 
-                            class="me-1" 
-                            href="#" 
-                            tabindex="0"
-                            >
-                            Editar 
-                            </a>                
-                                         
-                            <!--eliminar modal-->
-                            <a type="button" 
-                            class="me-1" 
-                            tabindex="0" 
-                            (click)="AcceptModal()"
-                            >
-                            Eliminar
-                          </a>
-                          <a type="button"
-                          class="me-1"
-                          tabindex="0">
-                          Gestionar requisitos
-                          </a>
-                          <a type="button"
-                          class="me-1"
-                          tabindex="0">
-                          Ordenar tareas
-                          </a>
-                        </td>
-                      </tr>
-                </tbody>
-            </table>   
-        </div>
+              <!--editar-->
+              <a type="button" [routerLink]="['/editar-etapa']" class="me-1" href="#" tabindex="0">
+                Editar
+              </a>
+
+              <!--eliminar modal-->
+              <a type="button" class="me-1" tabindex="0" (click)="AcceptModal()">
+                Eliminar
+              </a>
+              <a type="button" class="me-1" tabindex="0">
+                Gestionar requisitos
+              </a>
+              <a type="button" class="me-1" tabindex="0" data-bs-target="#configurarFlujoModal" data-bs-toggle="modal">
+                Ordenar tareas
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
 <div #dialog></div>
+<app-configure-flow-stages></app-configure-flow-stages>
