@@ -1,5 +1,5 @@
 <h4 class="h3-tipografia-govco mt-3 mb-4">
-    <span class="govcolor-marine">Asociar documentos de entrada del GesDoc</span>
+    <span class="govcolor-marine">Asociar documentos de entrada desde GESDOC</span>
 </h4>
 
 <div class="row">
@@ -9,40 +9,16 @@
             typeValidation="alphanumeric"></subsidios-input>
     </div>
 
-    <div class="col-md-4">
-        <label for="fechaInicio" class="label-desplegable-govco">Fecha Inicio:</label>
-        <div id="fechaInicio" class="desplegable-govco desplegable-calendar-govco" style='width:auto; height: 40px;'
-            data-type="calendar">
-            <div class="date desplegable-selected-option">
-                <input class="browser-default" type="text" id="fechaInicio" aria-autocomplete="off" days="true">
-            </div>
-        </div>
-        <label class="label-desplegable-govco">Filtrar por per&iacute;odo de radicaci&oacute;n.</label>
-    </div>
-
-    <div class="col-md-4">
-        <label for="fechaFin" class="label-desplegable-govco">Fecha Fin:</label>
-        <div id="fechaFin" class="desplegable-govco desplegable-calendar-govco" style='width:auto; height: 40px;'
-            data-type="calendar">
-            <div class="date desplegable-selected-option">
-                <input class="browser-default" type="text" id="fechaFin" aria-autocomplete="off" days="true">
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="row mt-3">
-    <div class="col-md-12">
+    <div class="col-md-4 d-flex align-items-center mt-2">
         <button type="button" class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space"
             (click)="onSearchDocuments()">
             Buscar
         </button>
-        <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space">
+        <button class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space" (click)="onClearSearch()">
             Limpiar
         </button>
     </div>
 </div>
-
 
 <div class="table-responsive mt-4">
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">

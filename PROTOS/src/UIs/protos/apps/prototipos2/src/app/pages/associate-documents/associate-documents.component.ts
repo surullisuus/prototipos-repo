@@ -51,6 +51,10 @@ export class AssociateDocumentsComponent {
     this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.warning);
   }
 
+  onClearSearch() {
+    this.formQueryScheme.reset();
+  }
+
   onAssociateAlert(){
       const dialogData = new DialogData();
       dialogData.title = '¿Está seguro que desea asociar los documentos?'
