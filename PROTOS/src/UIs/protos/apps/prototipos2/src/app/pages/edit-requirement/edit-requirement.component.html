@@ -1,5 +1,5 @@
 <div class="modal fade" id="editarRequisito" tabindex="-1" aria-labelledby="#editarRequisito" aria-hidden="true">
-    <form>
+    <form [formGroup]="formQueryScheme" >
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -17,10 +17,38 @@
           <div class="modal-body">
            
             <div class="row">
+
+
+              <div class="col-md-12 mt-3">
+                <label for='tipoParte' class='form-label govcolor-tundora'>Proceso*:</label>
+                <select class='form-select select-dark-border' name='proceso' id='proceso' formControlName='proceso'
+                     autocomplete='off'>
+                     <option disabled selected hidden >Escoger</option> 
+          <option *ngFor='let row of typesListProcess' [value]='row.value'>
+          {{ row.text }}
+          </option>
+          </select>
+          <label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione una opci&oacute;n</label>
+                </div>
+  
+  
+                <div class="col-md-12 mt-3">
+                  <label for='tipoParte' class='form-label govcolor-tundora'>Etapa*:</label>
+                  <select class='form-select select-dark-border' name='Etapa' id='Etapa' formControlName='etapa'
+                       autocomplete='off'>
+                       <option  disabled selected hidden >Escoger</option> 
+            <option *ngFor='let row of typesListStage' [value]='row.value'>
+            {{ row.text }}
+            </option>
+            </select>
+            <label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione una opci&oacute;n</label>
+                  </div>
+
+
               <div class="col-md-12 mt-3">
                 <label class="label-govco text2-tipografia-govco govcolor-silver">Requisito*:</label>
                 <textarea class="form-control" placeholder="Ej. Descripción del requisito." rows="5"></textarea>
-                <span id="campo-nota" class=" text2-tipografia-govco info-entradas-de-texto-govco">Ingrese la Descripción del requisito.</span>
+                <label class="govcolor-dim-gray" style="padding-top:10px ;">Ingrese la descripci&oacute;n del requisito</label>
               </div>
             </div>
           </div>
