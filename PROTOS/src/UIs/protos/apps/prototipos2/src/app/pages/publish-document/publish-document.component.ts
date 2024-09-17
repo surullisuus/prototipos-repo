@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogData } from '../../components/dialog/models/dialog-data';
 import { ActionType, DialogAction } from '../../components/dialog/models/dialog-action';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-publish-document',
@@ -14,7 +15,7 @@ import { ActionType, DialogAction } from '../../components/dialog/models/dialog-
 export class PublishDocumentComponent implements OnInit {
     subscription!: Subscription;
     formQueryScheme!: FormGroup;
-    constructor(private readonly fb: FormBuilder, private dialogService: DialogService) {}
+    constructor(private readonly fb: FormBuilder, private dialogService: DialogService, private router: Router) {}
     @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
 
     publicaciones = [
@@ -93,6 +94,12 @@ export class PublishDocumentComponent implements OnInit {
         this.formQueryScheme = this.initForm();
       }
 
+
+      onClose() {
+      this.router.navigate(['consultar-documentos']);
+
+
+      }
 
       showAlertState(body: string, dialogType: DialogType) {
         const dialogData = new DialogData();
