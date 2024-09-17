@@ -69,37 +69,15 @@
             note="Ingrese el número de radicado"
           ></subsidios-input>
         </div>
-        <div class="col-md-3">
-            <label for="calendario-govco" class="label-desplegable-govco">Fecha Inicio:</label>
-            <div class="d-flex align-items-center">
-                <div id="fechaInicio" class="desplegable-govco desplegable-calendar-govco" style='width:280px;  height: 40px;' data-type="calendar">
-                    <div class="date desplegable-selected-option">
-                        <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" days="true">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <label for="calendario-govco" class="label-desplegable-govco">Fecha Fin:</label>
-            <div class="d-flex align-items-center">
-                <div id="fechaFin" class="desplegable-govco desplegable-calendar-govco" style='width:280px;  height: 40px;' data-type="calendar">
-                    <div class="date desplegable-selected-option">
-                        <input class="browser-default" type="text" id="calendario-govco" aria-autocomplete="off" days="true">
-                    </div>
-                </div>
-            </div>          
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-9">
+            <p></p>
             <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
-              Buscar
+                Buscar
             </button>
-      
             <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
-              Limpiar
-            </button>
-          </div>
+                Limpiar
+            </button> 
+        </div>
     </div>
     <div class="row">
         <div class="row mt-4 mb-3 text-left">
@@ -111,7 +89,6 @@
                     <thead class="encabezado-tabla">
                         <tr>
                             <th class="columna-pequena" role="button" style="text-align: center !important;">No. Radicado</th>
-                            <th class="columna-pequena" role="button" style="text-align: center !important;">Fecha de radiación</th>
                             <th style="text-align: center !important;">Acción</th>
                             <th class="columna-especial" style="text-align: center !important;">Seleccionar</th>
                         </tr>
@@ -119,11 +96,6 @@
                     <tbody class="contenido-tablas">
                         <tr *ngFor="let item of documentsRequest">
                             <td class="text-center">{{ item.noRadicado }}</td>
-                            <td style="text-align: center !important; padding-right: 10px">
-                                <p class="mb-0">
-                                  {{ item.fechaRadicacion | date: 'dd/MM/yyyy' }}
-                                </p>
-                            </td>
                             <td style="text-align: center !important; padding-right: 10px">
                                 <!-- Accion-->
                                  <!--Documento-->
@@ -137,9 +109,9 @@
                                 Ver Documento 
                                 </a>
                             </td>
-                            <td style="text-align: center !important; padding-left: 190px">
+                            <td style="text-align: center !important; padding-left: 230px">
                                 <div class="checkbox-seleccion-govco m-2">
-                                    <input id="opt" type="checkbox"/>
+                                    <input id="opt" type="checkbox" checked/>
                                   </div>
                             </td>
                         </tr>
@@ -157,7 +129,7 @@ class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
 </button>  
 <button type="button" 
 class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
-[routerLink]="['/']">
+[routerLink]="['/gestionar-documento-tarea']">
     Cancelar
 </button>
 <app-see-document-modal></app-see-document-modal>

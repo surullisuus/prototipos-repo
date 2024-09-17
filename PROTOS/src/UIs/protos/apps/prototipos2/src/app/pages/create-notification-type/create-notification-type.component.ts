@@ -78,7 +78,8 @@ export class CreateNotificationTypeComponent {
   }
   SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Está seguro de guardar este tipo de notificación?";
+    dialogData.title = "Guardar tipo de notificación"
+    dialogData.body = "¿Está seguro de guardar este tipo de notificación?";
     dialogData.textButtonCancel = "Cerrar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
