@@ -167,8 +167,6 @@ import { CommonModule } from '@angular/common';
     CreateTaskComponent,
     ConfigureFlowStagesComponent,
     ManagePlantillasCorreosComponent,
-    CreateEmailTemplateComponent,
-    EditEmailTemplateComponent,
     SeeEmailTemplateComponent,
     ConfigureFlowTasksComponent,
     ConfigureGeneralAlertsComponent,

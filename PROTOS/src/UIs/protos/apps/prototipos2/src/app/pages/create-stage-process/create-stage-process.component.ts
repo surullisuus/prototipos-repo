@@ -7,6 +7,9 @@ import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 import { Subscription } from 'rxjs';
 
+interface processOption{
+  processName: string;
+}
 @Component({
   selector: 'app-create-stage-process',
   templateUrl: './create-stage-process.component.html',
@@ -17,6 +20,22 @@ export class CreateStageProcessComponent {
   constructor(private dialogService: DialogService) {}
   isDisabledSubmit = false;
   subscription!: Subscription;
+  processTypes: processOption[] = [
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+  ]
+  processOptions() {
+    return this.processTypes.map((processOption) => {
+      return { id: processOption.processName, text: processOption.processName };
+    });
+  }
   SaveModal() {
     const dialogData = new DialogData();
     dialogData.title = "¿Está seguro de guardar esta etapa?";

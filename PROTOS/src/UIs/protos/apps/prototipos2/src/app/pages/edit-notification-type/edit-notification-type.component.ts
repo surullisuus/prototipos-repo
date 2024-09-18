@@ -18,7 +18,8 @@ export class EditNotificationTypeComponent {
   subscription!: Subscription;
   SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Está seguro de guardar cambios?";
+    dialogData.title = "Guardar tipo de notificación"
+    dialogData.body = "¿Está seguro de guardar este tipo de notificación?";
     dialogData.textButtonCancel = "Cerrar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
@@ -37,7 +38,7 @@ export class EditNotificationTypeComponent {
 
   onSavedModal(){
     const dialogData = new DialogData();
-    dialogData.title = "Cambios guardados de forma exitosa";
+    dialogData.title = "Tipo de notificación guardada de forma exitosa";
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.success;
