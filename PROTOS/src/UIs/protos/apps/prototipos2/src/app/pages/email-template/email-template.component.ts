@@ -13,6 +13,12 @@ interface TemplateRequest {
   tema: string;
   nombrePlantilla: string;
 }
+interface processOption{
+  processName: string;
+}
+interface themeOption{
+  themeName: string;
+}
 @Component({
   selector: 'app-email-template',
   templateUrl: './email-template.component.html',
@@ -43,7 +49,38 @@ export class EmailTemplateComponent {
 fromQueryScheme!: FormGroup;
 isDisabledSubmit = false;
 subscription!: Subscription;
-
+processTypes: processOption[] = [
+  {
+    processName: 'ABC',
+  },
+  {
+    processName: 'ABC',
+  },
+  {
+    processName: 'ABC',
+  },
+]
+themeTypes: themeOption[] = [
+  {
+    themeName: 'ABC',
+  },
+  {
+    themeName: 'ABC',
+  },
+  {
+    themeName: 'ABC',
+  },
+]
+processOptions() {
+  return this.processTypes.map((processOption) => {
+    return { id: processOption.processName, text: processOption.processName };
+  });
+}
+themeOptions() {
+  return this.themeTypes.map((themeOption) => {
+    return { id: themeOption.themeName, text: themeOption.themeName };
+  });
+}
 constructor(private readonly fb: FormBuilder,private dialogService: DialogService) {}
 ngOnInit(): void {
   this.fromQueryScheme = this.initForm();

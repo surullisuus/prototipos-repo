@@ -1,111 +1,91 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> Editar plantillas correo electrónico </span></h3>
-
-
-<ng-container *ngIf="loading">
-    <div class="spinner-indicador-de-carga-govco" role="status" style="width: 60px; height: 60px; border-width: 8px;">
-        <span class="visually-hidden">Cargando</span>
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> EDITAR PLANTILLA DE CORREO ELECTRÓNICO</span></h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <span>ID*:</span>
+        <span><b>123</b></span>
     </div>
-</ng-container>
-
-<ng-container *ngIf="!loading">
-    <div class="rounded-3 mb-5 mt-3">
-        <div class="row mt-5">
-            <!--Proceso-->
-
-            <div class="col-md-4">
-
-                <subsidios-dropdown-list labelText="Proceso" note="Seleccione una opción" idList="type-345676"
-                    type="basic" [disabled]="false" [lista]="processOptions()" (eventlist)="setSelectedProcess($event)">
-                </subsidios-dropdown-list>
-            </div>
-
-            <!--Tema-->
-            <div class="col-md-4">
-                <subsidios-dropdown-list labelText="Tipo documental" note="Seleccione una opción" idList="type-345676"
-                    type="basic" [disabled]="false" [lista]="documentOptions()"
-                    (eventlist)="setSelectedDocument($event)">
-                </subsidios-dropdown-list>
-            </div>
-
+    <div class="row">
+        <!--Proceso-->
+        <div class="col-md-4">
+            <span>Proceso*:</span>
+            <p><span><b>ABC</b></span></p>
         </div>
-
-        <div class="row mt-3">
-            <!--Nombre tarea-->
-            <div class="col-md-2 entradas-de-texto-govco">
-                <label for="input-basico-id">Nombre*:</label>
-            </div>
-            <div class="col-md-10 entradas-de-texto-govco">
-                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    [value]="currentProcessId.name" />
-            </div>
+        <div class="col-md-4">
+            <span>Tema*:</span>
+            <p><span><b>ABC</b></span></p>
         </div>
-
-        <div class="row mt-3">
-            <!--Nombre tarea-->
-            <div class="col-md-2 entradas-de-texto-govco">
-                <label for="input-basico-id">Descripción*:</label>
-            </div>
-            <div class="col-md-10 entradas-de-texto-govco">
-                <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    style="min-height: 5rem; min-width: 100%;"> {{ currentProcessId.description }} </textarea>
-            </div>
-        </div>
-
-        <div class="row mt-3">
-            <!--Nombre tarea-->
-            <div class="col-md-2 entradas-de-texto-govco">
-                <label for="input-basico-id">CC*:</label>
-            </div>
-            <div class="col-md-10 entradas-de-texto-govco">
-                <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    style="min-height: 5rem; min-width: 100%;"> {{ currentProcessId.description }} </textarea>
-            </div>
-        </div>
-
-        <div class="row mt-3">
-            <!--Nombre tarea-->
-            <div class="col-md-2 entradas-de-texto-govco">
-                <label for="input-basico-id">Asunto*:</label>
-            </div>
-            <div class="col-md-10 entradas-de-texto-govco">
-                <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    [value]="currentProcessId.asunto" />
-            </div>
-        </div>
-
-        <div class="row mt-3">
-            <!--Nombre tarea-->
-            <div class="col-md-2 entradas-de-texto-govco">
-                <label for="input-basico-id">Cuerpo del correo*:</label>
-            </div>
-            <div class="col-md-10 entradas-de-texto-govco">
-                <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                    style="min-height: 10rem; min-width: 100%;">{{currentProcessId.cuerpo}}</textarea>
-
-            </div>
-        </div>
-
-
-        <div class="row mt-4 mb-3 text-left">
-            <div class="col-md-12">
-
-                <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
-                    (click)="showSuccessTaskInitializationAlertState('Plantilla de correo editada de forma exitosa.')">
-                    Guardar
-                </button>
-
-                <button type="button"
-                    class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
-                    routerLink="/consultar-plantillas-correo">
-                    Cancelar
-                </button>
-            </div>
-        </div>
-
-
-
-
     </div>
 
-    <div #dialog></div>
-</ng-container>
+    <!-- Nombre -->
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="nombre">Nombre*:</label>
+                <input type="text" id="nombre" [(ngModel)]="nombre" #nombreInput="ngModel" required placeholder="Ejemplo: Campo de texto"/>
+                <div *ngIf="nombreInput.invalid && nombreInput.touched" class="text-danger">
+                    El campo Nombre es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Descripción -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="descripcion">Descripción*:</label>
+                <textarea id="descripcion" [(ngModel)]="descripcion" #descripcionInput="ngModel" required
+                    aria-describedby="contador max-lenght" placeholder="Ejemplo: Campo de texto" maxlength="250"
+                    rows="3" style="width: 100%; border-radius: 5px; resize: none;"></textarea>
+                <div *ngIf="descripcionInput.invalid && descripcionInput.touched" class="text-danger">
+                    El campo Descripción es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asunto -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="asunto">Asunto*:</label>
+                <input type="text" id="asunto" [(ngModel)]="asunto" #asuntoInput="ngModel" required placeholder="Ejemplo: Campo de texto"/>
+                <div *ngIf="asuntoInput.invalid && asuntoInput.touched" class="text-danger">
+                    El campo Asunto es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cuerpo del correo -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="cuerpoCorreo">Cuerpo del correo*:</label>
+                <textarea id="cuerpoCorreo" [(ngModel)]="cuerpoCorreo" #cuerpoCorreoInput="ngModel" required
+                    aria-describedby="contador max-lenght" placeholder="Ejemplo: Campo de texto" maxlength="250"
+                    rows="6" style="width: 100%; border-radius: 5px; resize: none;"></textarea>
+                <div *ngIf="cuerpoCorreoInput.touched" class="text-danger">
+                    El campo Cuerpo del correo es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button"
+             class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+             (click)="checkFilledFields()">
+                Guardar
+            </button>
+            <button type="button" 
+             class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+             [routerLink]="['/plantilla-correo']">
+                Cancelar
+            </button>
+        </div>    
+    </div>
+</div>
+<div #dialog></div>

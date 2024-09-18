@@ -1,21 +1,26 @@
-<h3 class="h3-tipografia-govco mt-3">
+<h4 class="h4-tipografia-govco mt-3">
   <span class="govcolor-marine"> PARTES DEL PROCESO</span>
-</h3>
+</h4>
 <span class="label-desplegable-govco">
   Se&ntilde;or usuario, a continuaci&oacute;n puede consultar una o varias
   partes de un proceso.
 </span>
-<div class="rounded-3 mb-5 mt-3">
+<div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryScheme">
   <div class="row">
     <!--tipo de Parte-->
     <div class="col-md-4">
-      <subsidios-dropdown-list
-        labelText="Tipo de parte"
-        note="Seleccione una parte del proceso"
-        idList="type-345676"
-        type="basic"
-        [disabled]="false"
-      ></subsidios-dropdown-list>
+
+      <label for='tipoParte' class='form-label govcolor-tundora'>Tipo de parte:</label>
+      <select class='form-select select-dark-border desplegable-govco'  name='tipoParte' id='Proceso' formControlName='tipoParte' autocomplete='off'>
+        <option  class="govcolor-dim-gray" value="1" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of typesListParts' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class=" entradas-de-texto-govco info-entradas-de-texto-govco govcolor-dim-gray" style="padding-top:10px ;">
+        Seleccione una parte del proceso</label>
+
+   
     </div>
     <!--Numero de id-->
     <div class="col-md-4">
@@ -49,26 +54,34 @@
 
     <!--Departamento-->
 
-    <div class="col-md-4">
-      <subsidios-dropdown-list
-        labelText="Departamento"
-        note="Seleccione una departamento"
-        idList="type-345676"
-        type="basic"
-        [disabled]="false"
-      ></subsidios-dropdown-list>
+    <div class="col-md-4"> 
+
+      <label for='tipoParte' class='form-label govcolor-tundora'>Departamento:</label>
+      <select class='form-select select-dark-border desplegable-govco'  name='departamento' id='departamento' formControlName='departamento' autocomplete='off'>
+        <option  class="govcolor-dim-gray" value="1" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of typesListDepartment' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class=" entradas-de-texto-govco info-entradas-de-texto-govco govcolor-dim-gray" style="padding-top:10px ;">
+        Seleccione una departamento</label>
+     
     </div>
 
     <!-- Municipio-->
 
     <div class="col-md-4">
-      <subsidios-dropdown-list
-        labelText="Municipio"
-        note="Seleccione una municipio"
-        idList="type-345676"
-        type="basic"
-        [disabled]="false"
-      ></subsidios-dropdown-list>
+
+      <label for='tipoParte' class='form-label govcolor-tundora'>Municipio:</label>
+      <select class='form-select select-dark-border desplegable-govco'  name='municipio' id='municipio' formControlName='municipio' autocomplete='off'>
+        <option  class="govcolor-dim-gray" value="1" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of typesListMunicipal' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class=" entradas-de-texto-govco info-entradas-de-texto-govco govcolor-dim-gray" style="padding-top:10px ;">
+        Seleccione un municipio</label>
+
     </div>
   </div>
 
@@ -82,7 +95,7 @@
         #openbuttoncreate
       ></a>
       <button
-        type="submit"
+      (click)="filterResults()"
         class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
       >
         Buscar
@@ -91,6 +104,7 @@
       <button
         type="button"
         class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+        (click)="resetFilters()"
       >
         Limpiar
       </button>
@@ -114,7 +128,7 @@
     </div>
     <div class="col-md-2">
       <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
-        Total registros: {{ 6 }}
+        Total registros: {{ filteredRequests.length}}
       </p>
     </div>
   </div>
@@ -126,23 +140,37 @@
     >
       <thead class="encabezado-tabla">
         <tr>
-          <th class="columna-especial" role="button">
+          <th class="columna-especial" role="button" (click)="sortTable('tipoParte')" >
             Tipo&nbsp;de&nbsp;parte
+            <span *ngIf="sortColumn === 'tipoParte' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'tipoParte' && sortDirection === 'desc'">▼</span>
           </th>
-          <th role="button">No. identificaci&oacute;n</th>
-          <th role="button">Nombre/Razon&nbsp;social</th>
-          <th class="text-align: right; columna-estado" role="button">
+          <th role="button"  (click)="sortTable('noIdentificacion')" >
+            No. identificaci&oacute;n
+            <span *ngIf="sortColumn === 'noIdentificacion' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'noIdentificacion' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th role="button" (click)="sortTable('nombreRazonSocial')" >
+            Nombre/Razon&nbsp;social
+            <span *ngIf="sortColumn === 'nombreRazonSocial' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'nombreRazonSocial' && sortDirection === 'desc'">▼</span>
+          </th>
+            <th class="text-align: right; columna-estado" role="button"  (click)="sortTable('departamento')" >
             Departamento
+            <span *ngIf="sortColumn === 'departamento' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'departamento' && sortDirection === 'desc'">▼</span>
           </th>
-          <th class="text-align: right; columna-estado" role="button">
+          <th class="text-align: right; columna-estado" role="button"  (click)="sortTable('municipio')" >
             Municipio
+            <span *ngIf="sortColumn === 'municipio' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'municipio' && sortDirection === 'desc'">▼</span>
           </th>
 
           <th style="text-align: center !important">Acciones</th>
         </tr>
       </thead>
 
-      <tbody class="contenido-tablas">
+      <tbody class="contenido-tablas" *ngIf="filteredRequests.length > 0">
         <tr *ngFor="let item of partes">
           <td class="text-left">{{ item.tipoParte }}</td>
           <td class="text-left">{{ item.noIdentificacion }}</td>
@@ -159,7 +187,7 @@
           <td class="text-left">
             {{ item.municipio }}
           </td>
-          <td style="text-align: left !important; padding-right: 10px">
+          <td style="text-align: center !important; padding-right: 10px">
             <!-- Acciones-->
             <a type="button"  [routerLink]="['/detalles-parte']" class="me-0" href="#" tabindex="0">Ver&nbsp;detalle</a>
 
@@ -176,13 +204,13 @@
         </tr>
       </tbody>
 
-      <!--<tbody >
+      <tbody >
       <tr>
-        <td colspan="7">
+        <td colspan="6" class="text-center" *ngIf="filteredRequests.length === 0">
           No se encuentra información con los criterios de búsqueda seleccionados
         </td>
       </tr>
-    </tbody>-->
+    </tbody>
 
       <!--  <tbody >
       <tr>

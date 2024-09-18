@@ -1,0 +1,35 @@
+.table-responsive {
+    overflow-x: auto;
+    margin: 0 auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table {
+    width: 100%;
+    table-layout: fixed; /* Para que todas las columnas tengan el mismo tamaño */
+    border-collapse: collapse;
+  }
+
+  .table th,
+.table td {
+  width: 16,6%; /* Ajusta este valor según el número de columnas para que sumen 100% */
+  padding: 10px;
+  text-align: left;
+}
+  .encabezado-tabla th {
+    width: 20%; /* Puedes ajustar el valor según tus necesidades */
+    padding: 10px; /* Espaciado interno para mejorar la apariencia */
+    }
+  
+    .encabezado-tabla .columna-especial {
+        width: 10%; 
+      }
+
+      .encabezado-tabla .columna-estado {
+        width: 10%; 
+      }
+
+      .select-dark-border {
+        border: 2px solid #737373; /* Cambia #555 por el color gris oscuro que prefieras */
+        
+      }

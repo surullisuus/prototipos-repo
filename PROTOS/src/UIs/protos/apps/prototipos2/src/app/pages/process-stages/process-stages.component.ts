@@ -11,6 +11,12 @@ interface ProcessStage {
   nombreProceso: string;
   nombreEtapa: string;
 }
+interface processOption{
+  processName: string;
+}
+interface stageOption{
+  stageName: string;
+}
 
 @Component({
   selector: 'app-process-stages',
@@ -29,6 +35,28 @@ processStages: ProcessStage[] = [
       nombreEtapa: "Etapa 2"
     }
   ];
+  processTypes: processOption[] = [
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+  ]
+  stageTypes: stageOption[] = [
+    {
+      stageName: 'ABC',
+    },
+    {
+      stageName: 'ABC',
+    },
+    {
+      stageName: 'ABC',
+    },
+  ]
   fromQueryScheme!: FormGroup;
   isDisabledSubmit = false;
   subscription!: Subscription;
@@ -43,6 +71,16 @@ processStages: ProcessStage[] = [
       keyword: [null],
       status: [null],
       date: [null],
+    });
+  }
+  processOptions() {
+    return this.processTypes.map((processOption) => {
+      return { id: processOption.processName, text: processOption.processName };
+    });
+  }
+  stageOptions() {
+    return this.stageTypes.map((stageOption) => {
+      return { id: stageOption.stageName, text: stageOption.stageName };
     });
   }
   AcceptModal() {

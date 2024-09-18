@@ -6,7 +6,12 @@ import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 
-
+interface processOption{
+  processName: string;
+}
+interface stageOption{
+  stageName: string;
+}
 @Component({
   selector: 'app-fill-additional-task-fields',
   templateUrl: './fill-additional-task-fields.component.html',
@@ -14,8 +19,40 @@ import { DialogService } from '../../components/dialog/services/dialog.service';
 })
 export class FillAdditionalTaskFieldsComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
+  processTypes: processOption[] = [
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+  ]
+  stageTypes: stageOption[] = [
+    {
+      stageName: 'ABC',
+    },
+    {
+      stageName: 'ABC',
+    },
+    {
+      stageName: 'ABC',
+    },
+  ]
   constructor(private dialogService: DialogService) {}
   subscription!: Subscription;
+  processOptions() {
+    return this.processTypes.map((processOption) => {
+      return { id: processOption.processName, text: processOption.processName };
+    });
+  }
+  stageOptions() {
+    return this.stageTypes.map((stageOption) => {
+      return { id: stageOption.stageName, text: stageOption.stageName };
+    });
+  }
   SaveModal() {
     const dialogData = new DialogData();
     dialogData.title = "Diligenciar campos adicionales Tarea";

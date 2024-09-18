@@ -9,89 +9,47 @@
 
 <ng-container *ngIf="!loading">
     <div class="rounded-3 mb-5 mt-3">
-
-        <div class="row mt-5">
-
-            <!--ID-->
+        <ng-container *ngIf="!loading">
+            <div class="rounded-3 mb-5 mt-3">
+                <div class="row">
+                    <span>ID*:</span>
+                    <span><b>123</b></span>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <!--Proceso-->
+                    <div class="col-md-4">
+                        <span>Proceso*:</span>
+                        <p><span><b>ABC</b></span></p>
+                    </div>
+                    <div class="col-md-4">
+                        <span>Tema*:</span>
+                        <p><span><b>ABC</b></span></p>
+                    </div>
+            
+                </div>
+                <div class="row">
+                    <span>Nombre*:</span>
+                    <span><b>ABC........................................................................................................................</b></span>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <span>Descripción*:</span>
+                    <span><b>ABC........................................................................................................................</b></span>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <span>Asunto*:</span>
+                    <span><b>ABC........................................................................................................................</b></span>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <span>Cuerpo del correo*:</span>
+                    <span><b>ABC........................................................................................................................</b></span>
+                    <p></p>
+                </div>
+        <div class="row">
             <div class="col-md-4">
-                <div class="row">
-                    <span class="text3-tipografia-govco govcolor-silver">ID:</span>
-                    <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.id}}</span>
-                </div>
-
-            </div>
-            <div class="col-md-8">
-            </div>
-
-            <!--Proceso-->
-            <div class="col-md-4 mt-5">
-                <div class="row">
-                    <span class="text3-tipografia-govco govcolor-silver">Proceso:</span>
-                    <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.process
-                        }}</span>
-                </div>
-            </div>
-
-
-            <!--Tipo documental-->
-            <div class="col-md-4 mt-5">
-                <div class="row">
-                    <span class="text3-tipografia-govco govcolor-silver">Proceso:</span>
-                    <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.tema}}</span>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="row mt-5">
-            <!--Nombre tarea-->
-            <div class="row">
-                <span class="text3-tipografia-govco govcolor-silver">Nombre:</span>
-                <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.name}}</span>
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <!--Nombre tarea-->
-            <div class="row">
-                <span class="text3-tipografia-govco govcolor-silver">Descripción:</span>
-                <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.description}}</span>
-            </div>
-        </div>
-
-
-        <div class="row mt-5">
-            <!--Nombre tarea-->
-            <div class="row">
-                <span class="text3-tipografia-govco govcolor-silver">CC:</span>
-                <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.cc}}</span>
-            </div>
-        </div>
-
-        <div class="row mt-5">
-            <div class="row">
-                <span class="text3-tipografia-govco govcolor-silver">Asunto:</span>
-                <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{ currentProcessId.asunto}}</span>
-            </div>
-        </div>
-
-
-        <div class="row mt-5">
-            <!--Nombre tarea-->
-            <div>
-                <div class="col-md-10 entradas-de-texto-govco">
-                    <label for="input-basico-id">Cuerpo del correo</label>
-                    <textarea id="input-basico-id" placeholder="Ejemplo: Campo de texto"
-                        style="min-height: 10rem; min-width: 100%; color: #000; font-weight: bold; border: none; background-color: transparent;"
-                        disabled>{{currentProcessId.cuerpo}}</textarea>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="row mt-4 mb-3 text-center">
-            <div class="col-md-12">
                 <button type="button"
                     class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom align-self-end"
                     routerLink="/consultar-plantillas-correo">
@@ -99,11 +57,6 @@
                 </button>
             </div>
         </div>
-
-
-
-
     </div>
-
     <div #dialog></div>
 </ng-container>

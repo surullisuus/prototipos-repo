@@ -1,4 +1,4 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> ASIGNAR RESPONSABLE TAREA</span></h3>
+<h4 class="h4-tipografia-govco mt-3"><span class="govcolor-marine"> ASIGNAR RESPONSABLE TAREA</span></h4>
 
 <div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryTasks">
 
@@ -58,9 +58,18 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
+
+          <th style="text-align: center !important;" role="button" (click)="sortTable('nombre')">
+            Nombres y apellidos del usuario
+            <span *ngIf="sortColumn === 'nombre' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'nombre' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th style="text-align: center !important;" role="button" (click)="sortTable('rol')">
+            Rol
+            <span *ngIf="sortColumn === 'rol' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'rol' && sortDirection === 'desc'">▼</span>
+          </th>
           <th style="text-align: center !important;">Acci&oacute;n</th>
-          <th style="text-align: center !important;" role="button">Nombres y apellidos del usuario</th>
-          <th style="text-align: center !important;" role="button">Rol</th>
 
         </tr>
       </thead>
@@ -69,13 +78,13 @@
 
 
         <tr *ngFor="let item of taskAssign">
+
+          <td style="text-align: center !important;">{{ item.nombre }}</td>
+          <td style="text-align: center !important;">{{ item.rol }}</td>
           <td style="text-align: center !important; padding-right: 10px;">
             <!-- Acciones-->
             <a type="button" (click)="onAssignTaskModal(item)" class="me-0" tabindex="0">Asignar</a>
           </td>
-          <td style="text-align: center !important;">{{ item.nombre }}</td>
-          <td style="text-align: center !important;">{{ item.rol }}</td>
-
 
         </tr>
       </tbody>
@@ -101,8 +110,7 @@
 
   <div class="row mt-4 mb-3 text-left">
     <div class="col-md-12">
-      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
-        (click)="onBackClick()">
+      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
         Cancelar
       </button>
     </div>

@@ -4,123 +4,102 @@ import { Subscription } from 'rxjs';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
-import { DialogAction } from '../../components/dialog/models/dialog-action';
+import { ActionType, DialogAction } from '../../components/dialog/models/dialog-action';
 
-interface Process {
-  id: number;
-  name: string;
-  documentType: string;
-  process: string;
-  description: string;
+interface processOption{
+  processName: string;
 }
-
+interface themeOption{
+  themeName: string;
+}
 @Component({
   selector: 'app-create-email-template',
   templateUrl: './create-email-template.component.html',
   styleUrl: './create-email-template.component.css',
 })
-export class CreateEmailTemplateComponent implements OnInit {
+export class CreateEmailTemplateComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   subscription!: Subscription;
-
-  selectedProcess: string | null = null;
-  selectedDocument: string | null = null;
-  formQueryScheme!: FormGroup;
-
-  process: Process[] = [
-    {
-      id: 1,
-      name: 'abc',
-      documentType: 'abc',
-      process: 'ABC',
-      description: 'Abc............',
-    },
-    {
-      id: 2,
-      name: 'abc',
-      documentType: 'abc',
-      process: 'abc',
-      description: 'abc............',
-    },
-    {
-      id: 3,
-      name: 'abc',
-      documentType: 'abc',
-      process: 'abc',
-      description: 'abc............',
-    },
-  ];
+  nombre: string = '';
+  descripcion: string = '';
+  asunto: string = '';
+  cuerpoCorreo: string = '';
 
   constructor(
-    private _formBuilder: FormBuilder,
     private dialogService: DialogService
   ) {}
 
-  ngOnInit(): void {
-    this.formQueryScheme = this.initForm();
-  }
-
-  initForm(): FormGroup {
-    return this._formBuilder.group({
-      idPlantilla: [null],
+  processTypes: processOption[] = [
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+    {
+      processName: 'ABC',
+    },
+  ]
+  themeTypes: themeOption[] = [
+    {
+      themeName: 'ABC',
+    },
+    {
+      themeName: 'ABC',
+    },
+    {
+      themeName: 'ABC',
+    },
+  ]
+  processOptions() {
+    return this.processTypes.map((processOption) => {
+      return { id: processOption.processName, text: processOption.processName };
     });
   }
-
-  processOptions() {
-    return [
-      {
-        id: 1,
-        text: 'Proceso 1',
-      },
-      {
-        id: 2,
-        text: 'Proceso 2',
-      },
-      {
-        id: 3,
-        text: 'Proceso 3',
-      },
-    ];
+  themeOptions() {
+    return this.themeTypes.map((themeOption) => {
+      return { id: themeOption.themeName, text: themeOption.themeName };
+    });
   }
-
-  setSelectedProcess(process: { id: number; text: string }) {
-    this.selectedProcess = process.text;
+  checkFilledFields(){
+    if (!this.nombre || !this.descripcion || !this.asunto || !this.cuerpoCorreo) {
+      document.querySelectorAll('input, textarea').forEach((input) => {
+        (input as any).classList.add('ng-touched');
+      });
+    } else {
+      this.SaveModal();
+    }
   }
-
-  documentOptions() {
-    return [
-      {
-        id: 1,
-        text: 'Tipo documental 1',
-      },
-      {
-        id: 2,
-        text: 'Tipo documental 2',
-      },
-      {
-        id: 3,
-        text: 'Tipo documental 3',
-      },
-    ];
-  }
-
-  setSelectedDocument(document: { id: number; text: string }) {
-    this.selectedDocument = document.text;
-  }
-
-  showSuccessTaskInitializationAlertState(body: string) {
+  SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = body;
-    dialogData.type = DialogType.success;
-    dialogData.buttonConfirm = false;
-    dialogData.textButtonCancel = 'Cerrar';
-
+    dialogData.title = "Guardar plantilla de correo";
+    dialogData.body = "¿Está seguro de querer guardar esta plantilla de correo?"
+    dialogData.textButtonCancel = "Cerrar";
+    dialogData.textButtonConfirm = "Aceptar";
+    dialogData.type = DialogType.warning;
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
-        dialogAction.eventClose.emit();
-        location.reload();
-        location.replace('/consultar-plantillas-correo');
+        if (dialogAction.action === ActionType.confirm) {
+          dialogAction.eventClose.emit();
+          this.onSavedModal(); 
+        } else {
+          dialogAction.eventClose.emit();
+        }
       });
   }
+  onSavedModal(){
+    const dialogData = new DialogData();
+    dialogData.title = "Plantilla de correo guardada de forma exitosa";
+    dialogData.buttonConfirm = false;
+    dialogData.textButtonCancel = 'Cerrar';
+    dialogData.type = DialogType.success;
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((DialogAction: DialogAction) => {
+          DialogAction.eventClose.emit()
+          location.reload();
+      })
+  }
+  onCloseModal() {}
 }

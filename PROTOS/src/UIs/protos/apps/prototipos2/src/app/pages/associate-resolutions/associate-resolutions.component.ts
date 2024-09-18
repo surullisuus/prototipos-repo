@@ -11,7 +11,10 @@ interface ResolutionRequest{
   tipoResolucion: string;
   fechaCreacion: Date;
 }
-
+interface resolutionType {
+  resolutionName: string;
+  id: number;
+}
 @Component({
   selector: 'app-associate-resolutions',
   templateUrl: './associate-resolutions.component.html',
@@ -34,6 +37,20 @@ export class AssociateResolutionsComponent {
       fechaCreacion: new Date('2023-07-20')
     }
   ]
+resolutionTypes: resolutionType[] = [
+  {
+    id: 1,
+    resolutionName: 'ABC',
+  },
+  {
+    id: 2,
+    resolutionName: 'ABC',
+  },
+  {
+    id: 3,
+    resolutionName: 'ABC',
+  },
+]
   subscription!: Subscription;
   fromQueryScheme!: FormGroup;
 
@@ -47,6 +64,11 @@ export class AssociateResolutionsComponent {
       keyword: [null],
       status: [null],
       date: [null],
+    });
+  }
+  resolutionOptions() {
+    return this.resolutionTypes.map((resolutionType) => {
+      return { id: resolutionType.resolutionName, text: resolutionType.resolutionName };
     });
   }
   AssociateModal() {
