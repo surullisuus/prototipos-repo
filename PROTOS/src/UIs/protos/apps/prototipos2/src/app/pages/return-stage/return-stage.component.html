@@ -1,5 +1,5 @@
 <div class="modal fade" id="devolverEtapaModal" tabindex="-1" aria-labelledby="#devolverEtapaModal" aria-hidden="true">
-    <form>
+    <form [formGroup]="formQueryScheme">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -18,20 +18,21 @@
             <div class="row">
               <div class="mt-3 col-md-12">
                 <subsidios-dropdown-list labelText="Motivo - Devoluci&oacute;n de etapa*" note="Seleccione una opción"
-                  idList="type-345676" type="basic" [disabled]="false">
+                [lista]="typesListMotive" [isRequired]="true"  
+                idList="type-345676" type="basic" [disabled]="false">
                 </subsidios-dropdown-list>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12 mt-3">
                 <label class="label-govco text2-tipografia-govco govcolor-silver">Comentarios*:</label>
-                <textarea class="form-control" placeholder="Ej. Descripción del esquema." rows="5"></textarea>
+                <textarea formControlName="comentario" class="form-control" placeholder="Ej. Descripción del esquema." rows="5"></textarea>
                 <span id="campo-nota" class=" text2-tipografia-govco info-entradas-de-texto-govco">Ingrese la Descripción del comentario.</span>
               </div>
             </div>
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" (click)="showSuccessAlert()" type="button" >Guardar</button>
+            <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" (click)="showSuccessAlert()" type="button"  [disabled]="formQueryScheme.invalid" >Guardar</button>
             <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space" #closeModal  data-bs-dismiss='modal'  (click)="onCloseModal()">Cancelar</button>
           </div>
         </div>

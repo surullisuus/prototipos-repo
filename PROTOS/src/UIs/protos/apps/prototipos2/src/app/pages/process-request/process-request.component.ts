@@ -68,7 +68,7 @@ export class ProcessRequestComponent {
       const esProcesoInvalido = procesoSeleccionado === '4'; // Proceso 4
       const esEstadoInvalido = !['1', '2'].includes(request.estado); // Solo "Asignado" y "Sin Asignar"
 
-      return !(esProcesoInvalido || esEstadoInvalido);
+      return !(esProcesoInvalido);
     });
   }
 

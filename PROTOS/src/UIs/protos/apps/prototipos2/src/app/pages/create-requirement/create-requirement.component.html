@@ -46,14 +46,14 @@
   
               <div class="col-md-12 mt-3">
                 <label class="label-govco text2-tipografia-govco govcolor-silver">Requisito*:</label>
-                <textarea class="form-control select-dark-border" placeholder="Ej. Descripción del requisito." rows="5"></textarea>
+                <textarea  formControlName="requisito" class="form-control select-dark-border" placeholder="Ej. Descripción del requisito." rows="5"></textarea>
                 <label class="govcolor-dim-gray" style="padding-top:10px ;">Ingrese la descripci&oacute;n del requisito</label>
                 
               </div>
             </div> 
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" (click)="showSuccessAlert()" type="button" >Guardar</button>
+            <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" (click)="showSuccessAlert()" type="button"  [disabled]="formQueryScheme.invalid" >Guardar</button>
             <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space" #closeModal  data-bs-dismiss='modal'  (click)="onCloseModal()">Cancelar</button>
           </div>
         </div>

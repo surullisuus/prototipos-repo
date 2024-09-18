@@ -1,16 +1,19 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine">CREAR PARTE</span></h3>
+<h4 class="h4-tipografia-govco mt-3"><span class="govcolor-marine">CREAR PARTE</span></h4>
 <div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryScheme">
   <div class="row">
     <!--tipo id-->
     <div class="col-md-4">
-      <subsidios-dropdown-list
-       labelText="Tipo identificación*:" 
-       [lista]="typesList"
-       note="Seleccione un tipo de identificaci&oacute;n" 
-       idList="type-345676" 
-       type="basic"
-       [disabled]="false">
-      </subsidios-dropdown-list>
+
+      <label for='tipoParte' class='form-label govcolor-tundora'>Tipo identificación*:</label>
+      <select class='form-select select-dark-border' name='tipoId' id='tipoId' formControlName='tipoId'
+           autocomplete='off'>
+           <option value="1" disabled selected hidden >Escoger</option> 
+<option *ngFor='let row of typesList' [value]='row.value'>
+{{ row.text }}
+</option>
+</select>
+<label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione un tipo de identificaci&oacute;n</label>
+      
     </div>
     <!--Numero de id-->
     <div class="col-md-4">
@@ -57,6 +60,7 @@
         typeValidation="alphanumericwhithspaces"
         note="Ingrese su identificación"
       ></subsidios-input>
+
     </div>
      <!-- Departamento -->
      <div class="col-md-4">
@@ -165,7 +169,7 @@
   </div> <!--fin row-->
   <div class="row mt-4 mb-3 text-left">
     <div class="col-md-12">
-      <button type="button" (click)="onSaveModal()" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1">
+      <button type="button" (click)="onSaveModal()"  class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1">
         Guardar
       </button>
       <button type="button" (click)="onCancel()"
