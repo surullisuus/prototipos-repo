@@ -1,5 +1,4 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
@@ -44,7 +43,8 @@ export class AssingResponsibleTaskComponent {
 
 formQueryTasks!: FormGroup;
 subscription!: Subscription;
-
+sortColumn: string = ''; // Columna por la que se está ordenando
+sortDirection: 'asc' | 'desc' = 'asc'; // Dirección de ordenamiento
 
 constructor( private readonly fb: FormBuilder,private dialogService: DialogService){}
 
@@ -99,5 +99,28 @@ showSuccessAlert(item:any) {
     });
 }
  
+sortTable(column: string) {
+  if (this.sortColumn === column) {
+    // Alternar la dirección si la columna es la misma
+    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+  } else {
+    // Si es una nueva columna, ordenar en ascendente
+    this.sortDirection = 'asc';
+  }
+  this.sortColumn = column;
+
+  this.taskAssign.sort((a, b) => {
+    const valueA = a[column as keyof TaskAssing];
+    const valueB = b[column as keyof TaskAssing];
+
+    if (valueA < valueB) {
+      return this.sortDirection === 'asc' ? -1 : 1;
+    }
+    if (valueA > valueB) {
+      return this.sortDirection === 'asc' ? 1 : -1;
+    }
+    return 0;
+  });
+}
 
 }

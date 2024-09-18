@@ -1,4 +1,4 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR TAREAS POR RESPONSABLE</span></h3>
+<h4 class="h4-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR TAREAS POR RESPONSABLE</span></h4>
 
 
 <div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryTasks">
@@ -8,20 +8,45 @@
 
     <!--Proceso-->
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Proceso" note="Seleccione el proceso" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+      <label for='Proceso' class='form-label govcolor-tundora'>Proceso:</label>
+      <select class='form-select select-dark-border desplegable-govco'  name='proceso' id='proceso' formControlName='proceso' autocomplete='off'>
+        <option  class="govcolor-dim-gray" value="1" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of typesListProcess' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class=" entradas-de-texto-govco info-entradas-de-texto-govco govcolor-dim-gray" style="padding-top:10px ;">
+        Seleccione el proceso</label>
+
     </div>
 
      <!--Etapa-->
      <div class="col-md-4">
-        <subsidios-dropdown-list labelText="Etapa" note="Etapa donde se inicia la tarea" idList="type-345676" type="basic"
-          [disabled]="false"></subsidios-dropdown-list>
+      <label for='Proceso' class='form-label govcolor-tundora'>Etapa:</label>
+      <select class='form-select select-dark-border desplegable-govco'  name='etapa' id='etapa' formControlName='etapa' autocomplete='off'>
+        <option  class="govcolor-dim-gray" value="1" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of typesListStages' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class=" entradas-de-texto-govco info-entradas-de-texto-govco govcolor-dim-gray" style="padding-top:10px ;">
+        Etapa donde se inicia la tarea</label>
+
       </div>
 
        <!--Estado tarea-->
      <div class="col-md-4">
-        <subsidios-dropdown-list labelText="Estado tarea" note="Seleccione un estado" idList="type-345676" type="basic"
-          [disabled]="false"></subsidios-dropdown-list>
+
+      <label for='Proceso' class='form-label govcolor-tundora'>Estado tarea:</label>
+      <select class='form-select select-dark-border desplegable-govco'  name='estadoTarea' id='estadoTarea' formControlName='estadoTarea' autocomplete='off'>
+        <option  class="govcolor-dim-gray" value="1" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of typesListStates' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class=" entradas-de-texto-govco info-entradas-de-texto-govco govcolor-dim-gray" style="padding-top:10px ;">
+        Seleccione un estado</label>
+       
       </div>
    
     <!--Numero de solicitud-->
@@ -46,11 +71,12 @@
     <div class="col-md-12">
       <a class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#crearEsquemaModal" href="#"
         #openbuttoncreate></a>
-      <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+      <button (click)="filterResults()" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
         Buscar
       </button>
 
-      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+      <button type="button"  (click)="resetFilters()"
+      class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
         Limpiar
       </button>
     </div>
@@ -68,7 +94,7 @@
     </div>
     <div class="col-md-2">
       <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
-        Total registros: {{ 3 }}
+        Total registros: {{ filteredRequests.length }}
       </p>
     </div>
   </div>
@@ -85,20 +111,54 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
-          <th style="text-align: center;" role="button">Proceso</th>
-          <th role="button">No. Solicitud</th>
-          <th  class="text-align: center;" role="button">Estado Solicitud</th>
-          <th class="text-align: right; " role="button">Etapa</th>
-          <th class="text-align: right;" role="button">Tarea</th>
-          <th class="text-align: right; " role="button">Estado Tarea</th>
-          <th class="text-align: center;" role="button">Fecha Vencimiento</th>
-          <th class="text-align: right;" role="button">Estatus Temporal</th>
+          <th style="text-align: center;" role="button" (click)="sortTable('nombreProceso')">
+            Proceso
+            <span *ngIf="sortColumn === 'nombreProceso' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'nombreProceso' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th role="button" (click)="sortTable('expediente')">
+            No. Solicitud
+            <span *ngIf="sortColumn === 'expediente' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'expediente' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th  class="text-align: center;" role="button" (click)="sortTable('estado')">
+            Estado Solicitud
+            <span *ngIf="sortColumn === 'estado' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'estado' && sortDirection === 'desc'">▼</span>
+
+          </th>
+          <th class="text-align: right; " role="button" (click)="sortTable('etapa')">
+            Etapa
+            <span *ngIf="sortColumn === 'etapa' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'etapa' && sortDirection === 'desc'">▼</span>
+
+          </th>
+          <th class="text-align: right;" role="button" (click)="sortTable('tarea')">
+            Tarea
+            <span *ngIf="sortColumn === 'tarea' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'tarea' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="text-align: right; " role="button" (click)="sortTable('estadoTarea')">
+            Estado Tarea
+            <span *ngIf="sortColumn === 'estadoTarea' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'estadoTarea' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="text-align: center;" role="button" (click)="sortTable('fechaVencimiento')">
+            Fecha Vencimiento
+            <span *ngIf="sortColumn === 'fechaVencimiento' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'fechaVencimiento' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="text-align: right;" role="button" (click)="sortTable('estatusTemporal')">
+            Estatus Temporal
+            <span *ngIf="sortColumn === 'estatusTemporal' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'estatusTemporal' && sortDirection === 'desc'">▼</span>
+          </th>
 
           <th style="text-align: center !important;">Acci&oacute;n</th>
         </tr>
       </thead>
 
-      <tbody class="contenido-tablas">
+      <tbody class="contenido-tablas" *ngIf="filteredRequests.length > 0">
         <tr *ngFor="let item of processRequests">
           <td class="text-left">{{ item.nombreProceso }}</td>
           <td class="text-left">{{ item.expediente }}</td>
@@ -137,13 +197,13 @@
         </tr>
       </tbody>
 
-      <!--<tbody >
+      <tbody >
       <tr>
-        <td colspan="7">
+        <td colspan="9" *ngIf="filteredRequests.length === 0"  class="text-center" >
           No se encuentra información con los criterios de búsqueda seleccionados
         </td>
       </tr>
-    </tbody>-->
+    </tbody>
 
       <!--  <tbody >
       <tr>

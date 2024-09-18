@@ -1,6 +1,6 @@
-<h3 class="h3-tipografia-govco mt-3">
+<h4 class="h4-tipografia-govco mt-3">
   <span class="govcolor-marine">ASIGNAR SOLICITUD</span>
-</h3>
+</h4>
 
 <div class="rounded-3 mb-5 mt-3">
   <div class="row">
@@ -55,11 +55,22 @@
       aria-describedby="tableDescBasic"
     >
       <thead class="encabezado-tabla">
-        <tr>
-       
-          <th scope="col" role="button">Cantidad Solicitudes a Cargo</th>
-          <th scope="col" role="button">Nombres y Apellidos del usuario</th>
-          <th class="text-align: right; columna-estado" role="button">Rol</th>
+        <tr>   
+          <th scope="col" role="button" (click)="sortTable('cantidadDeSolicitudes')">
+            Cantidad Solicitudes a Cargo
+            <span *ngIf="sortColumn === 'cantidadDeSolicitudes' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'cantidadDeSolicitudes' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th scope="col" role="button" (click)="sortTable('nombresYApellidos')">
+            Nombres y Apellidos del usuario
+            <span *ngIf="sortColumn === 'nombresYApellidos' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'nombresYApellidos' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="text-align: right; columna-estado" role="button" (click)="sortTable('rol')">
+            Rol
+            <span *ngIf="sortColumn === 'rol' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'rol' && sortDirection === 'desc'">▼</span>
+          </th>
           <th
           class="columna-especial"
           role="button"

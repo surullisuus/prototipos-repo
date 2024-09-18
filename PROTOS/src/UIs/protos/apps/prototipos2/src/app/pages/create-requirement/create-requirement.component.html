@@ -1,14 +1,14 @@
 <div class="modal fade" id="crearRequisito" tabindex="-1" aria-labelledby="#crearRequisito" aria-hidden="true">
-    <form>
+    <form [formGroup]="formQueryScheme"> 
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <div class='row'>
-              <h4 class="h4-tipografia-govco">
+              <h3 class="h4-tipografia-govco">
                 <span class="govcolor-marine">
                  CREAR REQUISITO
                 </span>
-              </h4>
+              </h3>
             </div>
             <a href="#" role="button" data-bs-dismiss="modal" class="close-btn-modal" aria-label="Close" aria-expanded="false">
               <span class="modal-close-govco govco-times"></span>
@@ -17,15 +17,43 @@
           <div class="modal-body">
            
             <div class="row">
+
+
+              <div class="col-md-12 mt-3">
+              <label for='tipoParte' class='form-label govcolor-tundora'>Proceso*:</label>
+              <select class='form-select select-dark-border' name='proceso' id='proceso' formControlName='proceso'
+                   autocomplete='off'>
+                   <option value="2" disabled selected hidden >Escoger</option> 
+        <option *ngFor='let row of typesListProcess' [value]='row.value'>
+        {{ row.text }}
+        </option>
+        </select>
+        <label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione una opci&oacute;n</label>
+              </div>
+
+
+              <div class="col-md-12 mt-3">
+                <label for='tipoParte' class='form-label govcolor-tundora'>Etapa*:</label>
+                <select class='form-select select-dark-border' name='Etapa' id='Etapa' formControlName='etapa'
+                     autocomplete='off'>
+                     <option value="2" disabled selected hidden >Escoger</option> 
+          <option *ngFor='let row of typesListStage' [value]='row.value'>
+          {{ row.text }}
+          </option>
+          </select>
+          <label class="govcolor-dim-gray" style="padding-top:10px ;">Seleccione una opci&oacute;n</label>
+                </div>
+  
               <div class="col-md-12 mt-3">
                 <label class="label-govco text2-tipografia-govco govcolor-silver">Requisito*:</label>
-                <textarea class="form-control" placeholder="Ej. Descripción del requisito." rows="5"></textarea>
-                <span id="campo-nota" class=" text2-tipografia-govco info-entradas-de-texto-govco">Ingrese la Descripción del requisito.</span>
+                <textarea  formControlName="requisito" class="form-control select-dark-border" placeholder="Ej. Descripción del requisito." rows="5"></textarea>
+                <label class="govcolor-dim-gray" style="padding-top:10px ;">Ingrese la descripci&oacute;n del requisito</label>
+                
               </div>
-            </div>
+            </div> 
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" (click)="showSuccessAlert()" type="button" >Guardar</button>
+            <button class="btn-govco fill-btn-govco btn-govco-custom btn-govco-space" (click)="showSuccessAlert()" type="button"  [disabled]="formQueryScheme.invalid" >Guardar</button>
             <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space" #closeModal  data-bs-dismiss='modal'  (click)="onCloseModal()">Cancelar</button>
           </div>
         </div>

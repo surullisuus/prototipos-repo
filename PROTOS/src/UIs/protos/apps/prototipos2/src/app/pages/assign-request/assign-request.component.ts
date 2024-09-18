@@ -7,6 +7,14 @@ import { ActionType } from '../../components/dialog/models/action-type.enum';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 
+interface AssignRequest {
+  cantidadDeSolicitudes: number,
+  nombresYApellidos: string,
+  rol: string,
+  NoSoli:number
+}
+
+
 @Component({
   selector: 'app-assign-request',
   templateUrl: './assign-request.component.html',
@@ -21,7 +29,7 @@ export class AssignRequestComponent
 @ViewChild('closeModal') closeModal!: ElementRef;
 @ViewChild('openbutton') openbutton!: ElementRef;
 
- usuarios = [
+ usuarios:AssignRequest[]= [
     {
       cantidadDeSolicitudes: 5,
       nombresYApellidos: "Juan Pérez",
@@ -52,6 +60,8 @@ export class AssignRequestComponent
   
   isDisabledSubmit = false;
   subscription!: Subscription;
+  sortColumn: string = ''; // Columna por la que se está ordenando
+  sortDirection: 'asc' | 'desc' = 'asc'; // Dirección de ordenamiento
 
 
   
@@ -81,8 +91,7 @@ export class AssignRequestComponent
       });
   }
 
-
-  
+ 
 showSuccessAlertState(body: string) {
   const dialogData = new DialogData();
   dialogData.title = body;
@@ -98,5 +107,30 @@ showSuccessAlertState(body: string) {
     });
 }
  
+sortTable(column: string) {
+  if (this.sortColumn === column) {
+    // Alternar la dirección si la columna es la misma
+    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+  } else {
+    // Si es una nueva columna, ordenar en ascendente
+    this.sortDirection = 'asc';
+  }
+  this.sortColumn = column;
+
+  this.usuarios.sort((a, b) => {
+    const valueA = a[column as keyof AssignRequest];
+    const valueB = b[column as keyof AssignRequest];
+
+    if (valueA < valueB) {
+      return this.sortDirection === 'asc' ? -1 : 1;
+    }
+    if (valueA > valueB) {
+      return this.sortDirection === 'asc' ? 1 : -1;
+    }
+    return 0;
+  });
+}
+
+
 
 }
