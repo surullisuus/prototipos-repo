@@ -2,6 +2,18 @@
   display: block;
 }
 
+th {
+  cursor: pointer;
+}
+
+.asc-icon::after {
+  content: '▲';
+}
+
+.desc-icon::after {
+  content: '▼';
+}
+
 @media screen and (min-width: 768px) {
   .md-mt-5{
     margin-top: 1.8813rem;

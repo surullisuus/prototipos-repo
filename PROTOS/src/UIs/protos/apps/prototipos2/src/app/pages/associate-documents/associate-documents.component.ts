@@ -16,17 +16,25 @@ export class AssociateDocumentsComponent {
   public data = [
     {
       id: 1,
-      numeroRadicado: '234',
+      numeroRadicado: '123',
       seleccionado: false,
     },
     {
       id: 2,
-      numeroRadicado: '235',
-      seleccionado: false,
+      numeroRadicado: '456',
+      seleccionado: true,
+    },
+    {
+      id: 3,
+      numeroRadicado: '789',
+      seleccionado: true,
     },
   ];
   subscription!: Subscription;
   formQueryScheme!: FormGroup;
+
+  sortColumnName: string = '';
+  sortOrder: 'asc' | 'desc' = 'asc';
 
   constructor(
     private readonly fb: FormBuilder,
@@ -39,17 +47,18 @@ export class AssociateDocumentsComponent {
 
   initForm(): FormGroup {
     return this.fb.group({
-      keyword: [null],
-      status: [null],
+      noRadicado: [null],
+      fechaInicio: [null],
+      fechaFin: [null],
     });
   }
 
+  onSearchDocuments() {
+    this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.warning);
+  }
 
-
-  onSearchDocuments(){
-        // si no hay resultados
-    //this.showAlertState('No existe información asociada con los filtros seleccionados', DialogType.danger);
-
+  onLimpiar(){
+    this.formQueryScheme.reset();
   }
 
   onAssociateAlert(){
@@ -71,7 +80,6 @@ export class AssociateDocumentsComponent {
             dialogAction.eventClose.emit();
           }
         });
-
   }
 
   showAlertState(body: string, dialogType: DialogType) {
@@ -87,5 +95,25 @@ export class AssociateDocumentsComponent {
         location.reload();
         dialogAction.eventClose.emit();
       });
+  }
+
+  sortColumn(columnName: string) {
+    if (this.sortColumnName === columnName) {
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortColumnName = columnName;
+      this.sortOrder = 'asc';
+    }
+    this.data.sort((a: any, b: any) => {
+      const aValue = a[columnName].toString().toLowerCase();
+      const bValue = b[columnName].toString().toLowerCase();
+      if (aValue < bValue) {
+        return this.sortOrder === 'asc' ? -1 : 1;
+      } else if (aValue > bValue) {
+        return this.sortOrder === 'asc' ? 1 : -1;
+      } else {
+        return 0;
+      }
+    });
   }
 }
