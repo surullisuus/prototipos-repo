@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogData } from '../../components/dialog/models/dialog-data';
 import { ActionType, DialogAction } from '../../components/dialog/models/dialog-action';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-publish-document',
@@ -14,7 +15,7 @@ import { ActionType, DialogAction } from '../../components/dialog/models/dialog-
 export class PublishDocumentComponent implements OnInit {
     subscription!: Subscription;
     formQueryScheme!: FormGroup;
-    constructor(private readonly fb: FormBuilder, private dialogService: DialogService) {}
+    constructor(private readonly fb: FormBuilder, private dialogService: DialogService, private router: Router) {}
     @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
 
     publicaciones = [
@@ -80,21 +81,26 @@ export class PublishDocumentComponent implements OnInit {
         },
     ];
 
+    sortColumnName: string = '';
+    sortOrder: 'asc' | 'desc' = 'asc';
+
     initForm(): FormGroup {
         return this.fb.group({
           idPublicacion: [null],
           enlaceUnoPublicacion: [null],
           enlaceDosPublicacion: [null],
         });
+    }
 
-      }
-
-      ngOnInit(): void {
+    ngOnInit(): void {
         this.formQueryScheme = this.initForm();
-      }
+    }
 
+    onClose() {
+        this.router.navigate(['consultar-documentos']);
+    }
 
-      showAlertState(body: string, dialogType: DialogType) {
+    showAlertState(body: string, dialogType: DialogType) {
         const dialogData = new DialogData();
         dialogData.title = body;
         dialogData.type = dialogType;
@@ -107,9 +113,9 @@ export class PublishDocumentComponent implements OnInit {
             location.reload();
             dialogAction.eventClose.emit();
           });
-      }
+    }
 
-      onSavePublication(): void {
+    onSavePublication(): void {
         const dialogData = new DialogData();
         dialogData.title = "Guardar publicación";
         dialogData.body = "¿Esta seguro de guardar la publicación?";
@@ -126,5 +132,25 @@ export class PublishDocumentComponent implements OnInit {
               dialogAction.eventClose.emit();
             }
           });
-      }
+    }
+
+    sortColumn(columnName: string, table: 'publicaciones' | 'historicoDocumentos') {
+        if (this.sortColumnName === columnName) {
+          this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+        } else {
+          this.sortColumnName = columnName;
+          this.sortOrder = 'asc';
+        }
+        this[table].sort((a: any, b: any) => {
+          const aValue = a[columnName].toString().toLowerCase();
+          const bValue = b[columnName].toString().toLowerCase();
+          if (aValue < bValue) {
+            return this.sortOrder === 'asc' ? -1 : 1;
+          } else if (aValue > bValue) {
+            return this.sortOrder === 'asc' ? 1 : -1;
+          } else {
+            return 0;
+          }
+        });
+    }
 }

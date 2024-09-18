@@ -91,7 +91,8 @@
                             </ng-container>
                         </ng-container>
 
-                        <a *ngIf="item.tipoDocumento === 'Salida'" class="button-modal-accept-none d-inline-block mx-1" style="cursor: pointer;">Observaciones</a>
+                        <a *ngIf="item.tipoDocumento === 'Salida'" class="button-modal-accept-none d-inline-block mx-1"
+                            style="cursor: pointer;" [routerLink]="'/observacion-documento'">Observaciones</a>
                     </td>
                 </tr>
             </tbody>
