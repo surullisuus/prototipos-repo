@@ -37,8 +37,10 @@
                             (click)="form.get('numeroSolicitud')?.value ? onSearchNumberApplication() : null"></span>
                     </div>
                 </div>
+
             </div>
         </div>
+
         <div class="col-6 col-xl-5 pt-2 select-etapa" *ngIf="clickedSearchNumberApplication && !isExternalUser">
             <subsidios-dropdown-list labelText="Etapa*:" idList="type-345676" type="basic" [disabled]="false"
                 [lista]="opciones" formControlName="etapa" [isRequired]="true" (eventlist)="onDropdownChange($event)">

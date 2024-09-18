@@ -29,6 +29,7 @@ export class SeeReadPermissionsComponent implements OnInit {
   @ViewChild('openbuttonaddRolesModal') openbuttonaddRolesModal!: ElementRef;
 
   form: FormGroup;
+  formQueryScheme!: FormGroup;
   subscription!: Subscription;
   clickedSearchNumberApplication = false;
   clickedSearchButton = false;
@@ -115,6 +116,10 @@ export class SeeReadPermissionsComponent implements OnInit {
       numeroSolicitud: [null],
       etapa: [null],
       usuario: [null],
+    });
+
+    this.formQueryScheme = this.fb.group({
+      numeroSolicitud: ['']
     });
   }
 
