@@ -1,3 +1,15 @@
 :host {
   display: block;
 }
+
+th {
+  cursor: pointer;
+}
+
+.asc-icon::after {
+  content: '▲';
+}
+
+.desc-icon::after {
+  content: '▼';
+}

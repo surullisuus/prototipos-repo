@@ -16,7 +16,6 @@ export class AssociateEntryDocComponent {
   @ViewChild('closeModal') closeModal!: ElementRef;
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
 
-
   public data = [
     {
       id: 1,
@@ -33,6 +32,8 @@ export class AssociateEntryDocComponent {
   ];
   subscription!: Subscription;
   formQueryScheme!: FormGroup;
+  sortColumn: string = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
 
   constructor(private readonly fb: FormBuilder,private dialogService: DialogService) {}
 
@@ -54,8 +55,6 @@ export class AssociateEntryDocComponent {
 
   onAssociate(): void {
     this.showAlert('Documento asociado con éxito', DialogType.success,false);
-
-
   }
 
   onCancel(): void {
@@ -80,5 +79,27 @@ export class AssociateEntryDocComponent {
           }
 
       });
+  }
+
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.data.sort((a, b) => {
+      const valueA = a[column as keyof typeof a];
+      const valueB = b[column as keyof typeof b];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
   }
 }

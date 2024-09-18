@@ -22,21 +22,20 @@
     </div>
 
     <div class="row mb-3" *ngIf="form.value.usuario">
-        <div class="col-6 col-xl-5">
-            <div class="entradas-de-texto-govco pb-0 text-nowrap">
-                <label for="input-basico-id">No. Solicitud*:</label>
-                <div class="row">
-                    <div class="col-11">
-                        <input type="text" id="input-basico-id" formControlName="numeroSolicitud" />
-
-                        <span *ngIf="!isExternalUser" class="govco-search ms-1"
-                            [ngStyle]="{'font-size': '1.4rem', 'color': form.value.numeroSolicitud ? '#3366CC' : '#A0A0A0', 'cursor': 'pointer'}"
-                            (click)="form.value.numeroSolicitud ? onSearchNumberApplication() : null"></span>
-
-                    </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="entradas-de-texto-govco pb-0 text-nowrap">
+                    <subsidios-input [control]="$any(formQueryScheme.get('numeroSolicitud'))" type="text"
+                        label="No. Solicitud*:" [showStatus]="false" [maxLength]="20" [minLength]="1"
+                        [required]="true"></subsidios-input>
+                    <span *ngIf="!isExternalUser" class="govco-search ms-1"
+                        [ngStyle]="{'font-size': '1.4rem', 'color': form.value.numeroSolicitud ? '#3366CC' : '#A0A0A0', 'cursor': 'pointer'}"
+                        (click)="form.value.numeroSolicitud ? onSearchNumberApplication() : null"></span>
                 </div>
+
             </div>
         </div>
+
         <div class="col-6 col-xl-5 pt-2 select-etapa" *ngIf="clickedSearchNumberApplication && !isExternalUser">
             <subsidios-dropdown-list labelText="Etapa*:" idList="type-345676" type="basic" [disabled]="false"
                 [lista]="opciones" formControlName="etapa" [isRequired]="true"></subsidios-dropdown-list>

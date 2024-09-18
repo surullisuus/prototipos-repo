@@ -28,7 +28,8 @@ export class SeeReadPermissionsComponent implements OnInit {
   @ViewChild('openbuttonpermisosLecturaInternoModal') openbuttonpermisosLecturaInternoModal!: ElementRef;
   @ViewChild('openbuttonaddRolesModal') openbuttonaddRolesModal!: ElementRef;
 
-  form!: FormGroup;
+  form: FormGroup;
+  formQueryScheme: FormGroup;
   subscription!: Subscription;
   clickedSearchNumberApplication = false;
   clickedSearchButton = false;
@@ -106,15 +107,19 @@ export class SeeReadPermissionsComponent implements OnInit {
     },
   ];
 
-  constructor(private fb: FormBuilder, private dialogService: DialogService) {}
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder, private dialogService: DialogService) {
     this.form = this.fb.group({
-      usuario: [null],
-      numeroSolicitud: [null],
-      etapa: [null],
+      usuario: [''],
+      numeroSolicitud: [''],
+      etapa: ['']
+    });
+
+    this.formQueryScheme = this.fb.group({
+      numeroSolicitud: ['']
     });
   }
+
+  ngOnInit(): void {}
 
   onSearchNumberApplication() {
     this.clickedSearchNumberApplication = true;

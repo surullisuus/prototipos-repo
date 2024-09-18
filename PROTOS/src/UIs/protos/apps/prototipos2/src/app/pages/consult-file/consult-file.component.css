@@ -21,3 +21,15 @@
     margin-top: 1.8813rem;
   }
 }
+
+th {
+  cursor: pointer;
+}
+
+.asc-icon::after {
+  content: '▲';
+}
+
+.desc-icon::after {
+  content: '▼';
+}

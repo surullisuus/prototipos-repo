@@ -26,6 +26,8 @@ export class ConsultFileComponent implements OnInit {
       numeroRadicado: '456',
     },
   ];
+  sortColumn: string = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
 
   constructor(private readonly fb: FormBuilder, private dialogService: DialogService) {}
 
@@ -67,5 +69,27 @@ export class ConsultFileComponent implements OnInit {
         dialogAction.eventClose.emit();
         location.reload();
       });
+  }
+
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.radicados.sort((a, b) => {
+      const valueA = a[column as keyof typeof a];
+      const valueB = b[column as keyof typeof b];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
   }
 }
