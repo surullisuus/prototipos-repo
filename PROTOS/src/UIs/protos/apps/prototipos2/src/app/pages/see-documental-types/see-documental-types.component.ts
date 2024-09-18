@@ -28,6 +28,9 @@ export class SeeDocumentalTypesComponent {
   subscription!: Subscription;
   selectedProcess: string | null = null;
   selectedDocumentType: string | null = null;
+  showTable = false;
+  sortColumn = ''; // Columna por la que se está ordenando
+  sortDirection: 'asc' | 'desc' = 'asc'; // Dirección de ordenamiento
 
   tiposDocumentales: DocumentType[] = [
     {
@@ -49,6 +52,11 @@ export class SeeDocumentalTypesComponent {
       id: 4,
       process: 'Proceso de liquidación',
       documents: ['Acta de liquidación', 'Acta de apertura', 'Acta de cierre'],
+    },
+    {
+      id: 5,
+      process: 'No existe proceso',
+      documents: ['No existe documento'],
     },
   ];
 
@@ -74,12 +82,15 @@ export class SeeDocumentalTypesComponent {
         id: 3,
         text: 'Acta de cierre',
       },
+      {
+        id: 4,
+        text: 'No existe documento',
+      },
     ];
   }
 
   setProcess(processSelected: { id: number; text: string }) {
     this.selectedProcess = processSelected.text;
-    console.log('selectedDocumentType', this.selectedDocumentType);
   }
 
   setDocumentType(documentType: { id: number; text: string }) {
@@ -87,16 +98,63 @@ export class SeeDocumentalTypesComponent {
   }
 
   get activeSaveButton(): boolean {
-    console.log('selectedProcess', this.selectedProcess);
     return this.selectedProcess !== null && this.selectedDocumentType !== null;
+  }
+
+  onSearch() {
+    if (
+      this.selectedProcess === 'No existe proceso' &&
+      this.selectedDocumentType === 'No existe documento'
+    ) {
+      this.showNoDataTableModal();
+      this.showTable = false;
+    }
+    this.showTable = true;
   }
 
   cancelSearch() {
     this.selectedProcess = null;
     this.selectedDocumentType = null;
+    this.showTable = false;
+  }
+
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      // Alternar la dirección si la columna es la misma
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      // Si es una nueva columna, ordenar en ascendente
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.tiposDocumentales.sort((a, b) => {
+      const valueA = a[column as keyof DocumentType];
+      const valueB = b[column as keyof DocumentType];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
   }
 
   // MODALES
+  showNoDataTableModal() {
+    const dialogData = new DialogData();
+    dialogData.title = 'No se han encontrado coincidencias';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        dialogAction.eventClose.emit();
+      });
+  }
+
   showSaveInformationModal(proccess: DocumentType[], $event: Event) {
     $event.preventDefault();
 
@@ -124,7 +182,7 @@ export class SeeDocumentalTypesComponent {
 
     const dialogData = new DialogData();
     dialogData.title = 'Eliminar registro';
-    dialogData.body = `¿Está seguro de eliminar el registro ${proccess.process}?`;
+    dialogData.body = `¿Está seguro de eliminar el registro?`;
     dialogData.textButtonCancel = 'Cancelar';
     dialogData.type = DialogType.warning;
 

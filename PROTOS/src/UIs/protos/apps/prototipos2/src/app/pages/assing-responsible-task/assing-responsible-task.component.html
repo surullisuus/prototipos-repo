@@ -7,31 +7,31 @@
 
     <!--Grupo/subdirección-->
     <div class="col-md-4">
-        <div class="row">
-            <span class="text3-tipografia-govco govcolor-silver">Grupo/Subdirección*:</span>
-             <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" >{{
-               formQueryTasks.get('Grupo')?.value
-                }}</span>
-            </div>
+      <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Grupo/Subdirección*:</span>
+        <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{
+          formQueryTasks.get('Grupo')?.value
+          }}</span>
+      </div>
     </div>
     <!--Proceso-->
     <div class="col-md-4">
-        <div class="row">
-            <span class="text3-tipografia-govco govcolor-silver">Proceso*:</span>
-             <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" >{{
-               formQueryTasks.get('Proceso')?.value
-                }}</span>
-            </div>
+      <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">Proceso*:</span>
+        <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{
+          formQueryTasks.get('Proceso')?.value
+          }}</span>
+      </div>
     </div>
-  
-     <!--No. solicitud-->
-     <div class="col-md-4">
-        <div class="row">
-            <span class="text3-tipografia-govco govcolor-silver">No. Solicitud*:</span>
-             <span class="text2-tipografia-govco mt-1 bold-tipografia-govco" >{{
-               formQueryTasks.get('nosolicitud')?.value
-                }}</span>
-            </div>
+
+    <!--No. solicitud-->
+    <div class="col-md-4">
+      <div class="row">
+        <span class="text3-tipografia-govco govcolor-silver">No. Solicitud*:</span>
+        <span class="text2-tipografia-govco mt-1 bold-tipografia-govco">{{
+          formQueryTasks.get('nosolicitud')?.value
+          }}</span>
+      </div>
     </div>
 
   </div>
@@ -39,7 +39,7 @@
 
   <!--Tabla-->
 
-  <div class="row" >
+  <div class="row">
     <div class="col-md-10" style="padding-bottom: 2%;">
       <h4 class="h4-tipografia-govco mt-3 mb-2">
         <span class="govcolor-marine">
@@ -58,19 +58,19 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
-        
-          <th style="text-align: center !important;" role="button" (click)="sortTable('nombre')" >
+
+          <th style="text-align: center !important;" role="button" (click)="sortTable('nombre')">
             Nombres y apellidos del usuario
             <span *ngIf="sortColumn === 'nombre' && sortDirection === 'asc'">▲</span>
             <span *ngIf="sortColumn === 'nombre' && sortDirection === 'desc'">▼</span>
           </th>
-          <th style="text-align: center !important;" role="button" (click)="sortTable('rol')" >
+          <th style="text-align: center !important;" role="button" (click)="sortTable('rol')">
             Rol
             <span *ngIf="sortColumn === 'rol' && sortDirection === 'asc'">▲</span>
             <span *ngIf="sortColumn === 'rol' && sortDirection === 'desc'">▼</span>
           </th>
           <th style="text-align: center !important;">Acci&oacute;n</th>
-          
+
         </tr>
       </thead>
 
@@ -78,14 +78,14 @@
 
 
         <tr *ngFor="let item of taskAssign">
-           
+
           <td style="text-align: center !important;">{{ item.nombre }}</td>
           <td style="text-align: center !important;">{{ item.rol }}</td>
           <td style="text-align: center !important; padding-right: 10px;">
             <!-- Acciones-->
-            <a type="button" (click)="onAssignTaskModal(item)" class="me-0"  tabindex="0">Asignar</a>
+            <a type="button" (click)="onAssignTaskModal(item)" class="me-0" tabindex="0">Asignar</a>
           </td>
-         
+
         </tr>
       </tbody>
 
@@ -110,8 +110,8 @@
 
   <div class="row mt-4 mb-3 text-left">
     <div class="col-md-12">
-       <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
-       Cancelar
+      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+        Cancelar
       </button>
     </div>
   </div>

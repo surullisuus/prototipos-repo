@@ -23,11 +23,31 @@
             <!-- headers -->
             <thead class="encabezado-tabla">
                 <tr>
-                    <th style="text-align: center !important;">Tarea</th>
-                    <th style="text-align: center !important;">Estado</th>
-                    <th style="text-align: center !important;">Fecha vencimiento</th>
-                    <th style="text-align: center !important;">Estatus temporal</th>
-                    <th style="text-align: center !important;">Responsable</th>
+                    <th style="text-align: center !important;" (click)="sortTable('taskName')">
+                        Tarea
+                        <span *ngIf="sortColumn === 'taskName' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'taskName' && sortDirection === 'desc'">▼</span>
+                    </th>
+                    <th style="text-align: center !important;" (click)="sortTable('state')">
+                        Estado
+                        <span *ngIf="sortColumn === 'state' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'state' && sortDirection === 'desc'">▼</span>
+                    </th>
+                    <th style="text-align: center !important;" (click)="sortTable('expirationDate')">
+                        Fecha vencimiento
+                        <span *ngIf="sortColumn === 'expirationDate' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'expirationDate' && sortDirection === 'desc'">▼</span>
+                    </th>
+                    <th style="text-align: center !important;" (click)="sortTable('temporalStatus')">
+                        Estatus temporal
+                        <span *ngIf="sortColumn === 'temporalStatus' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'temporalStatus' && sortDirection === 'desc'">▼</span>
+                    </th>
+                    <th style="text-align: center !important;" (click)="sortTable('responsible')">
+                        Responsable
+                        <span *ngIf="sortColumn === 'responsible' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'responsible' && sortDirection === 'desc'">▼</span>
+                    </th>
                     <th style="text-align: center !important;">Tipo de ejeci&oacute;n</th>
                     <th style="text-align: center !important;">Acciones</th>
                 </tr>
@@ -44,9 +64,10 @@
                         </p>
                     </td>
                     <td class="text-center">
-                        <div style="display: flex; justify-content: space-between;">
+                        <div style="display: flex; justify-content:center;">
                             <p>&nbsp;</p>
-                            {{ task.temporalStatus }}
+                            <p style="min-width: 7rem;">{{ task.temporalStatus }}</p>
+
                             <ng-container [ngSwitch]="task.temporalStatus">
                                 <p *ngSwitchCase="'Vencida'" class="govcolor-red-flag"> <span
                                         class="govco-exclamation-triangle"></span></p>
@@ -75,9 +96,9 @@
                             <span>&nbsp;/&nbsp;</span>
 
                             <a type="button" class="ms-2 me-2" tabindex="0"
-                            [routerLink]="'/diligenciar-acampos-tarea'">Campos Adicionales</a>
+                                [routerLink]="'/diligenciar-acampos-tarea'">Campos Adicionales</a>
 
-                        <span>&nbsp;/&nbsp;</span>
+                            <span>&nbsp;/&nbsp;</span>
 
 
                             <a type="button" class="button-modal-enabled-none"
@@ -103,9 +124,10 @@
 
                             <a class="button-modal-enabled-none" (click)="onCloseTaskAnormalModal(task, $event)"
                                 (keypress)="onCloseTaskAnormalModal(task, $event)">Cierre anormal</a>
-                                <span>&nbsp;/&nbsp;</span>
+                            <span>&nbsp;/&nbsp;</span>
 
-                                <a  [routerLink]="'/ver-comentarios-tarea'" class="button-modal-enabled-none">Ver Comentarios</a>
+                            <a [routerLink]="'/ver-comentarios-tarea'" class="button-modal-enabled-none">Ver
+                                Comentarios</a>
 
                         </ng-container>
 
@@ -147,7 +169,11 @@
             <!-- headers -->
             <thead class="encabezado-tabla">
                 <tr>
-                    <th style="text-align: center !important;">Tarea</th>
+                    <th style="text-align: center !important;" (click)="sortSuggestionTable('taskName')">
+                        Tarea
+                        <span *ngIf="sortColumn === 'taskName' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'taskName' && sortDirection === 'desc'">▼</span>
+                    </th>
                     <th style="text-align: center !important;">Seleccionar</th>
                 </tr>
             </thead>
@@ -163,11 +189,11 @@
                             (click)="onMakeSuggestedTasktModal(task, $event)"
                             (keypress)="onMakeSuggestedTasktModal(task, $event)">Realizar</a>
                         <span>&nbsp;/&nbsp;</span>
-                        <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                            data-bs-target="#verEsquemaModal" href="#">Aprobar</a>
+                        <a class="button-modal-enabled-none" [routerLink]="'/asignar-responsable-tareas'"
+                            href="#">Asignar</a>
                         <span>&nbsp;/&nbsp;</span>
-                        <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                          (click)="OnRejectTask()"  data-bs-target="#verEsquemaModal" href="#">Rechazar</a>
+                        <a class="button-modal-enabled-none" type="button" (click)="onRejectionTasktModal(task, $event)"
+                            (keypress)="onRejectionTasktModal(task, $event)">Rechazar</a>
 
 
                     </td>

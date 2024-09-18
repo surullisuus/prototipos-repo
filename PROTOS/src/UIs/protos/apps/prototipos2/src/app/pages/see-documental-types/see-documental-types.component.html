@@ -27,13 +27,18 @@
         <div class="col-md-12">
 
 
+            <button type="button" class="btn-govco outline-btn-govco mt-1 btn-govco-space btn-govco-custom"
+                (click)="onSearch()">
+                Buscar
+            </button>
+
             <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
                 (click)="showSaveInformationModal(tiposDocumentales, $event)">
                 Guardar
             </button>
 
 
-            <button type="button" class="btn-govco fill-btn-govco mt-1 btn-govco-space btn-govco-custom"
+            <button type="button" class="btn-govco outline-secondary-btn-govco mt-1 btn-govco-space btn-govco-custom"
                 (click)="cancelSearch()">
                 Cancelar
             </button>
@@ -59,35 +64,31 @@
 
         <!--Tabla-->
         <div class="table-responsive" style="overflow: hidden;">
-
             <table class="table table-general table-basic" aria-describedby="tableDescBasic">
                 <!-- headers -->
                 <thead class="encabezado-tabla">
                     <tr>
-                        <th style="text-align: center !important;">Proceso</th>
-                        <th style="text-align: center !important;">Tipos documentales</th>
+                        <th style="text-align: center !important;" (click)="sortTable('process')">
+                            Proceso
+                            <span *ngIf="sortColumn === 'process' && sortDirection === 'asc'">▲</span>
+                            <span *ngIf="sortColumn === 'process' && sortDirection === 'desc'">▼</span>
+                        </th>
+                        <th style="text-align: center !important;" (click)="sortTable('documents')">
+                            Tipos documentales
+                            <span *ngIf="sortColumn === 'documents' && sortDirection === 'asc'">▲</span>
+                            <span *ngIf="sortColumn === 'documents' && sortDirection === 'desc'">▼</span>
+                        </th>
                         <th style="text-align: center !important;">Acciones</th>
                     </tr>
                 </thead>
-
                 <tbody class="contenido-tablas">
                     <tr *ngFor="let process of tiposDocumentales">
                         <td class="text-center">{{ process.process }}</td>
                         <td class="text-center">{{ process.documents }}</td>
-
-
                         <td style="text-align: center !important; padding-right: 10px;">
-
                             <!-- ACCIONES PRA TAREAS GENERALES ASIGNADAS -->
-
-
                             <a type="button" class="button-modal-enabled-none"
                                 (click)="showDeleteProcessModal(process, $event)">Eliminar</a>
-
-
-
-
-
                         </td>
                     </tr>
                 </tbody>
@@ -98,6 +99,7 @@
 
 
     </div>
+
 </div>
 
 <div #dialog></div>
