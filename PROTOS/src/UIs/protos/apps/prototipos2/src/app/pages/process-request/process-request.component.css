@@ -34,5 +34,10 @@
         border: 2px solid #737373; /* Cambia #555 por el color gris oscuro que prefieras */
         
       }
+
+      select option {
+        color: #333333; /* Puedes cambiar esto al color que quieras para las opciones */
+      }
+    
       
 

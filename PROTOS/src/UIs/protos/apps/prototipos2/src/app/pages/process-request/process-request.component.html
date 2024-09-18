@@ -1,4 +1,4 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR SOLICITUDES POR PROCESO</span></h3>
+<h4 class="h4-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR SOLICITUDES POR PROCESO</span></h4>
 <div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryScheme">
 
 
@@ -6,12 +6,19 @@
 
     <!--Proceso-->
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Proceso" note="Seleccione el proceso" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
-    </div>
+
+      <label for='Proceso' class='form-label govcolor-tundora'>Proceso:</label>
+      <select class='form-select select-dark-border desplegable-govco'  name='Proceso' id='Proceso' formControlName='proceso' autocomplete='off'>
+        <option  class="govcolor-dim-gray" value="1" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of typesListProcess' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class=" entradas-de-texto-govco info-entradas-de-texto-govco govcolor-dim-gray" style="padding-top:10px ;">Seleccione el proceso</label>
+      </div>
     <!--Numero de solicitud-->
     <div class="col-md-4">
-      <subsidios-input [control]="$any(formQueryScheme.get('keyword'))" type="text" label="No. Solicitud"
+      <subsidios-input [control]="$any(formQueryScheme.get('noSolicitud'))" type="text" label="No. Solicitud"
         placeholder="Ej. 234" [showStatus]="false" [maxLength]="20" [minLength]="1" typeValidation="alphanumeric"
         note="Ingrese un número"></subsidios-input>
     </div>
@@ -21,7 +28,7 @@
       <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
         <label for="calendario-govco" class="label-desplegable-govco">Fecha de creación</label>
         <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
-          <input #fechaInicioInput class="browser-default" type="text" formControlName="date" placeholder="dd/mm/aaaa"
+          <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaInicio" placeholder="dd/mm/aaaa"
             id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off" days="true">
         </div>
         <label for="texto de ayuda" class="label-desplegable-govco">Seleccione la fecha de creación</label>
@@ -40,7 +47,7 @@
       <div id="miCalendario" class="desplegable-govco desplegable-calendar-govco" data-type="calendar">
         <label for="calendario-govco" class="label-desplegable-govco">Fecha fin</label>
         <div class="date desplegable-selected-option select-dark-border" style="height: 40px; width: auto;">
-          <input #fechaInicioInput class="browser-default" type="text" formControlName="date" placeholder="dd/mm/aaaa"
+          <input #fechaInicioInput class="browser-default" type="text" formControlName="fechaFin" placeholder="dd/mm/aaaa"
             id="calendario-govco" minlength="10" maxlength="10" aria-autocomplete="off" days="true">
         </div>
         <label for="texto de ayuda" class="label-desplegable-govco">Seleccione fecha de finalizaci&oacute;n</label>
@@ -54,8 +61,15 @@
     <!--Estado-->
 
     <div class="col-md-4">
-      <subsidios-dropdown-list labelText="Estado" note="Seleccione el estado" idList="type-345676" type="basic"
-        [disabled]="false"></subsidios-dropdown-list>
+
+      <label for='Proceso' class='form-label govcolor-tundora'>Estado:</label>
+      <select class='form-select select-dark-border desplegable-govco'  name='Estado' id='Estado' formControlName='status' autocomplete='off'>
+        <option  class="govcolor-dim-gray" value="1" disabled selected hidden>Escoger</option> 
+        <option *ngFor='let row of StatusList' [value]='row.value'>
+          {{ row.text }}
+        </option>
+      </select>
+      <label class=" entradas-de-texto-govco info-entradas-de-texto-govco govcolor-dim-gray" style="padding-top:10px ;">Seleccione el estado</label>
     </div>
 
   </div>
@@ -64,11 +78,11 @@
     <div class="col-md-12">
       <a class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#crearEsquemaModal" href="#"
         #openbuttoncreate></a>
-      <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+      <button (click)="filterResults()" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
         Buscar
       </button>
 
-      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+      <button (click)="resetFilters()" type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
         Limpiar
       </button>
     </div>
@@ -86,7 +100,7 @@
     </div>
     <div class="col-md-2">
       <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
-        Total registros: {{ 3 }}
+        Total registros: {{ filteredRequests.length }}
       </p>
     </div>
   </div>
@@ -95,56 +109,53 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
-          <th class="columna-especial" role="button">Proceso</th>
-          <th role="button">No. Solicitud</th>
-          <th role="button">Fecha de creaci&oacute;n Solicitud</th>
-          <th class="text-align: right; columna-estado" role="button">Estado</th>
+          <th class="columna-especial" role="button" (click)="sortTable('nombreProceso')">
+            Proceso
+            <span *ngIf="sortColumn === 'nombreProceso' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'nombreProceso' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th role="button" (click)="sortTable('numeroSolicitud')">
+            No. Solicitud
+            <span *ngIf="sortColumn === 'numeroSolicitud' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'numeroSolicitud' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th role="button" (click)="sortTable('fechaCreacion')">
+            Fecha de creaci&oacute;n Solicitud
+            <span *ngIf="sortColumn === 'fechaCreacion' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'fechaCreacion' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th role="button" (click)="sortTable('estado')">
+            Estado
+            <span *ngIf="sortColumn === 'estado' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'estado' && sortDirection === 'desc'">▼</span>
+          </th>
           <th style="text-align: center !important;">Acci&oacute;n</th>
         </tr>
       </thead>
 
-      <tbody class="contenido-tablas">
-        <tr *ngFor="let item of processRequests">
-          <td class="text-left">{{ item.nombreProceso }}</td>
-          <td class="text-left">{{ item.numeroSolicitud }}</td>
-
-          <td style="text-align: left !important;">
-            <p class="mb-0">
-              {{ item.fechaCreacion | date: 'dd/MM/yyyy' }}
-            </p>
-          </td>
-          <td class="text-left">
-            {{ item.estado === '1' ? 'Asignado' : 'Sin Asignar' }}
-
-          </td>
-          <td style="text-align: left !important; padding-right: 10px;">
-
-
-            <!-- Acciones-->
-            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-              data-bs-target="#verEsquemaModal" href="#"></a>
-            <a *ngIf="item.estado==='2'" type="button" [routerLink]="['/asignar-solicitud']" class="me-0" href="#"
-              tabindex="0">Asignar&nbsp;Solicitud</a>
-
-            <!--eliminaaaar modal-->
-
-            <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttondelete data-bs-target="#modalDelete"
-              href="#"></a>
-            <a *ngIf="item.estado==='1'" type="button" class="me-0" href="#" [routerLink]="['/gestionar-procesos']"
-              tabindex="0">Gestionar&nbsp;Proceso
-            </a>
-
-          </td>
-        </tr>
-      </tbody>
-
-      <!--<tbody >
-      <tr>
-        <td colspan="7">
-          No se encuentra información con los criterios de búsqueda seleccionados
+      <tbody class="contenido-tablas" *ngIf="filteredRequests.length > 0">
+           <!-- Mostrar resultados si existen -->
+        <tr *ngFor="let item of filteredRequests">
+        <td class="text-left">{{ item.nombreProceso }}</td>
+        <td class="text-left">{{ item.numeroSolicitud }}</td>
+        <td style="text-align: left !important;">
+          <p class="mb-0">{{ item.fechaCreacion | date: 'dd/MM/yyyy' }}</p>
+        </td>
+        <td class="text-left">{{ item.estado === '1' ? 'Asignado' : 'Sin Asignar' }}</td>
+        <td style="text-align: left !important; padding-right: 10px;">
+          <a *ngIf="item.estado === '2'" [routerLink]="['/asignar-solicitud']">Asignar Solicitud</a>
+          <a *ngIf="item.estado === '1'" [routerLink]="['/gestionar-procesos']">Gestionar Proceso</a>
         </td>
       </tr>
-    </tbody>-->
+    </tbody>
+
+    <!-- Mostrar mensaje si no hay resultados -->
+    <tbody class="contenido-tablas" *ngIf="filteredRequests.length === 0">
+      <tr>
+        <td colspan="5" class="text-center">No se encuentra información con los criterios de búsqueda seleccionados</td>
+      </tr>
+    </tbody>
+
 
       <!--  <tbody >
       <tr>

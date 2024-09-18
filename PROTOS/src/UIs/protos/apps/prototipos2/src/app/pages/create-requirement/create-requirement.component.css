@@ -1,0 +1,12 @@
+.search-govco {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .select-dark-border {
+    border: 2px solid #737373; /* Cambia #555 por el color gris oscuro que prefieras */
+    
+  }
+  
