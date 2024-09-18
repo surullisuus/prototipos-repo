@@ -1,4 +1,4 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR ALERTAS POR RESPONSABLE</span></h3>
+<h4 class="h4-tipografia-govco mt-3"><span class="govcolor-marine"> CONSULTAR ALERTAS POR RESPONSABLE</span></h4>
 
 <div class="rounded-3 mb-5 mt-3">
 
@@ -23,13 +23,41 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
-          <th class="columna-especial" role="button">No. Solicitud</th>
-          <th role="button">Proceso</th>
-          <th role="button">Tarea</th>
-          <th class="text-align: right; columna-estado" role="button">Estado</th>
-          <th class="text-align: right; columna-estado" role="button">Estatus Temporal</th>
-          <th class="text-align: right; columna-estado" role="button">Fecha asignaci&oacute;n</th>
-          <th class="text-align: right; columna-estado" role="button">Fecha vencimiento</th>
+          <th class="columna-especial" (click)="sortTable('noSolicitud')" role="button">
+            No. Solicitud
+            <span *ngIf="sortColumn === 'noSolicitud' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'noSolicitud' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th (click)="sortTable('proceso')" role="button">
+            Proceso
+            <span *ngIf="sortColumn === 'proceso' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'proceso' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th (click)="sortTable('tarea')" role="button">
+            Tarea
+            <span *ngIf="sortColumn === 'tarea' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'tarea' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="text-align: right; columna-estado" (click)="sortTable('estado')" role="button">
+            Estado
+            <span *ngIf="sortColumn === 'estado' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'estado' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="text-align: right; columna-estado" (click)="sortTable('estadoTarea')" role="button">
+            Estatus Temporal
+            <span *ngIf="sortColumn === 'estadoTarea' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'estadoTarea' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="text-align: right; columna-estado"  (click)="sortTable('fechaAsignacion')" role="button">
+            Fecha asignaci&oacute;n
+            <span *ngIf="sortColumn === 'fechaAsignacion' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'fechaAsignacion' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="text-align: right; columna-estado" (click)="sortTable('fechaVencimiento')" role="button">
+            Fecha vencimiento
+            <span *ngIf="sortColumn === 'fechaVencimiento' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'fechaVencimiento' && sortDirection === 'desc'">▼</span>
+          </th>
 
           <th style="text-align: center !important;">Acci&oacute;n</th>
         </tr>

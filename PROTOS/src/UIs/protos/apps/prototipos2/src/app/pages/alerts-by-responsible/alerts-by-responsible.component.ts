@@ -9,6 +9,17 @@ import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
 
+interface Alerts {
+  noSolicitud: number,
+  proceso: string,
+  tarea: string,
+  estado: string,
+  estadoTarea: string,
+  fechaAsignacion: string,
+  fechaVencimiento:string,
+  accion: string
+}
+
 @Component({
   selector: 'app-alerts-by-responsible',
   templateUrl: './alerts-by-responsible.component.html',
@@ -21,7 +32,7 @@ export class AlertsByResponsibleComponent {
   ){}
   
 
-  alertas = [
+  alertas:Alerts[] = [
     {
       noSolicitud: 1,
       proceso: 'Proceso 1',
@@ -88,6 +99,8 @@ export class AlertsByResponsibleComponent {
  
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
    subscription!: Subscription;
+   sortColumn: string = ''; // Columna por la que se está ordenando
+sortDirection: 'asc' | 'desc' = 'asc'; // Dirección de ordenamiento
 
   
   ngOnInit(): void {
@@ -127,6 +140,30 @@ export class AlertsByResponsibleComponent {
          
         } 
       });
+  }
+
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      // Alternar la dirección si la columna es la misma
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      // Si es una nueva columna, ordenar en ascendente
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+  
+    this.alertas.sort((a, b) => {
+      const valueA = a[column as keyof Alerts];
+      const valueB = b[column as keyof Alerts];
+  
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
   }
 
 }
