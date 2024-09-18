@@ -21,18 +21,28 @@
     width: 20%; /* Puedes ajustar el valor según tus necesidades */
     padding: 10px; /* Espaciado interno para mejorar la apariencia */
     }
-  
+
     .encabezado-tabla .columna-especial {
-        width: 30%; 
+        width: 30%;
       }
 
       .encabezado-tabla .columna-estado {
-        width: 30%; 
+        width: 30%;
       }
 
       .select-dark-border {
         border: 2px solid #737373; /* Cambia #555 por el color gris oscuro que prefieras */
-        
-      }
-      
 
+      }
+
+th {
+  cursor: pointer;
+}
+
+.asc-icon::after {
+  content: '▲';
+}
+
+.desc-icon::after {
+  content: '▼';
+}

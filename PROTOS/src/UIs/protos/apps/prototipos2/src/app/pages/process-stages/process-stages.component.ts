@@ -60,6 +60,8 @@ processStages: ProcessStage[] = [
   fromQueryScheme!: FormGroup;
   isDisabledSubmit = false;
   subscription!: Subscription;
+  sortColumn: string = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
 
   constructor(private readonly fb: FormBuilder,private dialogService: DialogService) {}
   ngOnInit(): void {
@@ -94,7 +96,7 @@ processStages: ProcessStage[] = [
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
           dialogAction.eventClose.emit();
-          this.onAcceptedModal(); 
+          this.onAcceptedModal();
           // Aquí puedes agregar el setTimeout si es necesario
         } else {
           dialogAction.eventClose.emit();
@@ -116,4 +118,26 @@ processStages: ProcessStage[] = [
       })
   }
   onCloseModal() {}
+
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.processStages.sort((a, b) => {
+      const valueA = a[column as keyof typeof a];
+      const valueB = b[column as keyof typeof b];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  }
 }

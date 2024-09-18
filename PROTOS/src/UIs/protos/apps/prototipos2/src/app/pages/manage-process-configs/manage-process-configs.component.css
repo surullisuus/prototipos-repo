@@ -1,0 +1,11 @@
+th {
+    cursor: pointer; /* Cambia el cursor al pasar sobre los encabezados */
+}
+
+th.sorted-asc::after {
+    content: ' ▲'; /* Agrega un ícono de flecha hacia arriba para orden ascendente */
+}
+
+th.sorted-desc::after {
+    content: ' ▼'; /* Agrega un ícono de flecha hacia abajo para orden descendente */
+}

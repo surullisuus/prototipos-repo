@@ -28,7 +28,8 @@ export class SeeReadPermissionsComponent implements OnInit {
   @ViewChild('openbuttonpermisosLecturaInternoModal') openbuttonpermisosLecturaInternoModal!: ElementRef;
   @ViewChild('openbuttonaddRolesModal') openbuttonaddRolesModal!: ElementRef;
 
-  form!: FormGroup;
+  form: FormGroup;
+  formQueryScheme!: FormGroup;
   subscription!: Subscription;
   clickedSearchNumberApplication = false;
   clickedSearchButton = false;
@@ -106,24 +107,63 @@ export class SeeReadPermissionsComponent implements OnInit {
     },
   ];
 
-  constructor(private fb: FormBuilder, private dialogService: DialogService) {}
+  constructor(private fb: FormBuilder, private dialogService: DialogService) {
+    this.form = this.initForm();
+  }
 
-  ngOnInit(): void {
-    this.form = this.fb.group({
-      usuario: [null],
+  initForm(): FormGroup {
+    return this.fb.group({
       numeroSolicitud: [null],
       etapa: [null],
+      usuario: [null],
+    });
+
+    this.formQueryScheme = this.fb.group({
+      numeroSolicitud: ['']
     });
   }
 
-  onSearchNumberApplication() {
+  ngOnInit(): void {}
+
+  get searchIconStyle() {
+    return {
+      'font-size': '1.4rem',
+      'color': this.form.get('numeroSolicitud')?.value ? '#3366CC' : '#A0A0A0',
+      'cursor': this.form.get('numeroSolicitud')?.value ? 'pointer' : ''
+    };
+  }
+
+  get isSearchButtonDisabled(): boolean {
+    const usuario = this.form.get('usuario')?.value;
+    const numeroSolicitud = this.form.get('numeroSolicitud')?.value;
+    const etapa = this.form.get('etapa')?.value;
+
+    if (usuario === 'interno' && !etapa) {
+      return true;
+    }
+
+    if (usuario === 'externo' && !numeroSolicitud) {
+      return true;
+    }
+
+    return false;
+  }
+
+  onRadioChange(): void {
+    const userType = this.form.get('usuario')?.value;
+    this.isExternalUser = userType === 'externo';
+    this.clickedSearchNumberApplication = false;
+    this.clickedSearchButton = false;
+  }
+
+  onSearchNumberApplication(): void {
     this.clickedSearchNumberApplication = true;
     // buscar por numero de solicitud
     // si no se encuentra, mostrar alerta de error
     //showAlertState('No se encontraron resultados que coincidan con la información suministrada y la opción Cerrar');
   }
 
-  onSearchButton() {
+  onSearchButton(): void {
     if (!this.isExternalUser) {
       if (this.openbuttonPermisosRoles) {
         this.openbuttonPermisosRoles.nativeElement.click();
@@ -135,20 +175,13 @@ export class SeeReadPermissionsComponent implements OnInit {
     }
   }
 
-  onCleanInputs() {
-    this.form.patchValue({
-      numeroSolicitud: '',
-      etapa: '',
-    });
+  onCleanInputs(): void {
+    this.form.get('numeroSolicitud')?.setValue(null);
   }
 
-  onRadioChange() {
-    const userType = this.form.get('usuario')?.value;
-    this.isExternalUser = userType === 'externo';
-    this.clickedSearchNumberApplication = false;
-    this.clickedSearchButton = false;
-  }
-
+  onDropdownChange(event: any): void {
+    this.form.get('etapa')?.setValue(event);
+}
   showAlertState(body: string, dialogType: DialogType) {
     const dialogData = new DialogData();
     dialogData.title = body;

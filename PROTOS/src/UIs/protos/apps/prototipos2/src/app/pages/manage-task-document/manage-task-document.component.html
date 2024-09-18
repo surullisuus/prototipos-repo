@@ -1,66 +1,84 @@
 <h4 class="h4-tipografia-govco mt-3 mb-2">
     <span class="govcolor-marine">Gestionar documentos de tarea</span>
-  </h4>
-  <div class="container-navbar-menu-govco blue-menu-govco">
+</h4>
+<div class="container-navbar-menu-govco blue-menu-govco">
     <nav class="navbar navbar-expand-lg navbar-menu-govco" role="navigation" aria-label="Menú ejemplo entidad">
-    <div class="container-fluid container-second-navbar-menu-govco">
-        <a class="navbar-brand navbar-toggler icon-entidad-menu-govco" href="#"></a>
-        <button class="navbar-toggler button-responsive-menu-govco collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="icon-bars-menu-govco"></span>
-        </button>
-        <div class="collapse navbar-collapse navbar-collapse-menu-govco" id="navbarScroll">
-        <ul class="navbar-nav navbar-nav-menu-govco ms-auto">
-            <li class="nav-item">
-                <a class="nav-link dir-menu-govco active" aria-current="page" href="/#/gestionar-documento-tarea">
-                <span class="text-item-menu-govco">
-                    Gestionar documento tarea
-                </span>
-                </a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link dir-menu-govco" aria-current="page" href="/#/asociar-documento-SISFV">
-                <span class="text-item-menu-govco">
-                Asociar documento desde SISFV
-                </span>
-            </a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link dir-menu-govco" aria-current="page" href="/#/asociar-documento-entrada-GesDoc">
-                <span class="text-item-menu-govco">
-                Asociar documento desde GesDoc
-                </span>
-            </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link dir-menu-govco" aria-current="page" href="/#/cargar-documento-tarea">
-                <span class="text-item-menu-govco">
-                    Cargar documento
-                </span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link dir-menu-govco" aria-current="page" href="/#/asociar-resolucion">
-                <span class="text-item-menu-govco">
-                    Asociar resoluciones
-                </span>
-                </a>
-            </li>
-        </ul>
+        <div class="container-fluid container-second-navbar-menu-govco">
+            <a class="navbar-brand navbar-toggler icon-entidad-menu-govco" href="#"></a>
+            <button class="navbar-toggler button-responsive-menu-govco collapsed" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bars-menu-govco"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-collapse-menu-govco" id="navbarScroll">
+                <ul class="navbar-nav navbar-nav-menu-govco ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link dir-menu-govco active" aria-current="page"
+                            href="/#/gestionar-documento-tarea">
+                            <span class="text-item-menu-govco">
+                                Gestionar documento tarea
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dir-menu-govco" aria-current="page" href="/#/asociar-documento-SISFV">
+                            <span class="text-item-menu-govco">
+                                Asociar documento desde SISFV
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dir-menu-govco" aria-current="page"
+                            href="/#/asociar-documento-entrada-GesDoc">
+                            <span class="text-item-menu-govco">
+                                Asociar documento desde GesDoc
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dir-menu-govco" aria-current="page" href="/#/cargar-documento-tarea">
+                            <span class="text-item-menu-govco">
+                                Cargar documento
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dir-menu-govco" aria-current="page" href="/#/asociar-resolucion">
+                            <span class="text-item-menu-govco">
+                                Asociar resoluciones
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
     </nav>
 </div>
 <h4 class="h5-tipografia-govco mt-5 mb-2 ps-3">
     <span class="govcolor-marine">Documentos de Entrada/Salida</span>
-  </h4>
+</h4>
 <div class="row mt-4 ps-3">
     <div class="table-responsive">
         <table class="table table-general table-basic" aria-describedby="tableDescBasic">
             <thead class="encabezado-tabla">
                 <tr>
-                    <th scope="col" role="button">Nombre&nbsp;documento</th>
-                    <th scope="col" role="button" style="text-align: center !important;">Tipo&nbsp;Documento</th>
-                    <th scope="col" role="button" style="text-align: center !important;">Origen&nbsp;Documento</th>
+                    <th scope="col" role="button" (click)="sortTable('nombreDocumento')">
+                        Nombre&nbsp;documento
+                        <span
+                            [ngClass]="{'asc-icon': sortColumn === 'nombreDocumento' && sortDirection === 'asc', 'desc-icon': sortColumn === 'nombreDocumento' && sortDirection === 'desc'}"></span>
+                    </th>
+                    <th scope="col" role="button" style="text-align: center !important;"
+                        (click)="sortTable('tipoDocumento')">
+                        Tipo&nbsp;Documento
+                        <span
+                            [ngClass]="{'asc-icon': sortColumn === 'tipoDocumento' && sortDirection === 'asc', 'desc-icon': sortColumn === 'tipoDocumento' && sortDirection === 'desc'}"></span>
+                    </th>
+                    <th scope="col" role="button" style="text-align: center !important;"
+                        (click)="sortTable('origenDocumento')">
+                        Origen&nbsp;Documento
+                        <span
+                            [ngClass]="{'asc-icon': sortColumn === 'origenDocumento' && sortDirection === 'asc', 'desc-icon': sortColumn === 'origenDocumento' && sortDirection === 'desc'}"></span>
+                    </th>
                     <th class="columna-especial" role="button" style="text-align: center !important;">Acci&oacute;n</th>
                 </tr>
             </thead>
@@ -74,16 +92,17 @@
 
                     <td style="text-align: center !important; padding-right: 10px;">
                         <a *ngIf="item.tipoDocumento === 'Entrada' || item.tipoDocumento === 'Salida'"
-                            class="button-modal-accept-none d-inline-block mx-1" style="cursor: pointer;" (click)="DeleteModal()">Borrar</a>
+                            class="button-modal-accept-none d-inline-block mx-1" style="cursor: pointer;"
+                            (click)="DeleteModal()">Borrar</a>
                         <ng-container *ngIf="item.tipoDocumento === 'Entrada' || item.tipoDocumento === 'Salida'">
                             <ng-container *ngIf="item.tipoDocumento === 'Salida' || hasVerDocumento(item)">
                                 <span> / </span>
                             </ng-container>
                         </ng-container>
 
-                        <a class="button-modal-accept-none d-inline-block mx-1" tabindex="0" data-bs-target="#seeRadicado"
-                        data-bs-toggle="modal" style="cursor: pointer;"
-                            >Ver documento</a>
+                        <a class="button-modal-accept-none d-inline-block mx-1" tabindex="0"
+                            data-bs-target="#seeRadicado" data-bs-toggle="modal" style="cursor: pointer;">Ver
+                            documento</a>
 
                         <ng-container *ngIf="item.tipoDocumento === 'Salida'">
                             <ng-container *ngIf="hasObservaciones(item)">

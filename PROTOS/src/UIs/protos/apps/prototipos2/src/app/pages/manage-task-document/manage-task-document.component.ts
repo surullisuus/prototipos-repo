@@ -75,14 +75,14 @@ export class ManageTaskDocumentComponent {
           .subscribe((dialogAction: DialogAction) => {
             if (dialogAction.action === ActionType.confirm) {
               dialogAction.eventClose.emit();
-              this.onAcceptedModal(); 
+              this.onAcceptedModal();
               // Aquí puedes agregar el setTimeout si es necesario
             } else {
               dialogAction.eventClose.emit();
             }
           });
       }
-      
+
       onAcceptedModal(){
         const dialogData = new DialogData();
         dialogData.title = "Documento eliminado de forma exitosa";
@@ -96,4 +96,29 @@ export class ManageTaskDocumentComponent {
               location.reload();
           })
       }
+
+    sortColumn: string = '';
+    sortDirection: 'asc' | 'desc' = 'asc';
+
+    sortTable(column: string) {
+        if (this.sortColumn === column) {
+            this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+        } else {
+            this.sortDirection = 'asc';
+        }
+        this.sortColumn = column;
+
+        this.documents.sort((a, b) => {
+            const valueA = a[column as keyof typeof a];
+            const valueB = b[column as keyof typeof b];
+
+            if (valueA < valueB) {
+                return this.sortDirection === 'asc' ? -1 : 1;
+            }
+            if (valueA > valueB) {
+                return this.sortDirection === 'asc' ? 1 : -1;
+            }
+            return 0;
+        });
+    }
 }

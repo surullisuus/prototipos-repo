@@ -13,7 +13,7 @@ interface QuerySelect {
   text: string;
   value: number;
 }
- 
+
 interface PartsProcess {
   tipoParte: string,
   noIdentificacion: number,
@@ -31,7 +31,7 @@ export class PartsProcessComponent {
   constructor( private readonly fb: FormBuilder,
     private router: Router,private dialogService: DialogService
   ){}
-  
+
   sortColumn: string = ''; // Columna por la que se está ordenando
   sortDirection: 'asc' | 'desc' = 'asc'; // Dirección de ordenamiento
   typesListParts: QuerySelect[] = [];
@@ -83,37 +83,37 @@ export class PartsProcessComponent {
     },
   ];
 
- 
+
   formQueryScheme!: FormGroup;
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
    subscription!: Subscription;
    filteredRequests: PartsProcess[] = [];
 
 
-  
+
   ngOnInit(): void {
   this.formQueryScheme = this.initForm();
   this.filteredRequests = [...this.partes];
   }
-  
+
 
   initList(){
- 
+
     this.typesListParts = [
       { text: 'Parte uno', value: 1 },
       { text: 'Parte dos', value: 2 },
       { text: 'Parte tres', value: 3 },
       { text: 'Parte cuatro', value: 4 }
     ];
-  
+
     this.typesListDepartment = [
       { text: 'CAUCA', value: 1 },
       { text: 'CAQUETÁ', value: 2 },
       { text: 'CUNDINAMARCA', value: 3 },
       { text: 'RISARALDA', value: 4 },
-     
+
     ];
-  
+
     this.typesListMunicipal = [
       { text: 'POPAYÁN', value: 1 },
       { text: 'FLORENCIA', value: 2 },
@@ -121,7 +121,7 @@ export class PartsProcessComponent {
       { text: 'PEREIRA', value: 4},
       ];
   }
-  
+
   initForm(): FormGroup {
     this.initList()
     return this.fb.group({
@@ -135,7 +135,7 @@ export class PartsProcessComponent {
       date: [null],
     });
   }
-  
+
   onCreatePart(){
     this.router.navigate(['/crear-parte']);
   }
@@ -143,10 +143,10 @@ export class PartsProcessComponent {
   onDeletePart(){
 
     const dialogData = new DialogData();
-    dialogData.title = '¿Está seguro de eliminar el registro?' 
+    dialogData.title = '¿Está seguro de eliminar el registro?'
     dialogData.textButtonCancel = "Cancelar";
     dialogData.type = DialogType.warning;
-  
+
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
@@ -163,15 +163,15 @@ export class PartsProcessComponent {
     dialogData.title="Registro eliminado de forma exitosa"
     dialogData.type = DialogType.success;
        dialogData.buttonCancel=false
-  
+
     this.dialogService.resultActionModal
     this.subscription = this.dialogService
       .openModal(this.dialog, dialogData)
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
           location.reload();
-         
-        } 
+
+        }
       });
   }
 
@@ -184,11 +184,11 @@ export class PartsProcessComponent {
       this.sortDirection = 'asc';
     }
     this.sortColumn = column;
-  
+
     this.partes.sort((a, b) => {
       const valueA = a[column as keyof PartsProcess];
       const valueB = b[column as keyof PartsProcess];
-  
+
       if (valueA < valueB) {
         return this.sortDirection === 'asc' ? -1 : 1;
       }
@@ -198,7 +198,7 @@ export class PartsProcessComponent {
       return 0;
     });
   }
-  
+
   resetFilters(): void {
     this.formQueryScheme.reset({
       tipoParte:["1"],
@@ -210,17 +210,37 @@ export class PartsProcessComponent {
       status: [null],
       date: [null],
     });
-     
+
     this.filteredRequests = [...this.partes]; // Restablece todos los datos en la tabla
   }
 
+  showAlert(body:string,dialogType:DialogType):void{
+    const dialogData = new DialogData();
+    dialogData.title=body;
+    dialogData.type = dialogType;
+       dialogData.buttonCancel=false
+
+    this.dialogService.resultActionModal
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          location.reload();
+
+        }
+      });
+  }
+
   filterResults() {
+
+    this.showAlert("No se encontraron resultados con los criterios de búsqueda",DialogType.warning);
+
     const procesoSeleccionado = this.formQueryScheme.value.tipoParte;
 
-    // Filtrar los datos según el 
+    // Filtrar los datos según el
     this.filteredRequests = this.partes.filter((request) => {
       const esProcesoInvalido = procesoSeleccionado === '4'; // Proceso 4
-      
+
       return !(esProcesoInvalido);
     });
   }

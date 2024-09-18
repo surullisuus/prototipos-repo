@@ -38,8 +38,16 @@
       <table class="table table-general table-basic" aria-describedby="tableDescBasic">
         <thead class="encabezado-tabla">
           <tr>
-            <th class="columna-especial" role="button">Proceso</th>
-            <th role="button">Etapa</th>
+            <th class="columna-especial" role="button" (click)="sortTable('nombreProceso')">
+              Proceso
+              <span
+                [ngClass]="{'asc-icon': sortColumn === 'nombreProceso' && sortDirection === 'asc', 'desc-icon': sortColumn === 'nombreProceso' && sortDirection === 'desc'}"></span>
+            </th>
+            <th role="button" (click)="sortTable('nombreEtapa')">
+              Etapa
+              <span
+                [ngClass]="{'asc-icon': sortColumn === 'nombreEtapa' && sortDirection === 'asc', 'desc-icon': sortColumn === 'nombreEtapa' && sortDirection === 'desc'}"></span>
+            </th>
             <th style="text-align: center !important;">Acciones</th>
           </tr>
         </thead>
