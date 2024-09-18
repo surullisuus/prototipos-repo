@@ -1,4 +1,4 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> CONFIGURAR REQUISITOS ETAPA</span></h3>
+<h4 class="h4-tipografia-govco mt-3"><span class="govcolor-marine"> CONFIGURAR REQUISITOS ETAPA</span></h4>
 <div class="rounded-3 mb-5 mt-3" [formGroup]="formQueryScheme">
 
 
@@ -7,7 +7,7 @@
     <!--Proceso-->
     <div class="col-md-4">
         <subsidios-input
-        [control]="$any(formQueryScheme.get('keyword'))"
+        [control]="$any(formQueryScheme.get('proceso'))"
         type="text"
         label="Proceso"
         placeholder="Ej. 234"
@@ -21,7 +21,7 @@
     <!--Etapa-->
     <div class="col-md-4">
       <subsidios-input
-      [control]="$any(formQueryScheme.get('keyword'))"
+      [control]="$any(formQueryScheme.get('etapa'))"
       type="text"
       label="Etapa"
       placeholder="Ej. 234"
@@ -36,7 +36,7 @@
 
     <div class="col-md-4">
         <subsidios-input
-        [control]="$any(formQueryScheme.get('keyword'))"
+        [control]="$any(formQueryScheme.get('requisito'))"
         type="text"
         label="Requisito"
         placeholder="Ej. 234"
@@ -54,11 +54,13 @@
     <div class="col-md-12">
       <a class="button-modal-enabled-none" data-bs-toggle="modal" data-bs-target="#crearEsquemaModal" href="#"
         #openbuttoncreate></a>
-      <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
+      <button type="button" (click)="filterResults()"
+       class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">
         Buscar
       </button>
 
-      <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
+      <button type="button" (click)="resetFilters()"
+       class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">
         Limpiar
       </button>
       <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbutton
@@ -85,7 +87,7 @@
     </div>
     <div class="col-md-2">
       <p lang="es" class="text2-tipografia-govco mt-3 mb-2">
-        Total registros: {{ 3 }}
+        Total registros: {{filteredRequests.length }}
       </p>
     </div>
   </div>
@@ -94,15 +96,28 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
-          <th class="columna-especial" role="button">Proceso</th>
-          <th class="columna-especial" role="button">Etapa</th>
-          <th class="columna-especial" role="button">Requisito</th>
+          <th class="columna-especial" role="button" (click)="sortTable('nombreProceso')">
+            Proceso
+            <span *ngIf="sortColumn === 'nombreProceso' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'nombreProceso' && sortDirection === 'desc'">▼</span>
+          </th>
+          <th class="columna-especial" role="button" (click)="sortTable('nombreEtapa')">
+            Etapa
+            <span *ngIf="sortColumn === 'nombreEtapa' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'nombreEtapa' && sortDirection === 'desc'">▼</span>
+
+          </th>
+          <th class="columna-especial" role="button" (click)="sortTable('nombreRequisito')" >
+            Requisito
+            <span *ngIf="sortColumn === 'nombreRequisito' && sortDirection === 'asc'">▲</span>
+            <span *ngIf="sortColumn === 'nombreRequisito' && sortDirection === 'desc'">▼</span>
+          </th>
        
           <th style="text-align: center !important;">Acciones</th>
         </tr>
       </thead>
 
-      <tbody class="contenido-tablas">
+      <tbody class="contenido-tablas" *ngIf="filteredRequests.length > 0">
         <tr *ngFor="let item of processRequests">
           <td class="text-left">{{ item.nombreProceso }}</td>
           <td class="text-left">{{ item.nombreEtapa }}</td>
@@ -128,13 +143,13 @@
         </tr>
       </tbody>
 
-      <!--<tbody >
+      <tbody >
       <tr>
-        <td colspan="7">
+        <td colspan="4"  class="text-center" *ngIf="filteredRequests.length === 0">
           No se encuentra información con los criterios de búsqueda seleccionados
         </td>
       </tr>
-    </tbody>-->
+    </tbody>
 
       <!--  <tbody >
       <tr>
