@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { Modal } from '@protos/lib';
 import { Subscription } from 'rxjs';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
@@ -6,6 +6,7 @@ import { DialogAction } from '../../components/dialog/models/dialog-action';
 import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 interface ProcessPhase {
   processName: string;
@@ -19,10 +20,13 @@ interface ProcessPhase {
   templateUrl: './manage-process-configs.component.html',
   styleUrl: './manage-process-configs.component.css',
 })
-export class ManageProcessConfigsComponent {
+export class ManageProcessConfigsComponent implements OnInit {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
   subscription!: Subscription;
   modalConfig: Modal;
+  form!: FormGroup;
+  sortColumn: string = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
 
   processPhases: ProcessPhase[] = [
     {
@@ -49,8 +53,23 @@ export class ManageProcessConfigsComponent {
   selectedPhase: string | null = null;
   selectedTask: string | null = null;
 
-  constructor(private dialogService: DialogService) {
+  constructor(private dialogService: DialogService, private fb: FormBuilder) {
     this.modalConfig = new Modal();
+    this.form = this.initForm();
+  }
+
+  ngOnInit(): void {
+    // Inicializa processPhases con datos si es necesario
+  }
+
+  initForm(): FormGroup {
+    return this.fb.group({
+      // Define tus controles de formulario aquí
+    });
+  }
+
+  onSearchButton():void{
+    this.showAlert("No se encontraron resultados asociados a la búsqueda",DialogType.warning)
   }
 
   processOptions() {
@@ -89,6 +108,28 @@ export class ManageProcessConfigsComponent {
     this.selectedTask = null;
   }
 
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.processPhases.sort((a, b) => {
+      const valueA = a[column as keyof ProcessPhase];
+      const valueB = b[column as keyof ProcessPhase];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  }
+
   // MODALS
 
   onDeleteTaskModal(processPhase: ProcessPhase) {
@@ -104,17 +145,17 @@ export class ManageProcessConfigsComponent {
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
           dialogAction.eventClose.emit();
-          this.showSuccessAlert('Registro eliminado de formar exitosa');
+          this.showAlert('Registro eliminado de formar exitosa',DialogType.success);
         } else {
           dialogAction.eventClose.emit();
         }
       });
   }
 
-  showSuccessAlert(body: string) {
+  showAlert(body: string,dialogType:DialogType) {
     const dialogData = new DialogData();
     dialogData.title = body;
-    dialogData.type = DialogType.success;
+    dialogData.type = dialogType;
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
 

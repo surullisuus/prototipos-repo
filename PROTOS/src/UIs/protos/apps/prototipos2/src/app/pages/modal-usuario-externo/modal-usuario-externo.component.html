@@ -30,10 +30,24 @@
           <table class="table table-general table-basic" aria-describedby="tableDescBasic">
             <thead class="encabezado-tabla">
               <tr>
-                <th style="text-align: center !important">Actuación</th>
-                <th style="text-align: center !important">Nombre archivo</th>
-                <th style="text-align: center !important">Tipo&nbsp;documento</th>
-                <th style="text-align: center !important">Lectura</th>
+                <th style="text-align: center !important" (click)="sortTable('actuacion')">
+                  Actuación<span
+                    [ngClass]="{'asc-icon': sortColumn === 'actuacion' && sortDirection === 'asc', 'desc-icon': sortColumn === 'actuacion' && sortDirection === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortTable('nombreArchivo')">
+                  Nombre&nbsp;archivo
+                  <span
+                    [ngClass]="{'asc-icon': sortColumn === 'nombreArchivo' && sortDirection === 'asc', 'desc-icon': sortColumn === 'nombreArchivo' && sortDirection === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortTable('tipoDocumento')">
+                  Tipo&nbsp;documento<span
+                    [ngClass]="{'asc-icon': sortColumn === 'tipoDocumento' && sortDirection === 'asc', 'desc-icon': sortColumn === 'tipoDocumento' && sortDirection === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortTable('lectura')">
+                  Lectura
+                  <span
+                    [ngClass]="{'asc-icon': sortColumn === 'lectura' && sortDirection === 'asc', 'desc-icon': sortColumn === 'lectura' && sortDirection === 'desc'}"></span>
+                </th>
               </tr>
             </thead>
             <tbody class="contenido-tablas">

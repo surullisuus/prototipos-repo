@@ -12,7 +12,8 @@ import { Subscription } from 'rxjs';
 import {
   ActionType,
   DialogAction,
-} from '../../components/dialog/models/dialog-action';
+}
+from '../../components/dialog/models/dialog-action';
 import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
@@ -162,5 +163,30 @@ export class ConsultDocumentsComponent implements AfterViewInit {
           dialogAction.eventClose.emit();
         }
       });
+  }
+
+  sortColumn: string = '';
+  sortDirection: 'asc' | 'desc' = 'asc';
+
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.documentos.sort((a, b) => {
+      const valueA = a[column as keyof typeof a];
+      const valueB = b[column as keyof typeof b];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
   }
 }

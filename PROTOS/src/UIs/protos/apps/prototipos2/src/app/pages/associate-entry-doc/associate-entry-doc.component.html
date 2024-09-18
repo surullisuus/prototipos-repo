@@ -69,8 +69,17 @@
             <table class="table table-general table-basic" aria-describedby="tableDescBasic">
               <thead class="encabezado-tabla">
                 <tr>
-                  <th role="button">No.&nbsp;Radicado</th>
-                  <th role="button">Fecha&nbsp;radicado</th>
+                  <th role="button" (click)="sortTable('numeroRadicado')" style="white-space: nowrap;">
+                    No.&nbsp;Radicado&nbsp;
+                    <span
+                      [ngClass]="{'asc-icon': sortColumn === 'numeroRadicado' && sortDirection === 'asc', 'desc-icon': sortColumn === 'numeroRadicado' && sortDirection === 'desc'}"
+                      style="display: inline;"></span>
+                  </th>
+                  <th role="button" (click)="sortTable('fechaRadicacion')">
+                    Fecha&nbsp;radicado
+                    <span
+                      [ngClass]="{'asc-icon': sortColumn === 'fechaRadicacion' && sortDirection === 'asc', 'desc-icon': sortColumn === 'fechaRadicacion' && sortDirection === 'desc'}"></span>
+                  </th>
                   <th style="text-align: center !important">Acción</th>
                   <th style="text-align: center !important">Seleccionar</th>
                 </tr>

@@ -29,8 +29,17 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
       <thead class="encabezado-tabla">
         <tr>
-          <th scope="col" role="button" style="text-align: center !important;">No.&nbsp;Radicado</th>
-          <th class="columna-especial" role="button" style="text-align: center !important;">Acci&oacute;n</th>
+          <th scope="col" role="button" style="text-align: center !important;" (click)="sortTable('numeroRadicado')">
+            No.&nbsp;Radicado
+            <span
+              [ngClass]="{'asc-icon': sortColumn === 'numeroRadicado' && sortDirection === 'asc', 'desc-icon': sortColumn === 'numeroRadicado' && sortDirection === 'desc'}"></span>
+          </th>
+          <th class="columna-especial" role="button" style="text-align: center !important;"
+            (click)="sortTable('accion')">
+            Acci&oacute;n
+            <span
+              [ngClass]="{'asc-icon': sortColumn === 'accion' && sortDirection === 'asc', 'desc-icon': sortColumn === 'accion' && sortDirection === 'desc'}"></span>
+          </th>
         </tr>
       </thead>
       <tbody class="contenido-tablas">
