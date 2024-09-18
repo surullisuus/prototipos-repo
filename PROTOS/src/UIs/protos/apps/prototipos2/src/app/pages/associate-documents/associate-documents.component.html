@@ -24,28 +24,34 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
         <thead class="encabezado-tabla">
             <tr>
-                <th role="button">No.&nbsp;Radicado</th>
+                <th style="text-align: center !important" (click)="sortColumn('numeroRadicado')">
+                    Número Radicado
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'numeroRadicado' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'numeroRadicado' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortColumn('seleccionado')">
+                    Seleccionado
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'seleccionado' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'seleccionado' && sortOrder === 'desc'}"></span>
+                </th>
                 <th style="text-align: center !important">Acción</th>
-                <th style="text-align: center !important">Seleccionar</th>
             </tr>
         </thead>
 
         <tbody class="contenido-tablas">
             <tr *ngFor="let item of data">
-                <td class="text-left">{{ item.numeroRadicado }}</td>
-                <td style="text-align: center !important; padding-right: 10px">
-                    <!-- Acciones-->
-                    <a class="button-modal-enabled-none" data-bs-toggle="modal" #openbuttonSeeScheme
-                        data-bs-target="#verEsquemaModal" href="#"></a>
-                    <a type="button" class="me-0" tabindex="0"
-                        [routerLink]="'/asociar-documento-entrada-GesDoc'">Ver&nbsp;documento</a>
-                </td>
-                <td style="text-align: center !important;">
-                    <div class="d-flex justify-content-center">
+                <td style="text-align: center !important">{{ item.numeroRadicado }}</td>
+                <td style="text-align: center !important">
+                    <div class="d-flex justify-content-center align-items-center">
                         <input class="form-check-input" type="checkbox" id="input-tratamiento-{{ item.numeroRadicado }}"
                             [checked]="item.seleccionado" disabled />
                         <label class="form-check-label" for="input-tratamiento-{{ item.numeroRadicado }}"></label>
                     </div>
+                </td>
+                <td style="text-align: center !important">
+                    <!-- Acción buttons or links here -->
+                    <a type="button" class="me-0" tabindex="0"
+                        [routerLink]="'/asociar-documento-entrada-GesDoc'">Ver&nbsp;documento</a>
                 </td>
             </tr>
         </tbody>

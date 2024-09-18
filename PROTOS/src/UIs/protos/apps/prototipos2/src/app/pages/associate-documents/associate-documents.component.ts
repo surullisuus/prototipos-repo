@@ -21,17 +21,20 @@ export class AssociateDocumentsComponent {
     },
     {
       id: 2,
-      numeroRadicado: '123',
+      numeroRadicado: '456',
       seleccionado: true,
     },
-        {
+    {
       id: 3,
-      numeroRadicado: '123',
+      numeroRadicado: '789',
       seleccionado: true,
     },
   ];
   subscription!: Subscription;
   formQueryScheme!: FormGroup;
+
+  sortColumnName: string = '';
+  sortOrder: 'asc' | 'desc' = 'asc';
 
   constructor(
     private readonly fb: FormBuilder,
@@ -77,7 +80,6 @@ export class AssociateDocumentsComponent {
             dialogAction.eventClose.emit();
           }
         });
-
   }
 
   showAlertState(body: string, dialogType: DialogType) {
@@ -93,5 +95,25 @@ export class AssociateDocumentsComponent {
         location.reload();
         dialogAction.eventClose.emit();
       });
+  }
+
+  sortColumn(columnName: string) {
+    if (this.sortColumnName === columnName) {
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortColumnName = columnName;
+      this.sortOrder = 'asc';
+    }
+    this.data.sort((a: any, b: any) => {
+      const aValue = a[columnName].toString().toLowerCase();
+      const bValue = b[columnName].toString().toLowerCase();
+      if (aValue < bValue) {
+        return this.sortOrder === 'asc' ? -1 : 1;
+      } else if (aValue > bValue) {
+        return this.sortOrder === 'asc' ? 1 : -1;
+      } else {
+        return 0;
+      }
+    });
   }
 }

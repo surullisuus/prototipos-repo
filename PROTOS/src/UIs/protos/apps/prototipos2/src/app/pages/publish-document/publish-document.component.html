@@ -38,14 +38,41 @@
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
         <thead class="encabezado-tabla">
             <tr>
-                <th style="text-align: center !important">ID</th>
-                <th style="text-align: center !important">Publicación</th>
-                <th style="text-align: center !important">Proceso</th>
-                <th style="text-align: center !important">Tipo documental</th>
-                <th style="text-align: start !important">Elaboró</th>
-                <th style="text-align: start !important">Firmó</th>
-                <th style="text-align: center !important;">Fecha&nbsp;de&nbsp;firma</th>
-
+                <th style="text-align: center !important" (click)="sortColumn('id', 'publicaciones')">
+                    ID
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'id' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'id' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortColumn('publicacion', 'publicaciones')">
+                    Publicación
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'publicacion' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'publicacion' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortColumn('proceso', 'publicaciones')">
+                    Proceso
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'proceso' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'proceso' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortColumn('tipoDocumental', 'publicaciones')">
+                    Tipo documental
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'tipoDocumental' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'tipoDocumental' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: start !important" (click)="sortColumn('elaboro', 'publicaciones')">
+                    Elaboró
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'elaboro' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'elaboro' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: start !important" (click)="sortColumn('firmo', 'publicaciones')">
+                    Firmó
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'firmo' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'firmo' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important;" (click)="sortColumn('fechaFirma', 'publicaciones')">
+                    Fecha&nbsp;de&nbsp;firma
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'fechaFirma' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'fechaFirma' && sortOrder === 'desc'}"></span>
+                </th>
             </tr>
         </thead>
         <tbody class="contenido-tablas">
@@ -62,23 +89,36 @@
     </table>
 </div>
 
-
-<div class="table-responsive table-process">
+<div class="table-responsive table-process mb-3">
     <table class="table table-general table-basic" aria-describedby="tableDescBasic">
         <thead class="encabezado-tabla">
             <tr>
-                <th style="text-align: left !important">Fase</th>
-                <th style="text-align: center !important">Responsable</th>
-                <th style="text-align: center !important">Estado</th>
+                <th style="text-align: center !important" (click)="sortColumn('fase', 'historicoDocumentos')">
+                    Fase
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'fase' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'fase' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortColumn('responsable', 'historicoDocumentos')">
+                    Responsable
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'responsable' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'responsable' && sortOrder === 'desc'}"></span>
+                </th>
+                <th style="text-align: center !important" (click)="sortColumn('estado', 'historicoDocumentos')">
+                    Estado
+                    <span
+                        [ngClass]="{'asc-icon': sortColumnName === 'estado' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'estado' && sortOrder === 'desc'}"></span>
+                </th>
             </tr>
         </thead>
         <tbody class="contenido-tablas">
-            <tr *ngFor="let historico of historicoDocumentos">
-                <td style="text-align: left !important">{{ historico.fase }}</td>
-                <td style="text-align: center !important ">{{ historico.responsable }}</td>
-                <td class="d-flex justify-content-center">
-                    <div class="checkbox-seleccion-govco m-2">
-                        <input id="opt1" type="checkbox" [checked]="historico.estado" disabled />
+            <tr *ngFor="let doc of historicoDocumentos">
+                <td style="text-align: center !important">{{ doc.fase }}</td>
+                <td style="text-align: center !important">{{ doc.responsable }}</td>
+                <td style="text-align: center !important">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <input class="form-check-input" type="checkbox" id="input-tratamiento-{{ doc.id }}"
+                            [checked]="doc.estado" disabled />
+                        <label class="form-check-label" for="input-tratamiento-{{ doc.id }}"></label>
                     </div>
                 </td>
             </tr>

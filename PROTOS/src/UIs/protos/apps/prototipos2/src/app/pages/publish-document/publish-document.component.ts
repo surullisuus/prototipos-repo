@@ -81,27 +81,26 @@ export class PublishDocumentComponent implements OnInit {
         },
     ];
 
+    sortColumnName: string = '';
+    sortOrder: 'asc' | 'desc' = 'asc';
+
     initForm(): FormGroup {
         return this.fb.group({
           idPublicacion: [null],
           enlaceUnoPublicacion: [null],
           enlaceDosPublicacion: [null],
         });
+    }
 
-      }
-
-      ngOnInit(): void {
+    ngOnInit(): void {
         this.formQueryScheme = this.initForm();
-      }
+    }
 
+    onClose() {
+        this.router.navigate(['consultar-documentos']);
+    }
 
-      onClose() {
-      this.router.navigate(['consultar-documentos']);
-
-
-      }
-
-      showAlertState(body: string, dialogType: DialogType) {
+    showAlertState(body: string, dialogType: DialogType) {
         const dialogData = new DialogData();
         dialogData.title = body;
         dialogData.type = dialogType;
@@ -114,9 +113,9 @@ export class PublishDocumentComponent implements OnInit {
             location.reload();
             dialogAction.eventClose.emit();
           });
-      }
+    }
 
-      onSavePublication(): void {
+    onSavePublication(): void {
         const dialogData = new DialogData();
         dialogData.title = "Guardar publicación";
         dialogData.body = "¿Esta seguro de guardar la publicación?";
@@ -133,5 +132,25 @@ export class PublishDocumentComponent implements OnInit {
               dialogAction.eventClose.emit();
             }
           });
-      }
+    }
+
+    sortColumn(columnName: string, table: 'publicaciones' | 'historicoDocumentos') {
+        if (this.sortColumnName === columnName) {
+          this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+        } else {
+          this.sortColumnName = columnName;
+          this.sortOrder = 'asc';
+        }
+        this[table].sort((a: any, b: any) => {
+          const aValue = a[columnName].toString().toLowerCase();
+          const bValue = b[columnName].toString().toLowerCase();
+          if (aValue < bValue) {
+            return this.sortOrder === 'asc' ? -1 : 1;
+          } else if (aValue > bValue) {
+            return this.sortOrder === 'asc' ? 1 : -1;
+          } else {
+            return 0;
+          }
+        });
+    }
 }
