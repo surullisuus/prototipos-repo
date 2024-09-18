@@ -102,6 +102,11 @@ export class EditPartComponent {
 
     onSaveModal(){
      
+      if(this.formQueryScheme.invalid){
+        this.onShowError()
+        this.formQueryScheme.markAllAsTouched()
+        return
+      }
       const dialogData = new DialogData();
       dialogData.title="¿Está seguro de guardar esta información?"
       dialogData.textButtonCancel = "Cerrar";
@@ -121,6 +126,26 @@ export class EditPartComponent {
         });
     }
     
+    onShowError(){
+     
+      const dialogData = new DialogData();
+      dialogData.title="Campos Requeridos"
+      dialogData.body="Señor usuario, hacen falta campos por diligenciar."
+      dialogData.type = DialogType.danger;
+      dialogData.buttonCancel=false
+    
+      this.dialogService.resultActionModal
+      this.subscription = this.dialogService
+        .openModal(this.dialog, dialogData)
+        .subscribe((dialogAction: DialogAction) => {
+          if (dialogAction.action === ActionType.confirm) {
+            dialogAction.eventClose.emit();
+           
+          } else{
+            dialogAction.eventClose.emit();
+          }
+        });
+    }
     onShowSuccessModal(){
        
       const dialogData = new DialogData();

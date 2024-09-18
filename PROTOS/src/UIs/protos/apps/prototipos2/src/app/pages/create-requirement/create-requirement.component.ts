@@ -68,6 +68,7 @@ export class CreateRequirementComponent {
   }
 
   showSuccessAlert() {
+
     const dialogData = new DialogData();
     dialogData.title = "El requisito fue creado con éxito";
     dialogData.type = DialogType.success;

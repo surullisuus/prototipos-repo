@@ -1,6 +1,6 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { ActionType } from '../../components/dialog/models/action-type.enum';
 import { DialogAction } from '../../components/dialog/models/dialog-action';
@@ -114,23 +114,31 @@ disableFileUpload() {
   initForm(): FormGroup {
     this.initList()
     return this.fb.group({
-      razon: [""],
-      tipoId: [null],
-      id: [null],
-      tipoParte:["5"],
-      direccion: [null],
-      telefono: [""],
-      correo: [""],
-      departamento:["5"],
-      municipio:["5"],
-      aceptaTratamiento:[false],
-      fileUpload: [{ value: '', disabled: true }]
+      razon: ["", [Validators.required]],
+      tipoId: ["1", Validators.required],
+      id: [null, [Validators.required]],
+      tipoParte: ["5", Validators.required],
+      direccion: ["", Validators.required],
+      telefono: ["", [Validators.required]],  // Para un teléfono de 7 a 10 dígitos
+      correo: ["", [Validators.required, Validators.email]],
+      departamento: ["5", Validators.required],
+      municipio: ["5", Validators.required],
+      aceptaTratamiento: [false],  
+      fileUpload: [{ value: "", disabled: true }]
        });
     
   }
 
   onSaveModal(){
-     
+
+    console.log(this.formQueryScheme.value)
+    console.log(this.formQueryScheme.invalid)
+if(this.formQueryScheme.invalid){
+  this.onShowError()
+  this.formQueryScheme.markAllAsTouched()
+  return
+}
+ 
     const dialogData = new DialogData();
     dialogData.title="¿Está seguro de guardar esta información?"
     dialogData.textButtonCancel = "Cerrar";
@@ -165,6 +173,28 @@ disableFileUpload() {
           this.router.navigate(['/partes-procesos']);
          
         } 
+      });
+  }
+  
+
+  onShowError(){
+     
+    const dialogData = new DialogData();
+    dialogData.title="Campos Requeridos"
+    dialogData.body="Señor usuario, hacen falta campos por diligenciar."
+    dialogData.type = DialogType.danger;
+    dialogData.buttonCancel=false
+  
+    this.dialogService.resultActionModal
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          dialogAction.eventClose.emit();
+         
+        } else{
+          dialogAction.eventClose.emit();
+        }
       });
   }
   
