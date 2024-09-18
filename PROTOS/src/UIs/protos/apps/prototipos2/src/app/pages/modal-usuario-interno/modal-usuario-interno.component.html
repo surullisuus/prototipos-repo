@@ -32,8 +32,16 @@
             <table class="table table-general table-basic" aria-describedby="tableDescBasic">
               <thead class="encabezado-tabla">
                 <tr>
-                  <th style="text-align: center !important">Grupo/Subdirección</th>
-                  <th style="text-align: center !important">Rol</th>
+                  <th style="text-align: center !important" (click)="sortColumn('name')">
+                    Grupo/Subdirección
+                    <span
+                      [ngClass]="{'asc-icon': sortColumnName === 'name' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'name' && sortOrder === 'desc'}"></span>
+                  </th>
+                  <th style="text-align: center !important" (click)="sortColumn('role')">
+                    Rol
+                    <span
+                      [ngClass]="{'asc-icon': sortColumnName === 'role' && sortOrder === 'asc', 'desc-icon': sortColumnName === 'role' && sortOrder === 'desc'}"></span>
+                  </th>
                   <th style="text-align: center !important">Acción</th>
                 </tr>
               </thead>

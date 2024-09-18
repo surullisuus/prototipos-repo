@@ -76,7 +76,7 @@ export const appRoutes: Route[] = [
   { path: 'editar-parte', component: EditPartComponent },
   { path: 'asignar-documento', component: AssignDocumentComponent },
   { path: 'observacion-documento', component: DocumentObservationsComponent },
-  { path: 'gestionar-proceso-diseno', component: ManageProcessDesignComponent },
+  { path: 'gestionar-proceso-diseno', component: ManageTaskDocumentComponent },
   { path: 'gestionar-tareas', component: ManageTaskComponent },
   {
     path: 'configurar-tareas-etapa',
@@ -159,7 +159,7 @@ export const appRoutes: Route[] = [
     component: AssociateInboundDocumentGesDocComponent,
   },
   { path: 'asociar-resolucion', component: AssociateResolutionsComponent },
-  { path: 'gestionar-documento-tarea', component: ManageTaskDocumentComponent },
+  { path: 'gestionar-documento-tarea', component: ManageProcessDesignComponent },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent },
   { path: 'flujo-documento', component: FlujoDocumentoComponent },
   { path: 'registrar-solicitud-cdg', component: RegisterCdgRequestComponent },

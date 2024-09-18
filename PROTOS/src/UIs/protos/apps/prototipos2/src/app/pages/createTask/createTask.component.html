@@ -8,28 +8,30 @@
 
 <div class="row">
     <div class="col-md-5">
-        <subsidios-dropdown-list labelText="Proceso:*" note="Seleccione el proceso" idList="type-345676"
-            type="basic" [disabled]="false"></subsidios-dropdown-list>
+        <subsidios-dropdown-list labelText="Proceso:*" note="Seleccione el proceso" idList="type-345676" type="basic"
+            [isRequired]="true" [disabled]="false"></subsidios-dropdown-list>
     </div>
     <div class="col-md-5">
-        <subsidios-dropdown-list labelText="Etapa:*" note="Seleccione la etapa" idList="type-345676"
-            type="basic" [disabled]="false"></subsidios-dropdown-list>
+        <subsidios-dropdown-list labelText="Etapa:*" note="Seleccione la etapa" idList="type-345676" type="basic"
+            [disabled]="false" [isRequired]="true"></subsidios-dropdown-list>
     </div>
 </div>
 
 <div class="row mt-3">
     <div class="col-md-10">
         <div class="entradas-de-texto-govco">
-            <label for="input-basico-id">Tarea*:</label>
-            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
+            <subsidios-input [control]="$any(formQueryScheme.get('tarea'))" type="text" label="Tarea*:"
+                placeholder="Ejemplo: Campo de texto" [showStatus]="false" [maxLength]="100" [minLength]="1"
+                [required]="true"></subsidios-input>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-10">
         <div class="entradas-de-texto-govco">
-            <label for="input-basico-id">Descripcion*:</label>
-            <input type="text" id="input-basico-id" placeholder="Ejemplo: Campo de texto" />
+            <subsidios-input [control]="$any(formQueryScheme.get('descripcion'))" type="text" label="Descripción*:"
+                placeholder="Ejemplo: Campo de texto" [showStatus]="false" [maxLength]="100" [minLength]="1"
+                [required]="true"></subsidios-input>
         </div>
     </div>
 </div>
@@ -37,10 +39,11 @@
 <div class="row">
     <div class="col-md-4">
         <div class="entradas-de-texto-govco pb-0 text-nowrap">
-            <label for="input-basico-id">Tiempo tarea (en días)*:</label>
             <div class="row">
                 <div class="col-md-8">
-                    <input type="text" id="input-basico-id" />
+                    <subsidios-input [control]="$any(formQueryScheme.get('tiempoTarea'))" type="text"
+                        label="Tiempo tarea (en días)*:" placeholder="Ejemplo: 5" [showStatus]="false" [maxLength]="10"
+                        [minLength]="1" [required]="true"></subsidios-input>
                 </div>
             </div>
 
@@ -53,13 +56,13 @@
             <div class="row">
                 <div class="col-md-4 mb-1 mb-md-0">
                     <div class="radio-seleccion-govco ms-2">
-                        <input type="radio" id="radio1" name="radioButton1" value="1" >
+                        <input type="radio" id="radio1" name="radioButton1" value="1">
                         <label for="radio1">Hábiles</label>
                     </div>
                 </div>
                 <div class="col-md-4 ">
                     <div class="radio-seleccion-govco ms-2">
-                        <input type="radio" id="radio2" name="radioButton1" value="1" >
+                        <input type="radio" id="radio2" name="radioButton1" value="1">
                         <label for="radio2">Calendario</label>
                     </div>
                 </div>
@@ -71,10 +74,11 @@
 <div class="row">
     <div class="col-md-4 ">
         <div class="entradas-de-texto-govco pb-0 text-nowrap">
-            <label for="input-basico-id">Tiempo alerta (en días)*:</label>
             <div class="row">
                 <div class="col-md-8">
-                    <input type="text" id="input-basico-id" />
+                    <subsidios-input [control]="$any(formQueryScheme.get('tiempoAlerta'))" type="text"
+                        label="Tiempo alerta (en días)*:" placeholder="Ejemplo: 2" [showStatus]="false" [maxLength]="10"
+                        [minLength]="1" [required]="true"></subsidios-input>
                 </div>
             </div>
 
@@ -88,13 +92,13 @@
             <div class="row">
                 <div class="col-md-4 col-md-4 mb-1 mb-md-0">
                     <div class="radio-seleccion-govco ms-2">
-                        <input type="radio" id="radio3" name="radioButton2" value="1" >
+                        <input type="radio" id="radio3" name="radioButton2" value="1">
                         <label for="radio3">Hábiles</label>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="radio-seleccion-govco ms-2">
-                        <input type="radio" id="radio4" name="radioButton2" value="1" >
+                        <input type="radio" id="radio4" name="radioButton2" value="1">
                         <label for="radio4">Calendario</label>
                     </div>
                 </div>
@@ -109,13 +113,14 @@
     <div class="col-md-6">
         <div class="entradas-de-texto-govco pb-0">
             <div class="d-flex justify-content-between">
-                    <label for="input-basico-id" class="pt-2">Asignación de responsable</label>
+                <label for="input-basico-id" class="pt-2">Asignación de responsable</label>
                 <div class="checkbox-seleccion-govco m-2">
                     <input id="opt1" type="checkbox" />
                 </div>
             </div>
         </div>
-        <p lang="en" class="text3-tipografia-govco">Selecciona si se asigna el responsable desde el motor de procesos</p>
+        <p lang="en" class="text3-tipografia-govco">Selecciona si se asigna el responsable desde el motor de procesos
+        </p>
     </div>
 </div>
 
@@ -123,7 +128,7 @@
     <div class="col-md-6">
         <div class="entradas-de-texto-govco pb-0">
             <div class="d-flex justify-content-between">
-                    <label for="input-basico-id" class="pt-2">Ejecución de tarea desde motor</label>
+                <label for="input-basico-id" class="pt-2">Ejecución de tarea desde motor</label>
                 <div class="checkbox-seleccion-govco m-2">
                     <input id="opt1" type="checkbox" />
                 </div>
@@ -138,7 +143,7 @@
     <div class="col-md-6">
         <div class="entradas-de-texto-govco pb-0">
             <div class="d-flex justify-content-between">
-                    <label for="input-basico-id" class="pt-2">Activar tarea</label>
+                <label for="input-basico-id" class="pt-2">Activar tarea</label>
                 <div class="checkbox-seleccion-govco m-2">
                     <input id="opt1" type="checkbox" />
                 </div>
@@ -176,8 +181,8 @@
     <div class="col-md-6 col-lg-3">
         <p lang="en" class="text2-tipografia-govco text-nowrap">Tipos documentales de salida*:</p>
         <div class="checkbox-seleccion-govco m-2">
-                <input id="opt1" type="checkbox" />
-                <label for="opt1" class="text-nowrap">Checkbox 1</label>
+            <input id="opt1" type="checkbox" />
+            <label for="opt1" class="text-nowrap">Checkbox 1</label>
         </div>
         <div class="checkbox-seleccion-govco m-2">
             <input id="opt1" type="checkbox" />
@@ -239,5 +244,6 @@
     </div>
 </div>
 
-<button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space bg-marine mt-4" (click)="agregarCampo()">Agregar campo
+<button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space bg-marine mt-4"
+    (click)="agregarCampo()">Agregar campo
     adicional</button>

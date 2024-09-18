@@ -1,0 +1,2034 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.3.1",
+  "deps": {
+    "@types/jest": "^29.5.12",
+    "nx": "19.3.1"
+  },
+  "pathMappings": {},
+  "nxJsonPlugins": [],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": "PROTOS/src/UIs/protos/nx.json",
+        "hash": "11917075900057292970"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/package.json",
+        "hash": "12860609680295575283"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "9711185089890210630"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "634395127707124363"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/README.md",
+        "hash": "17617539517234884743"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.gitignore",
+        "hash": "11966908335120871298"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.prettierignore",
+        "hash": "3395189204293871444"
+      },
+      {
+        "file": "package.json",
+        "hash": "1901056353039060329"
+      },
+      {
+        "file": "nx.json",
+        "hash": "5710489012492234158"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/tsconfig.base.json",
+        "hash": "14900512597538786341"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/package-lock.json",
+        "hash": "6557836008174197123"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.vscode/extensions.json",
+        "hash": "17425123947026961272"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/jest.config.ts",
+        "hash": "3494843969422251966"
+      }
+    ],
+    "projectFileMap": {
+      "prototipos2-e2e": [
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/.eslintrc.json",
+          "hash": "632147010597293032"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/playwright.config.ts",
+          "hash": "10136383218243061113"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/project.json",
+          "hash": "2211398605230030683"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/src/example.spec.ts",
+          "hash": "16019101014373124625"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/tsconfig.json",
+          "hash": "2800721902587063983"
+        }
+      ],
+      "prototipos2": [
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/.eslintrc.json",
+          "hash": "3322449398258820698"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/jest.config.ts",
+          "hash": "9316439228657163024"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/project.json",
+          "hash": "420087927269824660"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/app.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/app.component.html",
+          "hash": "4926799239135388711"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/app.component.spec.ts",
+          "hash": "6221502860174357890"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/app.component.ts",
+          "hash": "9396162679048716632"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/app.module.ts",
+          "hash": "14073582253489068954"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/app.routes.ts",
+          "hash": "4039581442339492341"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/dialog.component.css",
+          "hash": "16914107485870127469"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/dialog.component.html",
+          "hash": "18250960496144365009"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/dialog.component.spec.ts",
+          "hash": "5040842064992645777"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/dialog.component.ts",
+          "hash": "16732879481012023887"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/models/action-type.enum.ts",
+          "hash": "676056665182648939"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/models/dialog-action.ts",
+          "hash": "7139642064650596565"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/models/dialog-data.ts",
+          "hash": "14649704457934452233"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/models/dialog-type.ts",
+          "hash": "1524311768974099672"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dialog/services/dialog.service.ts",
+          "hash": "5570330265789738121"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dropdown-list/assets/WorkSans-Regular.ttf",
+          "hash": "10781031146758971685"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dropdown-list/assets/govco-font-icons.ttf",
+          "hash": "1838176861611985394"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dropdown-list/dropdown-list.component.css",
+          "hash": "4461381109934061478"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dropdown-list/dropdown-list.component.html",
+          "hash": "13801117875093923416"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dropdown-list/dropdown-list.component.spec.ts",
+          "hash": "14123043038322114225"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/dropdown-list/dropdown-list.component.ts",
+          "hash": "8374216464828073104"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/footer/footer.component.css",
+          "hash": "11908979427030446887"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/footer/footer.component.html",
+          "hash": "14415720863930921286"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/footer/footer.component.spec.ts",
+          "hash": "5999637913167128263"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/footer/footer.component.ts",
+          "hash": "5032434992843942886"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/header/header.component.css",
+          "hash": "13056594108729873618"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/header/header.component.html",
+          "hash": "2714177270651290221"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/header/header.component.spec.ts",
+          "hash": "6153927307393670060"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/header/header.component.ts",
+          "hash": "10112449855938504752"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/loading-modal/loading-modal.component.css",
+          "hash": "14436582006637867954"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/loading-modal/loading-modal.component.html",
+          "hash": "11294413218381063738"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/loading-modal/loading-modal.component.spec.ts",
+          "hash": "9377364381711523944"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/loading-modal/loading-modal.component.ts",
+          "hash": "7083449050426110359"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/main/main.component.css",
+          "hash": "4974157066309766306"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/main/main.component.html",
+          "hash": "10860656948244292126"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/main/main.component.spec.ts",
+          "hash": "10370364629513049989"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/main/main.component.ts",
+          "hash": "1334616085085940543"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/modal/modal.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/modal/modal.component.html",
+          "hash": "5883671929063885206"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/modal/modal.component.spec.ts",
+          "hash": "14565052085629875450"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/modal/modal.component.ts",
+          "hash": "13773326149150382814"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/notification/notification-component.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/notification/notification-component.component.html",
+          "hash": "10935311954588716184"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/notification/notification-component.component.spec.ts",
+          "hash": "15663161597685427164"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/notification/notification-component.component.ts",
+          "hash": "12930635410188816644"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/paginator/paginator.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/paginator/paginator.component.html",
+          "hash": "15549901642375878338"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/paginator/paginator.component.spec.ts",
+          "hash": "2338694205907153862"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/paginator/paginator.component.ts",
+          "hash": "11446165379055620277"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/sidebar/sidebar.component.css",
+          "hash": "2198705223269158508"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/sidebar/sidebar.component.html",
+          "hash": "7025353714473889239"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/sidebar/sidebar.component.spec.ts",
+          "hash": "2172665205593773014"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/components/sidebar/sidebar.component.ts",
+          "hash": "12594769683534530602"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/add-roles-modal/add-roles-modal.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/add-roles-modal/add-roles-modal.component.html",
+          "hash": "18428866361680438287"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/add-roles-modal/add-roles-modal.component.ts",
+          "hash": "4758048801198472980"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/alerts-by-responsible/alerts-by-responsible.component.css",
+          "hash": "13828702935539529965"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/alerts-by-responsible/alerts-by-responsible.component.html",
+          "hash": "16204184794223688924"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/alerts-by-responsible/alerts-by-responsible.component.spec.ts",
+          "hash": "12919582025638405134"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/alerts-by-responsible/alerts-by-responsible.component.ts",
+          "hash": "244540579678577827"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/approve-document-modal/approve-document-modal.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/approve-document-modal/approve-document-modal.component.html",
+          "hash": "7560970275568823531"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/approve-document-modal/approve-document-modal.component.ts",
+          "hash": "13683344950837700373"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assign-document/assign-document.component.css",
+          "hash": "17813467363965844122"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assign-document/assign-document.component.html",
+          "hash": "12263859434616290737"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assign-document/assign-document.component.spec.ts",
+          "hash": "8219225644402308227"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assign-document/assign-document.component.ts",
+          "hash": "3257275161929725555"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assign-request/assign-request.component.css",
+          "hash": "17471206042178267857"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assign-request/assign-request.component.html",
+          "hash": "11930970600040954086"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assign-request/assign-request.component.spec.ts",
+          "hash": "18118548917844299244"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assign-request/assign-request.component.ts",
+          "hash": "14015624104944587625"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assing-responsible-task/assing-responsible-task.component.css",
+          "hash": "15924937550236066956"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assing-responsible-task/assing-responsible-task.component.html",
+          "hash": "4149550345605979547"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assing-responsible-task/assing-responsible-task.component.spec.ts",
+          "hash": "3504393486935228507"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/assing-responsible-task/assing-responsible-task.component.ts",
+          "hash": "2763922813112232440"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-documents/associate-documents.component.css",
+          "hash": "5137979469056044340"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-documents/associate-documents.component.html",
+          "hash": "8867678953910683180"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-documents/associate-documents.component.ts",
+          "hash": "7790837421268676786"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-entry-doc/associate-entry-doc.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-entry-doc/associate-entry-doc.component.html",
+          "hash": "15135325914171600781"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-entry-doc/associate-entry-doc.component.ts",
+          "hash": "9963621406126733"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-inbound-document-GesDoc/associate-inbound-document-GesDoc.component.css",
+          "hash": "4795117974337553161"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-inbound-document-GesDoc/associate-inbound-document-GesDoc.component.html",
+          "hash": "6512953210005597957"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-inbound-document-GesDoc/associate-inbound-document-GesDoc.component.spec.ts",
+          "hash": "9754294312025414024"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-inbound-document-GesDoc/associate-inbound-document-GesDoc.component.ts",
+          "hash": "1936904931218400997"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-outbound-document-SISFV/associate-outbound-document-SISFV.component.css",
+          "hash": "4795117974337553161"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-outbound-document-SISFV/associate-outbound-document-SISFV.component.html",
+          "hash": "6470599076895593611"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-outbound-document-SISFV/associate-outbound-document-SISFV.component.spec.ts",
+          "hash": "10841454291933946037"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-outbound-document-SISFV/associate-outbound-document-SISFV.component.ts",
+          "hash": "11474410115352545840"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-resolutions/associate-resolutions.component.css",
+          "hash": "4795117974337553161"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-resolutions/associate-resolutions.component.html",
+          "hash": "4823230661000821656"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-resolutions/associate-resolutions.component.spec.ts",
+          "hash": "13282639572054649361"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/associate-resolutions/associate-resolutions.component.ts",
+          "hash": "7533706589330913990"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/close-stage/close-stage.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/close-stage/close-stage.component.html",
+          "hash": "15639070108859718626"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/close-stage/close-stage.component.spec.ts",
+          "hash": "7218445333924429989"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/close-stage/close-stage.component.ts",
+          "hash": "18104971421555538909"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/close-task-anormal/close-task-anormal.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/close-task-anormal/close-task-anormal.component.html",
+          "hash": "14996801618783185606"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/close-task-anormal/close-task-anormal.component.spec.ts",
+          "hash": "11250315725019361816"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/close-task-anormal/close-task-anormal.component.ts",
+          "hash": "129965308024047728"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-flow-stages/configure-flow-stages.component.css",
+          "hash": "2822621742587757354"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-flow-stages/configure-flow-stages.component.html",
+          "hash": "15818331326747388351"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-flow-stages/configure-flow-stages.component.ts",
+          "hash": "5515344634867611686"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-flow-tasks/configure-flow-tasks.component.css",
+          "hash": "2822621742587757354"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-flow-tasks/configure-flow-tasks.component.html",
+          "hash": "1683753140001852450"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-flow-tasks/configure-flow-tasks.component.ts",
+          "hash": "15051638950151245148"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-general-alerts/configure-general-alerts.component.css",
+          "hash": "5168925166938270956"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-general-alerts/configure-general-alerts.component.html",
+          "hash": "2859314191464967222"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-general-alerts/configure-general-alerts.component.spec.ts",
+          "hash": "7947739055905410102"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/configure-general-alerts/configure-general-alerts.component.ts",
+          "hash": "12055926236468010966"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/consult-documents/consult-documents.component.css",
+          "hash": "10005573516846357945"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/consult-documents/consult-documents.component.html",
+          "hash": "6246862931935981205"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/consult-documents/consult-documents.component.spec.ts",
+          "hash": "5640286763378271125"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/consult-documents/consult-documents.component.ts",
+          "hash": "10077763206613012415"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/consult-file/consult-file.component.css",
+          "hash": "342760620548973503"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/consult-file/consult-file.component.html",
+          "hash": "13364066695354282542"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/consult-file/consult-file.component.ts",
+          "hash": "17968419916506159308"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-document/generar-documento.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-document/generar-documento.component.html",
+          "hash": "15879363605814808417"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-document/generar-documento.component.spec.ts",
+          "hash": "11301739918642376795"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-document/generar-documento.component.ts",
+          "hash": "3334365012005496879"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-email-template/create-email-template.component.css",
+          "hash": "4357991517711647782"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-email-template/create-email-template.component.html",
+          "hash": "2088780412452117985"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-email-template/create-email-template.component.spec.ts",
+          "hash": "16141508510457725849"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-email-template/create-email-template.component.ts",
+          "hash": "5411645828417565579"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-notification-type/create-notification-type.component.css",
+          "hash": "517509114981058806"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-notification-type/create-notification-type.component.html",
+          "hash": "3401603138480664426"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-notification-type/create-notification-type.component.spec.ts",
+          "hash": "8415384682025975364"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-notification-type/create-notification-type.component.ts",
+          "hash": "1725946629545054689"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-part/create-part.component.css",
+          "hash": "2048007135096210615"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-part/create-part.component.html",
+          "hash": "9251054739823496425"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-part/create-part.component.spec.ts",
+          "hash": "8505059926367912649"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-part/create-part.component.ts",
+          "hash": "12504802592322298289"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-requirement/create-requirement.component.css",
+          "hash": "2048007135096210615"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-requirement/create-requirement.component.html",
+          "hash": "3208016391788501901"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-requirement/create-requirement.component.spec.ts",
+          "hash": "1365835259956299124"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-requirement/create-requirement.component.ts",
+          "hash": "17207673411887671381"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-stage-process/create-stage-process.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-stage-process/create-stage-process.component.html",
+          "hash": "13969650207234538247"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-stage-process/create-stage-process.component.spec.ts",
+          "hash": "6761224672810363761"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-stage-process/create-stage-process.component.ts",
+          "hash": "9258195196082858636"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-task-configs/create-task-config.component.css",
+          "hash": "842083754494455834"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-task-configs/create-task-config.component.html",
+          "hash": "7397869687852108283"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-task-configs/create-task-config.component.spec.ts",
+          "hash": "11710414826015464034"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/create-task-configs/create-task-config.component.ts",
+          "hash": "15095656102110059558"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/createTask/createTask.component.css",
+          "hash": "1631290730159635125"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/createTask/createTask.component.html",
+          "hash": "8521196246613703045"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/createTask/createTask.component.ts",
+          "hash": "603096320124748421"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/delete-document/delete-document.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/delete-document/delete-document.component.html",
+          "hash": "11823090053235499991"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/delete-document/delete-document.component.spec.ts",
+          "hash": "4877637981637407630"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/delete-document/delete-document.component.ts",
+          "hash": "12803604219055878827"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-email-template/detail-email-template.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-email-template/detail-email-template.component.html",
+          "hash": "12095430054851328893"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-email-template/detail-email-template.component.spec.ts",
+          "hash": "15316290351780581594"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-email-template/detail-email-template.component.ts",
+          "hash": "10468705535575638049"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-notification-type/detail-notification-type.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-notification-type/detail-notification-type.component.html",
+          "hash": "13680279256835129445"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-notification-type/detail-notification-type.component.spec.ts",
+          "hash": "15879226974881339617"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-notification-type/detail-notification-type.component.ts",
+          "hash": "15017772890822097385"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-part/detail-part.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-part/detail-part.component.html",
+          "hash": "3138737927844404325"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-part/detail-part.component.spec.ts",
+          "hash": "5186661493274004640"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-part/detail-part.component.ts",
+          "hash": "9626567641048285062"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-stage-process/detail-stage-process.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-stage-process/detail-stage-process.component.html",
+          "hash": "14272193681617893241"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-stage-process/detail-stage-process.component.spec.ts",
+          "hash": "4390024090289504160"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/detail-stage-process/detail-stage-process.component.ts",
+          "hash": "9410022906284857923"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/document-observations/document-observations.component.css",
+          "hash": "7003221628594033926"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/document-observations/document-observations.component.html",
+          "hash": "6040359848972596505"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/document-observations/document-observations.component.spec.ts",
+          "hash": "14932304411062334749"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/document-observations/document-observations.component.ts",
+          "hash": "3746007869051162058"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/document-signing/document-signing.component.css",
+          "hash": "1056349143845394211"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/document-signing/document-signing.component.html",
+          "hash": "8102207021606884681"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/document-signing/document-signing.component.spec.ts",
+          "hash": "18314752071083378507"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/document-signing/document-signing.component.ts",
+          "hash": "4482702379361731774"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-acuse-recibido/edit-acuse-recibido.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-acuse-recibido/edit-acuse-recibido.component.html",
+          "hash": "3761854833782354676"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-acuse-recibido/edit-acuse-recibido.component.spec.ts",
+          "hash": "10432413745086018483"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-acuse-recibido/edit-acuse-recibido.component.ts",
+          "hash": "2452872294439618986"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-document/editar-documento.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-document/editar-documento.component.html",
+          "hash": "11973732444327719954"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-document/editar-documento.component.spec.ts",
+          "hash": "2365080126155878774"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-document/editar-documento.component.ts",
+          "hash": "12141880708933689751"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-email-template/edit-email-template.component.css",
+          "hash": "4357991517711647782"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-email-template/edit-email-template.component.html",
+          "hash": "18350163275633820476"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-email-template/edit-email-template.component.spec.ts",
+          "hash": "9501149153173715361"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-email-template/edit-email-template.component.ts",
+          "hash": "10322442011517528458"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-notification-type/edit-notification-type.component.css",
+          "hash": "517509114981058806"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-notification-type/edit-notification-type.component.html",
+          "hash": "4618208010136573390"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-notification-type/edit-notification-type.component.spec.ts",
+          "hash": "4176658439764923418"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-notification-type/edit-notification-type.component.ts",
+          "hash": "17093410948518281465"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-part/edit-part.component.css",
+          "hash": "13840979284943416987"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-part/edit-part.component.html",
+          "hash": "8415632533378642889"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-part/edit-part.component.spec.ts",
+          "hash": "5517205094041817813"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-part/edit-part.component.ts",
+          "hash": "16847925959415688392"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-requirement/edit-requirement.component.css",
+          "hash": "2048007135096210615"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-requirement/edit-requirement.component.html",
+          "hash": "15175584580646601030"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-requirement/edit-requirement.component.spec.ts",
+          "hash": "8402081739941262200"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-requirement/edit-requirement.component.ts",
+          "hash": "2057418326728628032"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-stage-process/edit-stage-process.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-stage-process/edit-stage-process.component.html",
+          "hash": "14376002368082958757"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-stage-process/edit-stage-process.component.spec.ts",
+          "hash": "2925550974861663731"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-stage-process/edit-stage-process.component.ts",
+          "hash": "1250189567944299644"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-task/edit-task.component.css",
+          "hash": "842083754494455834"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-task/edit-task.component.html",
+          "hash": "10263589968321315778"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-task/edit-task.component.spec.ts",
+          "hash": "12269319057119341519"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-task/edit-task.component.ts",
+          "hash": "9345182946875853211"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/email-template/email-template.component.css",
+          "hash": "15389534131079591395"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/email-template/email-template.component.html",
+          "hash": "4237905846703085855"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/email-template/email-template.component.spec.ts",
+          "hash": "6559187034689567829"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/email-template/email-template.component.ts",
+          "hash": "8786519141176409954"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/file-document/file-document.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/file-document/file-document.component.html",
+          "hash": "3207270453907750438"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/file-document/file-document.component.spec.ts",
+          "hash": "18384011075630859309"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/file-document/file-document.component.ts",
+          "hash": "2327328484739397955"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/fill-additional-task-fields/fill-additional-task-fields.component.css",
+          "hash": "517509114981058806"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/fill-additional-task-fields/fill-additional-task-fields.component.html",
+          "hash": "13694791347103579584"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/fill-additional-task-fields/fill-additional-task-fields.component.spec.ts",
+          "hash": "1688234486412875354"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/fill-additional-task-fields/fill-additional-task-fields.component.ts",
+          "hash": "10129853813550938354"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/flujo-documento/flujo-documento.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/flujo-documento/flujo-documento.component.html",
+          "hash": "15522375385119750286"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/flujo-documento/flujo-documento.component.spec.ts",
+          "hash": "17329675507285761704"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/flujo-documento/flujo-documento.component.ts",
+          "hash": "3016005865707101612"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/generate-exit-document/generate-exit-document.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/generate-exit-document/generate-exit-document.component.html",
+          "hash": "6311319928113645506"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/generate-exit-document/generate-exit-document.component.ts",
+          "hash": "17154524492686398130"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-plantillas-correo/manage-plantillas-correos.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-plantillas-correo/manage-plantillas-correos.component.html",
+          "hash": "12986657437648103917"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-plantillas-correo/manage-plantillas-correos.component.spec.ts",
+          "hash": "7806122289260530298"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-plantillas-correo/manage-plantillas-correos.component.ts",
+          "hash": "13427922385079356351"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process-configs/manage-process-configs.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process-configs/manage-process-configs.component.html",
+          "hash": "5386214624910493156"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process-configs/manage-process-configs.component.spec.ts",
+          "hash": "6714860125619705726"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process-configs/manage-process-configs.component.ts",
+          "hash": "13086189030153140139"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process-design/manage-process-design.component.css",
+          "hash": "14489301001409959087"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process-design/manage-process-design.component.html",
+          "hash": "15149909349319931776"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process-design/manage-process-design.component.ts",
+          "hash": "11740865941234354173"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process/manage-process.component.css",
+          "hash": "1949170615863610293"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process/manage-process.component.html",
+          "hash": "12844488936439004574"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process/manage-process.component.spec.ts",
+          "hash": "10126550335980831321"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-process/manage-process.component.ts",
+          "hash": "14855796918633399288"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component.html",
+          "hash": "18030205571553507691"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component.spec.ts",
+          "hash": "17685385630046411457"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-seguimiento-notificaciones/manage-seguimiento-notificaciones.component.ts",
+          "hash": "16387527900604622099"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-task-document/manage-task-document.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-task-document/manage-task-document.component.html",
+          "hash": "7417522743689360074"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-task-document/manage-task-document.component.ts",
+          "hash": "17696322450979529566"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-task/manage-task.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-task/manage-task.component.html",
+          "hash": "7785576764887091914"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-task/manage-task.component.spec.ts",
+          "hash": "18134491589309926586"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/manage-task/manage-task.component.ts",
+          "hash": "6190410262877961232"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/modal-usuario-externo/modal-usuario-externo.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/modal-usuario-externo/modal-usuario-externo.component.html",
+          "hash": "2263216946175724559"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/modal-usuario-externo/modal-usuario-externo.component.ts",
+          "hash": "13494979945542040980"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/modal-usuario-interno/modal-usuario-interno.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/modal-usuario-interno/modal-usuario-interno.component.html",
+          "hash": "3148378582136097777"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/modal-usuario-interno/modal-usuario-interno.component.ts",
+          "hash": "14036873264549196268"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/notification-type/notification-type.component.css",
+          "hash": "15389534131079591395"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/notification-type/notification-type.component.html",
+          "hash": "18003383911290252302"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/notification-type/notification-type.component.spec.ts",
+          "hash": "3128614317056492927"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/notification-type/notification-type.component.ts",
+          "hash": "913672380770449114"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/parts-process/parts-process.component.css",
+          "hash": "9965057043008701260"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/parts-process/parts-process.component.html",
+          "hash": "9462622777346691189"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/parts-process/parts-process.component.spec.ts",
+          "hash": "7250963407858824022"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/parts-process/parts-process.component.ts",
+          "hash": "7204315430548165705"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/perform-documents-upload/perform-documents-upload.component.css",
+          "hash": "9889055028209250673"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/perform-documents-upload/perform-documents-upload.component.html",
+          "hash": "15203753159230944657"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/perform-documents-upload/perform-documents-upload.component.spec.ts",
+          "hash": "15972056761203335336"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/perform-documents-upload/perform-documents-upload.component.ts",
+          "hash": "12802889095536718311"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/perform-information-upload/perform-information-upload.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/perform-information-upload/perform-information-upload.component.html",
+          "hash": "11185576666254090533"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/perform-information-upload/perform-information-upload.component.spec.ts",
+          "hash": "6412757047850168079"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/perform-information-upload/perform-information-upload.component.ts",
+          "hash": "15221873465637405689"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/performances/performances.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/performances/performances.component.html",
+          "hash": "12920978164903651465"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/performances/performances.component.spec.ts",
+          "hash": "9039325500250661631"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/performances/performances.component.ts",
+          "hash": "18152941021648190096"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component.html",
+          "hash": "192681438876513166"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/permisos-lectura-interno-modal/permisos-lectura-interno-modal.component.ts",
+          "hash": "13307771616544227428"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/preliminar-view/preliminar-view.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/preliminar-view/preliminar-view.component.html",
+          "hash": "14085666272128788683"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/preliminar-view/preliminar-view.component.ts",
+          "hash": "120620345143604920"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-request/process-request.component.css",
+          "hash": "6029095273924464137"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-request/process-request.component.html",
+          "hash": "13885123334577470784"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-request/process-request.component.spec.ts",
+          "hash": "5975324693631596161"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-request/process-request.component.ts",
+          "hash": "11575768189603170060"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-stages/process-stages.component.css",
+          "hash": "18172366070505904585"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-stages/process-stages.component.html",
+          "hash": "15903031631614267220"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-stages/process-stages.component.spec.ts",
+          "hash": "13341633072450871948"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-stages/process-stages.component.ts",
+          "hash": "12746043268944746688"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/publish-document/publish-document.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/publish-document/publish-document.component.html",
+          "hash": "8160405111378075"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/publish-document/publish-document.component.ts",
+          "hash": "16673591078444202732"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/register-cdg-request/register-cdg-request.component.css",
+          "hash": "13708301242263899394"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/register-cdg-request/register-cdg-request.component.html",
+          "hash": "10653314076705572211"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/register-cdg-request/register-cdg-request.component.ts",
+          "hash": "2349780443273199813"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/reject-document/reject-document.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/reject-document/reject-document.component.html",
+          "hash": "13257106156710759252"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/reject-document/reject-document.component.ts",
+          "hash": "16074792583163126717"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/return-stage/return-stage.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/return-stage/return-stage.component.html",
+          "hash": "9130880377875700545"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/return-stage/return-stage.component.spec.ts",
+          "hash": "4597784177990090865"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/return-stage/return-stage.component.ts",
+          "hash": "4551034456127437937"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component.html",
+          "hash": "15133004845152343283"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component.spec.ts",
+          "hash": "2058381603451024081"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-asociar-radicado-notificacion/see-asociar-radicado-notificacion.component.ts",
+          "hash": "6524221067245862727"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-consultar-radicado/see-consultar-radicado.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-consultar-radicado/see-consultar-radicado.component.html",
+          "hash": "331127259803996139"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-consultar-radicado/see-consultar-radicado.component.spec.ts",
+          "hash": "23376555186909754"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-consultar-radicado/see-consultar-radicado.component.ts",
+          "hash": "9479613613104708997"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-document-modal/see-document-modal.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-document-modal/see-document-modal.component.html",
+          "hash": "2974320409060903926"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-document-modal/see-document-modal.component.spec.ts",
+          "hash": "18208453841450885601"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-document-modal/see-document-modal.component.ts",
+          "hash": "10735559733118006761"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-documental-types/see-documental-types.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-documental-types/see-documental-types.component.html",
+          "hash": "982652919734675701"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-documental-types/see-documental-types.component.spec.ts",
+          "hash": "14219336324909875709"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-documental-types/see-documental-types.component.ts",
+          "hash": "13042362251348285108"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-email-template/see-email-template.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-email-template/see-email-template.component.html",
+          "hash": "15466004348558317398"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-email-template/see-email-template.component.spec.ts",
+          "hash": "12373382434165165244"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-email-template/see-email-template.component.ts",
+          "hash": "3618770381463113895"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-preview-document/vista-previa-documento.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-preview-document/vista-previa-documento.component.html",
+          "hash": "1052140847610928222"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-preview-document/vista-previa-documento.component.spec.ts",
+          "hash": "7451758214716638948"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-preview-document/vista-previa-documento.component.ts",
+          "hash": "5848498418319314101"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-radicado/see-radicado.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-radicado/see-radicado.component.html",
+          "hash": "11598065690455355537"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-radicado/see-radicado.component.spec.ts",
+          "hash": "10380435003647828577"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-radicado/see-radicado.component.ts",
+          "hash": "5735312754688808123"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-read-permissions/see-read-permissions.component.css",
+          "hash": "3425759169036587646"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-read-permissions/see-read-permissions.component.html",
+          "hash": "14500759150545603106"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-read-permissions/see-read-permissions.component.ts",
+          "hash": "4322639190332233345"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-requirements/see-requirements.component.css",
+          "hash": "2751791701349875091"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-requirements/see-requirements.component.html",
+          "hash": "12569753023273760207"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-requirements/see-requirements.component.spec.ts",
+          "hash": "2660731136312404526"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-requirements/see-requirements.component.ts",
+          "hash": "8195536053286567793"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-task-details/see-task-details.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-task-details/see-task-details.component.html",
+          "hash": "16171684783007534990"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-task-details/see-task-details.component.spec.ts",
+          "hash": "13978533970154203854"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-task-details/see-task-details.component.ts",
+          "hash": "7764970271100476455"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-task-document/see-task-document.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-task-document/see-task-document.component.html",
+          "hash": "9231416122763341724"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-task-document/see-task-document.component.spec.ts",
+          "hash": "1790226492970839703"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/see-task-document/see-task-document.component.ts",
+          "hash": "13238381450178711386"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/selected-document-observations/selected-document-observations.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/selected-document-observations/selected-document-observations.component.html",
+          "hash": "15801221971307912702"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/selected-document-observations/selected-document-observations.component.spec.ts",
+          "hash": "904026450122882986"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/selected-document-observations/selected-document-observations.component.ts",
+          "hash": "14392505845633690448"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/send-email-notification/send-email-notification.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/send-email-notification/send-email-notification.component.html",
+          "hash": "17303528578512416661"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/send-email-notification/send-email-notification.component.spec.ts",
+          "hash": "16967689793728995450"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/send-email-notification/send-email-notification.component.ts",
+          "hash": "3635513125002883671"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/set-stage-requirements/set-stage-requirements.component.css",
+          "hash": "9985599081341620893"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/set-stage-requirements/set-stage-requirements.component.html",
+          "hash": "3615480733723234443"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/set-stage-requirements/set-stage-requirements.component.spec.ts",
+          "hash": "17678346575595888924"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/set-stage-requirements/set-stage-requirements.component.ts",
+          "hash": "11462603345422281450"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/task-by-responsible/task-by-responsible.component.css",
+          "hash": "9280975784536593867"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/task-by-responsible/task-by-responsible.component.html",
+          "hash": "10797505838212184368"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/task-by-responsible/task-by-responsible.component.spec.ts",
+          "hash": "9883002472499645948"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/task-by-responsible/task-by-responsible.component.ts",
+          "hash": "13072865527361946274"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/task-comments-view/task-comments-view.component.css",
+          "hash": "4795117974337553161"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/task-comments-view/task-comments-view.component.html",
+          "hash": "14951543928122463505"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/task-comments-view/task-comments-view.component.spec.ts",
+          "hash": "4863201488908190696"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/task-comments-view/task-comments-view.component.ts",
+          "hash": "1564372436209671043"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/template-email-alert-type/template-email-alert-type.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/template-email-alert-type/template-email-alert-type.component.html",
+          "hash": "16294371089270286149"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/template-email-alert-type/template-email-alert-type.component.spec.ts",
+          "hash": "8668688732654622562"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/template-email-alert-type/template-email-alert-type.component.ts",
+          "hash": "14538578884787037403"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/test-modal/test-modal.component.css",
+          "hash": "6474129673519552310"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/test-modal/test-modal.component.html",
+          "hash": "17997015041735417187"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/test-modal/test-modal.component.spec.ts",
+          "hash": "2940996682428838112"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/test-modal/test-modal.component.ts",
+          "hash": "1312336969556347743"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-info-modal/upload-info-modal.component.css",
+          "hash": "1251487804919639114"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-info-modal/upload-info-modal.component.html",
+          "hash": "14048312571171370475"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-info-modal/upload-info-modal.component.spec.ts",
+          "hash": "10177550309620300059"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-info-modal/upload-info-modal.component.ts",
+          "hash": "11608544602998122161"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-selected-document/upload-selected-document.component.css",
+          "hash": "17798266149395395898"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-selected-document/upload-selected-document.component.html",
+          "hash": "14867037571426459114"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-selected-document/upload-selected-document.component.spec.ts",
+          "hash": "13080263568565686657"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-selected-document/upload-selected-document.component.ts",
+          "hash": "5603922668201412510"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-task-document/upload-task-document.component.css",
+          "hash": "517509114981058806"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-task-document/upload-task-document.component.html",
+          "hash": "10147931743649350585"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-task-document/upload-task-document.component.spec.ts",
+          "hash": "12331326674642011299"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/upload-task-document/upload-task-document.component.ts",
+          "hash": "11458247504865691871"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/uploaded-info-table/uploaded-info-table.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/uploaded-info-table/uploaded-info-table.component.html",
+          "hash": "340024680163416765"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/uploaded-info-table/uploaded-info-table.component.spec.ts",
+          "hash": "10580980951132086367"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/uploaded-info-table/uploaded-info-table.component.ts",
+          "hash": "14516247156871696856"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/verRadicadoView/verRadicadoView.component.css",
+          "hash": "16587862945170759940"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/verRadicadoView/verRadicadoView.component.html",
+          "hash": "6238089981071648056"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/verRadicadoView/verRadicadoView.component.ts",
+          "hash": "7119991029506699444"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/view-selected-document/view-selected-document.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/view-selected-document/view-selected-document.component.html",
+          "hash": "4582771177779799034"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/view-selected-document/view-selected-document.component.spec.ts",
+          "hash": "7786655603302522096"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/view-selected-document/view-selected-document.component.ts",
+          "hash": "15493441488531045088"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/assets/fonts/Montserrat-Medium.ttf",
+          "hash": "13436451754088987770"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/assets/fonts/Montserrat-SemiBold.ttf",
+          "hash": "14312704757252675604"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/assets/fonts/WorkSans-Medium.ttf",
+          "hash": "18252672658657861549"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/assets/fonts/WorkSans-Regular.ttf",
+          "hash": "13275886024219505479"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/assets/fonts/govco-font-icons.ttf",
+          "hash": "1838176861611985394"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/assets/icons/times.svg",
+          "hash": "2191902771618351320"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/assets/images/minviviendaHeader.png",
+          "hash": "8629019037999237963"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/bootstrap.ts",
+          "hash": "14191774545949582757"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/index.html",
+          "hash": "11440760013768919315"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/main.ts",
+          "hash": "3259059517603285449"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/styles.css",
+          "hash": "1927679677978741942"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/test-setup.ts",
+          "hash": "12935735732682149507"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/tsconfig.editor.json",
+          "hash": "17511610827034788226"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/tsconfig.json",
+          "hash": "14845187541790154013"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "lib": [
+        {
+          "file": "PROTOS/src/UIs/protos/lib/.eslintrc.json",
+          "hash": "13179335397355282534"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/README.md",
+          "hash": "6751866278003627049"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/jest.config.ts",
+          "hash": "14765352243610266038"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/project.json",
+          "hash": "706066571856955378"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/index.ts",
+          "hash": "9582103258414411809"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/class/modal.ts",
+          "hash": "1598729083419263114"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/constants/validation.utils.ts",
+          "hash": "6527849534291298886"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/assets/WorkSans-Regular.ttf",
+          "hash": "10781031146758971685"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/disable-control.directive.ts",
+          "hash": "7734964105404819726"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.html",
+          "hash": "17860422938116125396"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.spec.ts",
+          "hash": "1051917733419957978"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.ts",
+          "hash": "13794325763351296224"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.html",
+          "hash": "12503743099659633921"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.spec.ts",
+          "hash": "11888506503727441711"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.ts",
+          "hash": "4313002594449636532"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/uis/uis.module.ts",
+          "hash": "15874306710402093297"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/test-setup.ts",
+          "hash": "12935735732682149507"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/tsconfig.json",
+          "hash": "4881022640630122902"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/tsconfig.lib.json",
+          "hash": "12869890349728543997"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/tsconfig.spec.json",
+          "hash": "16256243244356451527"
+        }
+      ],
+      "protos-e2e": [
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos-e2e/.eslintrc.json",
+          "hash": "632147010597293032"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos-e2e/playwright.config.ts",
+          "hash": "6501344045473073345"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos-e2e/project.json",
+          "hash": "6615908172934674106"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos-e2e/src/example.spec.ts",
+          "hash": "16019101014373124625"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos-e2e/tsconfig.json",
+          "hash": "2800721902587063983"
+        }
+      ],
+      "protos": [
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/.eslintrc.json",
+          "hash": "3322449398258820698"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/jest.config.ts",
+          "hash": "2934971482997220209"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/project.json",
+          "hash": "14050333242962779144"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/public/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/app.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/app.component.html",
+          "hash": "17816966185630879015"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/app.component.spec.ts",
+          "hash": "15132634351493640029"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/app.component.ts",
+          "hash": "15512368605328580369"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/app.config.ts",
+          "hash": "6137170128205633588"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/app.routes.ts",
+          "hash": "6185150965714414910"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/dash-board/dash-board.component.css",
+          "hash": "10694443230692406284"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/dash-board/dash-board.component.html",
+          "hash": "11174719742638762695"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/dash-board/dash-board.component.spec.ts",
+          "hash": "6000039151040308354"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/dash-board/dash-board.component.ts",
+          "hash": "8148755134260055158"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/footer/footer.component.css",
+          "hash": "3521742383427797574"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/footer/footer.component.html",
+          "hash": "10268916357806233124"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/footer/footer.component.spec.ts",
+          "hash": "2028942538878780779"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/footer/footer.component.ts",
+          "hash": "5552149008358768969"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/header/header.component.css",
+          "hash": "1512165773628565557"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/header/header.component.html",
+          "hash": "4550083824932083317"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/header/header.component.spec.ts",
+          "hash": "1274049401976839126"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/components/header/header.component.ts",
+          "hash": "15071175656776167612"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/app/nx-welcome.component.ts",
+          "hash": "5169176867131715081"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/index.html",
+          "hash": "2617380390259458021"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/main.ts",
+          "hash": "16635586463787978962"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/styles.css",
+          "hash": "5195668842064076916"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/src/test-setup.ts",
+          "hash": "12935735732682149507"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/tsconfig.editor.json",
+          "hash": "1055794200401717100"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/tsconfig.json",
+          "hash": "14845187541790154013"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/apps/protos/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ]
+    }
+  }
+}

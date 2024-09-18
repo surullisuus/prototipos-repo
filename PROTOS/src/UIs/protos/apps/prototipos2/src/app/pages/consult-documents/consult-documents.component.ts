@@ -100,11 +100,12 @@ export class ConsultDocumentsComponent implements AfterViewInit {
   }
 
   onAprobar(documentId: string): void {
- 
+    this.openbuttonApproveDocument.nativeElement.click()
+
   }
 
   onRechazar(documentId: string): void {
-    
+    this.openbuttonRechazarDocument.nativeElement.click()
   }
 
   onLimpiar(): void {

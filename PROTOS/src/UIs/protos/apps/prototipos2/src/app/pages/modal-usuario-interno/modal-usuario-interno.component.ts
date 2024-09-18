@@ -20,4 +20,26 @@ export class ModalUsuarioInternoComponent {
     }
   }
 
+  sortColumnName: string = '';
+  sortOrder: 'asc' | 'desc' = 'asc';
+
+  sortColumn(columnName: string) {
+    if (this.sortColumnName === columnName) {
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortColumnName = columnName;
+      this.sortOrder = 'asc';
+    }
+    this.internalGroups.sort((a: any, b: any) => {
+      const aValue = a[columnName].toLowerCase();
+      const bValue = b[columnName].toLowerCase();
+      if (aValue < bValue) {
+        return this.sortOrder === 'asc' ? -1 : 1;
+      } else if (aValue > bValue) {
+        return this.sortOrder === 'asc' ? 1 : -1;
+      } else {
+        return 0;
+      }
+    });
+  }
 }
