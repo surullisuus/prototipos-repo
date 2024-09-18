@@ -29,6 +29,8 @@ export class SeeDocumentalTypesComponent {
   selectedProcess: string | null = null;
   selectedDocumentType: string | null = null;
   showTable = false;
+  sortColumn = ''; // Columna por la que se está ordenando
+  sortDirection: 'asc' | 'desc' = 'asc'; // Dirección de ordenamiento
 
   tiposDocumentales: DocumentType[] = [
     {
@@ -114,6 +116,30 @@ export class SeeDocumentalTypesComponent {
     this.selectedProcess = null;
     this.selectedDocumentType = null;
     this.showTable = false;
+  }
+
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      // Alternar la dirección si la columna es la misma
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      // Si es una nueva columna, ordenar en ascendente
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.tiposDocumentales.sort((a, b) => {
+      const valueA = a[column as keyof DocumentType];
+      const valueB = b[column as keyof DocumentType];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
   }
 
   // MODALES

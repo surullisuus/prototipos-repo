@@ -23,11 +23,31 @@
             <!-- headers -->
             <thead class="encabezado-tabla">
                 <tr>
-                    <th style="text-align: center !important;">Tarea</th>
-                    <th style="text-align: center !important;">Estado</th>
-                    <th style="text-align: center !important;">Fecha vencimiento</th>
-                    <th style="text-align: center !important;">Estatus temporal</th>
-                    <th style="text-align: center !important;">Responsable</th>
+                    <th style="text-align: center !important;" (click)="sortTable('taskName')">
+                        Tarea
+                        <span *ngIf="sortColumn === 'taskName' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'taskName' && sortDirection === 'desc'">▼</span>
+                    </th>
+                    <th style="text-align: center !important;" (click)="sortTable('state')">
+                        Estado
+                        <span *ngIf="sortColumn === 'state' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'state' && sortDirection === 'desc'">▼</span>
+                    </th>
+                    <th style="text-align: center !important;" (click)="sortTable('expirationDate')">
+                        Fecha vencimiento
+                        <span *ngIf="sortColumn === 'expirationDate' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'expirationDate' && sortDirection === 'desc'">▼</span>
+                    </th>
+                    <th style="text-align: center !important;" (click)="sortTable('temporalStatus')">
+                        Estatus temporal
+                        <span *ngIf="sortColumn === 'temporalStatus' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'temporalStatus' && sortDirection === 'desc'">▼</span>
+                    </th>
+                    <th style="text-align: center !important;" (click)="sortTable('responsible')">
+                        Responsable
+                        <span *ngIf="sortColumn === 'responsible' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'responsible' && sortDirection === 'desc'">▼</span>
+                    </th>
                     <th style="text-align: center !important;">Tipo de ejeci&oacute;n</th>
                     <th style="text-align: center !important;">Acciones</th>
                 </tr>
@@ -149,7 +169,11 @@
             <!-- headers -->
             <thead class="encabezado-tabla">
                 <tr>
-                    <th style="text-align: center !important;">Tarea</th>
+                    <th style="text-align: center !important;" (click)="sortSuggestionTable('taskName')">
+                        Tarea
+                        <span *ngIf="sortColumn === 'taskName' && sortDirection === 'asc'">▲</span>
+                        <span *ngIf="sortColumn === 'taskName' && sortDirection === 'desc'">▼</span>
+                    </th>
                     <th style="text-align: center !important;">Seleccionar</th>
                 </tr>
             </thead>

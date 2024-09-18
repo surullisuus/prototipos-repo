@@ -68,8 +68,16 @@
                 <!-- headers -->
                 <thead class="encabezado-tabla">
                     <tr>
-                        <th style="text-align: center !important;">Proceso</th>
-                        <th style="text-align: center !important;">Tipos documentales</th>
+                        <th style="text-align: center !important;" (click)="sortTable('process')">
+                            Proceso
+                            <span *ngIf="sortColumn === 'process' && sortDirection === 'asc'">▲</span>
+                            <span *ngIf="sortColumn === 'process' && sortDirection === 'desc'">▼</span>
+                        </th>
+                        <th style="text-align: center !important;" (click)="sortTable('documents')">
+                            Tipos documentales
+                            <span *ngIf="sortColumn === 'documents' && sortDirection === 'asc'">▲</span>
+                            <span *ngIf="sortColumn === 'documents' && sortDirection === 'desc'">▼</span>
+                        </th>
                         <th style="text-align: center !important;">Acciones</th>
                     </tr>
                 </thead>
