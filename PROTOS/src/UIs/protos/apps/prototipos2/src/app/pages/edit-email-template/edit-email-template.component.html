@@ -1,18 +1,17 @@
-<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> EDITAR PLANTILLA DE CORREO ELECTRÓNICO</span></h3>
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> EDITAR PLANTILLA DE CORREO ELECTRÓNICO PARA TIPO
+        DOCUMENTAL</span></h3>
 <div class="rounded-3 mb-5 mt-3">
-    <div class="row">
-        <span>ID*:</span>
-        <span><b>123</b></span>
-    </div>
-    <div class="row">
-        <!--Proceso-->
+
+    <div class="row mt-5">
         <div class="col-md-4">
-            <span>Proceso*:</span>
-            <p><span><b>ABC</b></span></p>
+            <subsidios-dropdown-list labelText="Proceso:" idList="type-345676" type="basic" [disabled]="true"
+                [lista]="[]" [title]="'Opción 1'">
+            </subsidios-dropdown-list>
         </div>
         <div class="col-md-4">
-            <span>Tema*:</span>
-            <p><span><b>ABC</b></span></p>
+            <subsidios-dropdown-list labelText="Tipo documental:" idList="type-345676" type="basic" [disabled]="true"
+                [lista]="[]" [title]="'Opción 1'">
+            </subsidios-dropdown-list>
         </div>
     </div>
 
@@ -21,7 +20,8 @@
         <div class="col-md-8">
             <div class="entradas-de-texto-govco">
                 <label for="nombre">Nombre*:</label>
-                <input type="text" id="nombre" [(ngModel)]="nombre" #nombreInput="ngModel" required placeholder="Ejemplo: Campo de texto"/>
+                <input type="text" id="nombre" [(ngModel)]="nombre" #nombreInput="ngModel" required
+                    placeholder="Ejemplo: Campo de texto" />
                 <div *ngIf="nombreInput.invalid && nombreInput.touched" class="text-danger">
                     El campo Nombre es obligatorio.
                 </div>
@@ -44,12 +44,22 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="cc">C.C*:</label>
+                <input type="text" id="cc" [(ngModel)]="cc" #asuntoInput="ngModel" required
+                    placeholder="Ejemplo: Campo de texto" />
+            </div>
+        </div>
+    </div>
     <!-- Asunto -->
     <div class="row">
         <div class="col-md-8">
             <div class="entradas-de-texto-govco">
                 <label for="asunto">Asunto*:</label>
-                <input type="text" id="asunto" [(ngModel)]="asunto" #asuntoInput="ngModel" required placeholder="Ejemplo: Campo de texto"/>
+                <input type="text" id="asunto" [(ngModel)]="asunto" #asuntoInput="ngModel" required
+                    placeholder="Ejemplo: Campo de texto" />
                 <div *ngIf="asuntoInput.invalid && asuntoInput.touched" class="text-danger">
                     El campo Asunto es obligatorio.
                 </div>
@@ -75,17 +85,15 @@
     <!-- Botones -->
     <div class="row">
         <div class="col-md-12">
-            <button type="button"
-             class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
-             (click)="checkFilledFields()">
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+                (click)="checkFilledFields()">
                 Guardar
             </button>
-            <button type="button" 
-             class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
-             [routerLink]="['/plantilla-correo']">
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+                [routerLink]="['/plantilla-correo']">
                 Cancelar
             </button>
-        </div>    
+        </div>
     </div>
 </div>
 <div #dialog></div>
