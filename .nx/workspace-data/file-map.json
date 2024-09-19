@@ -10,30 +10,6 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".gitignore",
-        "hash": "9711185089890210630"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/.editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/.eslintignore",
-        "hash": "7663861978715868291"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/.eslintrc.json",
-        "hash": "18315524891129148814"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/.gitignore",
-        "hash": "11966908335120871298"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/.prettierignore",
-        "hash": "3395189204293871444"
-      },
-      {
         "file": "PROTOS/src/UIs/protos/.prettierrc",
         "hash": "16267754514737964994"
       },
@@ -42,67 +18,159 @@
         "hash": "17425123947026961272"
       },
       {
-        "file": "PROTOS/src/UIs/protos/README.md",
-        "hash": "17617539517234884743"
-      },
-      {
         "file": "PROTOS/src/UIs/protos/jest.config.ts",
         "hash": "3494843969422251966"
       },
       {
-        "file": "PROTOS/src/UIs/protos/jest.preset.js",
-        "hash": "9430166341120122740"
+        "file": "PROTOS/src/UIs/protos/.prettierignore",
+        "hash": "3395189204293871444"
       },
       {
-        "file": "PROTOS/src/UIs/protos/nx.json",
-        "hash": "11917075900057292970"
-      },
-      {
-        "file": "PROTOS/src/UIs/protos/package-lock.json",
-        "hash": "6557836008174197123"
+        "file": "PROTOS/src/UIs/protos/.eslintrc.json",
+        "hash": "18315524891129148814"
       },
       {
         "file": "PROTOS/src/UIs/protos/package.json",
         "hash": "12860609680295575283"
       },
       {
-        "file": "PROTOS/src/UIs/protos/tsconfig.base.json",
-        "hash": "14900512597538786341"
+        "file": "PROTOS/src/UIs/protos/nx.json",
+        "hash": "11917075900057292970"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.gitignore",
+        "hash": "11966908335120871298"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/package-lock.json",
+        "hash": "6557836008174197123"
+      },
+      {
+        "file": "package.json",
+        "hash": "1901056353039060329"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "9711185089890210630"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/.editorconfig",
+        "hash": "5443105041930014821"
       },
       {
         "file": "nx.json",
         "hash": "5710489012492234158"
       },
       {
+        "file": "PROTOS/src/UIs/protos/.eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/tsconfig.base.json",
+        "hash": "14900512597538786341"
+      },
+      {
+        "file": "PROTOS/src/UIs/protos/jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
         "file": "package-lock.json",
         "hash": "634395127707124363"
       },
       {
-        "file": "package.json",
-        "hash": "1901056353039060329"
+        "file": "PROTOS/src/UIs/protos/README.md",
+        "hash": "17617539517234884743"
       }
     ],
     "projectFileMap": {
-      "prototipos2-e2e": [
+      "lib": [
         {
-          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/.eslintrc.json",
-          "hash": "632147010597293032"
+          "file": "PROTOS/src/UIs/protos/lib/.eslintrc.json",
+          "hash": "13179335397355282534"
         },
         {
-          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/playwright.config.ts",
-          "hash": "10136383218243061113"
+          "file": "PROTOS/src/UIs/protos/lib/README.md",
+          "hash": "6751866278003627049"
         },
         {
-          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/project.json",
-          "hash": "2211398605230030683"
+          "file": "PROTOS/src/UIs/protos/lib/jest.config.ts",
+          "hash": "14765352243610266038"
         },
         {
-          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/src/example.spec.ts",
-          "hash": "16019101014373124625"
+          "file": "PROTOS/src/UIs/protos/lib/project.json",
+          "hash": "706066571856955378"
         },
         {
-          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/tsconfig.json",
-          "hash": "2800721902587063983"
+          "file": "PROTOS/src/UIs/protos/lib/src/index.ts",
+          "hash": "9582103258414411809"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/class/modal.ts",
+          "hash": "1598729083419263114"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/constants/validation.utils.ts",
+          "hash": "6527849534291298886"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/assets/WorkSans-Regular.ttf",
+          "hash": "10781031146758971685"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/disable-control.directive.ts",
+          "hash": "7734964105404819726"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.html",
+          "hash": "17860422938116125396"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.spec.ts",
+          "hash": "1051917733419957978"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.ts",
+          "hash": "13794325763351296224"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.html",
+          "hash": "12503743099659633921"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.spec.ts",
+          "hash": "11888506503727441711"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.ts",
+          "hash": "4313002594449636532"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/lib/uis/uis.module.ts",
+          "hash": "15874306710402093297"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/src/test-setup.ts",
+          "hash": "12935735732682149507"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/tsconfig.json",
+          "hash": "4881022640630122902"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/tsconfig.lib.json",
+          "hash": "12869890349728543997"
+        },
+        {
+          "file": "PROTOS/src/UIs/protos/lib/tsconfig.spec.json",
+          "hash": "16256243244356451527"
         }
       ],
       "prototipos2": [
@@ -908,7 +976,7 @@
         },
         {
           "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-part/edit-part.component.ts",
-          "hash": "16847925959415688392"
+          "hash": "3713349139285782789"
         },
         {
           "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/edit-requirement/edit-requirement.component.css",
@@ -1280,7 +1348,7 @@
         },
         {
           "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-request/process-request.component.ts",
-          "hash": "11575768189603170060"
+          "hash": "17840270757519279290"
         },
         {
           "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/app/pages/process-stages/process-stages.component.css",
@@ -1760,7 +1828,7 @@
         },
         {
           "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/index.html",
-          "hash": "11440760013768919315"
+          "hash": "720952693349516172"
         },
         {
           "file": "PROTOS/src/UIs/protos/apps/prototipos2/src/main.ts",
@@ -1917,94 +1985,26 @@
           "hash": "2927375835638640771"
         }
       ],
-      "lib": [
+      "prototipos2-e2e": [
         {
-          "file": "PROTOS/src/UIs/protos/lib/.eslintrc.json",
-          "hash": "13179335397355282534"
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/.eslintrc.json",
+          "hash": "632147010597293032"
         },
         {
-          "file": "PROTOS/src/UIs/protos/lib/README.md",
-          "hash": "6751866278003627049"
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/playwright.config.ts",
+          "hash": "10136383218243061113"
         },
         {
-          "file": "PROTOS/src/UIs/protos/lib/jest.config.ts",
-          "hash": "14765352243610266038"
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/project.json",
+          "hash": "2211398605230030683"
         },
         {
-          "file": "PROTOS/src/UIs/protos/lib/project.json",
-          "hash": "706066571856955378"
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/src/example.spec.ts",
+          "hash": "16019101014373124625"
         },
         {
-          "file": "PROTOS/src/UIs/protos/lib/src/index.ts",
-          "hash": "9582103258414411809"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/class/modal.ts",
-          "hash": "1598729083419263114"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/constants/validation.utils.ts",
-          "hash": "6527849534291298886"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/assets/WorkSans-Regular.ttf",
-          "hash": "10781031146758971685"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/disable-control.directive.ts",
-          "hash": "7734964105404819726"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.css",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.html",
-          "hash": "17860422938116125396"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.spec.ts",
-          "hash": "1051917733419957978"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/input/input.component.ts",
-          "hash": "13794325763351296224"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.css",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.html",
-          "hash": "12503743099659633921"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.spec.ts",
-          "hash": "11888506503727441711"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/lib/lib.component.ts",
-          "hash": "4313002594449636532"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/lib/uis/uis.module.ts",
-          "hash": "15874306710402093297"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/src/test-setup.ts",
-          "hash": "12935735732682149507"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/tsconfig.json",
-          "hash": "4881022640630122902"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/tsconfig.lib.json",
-          "hash": "12869890349728543997"
-        },
-        {
-          "file": "PROTOS/src/UIs/protos/lib/tsconfig.spec.json",
-          "hash": "16256243244356451527"
+          "file": "PROTOS/src/UIs/protos/apps/prototipos2-e2e/tsconfig.json",
+          "hash": "2800721902587063983"
         }
       ],
       "protos-e2e": [
