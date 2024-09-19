@@ -1,56 +1,62 @@
 <h3 class="h3-tipografia-govco">
     <span class="govcolor-marine">Observaciones</span>
 </h3>
-<div class="rounded-3 mb-5 mt-3">
-    <div class="row mt-4 mb-3 text-left">
-        <!--Documento-->
-        <div class="document-name-label">
+<form [formGroup]="observationForm" (ngSubmit)="onSubmit()">
+    <div class="rounded-3 mb-5 mt-3">
+        <div class="row mt-4 mb-3 text-left">
+            <!--Documento-->
+            <div class="document-name-label">
+                <div class="col-md-12">
+                    <span class="label-desplegable-govco">Documento: </span>
+                    <span class="label-desplegable-govco">Nombre del documento consultado</span>
+                </div>  
+            </div>
+        </div>
+        <div class="row mt-4 mb-3 text-left">
             <div class="col-md-12">
-                <span class="label-desplegable-govco">Documento: </span>
-                <span class="label-desplegable-govco">Nombre del documento consultado</span>
-            </div>  
+                <div class="entradas-de-texto-govco">
+                    <label for="input-basico-id">Observaci&oacute;n*</label>
+                    <input type="text" id="input-basico-id" placeholder="Ejemplo: Observaciones"/>
+                    <div *ngIf="observationForm.get('observacion')?.invalid && observationForm.get('observacion')?.touched" class="text-danger">
+                        La observación es obligatoria               
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!--Botones asociar/cancelar-->
+            <div class="col-md-12">
+                <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">Asociar</button>
+                <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">Cancelar</button>
+            </div>
+        </div>
+        <div class="row mt-4 mb-3 text-left">
+            <div class="col-md-10">        
+                <h4 class="h4-tipografia-govco mt-3 mb-2"><span class="govcolor-marine"> Observaciones asociadas</span></h4>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                    <thead class="encabezado-tabla">
+                        <tr>
+                            <th class="columna-pequena" role="button">Fecha</th>
+                            <th class="columna-pequena" role="button">Asociado por</th>
+                            <th style="text-align: center !important;">Observaci&oacute;n</th>
+                        </tr>
+                    </thead>
+                    <tbody class="contenido-tablas">
+                        <tr *ngFor="let item of observationsRequests">
+                            <td style="text-align: left !important;">
+                                <p class="mb-0">
+                                {{ item.fecha | date: 'dd/MM/yyyy' }}
+                                </p>
+                            </td>
+                            <td class="text-left">{{ item.asociadoPor }}</td>
+                            <td style="text-align: center !important; padding-right: 10px;">{{ item.observacion }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
+            </div>
         </div>
     </div>
-    <div class="row mt-4 mb-3 text-left">
-        <div class="col-md-12">
-            <div class="entradas-de-texto-govco">
-                <label for="input-basico-id">Observaci&oacute;n*</label>
-                <input type="text" id="input-basico-id" placeholder="Ejemplo: Observaciones"/>
-              </div>
-        </div>
-    </div>
-    <div class="row">
-        <!--Botones asociar/cancelar-->
-        <div class="col-md-12">
-            <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1">Asociar</button>
-            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1">Cancelar</button>
-          </div>
-    </div>
-    <div class="row mt-4 mb-3 text-left">
-        <div class="col-md-10">        
-            <h4 class="h4-tipografia-govco mt-3 mb-2"><span class="govcolor-marine"> Observaciones asociadas</span></h4>
-        </div>
-        <div class="table-responsive">
-            <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-                <thead class="encabezado-tabla">
-                    <tr>
-                        <th class="columna-pequena" role="button">Fecha</th>
-                        <th class="columna-pequena" role="button">Asociado por</th>
-                        <th style="text-align: center !important;">Observaci&oacute;n</th>
-                    </tr>
-                </thead>
-                <tbody class="contenido-tablas">
-                    <tr *ngFor="let item of observationsRequests">
-                        <td style="text-align: left !important;">
-                            <p class="mb-0">
-                              {{ item.fecha | date: 'dd/MM/yyyy' }}
-                            </p>
-                          </td>
-                          <td class="text-left">{{ item.asociadoPor }}</td>
-                          <td style="text-align: center !important; padding-right: 10px;">{{ item.observacion }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+</form>

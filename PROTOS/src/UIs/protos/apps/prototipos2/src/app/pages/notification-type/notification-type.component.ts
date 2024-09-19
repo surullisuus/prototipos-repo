@@ -54,7 +54,8 @@ initForm(): FormGroup {
 }
 AcceptModal() {
   const dialogData = new DialogData();
-  dialogData.title = "¿Está seguro de eliminar este tipo de notificación?";
+  dialogData.title = "Eliminar registro"
+  dialogData.body = "¿Está seguro de eliminar este tipo de notificación?";
   dialogData.textButtonCancel = "Cerrar";
   dialogData.textButtonConfirm = "Aceptar";
   dialogData.type = DialogType.warning;
