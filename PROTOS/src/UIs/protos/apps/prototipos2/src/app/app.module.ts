@@ -61,7 +61,7 @@ import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
 import { ManagePlantillasCorreosComponent } from './pages/manage-plantillas-correo/manage-plantillas-correos.component';
 import { SeeEmailTemplateComponent } from './pages/see-email-template/see-email-template.component';
-import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
+import { ConfigureFlowTasksModalComponent } from './pages/configure-flow-tasks-modal/configure-flow-tasks-modal.component';
 import { ConfigureGeneralAlertsComponent } from './pages/configure-general-alerts/configure-general-alerts.component';
 import { UploadTaskDocumentComponent } from './pages/upload-task-document/upload-task-document.component';
 import { DocumentSigningComponent } from './pages/document-signing/document-signing.component';
@@ -108,6 +108,7 @@ import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded
 import { ViewSelectedDocumentComponent } from './pages/view-selected-document/view-selected-document.component';
 import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 import { CommonModule } from '@angular/common';
+import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 
 @NgModule({
   declarations: [
@@ -168,7 +169,7 @@ import { CommonModule } from '@angular/common';
     ConfigureFlowStagesComponent,
     ManagePlantillasCorreosComponent,
     SeeEmailTemplateComponent,
-    ConfigureFlowTasksComponent,
+    ConfigureFlowTasksModalComponent,
     ConfigureGeneralAlertsComponent,
     UploadTaskDocumentComponent,
     DocumentSigningComponent,
@@ -213,7 +214,8 @@ import { CommonModule } from '@angular/common';
     ViewSelectedDocumentComponent,
     UploadInfoModalComponent,
     RegisterCdgRequestComponent,
-    FillAdditionalTaskFieldsComponent
+    FillAdditionalTaskFieldsComponent,
+    ConfigureFlowTasksComponent
   ],
   imports: [ReactiveFormsModule,
     RouterModule, BrowserModule,
