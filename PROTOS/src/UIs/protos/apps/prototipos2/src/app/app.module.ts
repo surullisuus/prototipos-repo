@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule,ExtraOptions} from '@angular/router';
+import { RouterModule, ExtraOptions } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { MainComponent } from './components/main/main.component';
@@ -108,6 +108,8 @@ import { UploadedInfoTableComponent } from './pages/uploaded-info-table/uploaded
 import { ViewSelectedDocumentComponent } from './pages/view-selected-document/view-selected-document.component';
 import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 import { CommonModule } from '@angular/common';
+import { CreateEmailTemplateDocumentComponent } from './create-email-template-document/create-email-template-document.component';
+import { EditEmailTemplateDocumentComponent } from './edit-email-template-document/edit-email-template-document.component';
 
 @NgModule({
   declarations: [
@@ -213,11 +215,19 @@ import { CommonModule } from '@angular/common';
     ViewSelectedDocumentComponent,
     UploadInfoModalComponent,
     RegisterCdgRequestComponent,
-    FillAdditionalTaskFieldsComponent
+    FillAdditionalTaskFieldsComponent,
+    CreateEmailTemplateDocumentComponent,
+    EditEmailTemplateDocumentComponent,
   ],
-  imports: [ReactiveFormsModule,
-    RouterModule, BrowserModule,
-    FormsModule, UisModule,CommonModule, RouterModule.forRoot(appRoutes,{useHash: true})],
+  imports: [
+    ReactiveFormsModule,
+    RouterModule,
+    BrowserModule,
+    FormsModule,
+    UisModule,
+    CommonModule,
+    RouterModule.forRoot(appRoutes, { useHash: true }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

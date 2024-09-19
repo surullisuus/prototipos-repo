@@ -65,6 +65,8 @@ import { PerformDocumentsUploadComponent } from './pages/perform-documents-uploa
 import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
 import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
 import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
+import { CreateEmailTemplateDocumentComponent } from './create-email-template-document/create-email-template-document.component';
+import { EditEmailTemplateDocumentComponent } from './edit-email-template-document/edit-email-template-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },
@@ -100,6 +102,10 @@ export const appRoutes: Route[] = [
     path: 'asignar-responsable-tareas',
     component: AssingResponsibleTaskComponent,
   },
+  {
+    path: 'editar-plantilla-correo',
+    component: EditEmailTemplateDocumentComponent,
+  },
   { path: 'consultar-alertas', component: AlertsByResponsibleComponent },
   { path: 'tipos-documentales', component: SeeDocumentalTypesComponent },
   { path: 'task-details/:id', component: SeeTaskDetailsComponent },
@@ -113,6 +119,10 @@ export const appRoutes: Route[] = [
   {
     path: 'consultar-plantillas-correo',
     component: ManagePlantillasCorreosComponent,
+  },
+  {
+    path: 'crear-plantilla-correo',
+    component: CreateEmailTemplateDocumentComponent,
   },
   {
     path: 'ver-plantilla-correo',
@@ -159,7 +169,10 @@ export const appRoutes: Route[] = [
     component: AssociateInboundDocumentGesDocComponent,
   },
   { path: 'asociar-resolucion', component: AssociateResolutionsComponent },
-  { path: 'gestionar-documento-tarea', component: ManageProcessDesignComponent },
+  {
+    path: 'gestionar-documento-tarea',
+    component: ManageProcessDesignComponent,
+  },
   { path: 'enviar-notificacion', component: SendEmailNotificationComponent },
   { path: 'flujo-documento', component: FlujoDocumentoComponent },
   { path: 'registrar-solicitud-cdg', component: RegisterCdgRequestComponent },
