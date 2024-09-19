@@ -67,12 +67,40 @@ export class EditPartComponent {
       { text: 'BOGOTÁ', value: 3 },
       { text: 'PEREIRA', value: 4 }
     ];
+    
   }
  
   ngOnInit(): void {
     this.initList()    
+    this.formQueryScheme = this.initForm();
+    const valuedept= this.formQueryScheme.get('departamento')?.value
+    console.log("depart",valuedept)
+    this.formQueryScheme.get('aceptaTratamiento')?.valueChanges.subscribe(value => {
+      if (value) {
+        this.isVisible=true
+        this.formQueryScheme.get('fileUpload')?.enable();
+      } else {
+        this.isVisible=false
+        this.formQueryScheme.get('fileUpload')?.disable();
+      }
+    });
 
-    this.formQueryScheme = this.fb.group({
+    if (!sessionStorage.getItem('reloaded')) {
+      // Recargar la página al iniciar el componente
+      sessionStorage.setItem('reloaded', 'true');
+      window.location.reload();
+    } else {
+      // Si ya se recargó, eliminar el indicador para futuras visitas
+      sessionStorage.removeItem('reloaded');
+    }  
+  
+    
+  
+  }
+
+  initForm():FormGroup
+  {
+   return this.fb.group({
       tipoIdentificacion: [{ value: 2, disabled: true }, Validators.required],
       numeroIdentificacion: ['12345678', Validators.required],
       tipoParte: ["1", Validators.required],
@@ -85,17 +113,6 @@ export class EditPartComponent {
       aceptaTratamiento: [false, Validators.requiredTrue],
       fileUpload: [{ value: "", disabled: true }]
     })
-   const valuedept= this.formQueryScheme.get('departamento')?.value
-    console.log("depart",valuedept)
-    this.formQueryScheme.get('aceptaTratamiento')?.valueChanges.subscribe(value => {
-      if (value) {
-        this.isVisible=true
-        this.formQueryScheme.get('fileUpload')?.enable();
-      } else {
-        this.isVisible=false
-        this.formQueryScheme.get('fileUpload')?.disable();
-      }
-    });
   
   }
 

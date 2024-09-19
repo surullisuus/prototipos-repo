@@ -112,17 +112,27 @@ export class ProcessRequestComponent {
 
   sortTable(column: string) {
     if (this.sortColumn === column) {
-      // Alternar la dirección si la columna es la misma
       this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
     } else {
-      // Si es una nueva columna, ordenar en ascendente
       this.sortDirection = 'asc';
     }
     this.sortColumn = column;
   
-    this.processRequests.sort((a, b) => {
-      const valueA = a[column as keyof ProcessRequest];
-      const valueB = b[column as keyof ProcessRequest];
+    this.filteredRequests.sort((a, b) => {
+      let valueA = a[column as keyof ProcessRequest];
+      let valueB = b[column as keyof ProcessRequest];
+  
+      // Manejar fechas
+      if (valueA instanceof Date && valueB instanceof Date) {
+        valueA = valueA.getTime();
+        valueB = valueB.getTime();
+      }
+  
+      // Manejar strings y otros tipos
+      if (typeof valueA === 'string' && typeof valueB === 'string') {
+        valueA = valueA.toLowerCase();
+        valueB = valueB.toLowerCase();
+      }
   
       if (valueA < valueB) {
         return this.sortDirection === 'asc' ? -1 : 1;
@@ -134,14 +144,14 @@ export class ProcessRequestComponent {
     });
   }
   
-
   resetFilters(): void {
     this.formQueryScheme.reset({
       proceso: ["1"], // Valor por defecto (equivalente a la opción "Escoger")
       noSolicitud: '',
       fechaInicio: '',
       fechaFin: '',
-      status: ["1"], // Valor por defecto (equivalente a la opción "Escoger")
+      status: ["1"],
+       // Valor por defecto (equivalente a la opción "Escoger")
     });
      // Restablece los valores del formulario a su estado inicial
     this.filteredRequests = [...this.processRequests]; // Restablece todos los datos en la tabla
