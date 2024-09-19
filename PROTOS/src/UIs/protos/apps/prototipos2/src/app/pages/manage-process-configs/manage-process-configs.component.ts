@@ -134,7 +134,7 @@ export class ManageProcessConfigsComponent implements OnInit {
 
   onDeleteTaskModal(processPhase: ProcessPhase) {
     const dialogData = new DialogData();
-    dialogData.body = `¿Está seguro que desea eliminar el registro ${processPhase.processName}?`;
+    dialogData.body = `¿Está seguro que desea eliminar el registro?`;
     dialogData.title = 'Eliminar registro';
     dialogData.textButtonCancel = 'Cancelar';
     dialogData.type = DialogType.warning;

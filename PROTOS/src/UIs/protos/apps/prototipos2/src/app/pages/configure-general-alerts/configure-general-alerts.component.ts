@@ -20,7 +20,8 @@ export class ConfigureGeneralAlertsComponent  {
 
   SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Está seguro de guardar esta nueva alerta?";
+    dialogData.title = "Guardar Alerta"
+    dialogData.body = "¿Está seguro de guardar esta nueva alerta?";
     dialogData.textButtonCancel = "Cerrar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;

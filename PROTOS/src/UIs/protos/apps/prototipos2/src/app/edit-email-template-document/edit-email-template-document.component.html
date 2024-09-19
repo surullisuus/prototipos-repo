@@ -1,0 +1,100 @@
+<h3 class="h3-tipografia-govco mt-3"><span class="govcolor-marine"> EDITAR PLANTILLA DE CORREO ELECTRÓNICO TIPO
+        DOCUMENTAL</span></h3>
+<div class="rounded-3 mb-5 mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Proceso:" idList="type-345676" type="basic" [disabled]="false"
+                [lista]="[]" [title]="'Opcion 1'" [disabled]="true">
+            </subsidios-dropdown-list>
+        </div>
+        <div class="col-md-4">
+            <subsidios-dropdown-list labelText="Tema:" idList="type-345676" type="basic" [disabled]="false" [lista]="[]"
+                [title]="'Opcion 1'" [disabled]="true">
+            </subsidios-dropdown-list>
+        </div>
+    </div>
+
+    <!-- Nombre -->
+    <div class="row mt-3">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="nombre">Nombre*:</label>
+                <input type="text" id="nombre" [(ngModel)]="nombre" #nombreInput="ngModel" required
+                    placeholder="Ejemplo: Campo de texto" />
+                <div *ngIf="nombreInput.invalid && nombreInput.touched" class="text-danger">
+                    El campo Nombre es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Descripción -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="descripcion">Descripción*:</label>
+                <textarea id="descripcion" [(ngModel)]="descripcion" #descripcionInput="ngModel" required
+                    aria-describedby="contador max-lenght" placeholder="Ejemplo: Campo de texto" maxlength="250"
+                    rows="3" style="width: 100%; border-radius: 5px; resize: none;"></textarea>
+                <div *ngIf="descripcionInput.invalid && descripcionInput.touched" class="text-danger">
+                    El campo Descripción es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Asunto -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="cc">C.C:</label>
+                <input type="text" id="cc" [(ngModel)]="cc" #asuntoInput="ngModel" required
+                    placeholder="Ejemplo: Campo de texto" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Asunto -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="asunto">Asunto*:</label>
+                <input type="text" id="asunto" [(ngModel)]="asunto" #asuntoInput="ngModel" required
+                    placeholder="Ejemplo: Campo de texto" />
+                <div *ngIf="asuntoInput.invalid && asuntoInput.touched" class="text-danger">
+                    El campo Asunto es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cuerpo del correo -->
+    <div class="row">
+        <div class="col-md-8">
+            <div class="entradas-de-texto-govco">
+                <label for="cuerpoCorreo">Cuerpo del correo*:</label>
+                <textarea id="cuerpoCorreo" [(ngModel)]="cuerpoCorreo" #cuerpoCorreoInput="ngModel" required
+                    aria-describedby="contador max-lenght" placeholder="Ejemplo: Campo de texto" maxlength="250"
+                    rows="6" style="width: 100%; border-radius: 5px; resize: none;"></textarea>
+                <div *ngIf="cuerpoCorreoInput.touched" class="text-danger">
+                    El campo Cuerpo del correo es obligatorio.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1"
+                (click)="checkFilledFields()">
+                Guardar
+            </button>
+            <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
+                [routerLink]="['/consultar-plantillas-correo']">
+                Cancelar
+            </button>
+        </div>
+    </div>
+</div>
+<div #dialog></div>

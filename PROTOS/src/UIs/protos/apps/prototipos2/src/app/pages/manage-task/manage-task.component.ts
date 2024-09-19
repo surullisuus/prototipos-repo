@@ -65,6 +65,8 @@ export class ManageTaskComponent implements OnInit {
 
   solicitudId = 101;
   anormalTaskClosed = '';
+  sortColumn = ''; // Columna por la que se está ordenando
+  sortDirection: 'asc' | 'desc' = 'asc'; // Dirección de ordenamiento
 
   /**
    * Esta lista de tareas se debe ordenar por el estado, de tal forma que:
@@ -293,8 +295,8 @@ export class ManageTaskComponent implements OnInit {
     console.log('taks', task);
 
     const dialogData = new DialogData();
-    dialogData.title = 'Asignar Solicitud';
-    dialogData.body = `¿Está seguro de asignar la tarea ${task.taskName}?`;
+    dialogData.title = 'Iniciar tarea';
+    dialogData.body = `¿Está seguro de iniciar la tarea?`;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.warning;
 
@@ -312,28 +314,25 @@ export class ManageTaskComponent implements OnInit {
       });
   }
 
-OnRejectTask(){
-  
-  const dialogData = new DialogData();
-  dialogData.title = '¿Está seguro que desea rechazar la tarea?';
-  dialogData.body = `Recuerde que esta acción es irreversible.`;
-  dialogData.textButtonCancel = 'Cancelar';
-  dialogData.type = DialogType.warning;
+  OnRejectTask() {
+    const dialogData = new DialogData();
+    dialogData.title = '¿Está seguro que desea rechazar la tarea?';
+    dialogData.body = `Recuerde que esta acción es irreversible.`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.warning;
 
-  this.subscription = this.dialogService
-    .openModal(this.dialog, dialogData)
-    .subscribe((dialogAction: DialogAction) => {
-      if (dialogAction.action === ActionType.confirm) {
-     
-        const body = `La tarea fue rechazada de forma exitosa.`;
-        dialogAction.eventClose.emit();
-        this.showSuccessTaskInitializationAlertState(body);
-       
-      } else {
-        dialogAction.eventClose.emit();
-      }
-    });
-}
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          const body = `La tarea fue rechazada de forma exitosa.`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
   onFinishTasktModal(task: PhaseTask, $event: Event) {
     $event.preventDefault();
     console.log('taks', task);
@@ -385,8 +384,8 @@ OnRejectTask(){
     $event.preventDefault();
 
     const dialogData = new DialogData();
-    dialogData.title = 'Asignar tarea';
-    dialogData.body = `¿Está seguro de realizar la tarea seleccionada? Con esta acción la tarea "${task.taskName}" le será asignada.`;
+    dialogData.title = 'Realizar tarea';
+    dialogData.body = `¿Está seguro de realizar la tarea"?`;
     dialogData.textButtonCancel = 'Cancelar';
     dialogData.type = DialogType.warning;
 
@@ -395,7 +394,30 @@ OnRejectTask(){
       .subscribe((dialogAction: DialogAction) => {
         if (dialogAction.action === ActionType.confirm) {
           this.changeTaskState(task.taskId, TaskStateEnum.EnEjecucion);
-          const body = `La tarea seleccionada pasó a su listado de tareas actuales.`;
+          const body = `La tarea se ha realizado con éxito`;
+          dialogAction.eventClose.emit();
+          this.showSuccessTaskInitializationAlertState(body);
+        } else {
+          dialogAction.eventClose.emit();
+        }
+      });
+  }
+
+  onRejectionTasktModal(task: SuggestedTask, $event: Event) {
+    $event.preventDefault();
+
+    const dialogData = new DialogData();
+    dialogData.title = 'Rechazar tarea';
+    dialogData.body = `¿Está seguro de rechazar la tarea"?`;
+    dialogData.textButtonCancel = 'Cancelar';
+    dialogData.type = DialogType.warning;
+
+    this.subscription = this.dialogService
+      .openModal(this.dialog, dialogData)
+      .subscribe((dialogAction: DialogAction) => {
+        if (dialogAction.action === ActionType.confirm) {
+          this.changeTaskState(task.taskId, TaskStateEnum.EnEjecucion);
+          const body = `La tarea se ha rechazado con éxito`;
           dialogAction.eventClose.emit();
           this.showSuccessTaskInitializationAlertState(body);
         } else {
@@ -424,5 +446,53 @@ OnRejectTask(){
     if (this.openSeeRadicadoModal) {
       this.openSeeRadicadoModal.nativeElement.click();
     }
+  }
+
+  sortTable(column: string) {
+    if (this.sortColumn === column) {
+      // Alternar la dirección si la columna es la misma
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      // Si es una nueva columna, ordenar en ascendente
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.phaseTasks.sort((a, b) => {
+      const valueA = a[column as keyof PhaseTask];
+      const valueB = b[column as keyof PhaseTask];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
+  }
+
+  sortSuggestionTable(column: string) {
+    if (this.sortColumn === column) {
+      // Alternar la dirección si la columna es la misma
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      // Si es una nueva columna, ordenar en ascendente
+      this.sortDirection = 'asc';
+    }
+    this.sortColumn = column;
+
+    this.suggestedTasks.sort((a, b) => {
+      const valueA = a[column as keyof SuggestedTask];
+      const valueB = b[column as keyof SuggestedTask];
+
+      if (valueA < valueB) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      }
+      if (valueA > valueB) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      }
+      return 0;
+    });
   }
 }

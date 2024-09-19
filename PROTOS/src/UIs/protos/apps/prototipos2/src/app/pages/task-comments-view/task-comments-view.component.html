@@ -1,61 +1,61 @@
 <h3 class="h3-tipografia-govco">
     <span class="govcolor-marine">Comentarios</span>
 </h3>
-<div class="rounded-3 mb-5 mt-3">
-    <div class="row">
-        <div class="col-md-1">
-            <span>Tarea:</span>
-        </div>
-        <div class="col-md-4">
-            <b><span> &lt; Nombre de la tarea... &gt; </span></b>
-        </div>
-    </div>
-    <div class="row">
-        <p></p>
-        <div class="entradas-de-texto-govco">
-            <label for="input-basico-id">Comentario*:</label>
-            <input type="text" id="input-basico-id" placeholder="Comentario..."/>
+<form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+  <div class="rounded-3 mb-5 mt-3">
+      <div class="row">
+          <div class="col-md-1">
+              <span>Tarea:</span>
           </div>
-    </div>
-    <div class="row">
-        <p></p>
-        <div class="col-md-12">
-            <button type="button"
-             class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space  mt-1"
-             (click)="SaveModal()">
-                Guardar
-               </button>   
-               <button type="button" 
-               class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1"
-               [routerLink]="['/ver-comentarios-tarea']">
-                 Cancelar
-               </button>
-        </div>    
-    </div>
-    <div class="row">
-        <div class="row mt-4 mb-3 text-left">
-            <div class="col-md-10">        
-                <h4 class="h4-tipografia-govco mt-3 mb-2"><span class="govcolor-marine">Observaciones asociadas</span></h4>
-            </div>
-            <div class="table-responsive">
-                <table class="table table-general table-basic" aria-describedby="tableDescBasic">
-                    <thead class="encabezado-tabla">
-                        <tr>
-                            <th class="columna-pequena" role="button" style="text-align: center !important;">Fecha</th>
-                            <th class="columna-pequena" role="button" style="text-align: center !important;">Asociado por</th>
-                            <th class="columna-especial" role="button" style="text-align: center !important;">Comentario</th>
-                        </tr>
-                    </thead>
-                    <tbody class="contenido-tablas">
-                        <tr *ngFor="let item of tasksRequest">
-                            <td class="text-center">{{ item.fecha | date: 'dd/MM/yyyy' }}</td>
-                            <td class="text-center">{{ item.asociadoPor }}</td>
-                            <td class="text-center">{{ item.comentario }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
+          <div class="col-md-4">
+              <b><span> &lt; Nombre de la tarea... &gt; </span></b>
+          </div>
+      </div>
+      <div class="row">
+          <p></p>
+          <div class="entradas-de-texto-govco">
+              <label for="input-basico-id">Comentario*:</label>
+              <input type="text" id="input-basico-id" formControlName="comentario" placeholder="Comentario..." />
+              <div *ngIf="commentForm.get('comentario')?.invalid && commentForm.get('comentario')?.touched" class="text-danger">
+                  El comentario es obligatorio.
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <p></p>
+          <div class="col-md-12">
+              <button type="submit" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space mt-1">
+                  Guardar
+              </button>   
+              <button type="button" class="btn-govco outline-btn-govco btn-govco-custom btn-govco-space btn-cancel mt-1" [routerLink]="['/ver-comentarios-tarea']">
+                  Cancelar
+              </button>
+          </div>    
+      </div>
+      <div class="row mt-4 mb-3 text-left">
+          <div class="col-md-10">
+              <h4 class="h4-tipografia-govco mt-3 mb-2"><span class="govcolor-marine">Observaciones asociadas</span></h4>
+          </div>
+          <div class="table-responsive">
+              <table class="table table-general table-basic" aria-describedby="tableDescBasic">
+                  <thead class="encabezado-tabla">
+                      <tr>
+                          <th class="columna-pequena" style="text-align: center !important;">Fecha</th>
+                          <th class="columna-pequena" style="text-align: center !important;">Asociado por</th>
+                          <th class="columna-especial" style="text-align: center !important;">Comentario</th>
+                      </tr>
+                  </thead>
+                  <tbody class="contenido-tablas">
+                      <tr *ngFor="let item of tasksRequest">
+                          <td class="text-center">{{ item.fecha | date: 'dd/MM/yyyy' }}</td>
+                          <td class="text-center">{{ item.asociadoPor }}</td>
+                          <td class="text-center">{{ item.comentario }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+              <subsidios-paginator [totalCount]="6" [pageSize]="5" [currentPage]="1"></subsidios-paginator>
+          </div>
+      </div>
+  </div>
+</form>
 <div #dialog></div>

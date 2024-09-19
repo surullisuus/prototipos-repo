@@ -16,6 +16,8 @@ export class EditAcuseRecibidoComponent {
 
   delivered?: boolean;
   guideNumber = '';
+  casual?: string;
+  date?: string;
 
   constructor(private dialogService: DialogService) {}
 
@@ -27,8 +29,35 @@ export class EditAcuseRecibidoComponent {
     this.guideNumber = $event.target.value;
   }
 
+  setCasual($event: any) {
+    this.casual = $event.text;
+  }
+
+  setDate($event: any) {
+    this.date = $event.target.value;
+  }
+
   get isDelivered() {
     return this.delivered;
+  }
+
+  get activeSaveButton() {
+    console.log(this.delivered, this.guideNumber, this.casual);
+
+    if (this.delivered === undefined) {
+      return false;
+    }
+
+    if (!this.delivered && this.casual !== '') {
+      return true;
+    }
+
+    return (
+      this.delivered &&
+      this.guideNumber !== '' &&
+      this.casual !== undefined &&
+      this.date !== undefined
+    );
   }
 
   showSuccessTaskInitializationAlertState(body: string) {

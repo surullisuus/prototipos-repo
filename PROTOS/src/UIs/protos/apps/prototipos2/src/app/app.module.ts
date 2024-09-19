@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule,ExtraOptions} from '@angular/router';
+import { RouterModule, ExtraOptions } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { MainComponent } from './components/main/main.component';
@@ -109,6 +109,8 @@ import { ViewSelectedDocumentComponent } from './pages/view-selected-document/vi
 import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 import { CommonModule } from '@angular/common';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
+import { CreateEmailTemplateDocumentComponent } from './create-email-template-document/create-email-template-document.component';
+import { EditEmailTemplateDocumentComponent } from './edit-email-template-document/edit-email-template-document.component';
 
 @NgModule({
   declarations: [
@@ -214,12 +216,20 @@ import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/config
     ViewSelectedDocumentComponent,
     UploadInfoModalComponent,
     RegisterCdgRequestComponent,
+    ConfigureFlowTasksComponent,
     FillAdditionalTaskFieldsComponent,
-    ConfigureFlowTasksComponent
+    CreateEmailTemplateDocumentComponent,
+    EditEmailTemplateDocumentComponent,
   ],
-  imports: [ReactiveFormsModule,
-    RouterModule, BrowserModule,
-    FormsModule, UisModule,CommonModule, RouterModule.forRoot(appRoutes,{useHash: true})],
+  imports: [
+    ReactiveFormsModule,
+    RouterModule,
+    BrowserModule,
+    FormsModule,
+    UisModule,
+    CommonModule,
+    RouterModule.forRoot(appRoutes, { useHash: true }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
