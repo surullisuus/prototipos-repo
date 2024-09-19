@@ -87,7 +87,8 @@ processStages: ProcessStage[] = [
   }
   AcceptModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Está seguro de eliminar esta etapa?";
+    dialogData.title = "Eliminar etapa"
+    dialogData.body = "¿Está seguro de eliminar esta etapa?";
     dialogData.textButtonCancel = "Cerrar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;

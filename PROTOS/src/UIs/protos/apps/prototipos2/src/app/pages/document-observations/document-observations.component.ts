@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UisModule } from "../../../../../../lib/src/lib/uis/uis.module";
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 interface ObservationRequest{
@@ -33,9 +33,20 @@ export class DocumentObservationsComponent {
     }
   ];
   fromQueryScheme!: FormGroup;
+  observationForm!: FormGroup;
+
   constructor(private readonly fb: FormBuilder,){}
   ngOnInit(): void{
     this.fromQueryScheme = this.initForm();
+    this.observationForm = this.fb.group({
+      observacion: ['', Validators.required],
+    })
+  }
+  onSubmit(){
+    if(this.observationForm.invalid){
+        this.observationForm.markAllAsTouched();
+    }
+    
   }
   initForm(): FormGroup{
     return this.fb.group({

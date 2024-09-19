@@ -5,6 +5,7 @@ import { DialogAction } from '../../components/dialog/models/dialog-action';
 import { DialogData } from '../../components/dialog/models/dialog-data';
 import { DialogType } from '../../components/dialog/models/dialog-type';
 import { DialogService } from '../../components/dialog/services/dialog.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-stage-process',
@@ -13,12 +14,31 @@ import { DialogService } from '../../components/dialog/services/dialog.service';
 })
 export class EditStageProcessComponent {
   @ViewChild('dialog', { read: ViewContainerRef }) dialog!: ViewContainerRef;
-  constructor(private dialogService: DialogService) {}
-  isDisabledSubmit = false;
+  
+  constructor(private readonly fb: FormBuilder, private dialogService: DialogService) {}
+  
+  stageForm!: FormGroup;
   subscription!: Subscription;
+
+  ngOnInit(): void {
+    this.stageForm = this.fb.group({
+      etapa: ['', Validators.required],  // Agregar validación requerida
+    });
+  }
+
+  onSubmit() {
+    if (this.stageForm.invalid) {
+      this.stageForm.markAllAsTouched();  // Marcar todos los campos como tocados si el formulario es inválido
+      return;
+    }
+
+    // Si el formulario es válido, mostrar el modal
+    this.SaveModal();
+  }
   SaveModal() {
     const dialogData = new DialogData();
-    dialogData.title = "¿Está seguro de guardar cambios?";
+    dialogData.title = "Guardar etapa"
+    dialogData.body = "¿Está seguro de guardar esta etapa?";
     dialogData.textButtonCancel = "Cerrar";
     dialogData.textButtonConfirm = "Aceptar";
     dialogData.type = DialogType.warning;
@@ -37,7 +57,7 @@ export class EditStageProcessComponent {
 
   onSavedModal(){
     const dialogData = new DialogData();
-    dialogData.title = "Cambios guardados de forma exitosa";
+    dialogData.title = "Etapa guardada de forma exitosa";
     dialogData.buttonConfirm = false;
     dialogData.textButtonCancel = 'Cerrar';
     dialogData.type = DialogType.success;
