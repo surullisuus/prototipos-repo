@@ -28,7 +28,6 @@ import { DetailNotificationTypeComponent } from './pages/detail-notification-typ
 import { SetStageRequirementsComponent } from './pages/set-stage-requirements/set-stage-requirements.component';
 import { CreateTaskComponent } from './pages/createTask/createTask.component';
 import { ConfigureFlowStagesComponent } from './pages/configure-flow-stages/configure-flow-stages.component';
-import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 import { ManageProcessConfigsComponent } from './pages/manage-process-configs/manage-process-configs.component';
 import { SeeDocumentalTypesComponent } from './pages/see-documental-types/see-documental-types.component';
 import { SeeTaskDetailsComponent } from './pages/see-task-details/see-task-details.component';
@@ -65,6 +64,7 @@ import { PerformDocumentsUploadComponent } from './pages/perform-documents-uploa
 import { PerformInformationUploadComponent } from './pages/perform-information-upload/perform-information-upload.component';
 import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
 import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
+import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
 import { CreateEmailTemplateDocumentComponent } from './create-email-template-document/create-email-template-document.component';
 import { EditEmailTemplateDocumentComponent } from './edit-email-template-document/edit-email-template-document.component';
 
