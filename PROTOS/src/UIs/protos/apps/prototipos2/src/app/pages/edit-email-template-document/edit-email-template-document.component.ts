@@ -1,12 +1,12 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { DialogType } from '../components/dialog/models/dialog-type';
-import { DialogData } from '../components/dialog/models/dialog-data';
+import { DialogType } from '../../components/dialog/models/dialog-type';
+import { DialogData } from '../../components/dialog/models/dialog-data';
 import {
   ActionType,
   DialogAction,
-} from '../components/dialog/models/dialog-action';
+} from '../../components/dialog/models/dialog-action';
 import { Subscription } from 'rxjs';
-import { DialogService } from '../components/dialog/services/dialog.service';
+import { DialogService } from '../../components/dialog/services/dialog.service';
 
 @Component({
   selector: 'app-edit-email-template-document',

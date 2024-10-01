@@ -65,8 +65,8 @@ import { PerformInformationUploadComponent } from './pages/perform-information-u
 import { TemplateEmailAlertTypeComponent } from './pages/template-email-alert-type/template-email-alert-type.component';
 import { PublishDocumentComponent } from './pages/publish-document/publish-document.component';
 import { ConfigureFlowTasksComponent } from './pages/configure-flow-tasks/configure-flow-tasks.component';
-import { CreateEmailTemplateDocumentComponent } from './create-email-template-document/create-email-template-document.component';
-import { EditEmailTemplateDocumentComponent } from './edit-email-template-document/edit-email-template-document.component';
+import { CreateEmailTemplateDocumentComponent } from './pages/create-email-template-document/create-email-template-document.component';
+import { EditEmailTemplateDocumentComponent } from './pages/edit-email-template-document/edit-email-template-document.component';
 
 export const appRoutes: Route[] = [
   { path: '', component: ProcessRequestComponent },

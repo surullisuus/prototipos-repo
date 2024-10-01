@@ -1,13 +1,13 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { DialogService } from '../components/dialog/services/dialog.service';
-import { DialogData } from '../components/dialog/models/dialog-data';
+import { DialogService } from '../../components/dialog/services/dialog.service';
+import { DialogData } from '../../components/dialog/models/dialog-data';
 import {
   ActionType,
   DialogAction,
-} from '../components/dialog/models/dialog-action';
-import { DialogType } from '../components/dialog/models/dialog-type';
+} from '../../components/dialog/models/dialog-action';
+import { DialogType } from '../../components/dialog/models/dialog-type';
 
 interface processOption {
   processName: string;
