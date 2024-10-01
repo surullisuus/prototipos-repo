@@ -53,11 +53,7 @@ export class SeeDocumentalTypesComponent {
       process: 'Proceso de liquidación',
       documents: ['Acta de liquidación', 'Acta de apertura', 'Acta de cierre'],
     },
-    {
-      id: 5,
-      process: 'No existe proceso',
-      documents: ['No existe documento'],
-    },
+    
   ];
 
   constructor(private dialogService: DialogService) {}

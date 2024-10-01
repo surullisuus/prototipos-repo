@@ -62,6 +62,16 @@ export class ManageProcessComponent {
     noProyecto:123
   }
 
+  ngOnInit(){
+    if (!sessionStorage.getItem('reloaded')) {
+      // Recargar la página al iniciar el componente
+      sessionStorage.setItem('reloaded', 'true');
+      window.location.reload();
+    } else {
+      // Si ya se recargó, eliminar el indicador para futuras visitas
+      sessionStorage.removeItem('reloaded');
+    }  
+  }
   onPerformanceModal() {
     if (this.openbuttonperformance) {
       this.openbuttonperformance.nativeElement.click();
