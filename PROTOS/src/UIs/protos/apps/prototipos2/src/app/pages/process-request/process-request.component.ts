@@ -75,6 +75,17 @@ export class ProcessRequestComponent {
   ngOnInit(): void {
   this.formQueryScheme = this.initForm();
   this.filteredRequests = [...this.processRequests]; 
+
+  if (!sessionStorage.getItem('reloaded')) {
+    // Recargar la página al iniciar el componente
+    sessionStorage.setItem('reloaded', 'true');
+    window.location.reload();
+  } else {
+    // Si ya se recargó, eliminar el indicador para futuras visitas
+    sessionStorage.removeItem('reloaded');
+  }  
+
+  
   }
   
   
