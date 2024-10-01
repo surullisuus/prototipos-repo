@@ -66,9 +66,9 @@ export class GenerarDocumentoComponent implements OnInit {
     return this._formBuilder.group({
       proceso: [null],
       tipoDocumental: [null],
-      nombreDocumento: [null],
+      nombreDocumento: '',
       programa: [null],
-      creacion: [null],
+      creacion: '',
     });
   }
 
