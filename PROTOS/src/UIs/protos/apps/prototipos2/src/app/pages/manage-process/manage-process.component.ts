@@ -33,6 +33,7 @@ export class ManageProcessComponent {
   }
 
   subscription!: Subscription;
+  show:boolean=true
   isVisible: boolean = false;
   registros = [
     {
@@ -71,7 +72,10 @@ export class ManageProcessComponent {
       // Si ya se recargó, eliminar el indicador para futuras visitas
       sessionStorage.removeItem('reloaded');
     }  
+  
   }
+
+  
   onPerformanceModal() {
     if (this.openbuttonperformance) {
       this.openbuttonperformance.nativeElement.click();

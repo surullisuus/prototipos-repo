@@ -139,3 +139,31 @@ li.nav-item {
 }
 
 
+.alerta-govco {
+  width: 100%;
+  height: 44px;
+  width: 200px;
+  max-width: 826px;
+  max-height: 44px;
+  padding: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #ffab00 !important;
+  border: #F6F8F9 !important;
+ 
+}
+.anotificacion,
+.anotificacion:hover {
+    color: #101111;
+}
+
+.alerta-content-text{
+  background-color: #ffab00;
+}
+
+.container-alerta-govco {
+ 
+  background-color: white;
+}
